@@ -1,27 +1,25 @@
-export function Person(first, name) {
-  // TODO: assigner first et name comme propriétés propres
-}
-
-Object.assign(Person.prototype, {
+export const Person = {
   name: "",
   first: "",
   getFullName() {
     return `${this.first} ${this.name}`;
   }
-});
+};
 
-export function User(first, name, rights) {
-  // TODO: appeler le constructeur Person
-  // TODO: assigner rights comme propriété propre
-}
-
-// TODO: définir Person.prototype comme prototype de User.prototype
-
-Object.assign(User.prototype, {
+// TODO : assigner Person comme prototype
+export const User = {
   rights: [],
   hasRight(right) {
     return this.rights.includes(right);
   }
-});
+};
 
-export const bob = new User("Bob", "Afett", ["create", "read"]);
+// TODO: assigner User comme prototype
+export const bob = {
+  name: "Afett",
+  first: "Bob",
+  rights: ["create", "read"]
+};
+
+// 1) avec Object.setPrototypeOf
+// 2) avec Object.create et avec Object.assign

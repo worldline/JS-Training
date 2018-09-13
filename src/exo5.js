@@ -1,25 +1,26 @@
-export const Person = {
-  name: "",
-  first: "",
-  getFullName() {
-    return `${this.first} ${this.name}`;
+export function getActions() {
+  const paroles = [
+    "Trois p'tits chats",
+    "Chapeau d'paille",
+    "Paillasson",
+    "Somnambule",
+    "Bulletin",
+    "Tintamarre"
+  ];
+
+  const actions = [];
+
+  // TOFIX: retourner la chanson correctement
+  for (var i = 0; i < paroles.length; i++) {
+    actions.push(function sing() {
+      return paroles[i] + ", " + paroles[i] + ", " + paroles[i] + " !!!";
+    });
   }
-};
 
-// TODO : assigner Person comme prototype
-export const User = {
-  rights: [],
-  hasRight(right) {
-    return this.rights.includes(right);
-  }
-};
+  return actions;
+}
 
-// TODO: assigner User comme prototype
-export const bob = {
-  name: "Afett",
-  first: "Bob",
-  rights: ["create", "read"]
-};
-
-// 1) avec Object.setPrototypeOf
-// 2) avec Object.create et avec Object.assign
+// code de test, à essayer en console pour voir le problème
+getActions().forEach(function(action) {
+  console.log(action());
+});
