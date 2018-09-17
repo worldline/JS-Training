@@ -1,5 +1,5 @@
 export function parseUserData(data) {
-  // Faire l'exercice en utilisant uniquement des opérateurs, pas de if()
+  // Résoudre l'exercice en utilisant uniquement des opérateurs, pas de if()
 
   return {
     // retourner data.name ou "Anonymous" si data.name est falsey
