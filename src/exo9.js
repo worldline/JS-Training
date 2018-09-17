@@ -13,9 +13,10 @@ const data = {
 
 export function calcTotalPrice(data) {
   // retourne le prix total des produits
-  return data.products;
+  return 0;
 }
 
 export function getNumberOfFruits(data) {
   // retourne le nombre total de fruits
+  return 0;
 }
