@@ -21,6 +21,6 @@ export function getActions() {
 }
 
 // code de test, à essayer en console pour voir le problème
-getActions().forEach(function(action) {
+/*getActions().forEach(function(action) {
   console.log(action());
-});
+});*/
