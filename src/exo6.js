@@ -1,4 +1,4 @@
-export const Person = {
+export const person = {
   name: "",
   first: "",
   getFullName() {
@@ -6,15 +6,15 @@ export const Person = {
   }
 };
 
-// TODO : assigner Person comme prototype
-export const User = {
+// TODO : assigner person comme prototype
+export const user = {
   rights: [],
   hasRight(right) {
     return this.rights.includes(right);
   }
 };
 
-// TODO: assigner User comme prototype
+// TODO: assigner user comme prototype
 export const bob = {
   name: "Afett",
   first: "Bob",
