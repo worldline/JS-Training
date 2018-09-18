@@ -1,4 +1,4 @@
-import { isPrimitive } from "../src/exo1.js";
+import { isPrimitive } from "../src/exo01.js";
 
 it("should detect numbers as primitives", () => {
   expect(isPrimitive(42)).toBe(true);
@@ -29,5 +29,5 @@ it("should detect Symbols as primitives", () => {
 it("should not detect these as primitives", () => {
   expect(isPrimitive({})).toBe(false);
   expect(isPrimitive([])).toBe(false);
-  expect(isPrimitive(function() {})).toBe(false);
+  expect(isPrimitive(function () { })).toBe(false);
 });

@@ -1,4 +1,4 @@
-import { calcTotalPrice, getNumberOfFruits } from "../src/exo9";
+import { calcTotalPrice, getNumberOfFruits } from "../src/exo09";
 
 const data1 = {
   products: [

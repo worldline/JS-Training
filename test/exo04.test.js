@@ -1,4 +1,4 @@
-import { setPrivatesAndConstants, addWatcher } from "../src/exo4";
+import { setPrivatesAndConstants, addWatcher } from "../src/exo04";
 
 it("should add getters and setters to object prop", () => {
   let obj = { a: 1, b: 2 };

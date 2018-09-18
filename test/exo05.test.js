@@ -1,4 +1,4 @@
-import { getActions } from "../src/exo5";
+import { getActions } from "../src/exo05";
 
 it("should fix the song", () => {
   expect(

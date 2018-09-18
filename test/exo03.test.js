@@ -1,4 +1,4 @@
-import { invertKeysAndValues } from "../src/exo3";
+import { invertKeysAndValues } from "../src/exo03";
 
 it("should invert keys and values", () => {
   expect(invertKeysAndValues({})).toEqual({});

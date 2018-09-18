@@ -2,7 +2,7 @@ import {
   hasProperty,
   hasPropertyValue,
   getNumberOfProperties
-} from "../src/exo2";
+} from "../src/exo02";
 
 it("hasProperty", () => {
   expect(hasProperty({ a: 1, b: 2, test: 42 }, "test")).toBe(true);
