@@ -1,6 +1,6 @@
 export function i18n(strings, ...vars) {
-  // basic internationalization helper
-  // TODO: replace each string fragment with i18n.translate
+  // utilitaire basique d'internationalisation
+  // TODO: remplacer chaque fragment de texte avec i18n.translate
   return;
 }
 
