@@ -9,14 +9,18 @@ const data = {
   ]
 };
 
-// Résoudre l'exercice avec des arrow functions et les méthodes map/filter/reduce de Array
+// Résoudre l'exercice avec des arrow functions
 
-export function calcTotalPrice(data) {
-  // retourne le prix total des produits
+export function getProductNames(data) {
+  // retourne la liste des noms des produits (méthode map de Array)
+}
+
+export function getFruits(data) {
+  // retourne les fruits uniquement (méthode filter de Array)
   return 0;
 }
 
-export function getNumberOfFruits(data) {
-  // retourne le nombre total de fruits
+export function calcTotalPrice(data) {
+  // retourne le prix total des produits (méthode reduce de Array)
   return 0;
 }

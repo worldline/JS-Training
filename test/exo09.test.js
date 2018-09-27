@@ -1,4 +1,4 @@
-import { calcTotalPrice, getNumberOfFruits } from "../src/exo09";
+import { getProductNames, getFruits, calcTotalPrice } from "../src/exo09";
 
 const data1 = {
   products: [
@@ -17,12 +17,17 @@ const data2 = {
   ]
 };
 
+it("getProductNames", () => {
+  expect(getProductNames(data1).join(",")).toBe("Carotte,Chou,Pomme,Poire");
+  expect(getProductNames(data2).join(",")).toBe("Carotte,Chou,Patates");
+});
+
+it("getFruits", () => {
+  expect(getFruits(data1).length).toBe(2);
+  expect(getFruits(data2).length).toBe(0);
+});
+
 it("calcTotalPrice", () => {
   expect(calcTotalPrice(data1)).toBe(48);
   expect(calcTotalPrice(data2)).toBe(11);
-});
-
-it("getNumberOfFruits", () => {
-  expect(getNumberOfFruits(data1)).toBe(3);
-  expect(getNumberOfFruits(data2)).toBe(0);
 });
