@@ -3,11 +3,6 @@
 export function promisify(fn) {
   // TODO: retourner une fonction appelant fn mais
   // retournant une Promise au lieu de passer un callback
-  return (...args) =>
-    new Promise((resolve, reject) => {
-      let callback = (err, result) => (err ? reject(err) : resolve(result));
-      return fn(callback, ...args);
-    });
 }
 
 // exemple d'utilisation

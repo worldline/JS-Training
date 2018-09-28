@@ -1,6 +1,12 @@
 import { Observable } from "../src/exo16";
 
-test("Observable", done => {
+it("Observable", done => {
+  const out = [];
+  setTimeout(() => {
+    expect(out.join(",")).toBe("1,2,2,4,3,6,4,8,5,10,complete,complete2");
+    done();
+  }, 500);
+
   const observable = new Observable(({ emit, complete }) => {
     let i = 0;
     const next = () => {
@@ -12,12 +18,11 @@ test("Observable", done => {
       }
     };
 
-    next();
+    setTimeout(next, 10);
   });
 
   expect("subscribe" in observable).toBe(true);
 
-  const out = [];
   observable.subscribe({
     onValue(i) {
       out.push(i);
@@ -35,14 +40,15 @@ test("Observable", done => {
       out.push("complete2");
     }
   });
-
-  setTimeout(() => {
-    expect(out.join(",")).toBe("1,2,2,4,3,6,4,8,5,10,complete,complete2");
-    done();
-  }, 500);
 });
 
-test("Observer unsubscribe", done => {
+it("Observer unsubscribe", done => {
+  const out = [];
+  setTimeout(() => {
+    expect(out.join(",")).toBe("1,2,3");
+    done();
+  }, 500);
+
   const observable = new Observable(({ emit, complete }) => {
     let i = 0;
     const next = () => {
@@ -57,8 +63,6 @@ test("Observer unsubscribe", done => {
     next();
   });
 
-  const out = [];
-
   const observer = observable.subscribe({
     onValue(i) {
       out.push(i);
@@ -70,9 +74,4 @@ test("Observer unsubscribe", done => {
   });
 
   expect("unsubscribe" in observer).toBe(true);
-
-  setTimeout(() => {
-    expect(out.join(",")).toBe("1,2,3");
-    done();
-  }, 500);
 });
