@@ -5,7 +5,7 @@ it("Observable", done => {
   setTimeout(() => {
     expect(out.join(",")).toBe("1,2,2,4,3,6,4,8,5,10,complete,complete2");
     done();
-  }, 500);
+  }, 300);
 
   const observable = new Observable(({ emit, complete }) => {
     let i = 0;
@@ -47,7 +47,7 @@ it("Observer unsubscribe", done => {
   setTimeout(() => {
     expect(out.join(",")).toBe("1,2,3");
     done();
-  }, 500);
+  }, 300);
 
   const observable = new Observable(({ emit, complete }) => {
     let i = 0;
@@ -56,17 +56,17 @@ it("Observer unsubscribe", done => {
       if (i >= 5) {
         complete();
       } else {
-        setTimeout(next, 100);
+        setTimeout(next, 10);
       }
     };
 
-    next();
+    setTimeout(next, 10);
   });
 
   const observer = observable.subscribe({
     onValue(i) {
       out.push(i);
-      if (i > 3) observer.unsubscribe();
+      if (i >= 3) observer.unsubscribe();
     },
     onComplete() {
       out.push("complete");
