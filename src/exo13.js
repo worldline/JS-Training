@@ -9,5 +9,5 @@ export function getPropertyFromValue(obj, val) {
   // TODO: retourner la clé de la propriété de obj ayant comme valeur val
   // 1 - avec Object.keys et Array.prototype.find
   // 2 - avec une Map et Object.entries
-  return;
+  return null;
 }

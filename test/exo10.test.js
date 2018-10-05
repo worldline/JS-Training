@@ -21,6 +21,6 @@ it("compose function with several arguments", () => {
     exclamation
   );
 
-  expect(f("Hello", "World").toBe("HELLO, WORLD!"));
-  expect(f("  one", "two", "three", "four  ").toBe("ONE, TWO, THREE, FOUR!"));
+  expect(f("Hello", "World")).toBe("HELLO, WORLD!");
+  expect(f("  one", "two", "three", "four  ")).toBe("ONE, TWO, THREE, FOUR!");
 });

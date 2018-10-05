@@ -20,11 +20,13 @@ it("should add getters and setters to object prop", () => {
 });
 
 it("should set private props non enumerable", () => {
-  let obj = setPrivatesAndConstants({
+  let obj = {
     a: 1,
     b: 2,
     _private: 3
-  });
+  };
+
+  setPrivatesAndConstants(obj);
 
   expect(Object.keys(obj).length).toBe(2);
   expect(Object.keys(obj).includes("b")).toBe(true);
@@ -32,21 +34,23 @@ it("should set private props non enumerable", () => {
 });
 
 it("should set constant props non writable nor configurable", () => {
-  let obj = setPrivatesAndConstants({
+  let obj = {
     a: 1,
     b: 2,
     Constant: 3
-  });
+  }
+
+  setPrivatesAndConstants(obj);
 
   try {
     obj.Constant = 4;
-  } catch (e) {}
+  } catch (e) { }
 
   expect(obj.Constant).toBe(3);
 
   try {
     delete obj.Constant;
-  } catch (e) {}
+  } catch (e) { }
 
   expect(obj.Constant).toBe(3);
 });

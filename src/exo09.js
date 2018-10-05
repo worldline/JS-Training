@@ -13,11 +13,12 @@ const data = {
 
 export function getProductNames(data) {
   // retourne la liste des noms des produits (méthode map de Array)
+  return [];
 }
 
 export function getFruits(data) {
   // retourne les fruits uniquement (méthode filter de Array)
-  return 0;
+  return [];
 }
 
 export function calcTotalPrice(data) {

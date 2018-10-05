@@ -1,4 +1,4 @@
-import { range } from "../src/exo17";
+import { range } from "../src/exo18";
 
 it("range", () => {
   expect(typeof range).toBe("function");
