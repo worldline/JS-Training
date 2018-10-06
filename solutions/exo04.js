@@ -2,15 +2,15 @@ export function addWatcher(obj, prop, getter, setter) {
   // change le descripteur pour appeler les fonctions:
   // - getter lorsque la propriété prop est accédée
   // - setter lorsque la propriété prop est modifiée
-  let value = obj.prop;
+  let value = obj[prop];
   Object.defineProperty(obj, prop, {
     get() {
-      getter();
+      getter(value);
       return value
     },
-    set(val) {
-      setter(val)
-      value = val;
+    set(newValue) {
+      setter(newValue)
+      value = newValue;
     }
   })
 }

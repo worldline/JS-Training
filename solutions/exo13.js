@@ -1,11 +1,10 @@
 export function deduplicateArray(arr) {
   // TODO: retirer les valeurs en double dans l'array et retourner l'array filtrée
-  // 1 - avec Array.prototype.filter
+  // solution 1 : avec Array.prototype.filter
   return arr.filter((elm, index, arr) => arr.indexOf(elm) === index);
 
-  // 2 - avec un Set et l'opérateur spread
+  // solution 2 : avec un Set et l'opérateur spread
   return [...new Set(arr)]
-
 }
 
 export function getPropertyFromValue(obj, val) {

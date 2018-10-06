@@ -3,23 +3,23 @@ export function PubSub() {
 }
 
 PubSub.prototype.on = function (event, callback) {
-  if (event in this.events === false) this.events[event] = [];
+  if (!this.events.hasOwnProperty(event)) this.events[event] = [];
 
   this.events[event].push(callback);
 };
 
 PubSub.prototype.emit = function (event, data) {
-  if (event in this.events) {
+  if (this.events.hasOwnProperty(event)) {
     this.events[event].forEach(callback => callback(data))
   }
-  if (this.events['*']) {
+  if (this.events.hasOwnProperty('*')) {
     this.events['*'].forEach(callback => callback(data))
   }
 };
 
 PubSub.prototype.off = function (event, callback) {
-  if (event in this.events) {
-    this.events[event] = this.events[event].filter(x => x !== callback);
+  if (this.events.hasOwnProperty(event)) {
+    this.events[event] = this.events[event].filter(x => callback && x !== callback);
   }
 }
 // Pour aller plus loin:

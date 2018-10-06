@@ -1,6 +1,10 @@
 export function i18n(strings, ...vars) {
   // utilitaire basique d'internationalisation
-  // TODO: remplacer chaque fragment de texte avec i18n.translate
+
+  // solution 1
+  return strings.reduce((a, b, i) => i18n.translate(a) + vars[i - 1] + i18n.translate(b));
+
+  // solution 2
   return strings
     .map((str, i) => i18n.translate(str) + (vars[i] || ""))
     .join("");

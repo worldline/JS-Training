@@ -1,15 +1,15 @@
 export function Observable(setup) {
-  this.subscribers = [];
+  this.observers = [];
   setup({
-    emit: data => this.subscribers.forEach(observer => observer.onValue(data)),
-    complete: () => this.subscribers.forEach(observer => observer.onComplete()),
+    emit: data => this.observers.forEach(observer => observer.onValue(data)),
+    complete: () => this.observers.forEach(observer => observer.onComplete()),
   })
 }
 
 Observable.prototype.subscribe = function (observer) {
-  this.subscribers.push(observer);
+  this.observers.push(observer);
   observer.unsubscribe = () => {
-    this.subscribers = this.subscribers.filter(o => o !== observer)
+    this.observers = this.observers.filter(o => o !== observer)
   }
   return observer;
 };

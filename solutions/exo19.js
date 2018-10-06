@@ -12,7 +12,6 @@ export const addAliasForObject = (object, alias) => {
       else return Reflect.set(o, key, val);
     }
   });
-  return object;
 };
 
 // exemple d'utilisation:
@@ -28,13 +27,12 @@ export const countFunctionCalls = fn => {
   // stocké dans la propriété fn.count
   let count = 0;
   return new Proxy(fn, {
-    get(o, key){
+    get(o, key) {
       return key === "count" ? count : Reflect.get(o, key)
     },
-    apply(...args){
+    apply(...args) {
       count++;
       return Reflect.apply(...args)
     }
   })
-  return fn;
 };
