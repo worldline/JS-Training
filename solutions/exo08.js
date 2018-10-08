@@ -13,6 +13,6 @@ export function parseUserData(data) {
 
     // si data.friends est une Array, retourner sa longueur
     // sinon retourner false
-    friends: Array.isArray(data.friends) ? data.friends.length : false
+    friends: Array.isArray(data.friends) && data.friends.length
   };
 }

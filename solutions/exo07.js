@@ -21,6 +21,9 @@ export function User(first, name, rights) {
 
 // TODO: définir Person.prototype comme prototype de User.prototype
 User.prototype = Object.create(Person.prototype)
+// ou
+// Object.setPrototypeOf(User.prototype, Person.prototype)
+
 
 Object.assign(User.prototype, {
   rights: [],

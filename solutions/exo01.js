@@ -8,5 +8,5 @@ export function isPrimitive(x) {
 
 // solution 2
 export function isPrimitive2(x) {
-    return !x || !(x instanceof Object)
+    return x === null || !(x instanceof Object)
 }

@@ -22,7 +22,7 @@ export function setPrivatesAndConstants(obj) {
   for (let prop in obj) {
     Object.defineProperty(obj, prop, {
       enumerable: !prop.startsWith("_"),
-      writable: prop[0].toUpperCase() !== prop[0],
+      writable: !/A-Z/.test(prop[0])
       configurable: prop[0].toUpperCase() !== prop[0]
     })
   }
