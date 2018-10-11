@@ -1,9 +1,12 @@
 export function i18n(strings, ...vars) {
-  // utilitaire basique d'internationalisation
-
   // solution 1
-  return strings.reduce((a, b, i) => i18n.translate(a) + vars[i - 1] + i18n.translate(b));
+  return strings.reduce(
+    (out, str, i) => `${out}${i18n.translate(str)}${vars[i] || ""}`,
+    ""
+  )
+}
 
+export function i18n2(strings, ...vars) {
   // solution 2
   return strings
     .map((str, i) => i18n.translate(str) + (vars[i] || ""))

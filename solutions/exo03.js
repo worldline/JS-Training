@@ -1,9 +1,8 @@
 // retourne un objet où les valeurs des propriétés sont devenues les clés et les clés les valeurs
 // { a: "b" } => { b: "a" }
 
+// solution 1
 export function invertKeysAndValues(obj) {
-
-  // solution 1
   var newObj = {};
   Object.entries(obj).forEach(function (entry) {
     var clé = entry[0];
@@ -11,8 +10,10 @@ export function invertKeysAndValues(obj) {
     newObj[valeur] = clé;
   })
   return newObj;
+}
 
-  // solution 2 avec reduce et Object.assign
+// solution 2 avec reduce et Object.assign
+export function invertKeysAndValues2(obj) {
   return Object.entries(obj).reduce(
     function (newObj, entry) {
       var clé = entry[0];
@@ -21,7 +22,9 @@ export function invertKeysAndValues(obj) {
     },
     {}
   )
+}
 
-  // solution ES2018, pour information
+// solution ES2018, pour information
+export function invertKeysAndValues3(obj) {
   return { ...Object.entries(obj).map(([clé, valeur]) => ({ [valeur]: clé })) }
 }
