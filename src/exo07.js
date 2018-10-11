@@ -11,7 +11,7 @@ Object.assign(Person.prototype, {
 });
 
 export function User(first, name, rights) {
-  // TODO: appeler le constructeur Person
+  // TODO: appeler le constructeur Person avec le bon contexte d'éxécution
   // TODO: assigner rights comme propriété propre
 }
 
