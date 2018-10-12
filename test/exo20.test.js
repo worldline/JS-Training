@@ -1,8 +1,8 @@
 import { query } from "../src/exo20";
-import data from "./exo20.data.json";
+import data from "./fakedata.json";
 
-test("Query class", () => {
-  const results = query(data.users)
+test("query function", () => {
+  const results = query(data)
     .where("age", n => n >= 25)
     .where("lastName", name => name.length > 5)
     .orderBy("_id")
@@ -10,5 +10,5 @@ test("Query class", () => {
     .map(user => user.company);
 
   expect(results.length).toBe(3);
-  expect(results.join(",")).toBe("GINKOGENE,GOKO,QUINTITY");
+  expect(results.join(",")).toBe("DEMINIMUM,UTARA,CINASTER");
 });
