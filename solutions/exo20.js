@@ -1,4 +1,4 @@
-import data from "../test/exo20.data.json";
+import data from "../test/fakedata.json";
 
 export const query = array =>
     Object.assign(array, {
@@ -15,7 +15,7 @@ export const query = array =>
 
 // exemple d'utilisation
 console.log(
-    query(data.users)
+    query(data)
         .where("age", n => n >= 18)
         .orderBy("lastName")
         .take(5)
