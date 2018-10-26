@@ -8,5 +8,5 @@ export function addWatcher(obj, prop, getter, setter) {
 export function setPrivatesAndConstants(obj) {
   // changer le descripteur de chaque propriété de l'objet:
   // énumérable si la clé ne commence pas par par un _
-  // mutable et configurable si la clé ne commence pas par une majuscule (A-Z)
+  // mutable et configurable si la clé ne commence pas par une majuscule (regex: /[A-Z]/)
 }
