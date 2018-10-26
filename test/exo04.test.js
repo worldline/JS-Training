@@ -19,6 +19,14 @@ it("should add getters and setters to object prop", () => {
   expect(countSet).toBe(1);
 });
 
+it('should be able to read and write a prop with a watcher', () => {
+  let obj = { x: 10 };
+
+  addWatcher(obj, "x", () => { }, () => { });
+  obj.x *= 2;
+  expect(obj.x).toBe(20);
+});
+
 it("should set private props non enumerable", () => {
   let obj = {
     a: 1,

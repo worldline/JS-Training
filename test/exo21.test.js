@@ -1,36 +1,30 @@
 import { compose, where, orderBy, take, map } from "../src/exo21";
 import data from "./fakedata.json";
 
-test("where", () => {
-    let arr = [{ x: 1 }, { x: 2 }, { x: 3 }, { x: 4 }]
-    let odds = where("x", n => n % 2 > 0, arr)
-    expect(odds.length).toBe(2)
-    expect(odds.map(o => o.x).join(",")).toBe("1,3")
-    expect(arr.length).toBe(4);
-})
+const join = (...args) => args.join(", "),
+    trim = s => s.trim(),
+    uppercase = s => s.toUpperCase(),
+    exclamation = s => s + "!";
 
-test("orderBy", () => {
-    let arr = [{ x: 3 }, { x: 1 }, { x: 4 }, { x: 2 }];
-    let ordered = orderBy("x", arr);
-    expect(ordered.length).toBe(4)
-    expect(ordered.map(o => o.x).join(",")).toBe("1,2,3,4")
-    expect(arr.length).toBe(4);
-    expect(arr.map(o => o.x).join(",")).toBe("3,1,4,2")
-})
+test("compose function with one argument", () => {
+    const f = compose(
+        uppercase,
+        exclamation
+    );
+    expect(f("hi")).toBe("HI!");
+});
 
-test("take", () => {
-    let arr = [1, 2, 3, 4, 5];
-    let firsttwo = take(2, arr)
-    expect(firsttwo.join(",")).toBe("1,2")
-    expect(arr.join(",")).toBe("1,2,3,4,5")
-})
+test("compose function with several arguments", () => {
+    const f = compose(
+        join,
+        trim,
+        uppercase,
+        exclamation
+    );
 
-test("map", () => {
-    let arr = [1, 2, 3, 4, 5];
-    let result = map(n => n * 2, arr)
-    expect(result.join(",")).toBe("2,4,6,8,10")
-    expect(arr.join(",")).toBe("1,2,3,4,5")
-})
+    expect(f("Hello", "World")).toBe("HELLO, WORLD!");
+    expect(f("  one", "two", "three", "four  ")).toBe("ONE, TWO, THREE, FOUR!");
+});
 
 test("where, orderBy, take and map composition", () => {
     const query = compose(

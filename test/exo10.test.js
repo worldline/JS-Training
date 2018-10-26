@@ -1,26 +1,11 @@
-import { compose } from "../src/exo10";
+import { count, mostFrequentIn } from "../src/exo10";
 
-const join = (...args) => args.join(", "),
-  trim = s => s.trim(),
-  uppercase = s => s.toUpperCase(),
-  exclamation = s => s + "!";
+test("count", () => {
+  const countByArg = count("a", "b", "c", "c", "c", "b", "c", "a", "c", "b");
+  expect(Object.keys(countByArg).join(",")).toBe("a,b,c")
+  expect(Object.values(countByArg).join(",")).toBe("2,3,5")
+})
 
-it("compose function with one argument", () => {
-  const f = compose(
-    uppercase,
-    exclamation
-  );
-  expect(f("hi")).toBe("HI!");
-});
-
-it("compose function with several arguments", () => {
-  const f = compose(
-    join,
-    trim,
-    uppercase,
-    exclamation
-  );
-
-  expect(f("Hello", "World")).toBe("HELLO, WORLD!");
-  expect(f("  one", "two", "three", "four  ")).toBe("ONE, TWO, THREE, FOUR!");
-});
+test("mostFrequentIn", () => {
+  expect(mostFrequentIn("a", "b", "c", "c", "c", "b", "c", "a", "c", "b")).toBe("c")
+})

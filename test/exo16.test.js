@@ -5,7 +5,7 @@ it("Observable", done => {
   setTimeout(() => {
     expect(out.join(",")).toBe("1,2,2,4,3,6,4,8,5,10,complete,complete2");
     done();
-  }, 300);
+  }, 10);
 
   const observable = new Observable(({ emit, complete }) => {
     let i = 0;
@@ -14,11 +14,11 @@ it("Observable", done => {
       if (i >= 5) {
         complete();
       } else {
-        setTimeout(next, 10);
+        setTimeout(next, 0);
       }
     };
 
-    setTimeout(next, 10);
+    setTimeout(next, 0);
   });
 
   expect("subscribe" in observable).toBe(true);
@@ -40,14 +40,14 @@ it("Observable", done => {
       out.push("complete2");
     }
   });
-});
+}, 100);
 
 it("Observer unsubscribe", done => {
   const out = [];
   setTimeout(() => {
     expect(out.join(",")).toBe("1,2,3");
     done();
-  }, 300);
+  }, 100);
 
   const observable = new Observable(({ emit, complete }) => {
     let i = 0;
@@ -56,11 +56,11 @@ it("Observer unsubscribe", done => {
       if (i >= 5) {
         complete();
       } else {
-        setTimeout(next, 10);
+        setTimeout(next, 0);
       }
     };
 
-    setTimeout(next, 10);
+    setTimeout(next, 0);
   });
 
   const observer = observable.subscribe({
@@ -74,4 +74,4 @@ it("Observer unsubscribe", done => {
   });
 
   expect("unsubscribe" in observer).toBe(true);
-});
+}, 100);

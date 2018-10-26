@@ -1,14 +1,16 @@
 import data from "../test/fakedata.json";
 
-export function compose(f, ...fns) {
-    return (...args) => fns.reduce((x, g) => g(x), f(...args))
+// TODO: implémenter une fonction qui compose plusieurs fonctions
+// compose(f,g,h)(x) <=> h(g(f(x)))
+export function compose() {
+
 }
 
 // les fonctions composées doivent être pures et non mutables
-export const where = (field, condition, array) => { }
-export const orderBy = (field, array) => { };
-export const take = (number, array) => { }
-export const map = (transform, array) => { }
+export const where = (field, condition, array) => array.filter(({ [field]: value }) => condition(value))
+export const orderBy = (field, array) => [...array].sort((a, b) => a[field] < b[field] ? -1 : 1);
+export const take = (number, array) => array.slice(0, number)
+export const map = (transform, array) => array.map(transform)
 
 // exemple d'utilisation
 const query = compose(
