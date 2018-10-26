@@ -6,7 +6,7 @@ export const query = array =>
             return query(this.filter(({ [field]: value }) => condition(value)))
         },
         orderBy(field) {
-            return query(this.sort((a, b) => a[field] < b[field] ? -1 : 1))
+            return query([...this].sort((a, b) => a[field] < b[field] ? -1 : 1))
         },
         take(number) {
             return query(this.slice(0, number))
