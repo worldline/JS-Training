@@ -23,8 +23,8 @@ export function setPrivatesAndConstants(obj) {
   for (let prop in obj) {
     Object.defineProperty(obj, prop, {
       enumerable: !prop.startsWith("_"),
-      writable: !/A-Z/.test(prop[0]),
-      configurable: !/A-Z/.test(prop[0])
+      writable: !/[A-Z]/.test(prop[0]),
+      configurable: !/[A-Z]/.test(prop[0])
     })
   }
 }
