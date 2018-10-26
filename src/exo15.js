@@ -7,7 +7,7 @@ export function promisify(fn) {
 
 // exemple d'utilisation
 const wait = promisify(setTimeout);
-wait(1000)
-  .then(() => console.log("1") && wait(1000))
-  .then(() => console.log("2") && wait(1000))
+wait(10)
+  .then(() => console.log("1") && wait(10))
+  .then(() => console.log("2") && wait(10))
   .then(() => console.log("3"));
