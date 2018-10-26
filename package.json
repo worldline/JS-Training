@@ -1,7 +1,7 @@
 {
   "name": "formation-javascript-avance",
   "version": "1.0.0",
-  "description": "",
+  "description": "Formation JavaScript Avancé",
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
@@ -11,12 +11,20 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-3": "6.24.1",
+    "babel-runtime": "^6.26.0",
     "jest": "^23.6.0",
     "parcel-bundler": "^1.10.1",
     "regenerator-runtime": "^0.12.1"
   },
-  "keywords": [],
+  "keywords": [
+    "training",
+    "formation",
+    "javascript",
+    "advanced"
+  ],
+  "browserslist": "last 5 Chrome versions, last 5 Firefox versions",
   "jest": {}
 }
