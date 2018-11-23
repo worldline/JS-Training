@@ -24,7 +24,7 @@ export function invertKeysAndValues2(obj) {
   )
 }
 
-// solution ES2018, pour information
+// solution ES2015, pour information
 export function invertKeysAndValues3(obj) {
-  return { ...Object.entries(obj).map(([clé, valeur]) => ({ [valeur]: clé })) }
+  return Object.assign({}, ...Object.entries(obj).map(([clé, valeur]) => ({ [valeur]: clé })))
 }
