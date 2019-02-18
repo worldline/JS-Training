@@ -20,6 +20,7 @@ const Clickable = {
 const Focusable = {
   listenToFocusEvents(elm) {
     elm.addEventListener("focus", this.onFocus);
+    elm.addEventListener("blur", this.onBlur);
   },
   onFocus(e) {
     console.log("focus event", e);
