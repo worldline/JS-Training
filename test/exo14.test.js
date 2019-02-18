@@ -1,4 +1,4 @@
-import { Observable } from "../src/exo12";
+import { Observable } from "../src/exo14";
 
 it("Observable", () => {
   const out = [];

@@ -1,4 +1,4 @@
-import { parseUserData } from "../src/exo07";
+import { parseUserData } from "../src/exo09";
 
 const joe = parseUserData({
   name: "Joe",

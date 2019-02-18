@@ -1,4 +1,4 @@
-import { deduplicateArray, getPropertyFromValue } from "../src/exo09";
+import { deduplicateArray, getPropertyFromValue } from "../src/exo11";
 
 it("should deduplicate array", () => {
   expect(deduplicateArray([1, 2, 3, 2, 1])).toEqual([1, 2, 3]);

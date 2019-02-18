@@ -1,4 +1,4 @@
-import { i18n } from "../src/exo08";
+import { i18n } from "../src/exo10";
 
 const name = "Jean",
   nbMails = 5;

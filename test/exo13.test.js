@@ -1,4 +1,4 @@
-import { promisify } from "../src/exo11";
+import { promisify } from "../src/exo13";
 
 it("promisify", done => {
   const wait = promisify(setTimeout);

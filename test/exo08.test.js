@@ -1,4 +1,4 @@
-import { count, mostFrequentIn } from "../src/exo06";
+import { count, mostFrequentIn } from "../src/exo08";
 
 test("count", () => {
   const countByArg = count("a", "b", "c", "c", "c", "b", "c", "a", "c", "b");

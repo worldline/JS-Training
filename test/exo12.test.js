@@ -1,4 +1,4 @@
-import { PubSub } from "../src/exo10";
+import { PubSub } from "../src/exo12";
 
 test("PubSub", () => {
   const emitter = new PubSub();

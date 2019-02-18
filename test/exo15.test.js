@@ -1,4 +1,4 @@
-import { bob, user, person } from "../src/exo13";
+import { bob, user, person } from "../src/exo15";
 
 it("should have user prototype", () => {
   expect(Object.getPrototypeOf(bob)).toBe(user);

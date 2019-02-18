@@ -1,4 +1,4 @@
-import { getProductNames, getFruits, calcTotalPrice } from "../src/exo16";
+import { getProductNames, getFruits, calcTotalPrice } from "../src/exo07";
 
 const data1 = {
   products: [

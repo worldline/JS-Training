@@ -1,4 +1,4 @@
-import { parseUserData } from "../src/exo15";
+import { parseUserData } from "../src/exo06";
 
 const a = parseUserData({
   // retourner data.name ou "Anonymous" si data.name est falsey
