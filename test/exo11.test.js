@@ -1,23 +1,17 @@
-import { parseUserData } from "../src/exo11";
+import { deduplicateArray, getPropertyFromValue } from "../src/exo09";
 
-const joe = parseUserData({
-  name: "Joe",
-  age: 25,
-  isAdmin: true
+it("should deduplicate array", () => {
+  expect(deduplicateArray([1, 2, 3, 2, 1])).toEqual([1, 2, 3]);
+  expect(deduplicateArray(["a", "b", "c", "b"])).toEqual(["a", "b", "c"]);
 });
 
-const anon = parseUserData({
-  age: 99
-});
+it("should get property from value", () => {
+  const x = { x: 1 },
+    y = { y: 2 };
+  const o = { a: "b", b: "a", x, y };
 
-it("should apply defaults", () => {
-  expect(anon.name).toBe("Anonymous");
-  expect(anon.age).toBe(99);
-  expect(anon.isAdmin).toBe(false);
-});
-
-it("should not override existing props with defaults", () => {
-  expect(joe.name).toBe("Joe");
-  expect(joe.age).toBe(25);
-  expect(joe.isAdmin).toBe(true);
+  expect(getPropertyFromValue(o, "a")).toBe("b");
+  expect(getPropertyFromValue(o, "b")).toBe("a");
+  expect(getPropertyFromValue(o, x)).toBe("x");
+  expect(getPropertyFromValue(o, y)).toBe("y");
 });

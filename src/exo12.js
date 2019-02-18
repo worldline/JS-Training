@@ -1,25 +1,13 @@
-export function i18n(strings, ...vars) {
-  // utilitaire basique d'internationalisation
-  // TODO: remplacer chaque fragment de texte avec i18n.translate
-  return;
-}
+export function PubSub() {}
 
-Object.assign(i18n, {
-  locale: "fr",
-  locales: {
-    fr: {
-      "Hello ": "Bonjour ",
-      ", you have ": ", vous avez ",
-      " new mails.": " nouveaux messages."
-    }
-  },
-  translate(str) {
-    let messages = i18n.locales[i18n.locale] || {};
-    return messages[str] || str;
-  }
-});
+PubSub.prototype.on = function(event, callback) {
+  // TODO
+};
 
-const name = "Bob",
-  nbMails = 3;
+PubSub.prototype.emit = function(event, data) {
+  // TODO
+};
 
-console.log(i18n`Hello ${name}, you have ${nbMails} new mails.`);
+// Pour aller plus loin:
+// - méthode off(event, callback) pour retirer une souscription
+// - on('*') pour réagir à tous les événements

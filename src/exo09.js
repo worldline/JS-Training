@@ -1,27 +1,11 @@
-// données d'exemple (d'autres sont utilisées en test)
-const data = {
-  products: [
-    { type: "legume", name: "Carotte", quantity: 3, unitPrice: 5 },
-    { type: "legume", name: "Chou", quantity: 1, unitPrice: 10 },
-    { type: "legume", name: "Patates", quantity: 10, unitPrice: 1 },
-    { type: "fruit", name: "Pomme", quantity: 6, unitPrice: 2 },
-    { type: "fruit", name: "Poire", quantity: 6, unitPrice: 3 }
-  ]
-};
+export function parseUserData(data) {
+  // TODO: retourner un nouvel objet avec les propriétés de l'objet data
+  // et ces valeurs par défaut pour les propriétés manquantes :
+  const defaults = { name: "Anonymous", isAdmin: false };
 
-// Résoudre l'exercice avec des arrow functions
+  // 1 - en utilisant Object.assign
+  // 2 - en utilisant l'opérateur spread sur les properties
+  // 3 - en utilisant le destructuring et les paramètres par défaut pour parseUserData
 
-export function getProductNames(data) {
-  // retourne la liste des noms des produits (méthode map de Array)
-  return [];
-}
-
-export function getFruits(data) {
-  // retourne les fruits uniquement (méthode filter de Array)
-  return [];
-}
-
-export function calcTotalPrice(data) {
-  // retourne le prix total des produits (méthode reduce de Array)
-  return 0;
+  return data;
 }

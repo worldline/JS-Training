@@ -1,13 +1,7 @@
-export function PubSub() {}
+export function Observable(setup) {
+  //TODO
+}
 
-PubSub.prototype.on = function(event, callback) {
-  // TODO
+Observable.prototype.subscribe = function(observer) {
+  //TODO
 };
-
-PubSub.prototype.emit = function(event, data) {
-  // TODO
-};
-
-// Pour aller plus loin:
-// - méthode off(event, callback) pour retirer une souscription
-// - on('*') pour réagir à tous les événements

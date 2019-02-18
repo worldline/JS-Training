@@ -1,25 +1,18 @@
-export const person = {
-  name: "",
-  first: "",
-  getFullName() {
-    return `${this.first} ${this.name}`;
-  }
-};
+export function parseUserData(data) {
+  // Résoudre l'exercice en utilisant uniquement des opérateurs, pas de if()
 
-// TODO : assigner person comme prototype
-export const user = {
-  rights: [],
-  hasRight(right) {
-    return this.rights.includes(right);
-  }
-};
+  return {
+    // retourner data.name ou "Anonymous" si data.name est falsey
+    name: data.name,
 
-// TODO: assigner user comme prototype
-export const bob = {
-  name: "Afett",
-  first: "Bob",
-  rights: ["create", "read"]
-};
+    // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
+    age: data.age,
 
-// 1) avec Object.setPrototypeOf
-// 2) avec Object.create et avec Object.assign
+    // retourner true si data.rightId est égal à 0
+    isAdmin: false,
+
+    // si data.friends est une Array, retourner sa longueur
+    // sinon retourner false
+    friends: 0
+  };
+}

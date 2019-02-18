@@ -1,13 +1,13 @@
-export function deduplicateArray(arr) {
-  // TODO: retirer les valeurs en double dans l'array et retourner l'array filtrée
-  // 1 - avec les méthodes filter et indexOf
-  // 2 - avec un Set et l'opérateur spread
-  return arr;
+// fn prend en premier argument un callback
+// fn(function callback(error, result){ ... }, arg1, arg2);
+export function promisify(fn) {
+  // TODO: retourner une fonction appelant fn mais
+  // retournant une Promise au lieu de passer un callback
 }
 
-export function getPropertyFromValue(obj, val) {
-  // TODO: retourner la clé de la propriété de obj ayant comme valeur val
-  // 1 - avec les méthodes find et Object.keys
-  // 2 - avec une Map et Object.entries
-  return null;
-}
+// exemple d'utilisation
+const wait = promisify(setTimeout);
+wait(10)
+  .then(() => console.log("1") && wait(10))
+  .then(() => console.log("2") && wait(10))
+  .then(() => console.log("3"));

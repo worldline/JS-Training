@@ -1,17 +1,19 @@
-import { deduplicateArray, getPropertyFromValue } from "../src/exo13";
+import { promisify } from "../src/exo11";
 
-it("should deduplicate array", () => {
-  expect(deduplicateArray([1, 2, 3, 2, 1])).toEqual([1, 2, 3]);
-  expect(deduplicateArray(["a", "b", "c", "b"])).toEqual(["a", "b", "c"]);
-});
+it("promisify", done => {
+  const wait = promisify(setTimeout);
 
-it("should get property from value", () => {
-  const x = { x: 1 },
-    y = { y: 2 };
-  const o = { a: "b", b: "a", x, y };
+  expect(typeof wait).toBe("function");
 
-  expect(getPropertyFromValue(o, "a")).toBe("b");
-  expect(getPropertyFromValue(o, "b")).toBe("a");
-  expect(getPropertyFromValue(o, x)).toBe("x");
-  expect(getPropertyFromValue(o, y)).toBe("y");
+  const out = [];
+  out.push(1);
+  wait(20).then(() => out.push(4) && done());
+
+  wait(10).then(() => {
+    out.push(3);
+    expect(out.join(",")).toBe("1,2,3");
+    done();
+  });
+
+  out.push(2);
 });

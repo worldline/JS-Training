@@ -1,18 +1,22 @@
-import { i18n } from "../src/exo12";
+import { PubSub } from "../src/exo10";
 
-const name = "Jean",
-  nbMails = 5;
+test("PubSub", () => {
+  const emitter = new PubSub();
 
-it("should translate in fr", () => {
-  i18n.locale = "fr";
-  expect(i18n`Hello ${name}, you have ${nbMails} new mails.`).toBe(
-    "Bonjour Jean, vous avez 5 nouveaux messages."
-  );
-});
+  const canal1 = [],
+    canal2 = [],
+    all = [];
+  emitter.on("event1", data => canal1.push(data));
+  emitter.on("event2", data => canal2.push(data));
 
-it("should keep strings in english", () => {
-  i18n.locale = "en";
-  expect(i18n`Hello ${name}, you have ${nbMails} new mails.`).toBe(
-    "Hello Jean, you have 5 new mails."
-  );
+  emitter.on("event1", data => all.push(data));
+  emitter.on("event2", data => all.push(data));
+
+  emitter.emit("event1", 1);
+  emitter.emit("event2", 2);
+  emitter.emit("event2", 3);
+
+  expect(canal1.join(",")).toBe("1");
+  expect(canal2.join(",")).toBe("2,3");
+  expect(all.join(",")).toBe("1,2,3");
 });

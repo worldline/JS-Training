@@ -1,11 +1,13 @@
-export function parseUserData(data) {
-  // TODO: retourner un nouvel objet avec les propriétés de l'objet data
-  // et ces valeurs par défaut pour les propriétés manquantes :
-  const defaults = { name: "Anonymous", isAdmin: false };
+export function deduplicateArray(arr) {
+  // TODO: retirer les valeurs en double dans l'array et retourner l'array filtrée
+  // 1 - avec les méthodes filter et indexOf
+  // 2 - avec un Set et l'opérateur spread
+  return arr;
+}
 
-  // 1 - en utilisant Object.assign
-  // 2 - en utilisant l'opérateur spread sur les properties
-  // 3 - en utilisant le destructuring et les paramètres par défaut pour parseUserData
-
-  return data;
+export function getPropertyFromValue(obj, val) {
+  // TODO: retourner la clé de la propriété de obj ayant comme valeur val
+  // 1 - avec les méthodes find et Object.keys
+  // 2 - avec une Map et Object.entries
+  return null;
 }

@@ -1,81 +1,15 @@
-import { Observable } from "../src/exo16";
+import { bob, User, Person } from "../src/exo14";
 
-it("Observable", () => {
-  const out = [];
-  let startEmit;
-
-  const observable = new Observable(({ emit, complete }) => {
-    let i = 0;
-    const next = () => {
-      emit(++i);
-      if (i >= 5) {
-        complete();
-      } else {
-        next()
-      }
-    };
-
-    startEmit = () => next();
-  });
-
-  expect("subscribe" in observable).toBe(true);
-
-  observable.subscribe({
-    onValue(i) {
-      out.push(i);
-    },
-    onComplete() {
-      out.push("complete");
-    }
-  });
-
-  observable.subscribe({
-    onValue(i) {
-      out.push(i * 2);
-    },
-    onComplete() {
-      out.push("complete2");
-    }
-  });
-
-  startEmit && startEmit();
-
-  expect(out.join(",")).toBe("1,2,2,4,3,6,4,8,5,10,complete,complete2");
-
+it("should have User prototype", () => {
+  expect(bob instanceof User).toBe(true);
+  expect(Object.getPrototypeOf(bob)).toBe(User.prototype);
+  expect(bob.hasRight("create")).toBe(true);
+  expect(bob.hasRight("delete")).toBe(false);
 });
 
-it("Observer unsubscribe", () => {
-  const out = [];
-  let startEmit;
-
-  const observable = new Observable(({ emit, complete }) => {
-    let i = 0;
-    const next = () => {
-      emit(++i);
-      if (i >= 5) {
-        complete();
-      } else {
-        next();
-      }
-    };
-
-    startEmit = () => next();
-  });
-
-  const observer = observable.subscribe({
-    onValue(i) {
-      out.push(i);
-      if (i >= 3) observer.unsubscribe();
-    },
-    onComplete() {
-      out.push("complete");
-    }
-  });
-
-  expect("unsubscribe" in observer).toBe(true);
-
-  startEmit && startEmit();
-
-  expect(out.join(",")).toBe("1,2,3");
-
-}, 100);
+it("should have Person prototype", () => {
+  expect(bob instanceof Person).toBe(true);
+  expect(Object.getPrototypeOf(User.prototype)).toBe(Person.prototype);
+  expect(Person.prototype.isPrototypeOf(bob)).toBe(true);
+  expect(bob.getFullName()).toBe("Bob Afett");
+});

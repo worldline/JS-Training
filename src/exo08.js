@@ -1,18 +1,22 @@
-export function parseUserData(data) {
-  // Résoudre l'exercice en utilisant uniquement des opérateurs, pas de if()
+// essayez d'utiliser l'opérateur spread et rest
 
-  return {
-    // retourner data.name ou "Anonymous" si data.name est falsey
-    name: data.name,
+// TODO: fonction retournant un objet avec comme propriétés
+// la liste des valeurs reçues en arguments et comme valeur
+// le nombre de fois où elles sont apparues
 
-    // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
-    age: data.age,
+export function count() {
 
-    // retourner true si data.rightId est égal à 0
-    isAdmin: false,
-
-    // si data.friends est une Array, retourner sa longueur
-    // sinon retourner false
-    friends: 0
-  };
 }
+
+// exemple d'utilisation:
+count("Carotte", "Chou", "Patate", "Chou", "Chou", "Carotte")
+// { Carotte: 2, Chou: 3, Patate: 1 }
+
+
+// TODO: fonction retournant l'argument apparu le plus de fois
+export function mostFrequentIn() {
+
+}
+
+// exemple d'utilisation:
+mostFrequentIn("Carotte", "Chou", "Patate", "Chou", "Chou", "Carotte") === "Chou"
