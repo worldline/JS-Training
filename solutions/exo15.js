@@ -1,17 +1,28 @@
-// fn prend en premier argument un callback avec cette signature:
-// fn(function callback(error, result){ ... }, arg1, arg2);
-export function promisify(fn) {
-  // TODO: retourner une fonction appelant fn mais
-  // retournant une Promise au lieu de passer un callback
-  return (...args) => new Promise((resolve, reject) => {
-    const callback = (error, result) => error ? reject(error) : resolve(result);
-    fn(callback, ...args);
-  })
-}
+export const person = {
+  name: "",
+  first: "",
+  getFullName() {
+    return `${this.first} ${this.name}`;
+  }
+};
 
-// exemple d'utilisation
-const wait = promisify(setTimeout);
-wait(1000)
-  .then(() => { console.log("1"); return wait(1000) })
-  .then(() => { console.log("2"); return wait(1000) })
-  .then(() => { console.log("3") });
+// TODO : assigner person comme prototype
+export const user = {
+  rights: [],
+  hasRight(right) {
+    return this.rights.includes(right);
+  }
+};
+
+// 1) avec Object.setPrototypeOf
+Object.setPrototypeOf(user, person);
+
+// TODO: assigner user comme prototype
+// 2) avec Object.create et avec Object.assign
+export const bob = Object.assign(Object.create(user), {
+  name: "Afett",
+  first: "Bob",
+  rights: ["create", "read"]
+});
+
+

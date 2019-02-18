@@ -1,16 +1,23 @@
-export function parseUserData(data) {
-  // TODO: retourner un nouvel objet avec les propriétés de l'objet data
-  // et ces valeurs par défaut pour les propriétés manquantes :
-  const defaults = { name: "Anonymous", isAdmin: false };
-
-  // solution 1 : en utilisant Object.assign
-  return Object.assign({}, defaults, data);
-
-  // solution 2 : en utilisant l'opérateur spread sur les properties
-  return { ...defaults, ...data }
+export function deduplicateArray(arr) {
+  // TODO: retirer les valeurs en double dans l'array et retourner l'array filtrée
+  // solution 1 : avec les méthodes filter et indexOf
+  return arr.filter((elm, index, arr) => arr.indexOf(elm) === index);
 }
 
-// solution 3 : en utilisant le destructuring et les paramètres par défaut pour parseUserData
-export function parseUserData2({ name = "Anonymous", isAdmin = false, ...rest }) {
-  return { name, isAdmin, ...rest }
+export function deduplicateArray2(arr) {
+  // solution 2 : avec un Set et l'opérateur spread
+  return [...new Set(arr)]
+}
+
+export function getPropertyFromValue(obj, val) {
+  // TODO: retourner la clé de la propriété de obj ayant comme valeur val
+  // solution 1 : avec les méthodes find et Object.keys
+  return Object.keys(obj).find(key => obj[key] === val)
+}
+
+export function getPropertyFromValue2(obj, val) {
+  // solution 2 : avec une Map et Object.entries
+  return new Map(
+    Object.entries(obj).map(entry => entry.reverse())
+  ).get(val)
 }
