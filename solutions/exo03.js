@@ -4,27 +4,27 @@
 // solution 1
 export function invertKeysAndValues(obj) {
   var newObj = {};
-  Object.entries(obj).forEach(function (entry) {
-    var clé = entry[0];
-    var valeur = entry[1];
-    newObj[valeur] = clé;
-  })
+  for(var clé in obj){
+    var valeur = obj[clé]
+    newObj[valeur] = clé
+  }
   return newObj;
 }
 
-// solution 2 avec reduce et Object.assign
+// solution 2 avec reduce
 export function invertKeysAndValues2(obj) {
   return Object.entries(obj).reduce(
-    function (newObj, entry) {
-      var clé = entry[0];
-      var valeur = entry[1];
-      return Object.assign(newObj, { [valeur]: clé })
+    function (newObj, paireCléValeur) {
+      var clé = paireCléValeur[0];
+      var valeur = paireCléValeur[1];
+      newObj[valeur] = clé
+      return newObj
     },
     {}
   )
 }
 
-// solution ES2015, pour information
+// solution ES2018, pour information
 export function invertKeysAndValues3(obj) {
-  return Object.assign({}, ...Object.entries(obj).map(([clé, valeur]) => ({ [valeur]: clé })))
+  return Object.entries(obj).reduce((newObj, [clé,valeur]) => ({ ...newObj, [valeur]: clé }), {})
 }
