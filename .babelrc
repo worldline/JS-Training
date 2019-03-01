@@ -1,8 +1,15 @@
 {
   "presets": [
-    "@babel/env"
+    "env",
+    "stage-3"
   ],
   "plugins": [
-    "@babel/plugin-transform-runtime"
+    [
+      "transform-runtime",
+      {
+        "polyfill": false,
+        "regenerator": true
+      }
+    ]
   ]
 }
