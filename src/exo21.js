@@ -1,7 +1,7 @@
 import data from "../test/fakedata.json";
 
-// TODO: implémenter une fonction qui compose plusieurs fonctions
-// compose(f,g,h)(x) <=> h(g(f(x)))
+// TODO: implémenter une fonction qui retourne la composée de plusieurs fonctions
+// compose(f,g,h)(...args) <=> h(g(f(...args)))
 export function compose() {
 
 }

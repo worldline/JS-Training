@@ -6,8 +6,13 @@
 </body>
 
 <script>
-  //TODO: créer un bouton et un textInput
-  // alert() la valeur de l'input au clic sur le bouton
- 
+  let text = Object.create(TextInput);
+  text.value = "Bob";
+  text.render();
+
+  let btn = Object.create(Button);
+  btn.text = "Salut !";
+  btn.onClick = () => alert(`Salut ${text.value} !`);
+  btn.render();
 </script>
 </html>

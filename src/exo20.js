@@ -2,10 +2,15 @@ import data from "../test/fakedata.json";
 
 export const query = array =>
   Object.assign(array, {
-    //TODO: implémenter les méthodes
-    where(field, condition) { },
-    orderBy(field) { },
-    take(number) { }
+    where(key, condition) {
+      //TODO: filtrer les éléments selon une condition sur une propriété
+    },
+    orderBy(key) {
+      //TODO: trier les éléments selon une propriété
+    },
+    take(number) {
+      //TODO: retourner les N premiers éléments de la liste
+    }
   });
 
 // exemple d'utilisation

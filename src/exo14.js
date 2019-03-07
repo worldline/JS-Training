@@ -1,4 +1,5 @@
 export function Observable(action) {
+  this.observers = [];
   action({
     emit: (value) => {
       //TODO: notifier les observateurs de la valeur émise

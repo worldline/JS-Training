@@ -3,7 +3,6 @@
 // TODO: fonction retournant un objet avec comme propriétés
 // la liste des valeurs reçues en arguments et comme valeur
 // le nombre de fois où elles sont apparues
-
 export function count() {
 
 }

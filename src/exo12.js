@@ -1,11 +1,13 @@
-export function PubSub() {}
+export function PubSub() {
+  this.events = new Map()
+}
 
 PubSub.prototype.on = function(event, callback) {
-  // TODO
+  // TODO: enregistrer le callback à déclencher suite à l'événement `event`
 };
 
 PubSub.prototype.emit = function(event, data) {
-  // TODO
+  // TODO: appeler les callbacks enregistrés pour l'événement `event`
 };
 
 // Pour aller plus loin:

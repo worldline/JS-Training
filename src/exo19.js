@@ -8,7 +8,7 @@ export const addAliasForObject = (object, alias) => {
 // exemple d'utilisation:
 const user = addAliasForObject(
   { name: "Sanchez", first: "Rick" },
-  { lastName: "name", firstName: "firstName" }
+  { lastName: "name", firstName: "first" }
 );
 console.log(`${user.firstName} ${user.lastName}`); // Rick Sanchez
 

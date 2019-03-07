@@ -46,6 +46,7 @@ const Button = {
   render() {
     super.render();
     this.elm.textContent = this.text;
+    // TODO: écouter les événements clic et focus
     return this.elm;
   }
 };
@@ -56,6 +57,7 @@ const Input = {
   render() {
     super.render();
     this.elm.value = this.value;
+    // TODO: écouter les événements keypress et focus
     return this.elm;
   }
 };
@@ -66,3 +68,6 @@ const TextInput = {
     this.value += key;
   }
 };
+
+//TODO: établir et coder les relations entre les différents objets: délégation, composition ou encapsulation
+// tester le fonctionnel attendu sur la page de test dans src/exo17.html
