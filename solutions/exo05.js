@@ -8,7 +8,7 @@ export function getActions() {
     "Tintamarre"
   ];
 
-  const actions = [];
+  let actions = [];
 
   // FIX 1 : utiliser une IIFE pour créer un nouveau scope et avoir une variable locale dans chaque itération
   for (let i = 0; i < paroles.length; i++) {
@@ -20,6 +20,7 @@ export function getActions() {
   }
 
   // FIX 2: utiliser forEach pour avoir une variable locale dans chaque itération
+  actions = [];
   paroles.forEach(function (parole) {
     actions.push(function sing() {
       return parole + ", " + parole + ", " + parole + " !!!";
@@ -27,6 +28,7 @@ export function getActions() {
   })
 
   // FIX 3: utiliser let au lieu de var dans la boucle for
+  actions = [];
   for (let i = 0; i < paroles.length; i++) {
     actions.push(function sing() {
       return paroles[i] + ", " + paroles[i] + ", " + paroles[i] + " !!!";
