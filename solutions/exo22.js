@@ -16,14 +16,14 @@ export const curry = (fn, ...savedArgs) => (...newArgs) => {
 }
 
 // version détaillée
-export function curry(fn, ...savedArgs) {
+export function curry2(fn, ...savedArgs) {
     return function (...args) {
         let totalArgs = [...savedArgs, ...args]
         if (totalArgs.length >= fn.length) {
             return fn(...totalArgs)
         } else {
             savedArgs.push(...args);
-            return curry(fn, ...savedArgs)
+            return curry2(fn, ...savedArgs)
         }
     }
 }
