@@ -4,7 +4,7 @@
 // solution 1
 export function invertKeysAndValues(obj) {
   var newObj = {};
-  for(var clé in obj){
+  for (var clé in obj) {
     var valeur = obj[clé]
     newObj[valeur] = clé
   }
@@ -24,7 +24,9 @@ export function invertKeysAndValues2(obj) {
   )
 }
 
-// solution ES2018, pour information
+// solution ES2019, pour information
 export function invertKeysAndValues3(obj) {
-  return Object.entries(obj).reduce((newObj, [clé,valeur]) => ({ ...newObj, [valeur]: clé }), {})
+  return Object.fromEntries(
+    Object.entries(obj).map(([clé, valeur]) => [valeur, clé])
+  );
 }
