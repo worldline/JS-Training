@@ -1,14 +1,9 @@
-import { getActions } from "../src/exo05";
+import { instructions } from "../src/exo05";
 
 it("should fix the song", () => {
-  expect(
-    getActions()
-      .map(
-        action =>
-          action()
-            .toString()
-            .match(/^[^\s,]+/)[0]
-      )
-      .join(" ")
-  ).toBe("Trois Chapeau Paillasson Somnambule Bulletin Tintamarre");
+  expect(instructions.length).toBe(4)
+  expect(instructions[0]()).toBe("Frère Jacques, Frère Jacques")
+  expect(instructions[1]()).toBe("Dormez-vous, Dormez-vous")
+  expect(instructions[2]()).toBe("Sonnez les matines, Sonnez les matines")
+  expect(instructions[3]()).toBe("Ding ding dong, Ding ding dong")
 });

@@ -1,26 +1,20 @@
-export function getActions() {
-  const paroles = [
-    "Trois p'tits chats",
-    "Chapeau d'paille",
-    "Paillasson",
-    "Somnambule",
-    "Bulletin",
-    "Tintamarre"
-  ];
+const paroles = [
+  "Frère Jacques",
+  "Dormez-vous",
+  "Sonnez les matines",
+  "Ding ding dong"
+];
 
-  const actions = [];
+export const instructions = [];
 
-  // TOFIX: retourner la chanson correctement
-  for (var i = 0; i < paroles.length; i++) {
-    actions.push(function sing() {
-      return paroles[i] + ", " + paroles[i] + ", " + paroles[i] + " !!!";
-    });
-  }
-
-  return actions;
+// TOFIX: imprimer la chanson correctement
+for (var i = 0; i < paroles.length; i++) {
+  instructions.push(function printNextLine() {
+    return paroles[i] + ", " + paroles[i];
+  });
 }
 
 // code de test, à essayer en console pour voir le problème
-/*getActions().forEach(function(action) {
-  console.log(action());
+/*instructions.forEach(function (printNextLine) {
+  console.log(printNextLine());
 });*/
