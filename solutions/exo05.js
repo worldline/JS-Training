@@ -1,44 +1,31 @@
-export function getActions() {
-  const paroles = [
-    "Trois p'tits chats",
-    "Chapeau d'paille",
-    "Paillasson",
-    "Somnambule",
-    "Bulletin",
-    "Tintamarre"
-  ];
+const paroles = [
+  "Frère Jacques",
+  "Dormez-vous",
+  "Sonnez les matines",
+  "Ding ding dong"
+];
 
-  let actions = [];
+export let instructions = [];
 
-  // FIX 1 : utiliser une IIFE pour créer un nouveau scope et avoir une variable locale dans chaque itération
-  for (let i = 0; i < paroles.length; i++) {
-    (function (parole) {
-      actions.push(function sing() {
-        return parole + ", " + parole + ", " + parole + " !!!";
-      });
-    })(paroles[i])
-  }
-
-  // FIX 2: utiliser forEach pour avoir une variable locale dans chaque itération
-  actions = [];
-  paroles.forEach(function (parole) {
-    actions.push(function sing() {
-      return parole + ", " + parole + ", " + parole + " !!!";
+// FIX 1 : utiliser une IIFE pour créer un nouveau scope et avoir une variable locale dans chaque itération
+for (var i = 0; i < paroles.length; i++) {
+  (function (parole) {
+    instructions.push(function printNextLine() {
+      return parole + ", " + parole;
     });
-  })
-
-  // FIX 3: utiliser let au lieu de var dans la boucle for
-  actions = [];
-  for (let i = 0; i < paroles.length; i++) {
-    actions.push(function sing() {
-      return paroles[i] + ", " + paroles[i] + ", " + paroles[i] + " !!!";
-    });
-  }
-
-  return actions;
+  })(paroles[i])
 }
 
-// code de test, à essayer en console pour voir le problème
-/*getActions().forEach(function(action) {
-  console.log(action());
-});*/
+// FIX 2: utiliser forEach pour avoir une variable locale dans chaque itération
+/*paroles.forEach(function (parole) {
+  instructions.push(function printNextLine() {
+    return parole + ", " + parole;
+  });
+})*/
+
+// FIX 3: utiliser let au lieu de var dans la boucle for
+/*for (let i = 0; i < paroles.length; i++) {
+  instructions.push(function printNextLine() {
+    return paroles[i] + ", " + paroles[i];
+  });
+}*/
