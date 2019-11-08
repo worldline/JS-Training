@@ -8,7 +8,7 @@ export function hasPropertyValue(obj, value) {
   return true;
 }
 
-// retourne le nombre de propriétés d'un objet (note: sans compter les propriétés héritées)
+// retourne le nombre de propriétés d'un objet (note: sans compter les propriétés déléguées)
 export function getNumberOfProperties(obj) {
   return 0;
 }
