@@ -1,4 +1,4 @@
-import data from "../test/fakedata.json";
+import data from "../__tests__/fakedata.json";
 import {
     compose,
     where as oldWhere,
