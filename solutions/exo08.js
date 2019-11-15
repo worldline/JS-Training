@@ -7,9 +7,9 @@
 // solution avec reduce
 export function count(...args) {
   return args.reduce(
-    (obj, arg) => {
-      let count = (obj[arg] || 0) + 1
-      return { ...obj, [arg]: count }
+    (countByArg, arg) => {
+      let count = (countByArg[arg] || 0) + 1
+      return { ...countByArg, [arg]: count }
     },
     {}
   )
