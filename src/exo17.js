@@ -10,32 +10,32 @@ const Component = {
 
 const Clickable = {
   listenToClickEvents(elm) {
-    elm.addEventListener("click", this.onClick);
+    elm.addEventListener("click", event => this.onClick(event));
   },
-  onClick(e) {
-    console.log("click event", e);
+  onClick(event) {
+    console.log("click event", event);
   }
 };
 
 const Focusable = {
   listenToFocusEvents(elm) {
-    elm.addEventListener("focus", this.onFocus);
-    elm.addEventListener("blur", this.onBlur);
+    elm.addEventListener("focus", event => this.onFocus(event));
+    elm.addEventListener("blur", event => this.onBlur(event));
   },
-  onFocus(e) {
-    console.log("focus event", e);
+  onFocus(event) {
+    console.log("focus event", event);
   },
-  onBlur(e) {
-    console.log("blur event", e);
+  onBlur(event) {
+    console.log("blur event", event);
   }
 };
 
-const KeyboardObserver = {
+const Editable = {
   listenToKeyboardEvents(elm) {
-    elm.addEventListener("keypress", e => this.onKey(e.key));
+    elm.addEventListener("keyup", event => this.onKey(event));
   },
-  onKey(keyName) {
-    console.log("key pressed", keyName);
+  onKey(event) {
+    console.log("key pressed", event);
   }
 };
 
@@ -57,15 +57,15 @@ const Input = {
   render() {
     super.render();
     this.elm.value = this.value;
-    // TODO: écouter les événements keypress et focus
+    // TODO: écouter les événements keyup et focus
     return this.elm;
   }
 };
 
 const TextInput = {
   name: "text-input",
-  onKey(key) {
-    this.value += key;
+  onKey(event) {
+    this.value = event.target.value;
   }
 };
 
