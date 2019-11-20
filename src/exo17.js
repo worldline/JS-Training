@@ -70,4 +70,17 @@ const TextInput = {
 };
 
 //TODO: établir et coder les relations entre les différents objets: délégation, composition ou encapsulation
-// tester le fonctionnel attendu sur la page de test dans src/exo17.html
+
+/**
+ * Exemple d'utilisation
+ * Décommenter la partie Exo 17 dans index.html pour tester le fonctionnel attendu
+ */
+
+let text = Object.create(TextInput);
+text.value = "Bob";
+text.render();
+
+let btn = Object.create(Button);
+btn.text = "Salut !";
+btn.onClick = () => alert(`Salut ${text.value} !`);
+btn.render();
