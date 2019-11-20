@@ -55,20 +55,21 @@ const Button = {
 Object.setPrototypeOf(Button, Component);
 Object.assign(Button, Clickable, Focusable);
 
-const Input = {
-    value: null,
-    tag: "input",
-    render() {
-        super.render();
-        this.elm.value = this.value;
-        this.listenToFocusEvents(this.elm);
-        this.listenToKeyboardEvents(this.elm);
-        return this.elm;
-    }
-};
-
-Object.setPrototypeOf(Input, Component);
-Object.assign(Input, KeyboardObserver, Focusable);
+const Input = Object.assign(Object.create(Component),
+    {
+        value: null,
+        tag: "input",
+        render() {
+            super.render();
+            this.elm.value = this.value;
+            this.listenToFocusEvents(this.elm);
+            this.listenToKeyboardEvents(this.elm);
+            return this.elm;
+        },
+    },
+    KeyboardObserver,
+    Focusable
+);
 
 const TextInput = {
     name: "text-input",
@@ -78,3 +79,18 @@ const TextInput = {
 };
 
 Object.setPrototypeOf(TextInput, Input);
+
+
+/**
+ * Exemple d'utilisation
+ * Décommenter la partie Exo 17 dans index.html pour tester le fonctionnel attendu
+ */
+
+let text = Object.create(TextInput);
+text.value = "Bob";
+text.render();
+
+let btn = Object.create(Button);
+btn.text = "Salut !";
+btn.onClick = () => alert(`Salut ${text.value} !`);
+btn.render();
