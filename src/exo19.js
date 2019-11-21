@@ -1,12 +1,12 @@
-export const addAliasForObject = (object, alias) => {
+export const addAliasForProperties = (object, alias) => {
   // TODO: retourner un Proxy pour l'objet permettant
-  // d'utiliser des alias pour accéder en lecture ou écriture
+  // de déclarer des alias pour accéder en lecture ou écriture
   // à une propriété de l'objet
   return object;
 };
 
 // exemple d'utilisation:
-const user = addAliasForObject(
+const user = addAliasForProperties(
   { name: "Sanchez", first: "Rick" },
   { lastName: "name", firstName: "first" }
 );

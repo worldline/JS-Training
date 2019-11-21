@@ -1,7 +1,7 @@
-import { addAliasForObject, countFunctionCalls } from "../src/exo19";
+import { addAliasForProperties, countFunctionCalls } from "../src/exo19";
 
-it("should add alias for object", () => {
-  const user = addAliasForObject(
+it("should add alias for object properties", () => {
+  const user = addAliasForProperties(
     { name: "Sanchez", first: "Rick" },
     { lastName: "name", firstName: "first", friend: "morty" }
   );
