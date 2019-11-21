@@ -1,21 +1,22 @@
-export const addAliasForObject = (object, alias) => {
+export const addAliasForProperties = (object, alias) => {
   // TODO: retourner un Proxy pour l'objet permettant
-  // d'utiliser des alias pour accéder en lecture ou écriture
+  // de déclarer des alias pour accéder en lecture ou écriture
   // à une propriété de l'objet
   return new Proxy(object, {
-    get(o, key) {
-      if (alias.hasOwnProperty(key)) return o[alias[key]];
-      else return Reflect.get(o, key);
+    has(obj, prop) {
+      return Reflect.has(obj, prop) || alias.hasOwnProperty(prop);
     },
-    set(o, key, val) {
-      if (alias.hasOwnProperty(key)) o[alias[key]] = val;
-      else return Reflect.set(o, key, val);
+    get(obj, prop) {
+      return Reflect.get(obj, alias.hasOwnProperty(prop) ? alias[prop] : prop);
+    },
+    set(obj, prop, val) {
+      return Reflect.set(obj, alias.hasOwnProperty(prop) ? alias[prop] : prop, val);
     }
   });
 };
 
 // exemple d'utilisation:
-const user = addAliasForObject(
+const user = addAliasForProperties(
   { name: "Sanchez", first: "Rick" },
   { lastName: "name", firstName: "firstName" }
 );
