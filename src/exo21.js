@@ -1,4 +1,4 @@
-import data from "../test/fakedata.json";
+import data from "../__tests__/fakedata.json";
 
 // TODO: implémenter une fonction qui retourne la composée de plusieurs fonctions
 // compose(f,g,h)(...args) <=> h(g(f(...args)))

@@ -1,4 +1,4 @@
-import data from "../test/fakedata.json";
+import data from "../__tests__/fakedata.json";
 
 export const query = array =>
   Object.assign(array, {

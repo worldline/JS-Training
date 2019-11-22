@@ -1,4 +1,4 @@
-import data from "../test/fakedata.json";
+import data from "../__tests__/fakedata.json";
 import {
     compose,
     where as oldWhere,
@@ -9,13 +9,12 @@ import {
 export { compose } from "./exo21";
 
 // TODO: implémenter la fonction curry
-// astuce: fn.length retourne le nombre d'arguments dans la signature de la fonction
+// ASTUCE: fn.length retourne le nombre d'arguments dans la signature de la fonction
 export const curry = (fn, ...savedArgs) => {
     // si j'ai tous les arguments, j'invoque ma fonction fn avec ces arguments
 
-    // sinon, je stocke les arguments reçus dans savedArgs et je
-    // retourne une fonction qui prendra les paramètres restants
-    // astuce: utiliser récursivement la fonction curry
+    // sinon, je retourne une fonction qui prendra les paramètres restants
+    // ASTUCE: utiliser récursivement la fonction curry
 }
 
 export const where = curry(oldWhere)
