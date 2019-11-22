@@ -10,23 +10,14 @@ export { compose } from "./exo21";
 
 // TODO: implémenter la fonction curry
 // astuce: fn.length retourne le nombre d'arguments dans la signature de la fonction
-export const curry = (fn, ...savedArgs) => (...newArgs) => {
-    const args = [...savedArgs, ...newArgs];
-    return (args.length < fn.length) ? curry(fn, ...args) : fn(...args)
-}
+export const curry = (fn, ...savedArgs) => {
+    // si j'ai tous les arguments, j'invoque ma fonction fn avec ces arguments
+    if (savedArgs.length >= fn.length) return fn(...savedArgs);
 
-// version détaillée
-export function curry2(fn, ...savedArgs) {
-    return function (...args) {
-        let totalArgs = [...savedArgs, ...args]
-        if (totalArgs.length >= fn.length) {
-            return fn(...totalArgs)
-        } else {
-            savedArgs.push(...args);
-            return curry2(fn, ...savedArgs)
-        }
-    }
-}
+    // sinon, je retourne une fonction qui prendra les paramètres restants
+    // astuce: utiliser récursivement la fonction curry
+    return (...args) => curry(fn, ...savedArgs, ...args);
+};
 
 export const where = curry(oldWhere)
 export const orderBy = curry(oldOrderBy)
