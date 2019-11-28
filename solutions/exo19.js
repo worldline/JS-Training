@@ -18,7 +18,7 @@ export const addAliasForProperties = (object, alias) => {
 // exemple d'utilisation:
 const user = addAliasForProperties(
   { name: "Sanchez", first: "Rick" },
-  { lastName: "name", firstName: "firstName" }
+  { lastName: "name", firstName: "first" }
 );
 console.log(`${user.firstName} ${user.lastName}`); // Rick Sanchez
 
