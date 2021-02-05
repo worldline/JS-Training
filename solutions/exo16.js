@@ -1,4 +1,4 @@
-export function Person(first, name) {
+export function Person(first = "John", name = "Smith") {
   // TODO: assigner first et name comme propriétés propres
   this.first = first;
   this.name = name;
@@ -23,6 +23,7 @@ export function User(first, name, rights) {
 
 // solution 1
 User.prototype = Object.create(Person.prototype)
+User.prototype.constructor = User
 
 // solution 2
 Object.setPrototypeOf(User.prototype, Person.prototype)
