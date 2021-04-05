@@ -1,5 +1,10 @@
 # JS-Training
+
 Formation JavaScript Avancé
+
+## Slides
+
+[presenter_slides.pptx](https://github.com/SDCOAdvocates/JS-Training/raw/master/presenter_slides.pptx)
 
 ## Exercices
 
