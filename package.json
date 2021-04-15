@@ -4,7 +4,7 @@
   "description": "Formation JavaScript Avancé",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SDCOAdvocates/JS-Training.git"
+    "url": "https://github.com/worldline/JS-Training.git"
   },
   "main": "index.html",
   "scripts": {
