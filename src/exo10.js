@@ -1,7 +1,14 @@
 export function i18n(strings, ...vars) {
   // utilitaire basique d'internationalisation
   // TODO: remplacer chaque fragment de texte avec i18n.translate
-  return;
+
+  // accumulateur 'out' initialisé à empty string (""),
+  // on itère sur ta trad 'str' + sur l'index pour alimenter le out
+  // (et si vars[index] est undefined on met un empty string)
+  return strings.reduce(
+    (out, str, index) => `${out}${i18n.translate(str)}${vars[index] || ""}`,
+    ""
+  );
 }
 
 Object.assign(i18n, {
