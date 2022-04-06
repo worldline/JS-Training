@@ -1,5 +1,20 @@
 export const range = (start, end) => {
-  // retourner un itérable itérant entre les deux bornes numériques
+  const objIterable = {
+    // retourner un itérable itérant entre les deux bornes numériques
+    [Symbol.iterator]: function () {
+      let temp = start;
+      return {
+        next() {
+          return {
+            done: temp > end,
+            value: temp++
+          };
+        }
+      };
+    }
+  };
+
+  return objIterable;
 };
 
 // exemple d'utilisation
