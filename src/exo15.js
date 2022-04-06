@@ -26,7 +26,7 @@ export const person = {
 // 2) avec Object.create et avec Object.assign
 //Object.setPrototypeOf(bob, user);
 //Object.setPrototypeOf(user, person);
-
+// person prototype de user
 export const user = Object.create(person);
 Object.assign(user, {
   rights: [],
