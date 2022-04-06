@@ -1,7 +1,7 @@
 export function i18n(strings, ...vars) {
   // utilitaire basique d'internationalisation
   // TODO: remplacer chaque fragment de texte avec i18n.translate
-  return;
+  return i18n.translate(`Bonjour ` ${name}`, vous avez` ${nbMails} `nouveaux messages.`,...vars);
 }
 
 Object.assign(i18n, {

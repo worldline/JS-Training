@@ -8,6 +8,14 @@ export function promisify(fn) {
 // exemple d'utilisation
 const wait = promisify(setTimeout);
 wait(1000)
-  .then(() => { console.log("1"); return wait(1000) })
-  .then(() => { console.log("2"); return wait(1000) })
-  .then(() => { console.log("3") });
+  .then(() => {
+    console.log("1");
+    return wait(1000);
+  })
+  .then(() => {
+    console.log("2");
+    return wait(1000);
+  })
+  .then(() => {
+    console.log("3");
+  });

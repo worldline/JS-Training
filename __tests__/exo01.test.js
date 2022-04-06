@@ -29,5 +29,5 @@ it("should detect Symbols as primitives", () => {
 it("should not detect these as primitives", () => {
   expect(isPrimitive({})).toBe(false);
   expect(isPrimitive([])).toBe(false);
-  expect(isPrimitive(function () { })).toBe(false);
+  expect(isPrimitive(function () {})).toBe(false);
 });
