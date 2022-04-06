@@ -17,16 +17,16 @@ export function deduplicateArray(arr) {
   return [...new Set(arr)];
 }
 
-export function getPropertyFromValue(obj, val) {
+export function getPropertyFromValue1(obj, val) {
   // TODO: retourner la clé de la propriété de obj ayant comme valeur val
   // 1 - avec les méthodes find et Object.keys
 
   return null;
 }
 
-export function getPropertyFromValue2(obj, val) {
+export function getPropertyFromValue(obj, val) {
   // TODO: retourner la clé de la propriété de obj ayant comme valeur val
 
   // 2 - avec une Map et Object.entries
-  return null;
+  return new Map(Object.entries(obj).map((entry) => entry.reverse())).get(val);
 }
