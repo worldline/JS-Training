@@ -17,6 +17,14 @@ export const range = (start, end) => {
   return objIterable;
 };
 
+//   return {
+//     [Symbol.iterator]: function* () {
+//       let temp = start;
+//       while (temp <= end) yield temp++;
+//     }
+//   };
+// };
+
 // exemple d'utilisation
 // [...range(5,10)]
 // -> [5,6,7,8,9,10]

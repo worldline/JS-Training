@@ -1,6 +1,6 @@
 import data from "../__tests__/fakedata.json";
 
-export const query = array =>
+export const query = (array) =>
   Object.assign(array, {
     where(key, condition) {
       //TODO: filtrer les éléments selon une condition sur une propriété
@@ -16,9 +16,9 @@ export const query = array =>
 // exemple d'utilisation
 console.log(
   query(data)
-    .where("age", n => n >= 18)
+    .where("age", (n) => n >= 18)
     .orderBy("lastName")
     .take(5)
-    .map(user => `${user.firstName} ${user.lastName}`)
+    .map((user) => `${user.firstName} ${user.lastName}`)
     .join("\n")
 );
