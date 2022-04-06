@@ -10,7 +10,7 @@ const Component = {
 
 const Clickable = {
   listenToClickEvents(elm) {
-    elm.addEventListener("click", (event) => this.onClick(event));
+    this.elm.addEventListener("click", (event) => this.onClick(event));
   },
   onClick(event) {
     console.log("click event", event);
@@ -19,8 +19,8 @@ const Clickable = {
 
 const Focusable = {
   listenToFocusEvents(elm) {
-    elm.addEventListener("focus", (event) => this.onFocus(event));
-    elm.addEventListener("blur", (event) => this.onBlur(event));
+    this.elm.addEventListener("focus", (event) => this.onFocus(event));
+    this.elm.addEventListener("blur", (event) => this.onBlur(event));
   },
   onFocus(event) {
     console.log("focus event", event);
@@ -32,7 +32,7 @@ const Focusable = {
 
 const Editable = {
   listenToKeyboardEvents(elm) {
-    elm.addEventListener("keyup", (event) => this.onKey(event));
+    this.elm.addEventListener("keyup", (event) => this.onKey(event));
   },
   onKey(event) {
     console.log("key pressed", event);
@@ -47,9 +47,11 @@ const Button = {
     super.render();
     this.elm.textContent = this.text;
     // TODO: écouter les événements clic et focus
-
+    this.listenToClickEvents(this.elem);
+    this.listenToFocusEvents(this.elem);
     return this.elm;
   }
+  //, ...Focusable,
 };
 
 const Input = {
@@ -59,8 +61,8 @@ const Input = {
     super.render();
     this.elm.value = this.value;
     // TODO: écouter les événements keyup et focus
-    this.listenToKeyboardEvents();
-    addEventListener();
+    this.listenToKeyboardEvents(this.elem);
+    this.listenToFocusEvents(this.elem);
     return this.elm;
   }
 };
@@ -73,12 +75,14 @@ const TextInput = {
 };
 
 //TODO: établir et coder les relations entre les différents objets: délégation, composition ou encapsulation
+/** Prototypes */
 Object.setPrototypeOf(Button, Component);
 Object.setPrototypeOf(Input, Component);
 Object.setPrototypeOf(TextInput, Input);
 
+/** Compositions */
 Object.assign(Button, Focusable, Clickable);
-Object.assign(Input, Focusable, Editable);
+Object.assign(Input, Editable, Focusable);
 
 /**
  * Exemple d'utilisation
