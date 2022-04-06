@@ -12,8 +12,8 @@ export const query = (array) =>
       // clonage de l'array grâce au spread pour ne pas modifié l'entrée
       return query(
         [...array].sort((a, b) => {
-          //TODO: revoir ça :
-          return a[key].localCompare(b[key]);
+          //TODO: revoir ça : il manque le "e" dans local ^^
+          return a[key].localeCompare(b[key]);
         })
       );
     },
