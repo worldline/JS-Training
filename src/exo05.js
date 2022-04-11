@@ -14,7 +14,7 @@ for (var i = 0; i < paroles.length; i++) {
   });
 }
 
-// code de test, à essayer en console pour voir le problème
+// code de test, à essayer pour voir le problème en console
 /*instructions.forEach(function (printNextLine) {
   console.log(printNextLine());
 });*/

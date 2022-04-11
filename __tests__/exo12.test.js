@@ -1,7 +1,7 @@
-import { PubSub } from "../src/exo12";
+import { createPubSub } from "../src/exo12";
 
 test("PubSub", () => {
-  const emitter = new PubSub();
+  const emitter = createPubSub();
 
   const canal1 = [],
     canal2 = [],
