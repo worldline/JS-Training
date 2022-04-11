@@ -6,15 +6,20 @@
 
 // solution avec reduce
 export function count(...args) {
-  return args.reduce((obj, arg) => {
-    return { ...obj, [arg]: (obj[arg] || 0) + 1 }
-  }, {})
+  return args.reduce(
+    (obj, arg) => {
+      let count = (obj[arg] || 0) + 1
+      return { ...obj, [arg]: count }
+    },
+    {}
+  )
 }
 
 // solution avec map et Object.assign
 export function count2(...args) {
   return Object.assign({}, ...args.map(arg => {
-    return { [arg]: args.filter(a => a === arg).length }
+    let count = args.filter(a => a === arg).length
+    return { [arg]: count }
   }))
 }
 

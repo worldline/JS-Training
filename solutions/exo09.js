@@ -11,6 +11,10 @@ export function parseUserData(data) {
 }
 
 // solution 3 : en utilisant le destructuring et les paramètres par défaut pour parseUserData
-export function parseUserData2({ name = "Anonymous", isAdmin = false, ...rest }) {
+export function parseUserData2({
+  name = "Anonymous",
+  isAdmin = false,
+  ...rest
+}) {
   return { name, isAdmin, ...rest }
 }

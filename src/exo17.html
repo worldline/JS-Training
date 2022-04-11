@@ -1,0 +1,18 @@
+<html>
+<script src="./exo17.js"></script>
+
+<body>
+  <h1>Exercice sur les patterns objet</h1>
+</body>
+
+<script>
+  let text = Object.create(TextInput);
+  text.value = "Bob";
+  text.render();
+
+  let btn = Object.create(Button);
+  btn.text = "Salut !";
+  btn.onClick = () => alert(`Salut ${text.value} !`);
+  btn.render();
+</script>
+</html>

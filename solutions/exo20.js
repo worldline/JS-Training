@@ -2,11 +2,11 @@ import data from "../test/fakedata.json";
 
 export const query = array =>
     Object.assign(array, {
-        where(field, condition) {
-            return query(this.filter(({ [field]: value }) => condition(value)))
+        where(key, condition) {
+            return query(this.filter(({ [key]: value }) => condition(value)))
         },
-        orderBy(field) {
-            return query([...this].sort((a, b) => a[field] < b[field] ? -1 : 1))
+        orderBy (key) {
+            return query([...this].sort((a, b) => a[key] < b[key] ? -1 : 1))
         },
         take(number) {
             return query(this.slice(0, number))

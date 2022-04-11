@@ -15,6 +15,19 @@ export const curry = (fn, ...savedArgs) => (...newArgs) => {
     return (args.length < fn.length) ? curry(fn, ...args) : fn(...args)
 }
 
+// version détaillée
+export function curry(fn, ...savedArgs=[]){
+    return function(...args){
+        let totalArgs = [...savedArgs, ...args]
+        if (totalArgs.length >= fn.length){
+            return fn(...totalArgs)
+        } else {
+            savedArgs.push(...args);
+            return curry(fn, ...savedArgs)
+        }
+    }
+}
+
 export const where = curry(oldWhere)
 export const orderBy = curry(oldOrderBy)
 export const take = curry(oldTake)
