@@ -28,4 +28,16 @@ export function setPrivatesAndConstants(obj) {
       configurable: !/[A-Z]/.test(prop[0])
     })
   }
+
+
+  // SOLUTION 2 avec Object.defineProperties
+  /*Object.defineProperties(obj, Object.fromEntries(Object.keys(obj).map(clé => {
+    return [clé, {
+      enumerable: !clé.startsWith("_"),
+      writable: !/[A-Z]/.test(clé[0]),
+      configurable: !/[A-Z]/.test(clé[0])
+    }]
+  })))*/
+
+  
 }
