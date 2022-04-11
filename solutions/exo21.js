@@ -1,10 +1,17 @@
 import data from "../test/fakedata.json";
 
+// solution avec reduce()
 export function compose(f, ...fns) {
     return (...args) => fns.reduce((x, g) => g(x), f(...args))
 }
 
-//TODO: implémenter des fonctions pures et non mutables
+// solution récursive
+export function compose_recursive(f, ...otherFns) {
+    if (otherFns.length === 0) return f;
+    return (...args) => compose_recursive(...otherFns)(f(...args));
+}
+
+// les fonctions composées doivent être pures et non mutables
 export const where = (field, condition, array) => array.filter(({ [field]: value }) => condition(value))
 export const orderBy = (field, array) => [...array].sort((a, b) => a[field] < b[field] ? -1 : 1);
 export const take = (number, array) => array.slice(0, number)
