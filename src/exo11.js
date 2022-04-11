@@ -10,6 +10,4 @@ export function getPropertyFromValue(obj, val) {
   // 1 - avec les méthodes find et Object.keys
   // 2 - avec une Map et Object.entries
   return null;
-
-  // QUESTION: quel est l'avantage d'utiliser une Map et non un objet comme dans l'exo 03 ?
 }
