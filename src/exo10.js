@@ -4,20 +4,17 @@ export function i18n(strings, ...vars) {
   return;
 }
 
-Object.assign(i18n, {
-  locale: "fr",
-  locales: {
-    fr: {
-      "Hello ": "Bonjour ",
-      ", you have ": ", vous avez ",
-      " new mails.": " nouveaux messages."
-    }
-  },
-  translate(str) {
-    let messages = i18n.locales[i18n.locale] || {};
-    return messages[str] || str;
-  }
-});
+const translations = {
+  "Hello ": "Bonjour ",
+  ", you have ": ", vous avez ",
+  " new mails.": " nouveaux messages."
+}
+
+function translatePart(str){
+  return translations[str] || str;
+}
+
+// Exemple d'utilisation
 
 const name = "Bob",
   nbMails = 3;
