@@ -26,5 +26,9 @@
     "advanced"
   ],
   "browserslist": "last 5 Chrome versions, last 5 Firefox versions",
-  "jest": {}
+  "jest": {
+    "moduleNameMapper": {
+      "\\.\\./src/(.*)$": "../solutions/$1"
+    }
+  }
 }
