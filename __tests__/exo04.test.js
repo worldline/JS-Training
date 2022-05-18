@@ -1,4 +1,4 @@
-import { setPrivatesAndConstants, watchProperty } from "../src/exo04";
+import { setPrivatesAndConstants, spyOnProperty } from "../src/exo04";
 
 it("should add getters and setters to object prop", () => {
   let obj = { a: 1, b: 2 };
@@ -7,7 +7,7 @@ it("should add getters and setters to object prop", () => {
   let getter = () => countGet++;
   let setter = () => countSet++;
 
-  watchProperty(obj, "a", getter, setter);
+  spyOnProperty(obj, "a", getter, setter);
 
   expect(countGet).toBe(0);
   expect(countSet).toBe(0);
@@ -19,10 +19,10 @@ it("should add getters and setters to object prop", () => {
   expect(countSet).toBe(1);
 });
 
-it('should be able to read and write a prop with a watcher', () => {
+it('should be able to read and write a prop with a spy', () => {
   let obj = { x: 10 };
 
-  watchProperty(obj, "x", () => { }, () => { });
+  spyOnProperty(obj, "x", () => { }, () => { });
   obj.x *= 2;
   expect(obj.x).toBe(20);
 });
