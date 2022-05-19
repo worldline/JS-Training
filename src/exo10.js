@@ -10,10 +10,6 @@ const translations = {
   " new mails.": " nouveaux messages."
 }
 
-function translatePart(str){
-  return translations[str] || str;
-}
-
 // Exemple d'utilisation
 
 const name = "Bob",
