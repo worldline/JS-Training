@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/worldline/JS-Training.git"
   },
-  "main": "index.html",
+  "main": "dist/reveal.js",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
@@ -26,5 +26,8 @@
     "advanced"
   ],
   "browserslist": "last 5 Chrome versions, last 5 Firefox versions",
-  "jest": {}
+  "jest": {},
+  "dependencies": {
+    "reveal.js": "^4.3.1"
+  }
 }
