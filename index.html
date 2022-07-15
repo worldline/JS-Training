@@ -1,48 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>Formation JS-Avancé</title>
+		<link rel="icon" type="image/x-icon" href="./assets/img/JavaScript-logo.png">
 
-		<title>reveal.js</title>
-
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<!-- styles -->
+		<link rel="stylesheet" href="./assets/css/reset.css">
+		<link rel="stylesheet" href="./assets/css/reveal.css">
+		<link rel="stylesheet" href="./assets/css/theme/black.css">
+		<link rel="stylesheet" href="./assets/css/global.css">
+		<link rel="stylesheet" href="./assets/plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<a href="https://revealjs.com">
-						<img src="https://static.slid.es/reveal/logo-v1/reveal-white-text.svg" alt="reveal.js logo" style="height: 180px; margin: 0 auto 4rem auto; background: transparent;" class="demo-logo">
-					</a>
-					<h3>The HTML Presentation Framework</h3>
+					<a href="./"><img src="img/JavaScript-logo.png" alt="logo" class="logo"></a>
+					<h3>JavaScript Avancé</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> and <a href="https://github.com/hakimel/reveal.js/graphs/contributors">contributors</a></small>
+						<small><a href="https://github.com/worldline/JS-Training" target="_blank">https://github.com/worldline/JS-Training</a></small>
 					</p>
         </section>
+				<section data-html="./slides/test.html"></section>
 				<section>Slide 2</section>
 			</div>
 		</div>
-
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
 	</body>
+
+	<!-- scripts -->
+	<script src="./assets/js/reveal.js"></script>
+	<script src="./assets/plugin/notes/notes.js"></script>
+	<script src="./assets/plugin/markdown/markdown.js"></script>
+	<script src="./assets/plugin/highlight/highlight.js"></script>
+	<script src="./assets/js/index.js"></script>
 </html>
