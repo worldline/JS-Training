@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>Formation JS-Avancé</title>
+		<title>JavaScript Training</title>
 		<link rel="icon" type="image/x-icon" href="./assets/img/JavaScript-logo.png">
 
 		<!-- styles -->
@@ -18,7 +18,7 @@
 			<div class="slides">
 				<section>
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
-					<h3>JavaScript Avancé</h3>
+					<h3>JavaScript Training</h3>
 					<p>
 						<small><a href="https://github.com/worldline/JS-Training" target="_blank">https://github.com/worldline/JS-Training</a></small>
 					</p>
@@ -116,7 +116,7 @@
 						<h2 class="blue">Cheat Sheets</h2>
 						<p><small>It can be useful</small></p>
 					</section>
-					<section class="present" style="top: 111px; display: block;">
+					<section>
 						<h2>String Methods</h2>
 						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
 							"str".charAt(1) === "str"[1] === "t"
@@ -136,7 +136,7 @@
 							"  str  ".trim() == "str"
 						</code></pre>
 					</section>
-					<section class="present" style="top: 111px; display: block;">
+					<section>
 						<h2>Array Methods</h2>
 						<pre style="font-size: .3em"><code class="javascript hljs" data-trim data-line-numbers>
 							[1,2].concat([3,4], 5, 6) // [1,2,3,4,5,6]
@@ -167,7 +167,7 @@
 							arr.reverse() // [8,7,5,4,2]
 						</code></pre>
 					</section>
-					<section class="present" style="top: 111px; display: block;">
+					<section>
 						<h2>Map</h2>
 						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
 							let map = new Map([ ['key1', 'val1'], ['key2', 'val2'] ])
@@ -187,7 +187,7 @@
 							map.forEach((val, key, map) => {})
 						</code></pre>
 					</section>
-					<section class="present" style="top: 111px; display: block;">
+					<section>
 						<h2>Set</h2>
 						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
 							let mySet = new Set([ 1,2,3,4 ])
@@ -212,26 +212,8 @@
 							ECMAScript, TC39 and JavaScript versions
 						</small></p>
 					</section>
-					<section class="present" style="top: 149px; display: block;">
-						<h2 class="flex-title blue">ECMAScript <img height="50px" src="assets/img/ecma.jpg" alt=""></h2>
-						<ul class="small-list">
-							<li><b>ECMA International</b> is an organisation that creates standards for technologies</li>
-							<li><b>ECMAScript</b> is the name of the specification referenced ECMA-262 and describing a general purpose scripting language</li>
-							<li>
-								<b>TC39</b> is the name of the technical committee that decides on developments in the ECMAScript specification. 
-								It is composed of delegates from <b>major companies</b> (including all browser providers) and <b>invited experts.</b>
-							</li>
-							<li>
-								<b>JavaScript</b> is a versatile scripting language and the most popular implementation of ECMAScript<br>
-								<em>(another popular implementation: ActionScript)</em>
-							</li>
-						</ul>
-					</section>
 					<section>
-						<h2 class="blue">JavaScript Evolutions</h2>
-						<p style="text-align: left"><small>
-							TC39 is considering proposals for ECMAScript developments. Each proposal goes through 5 stages:
-						</small></p>
+						<h2 class="flex-center blue">ECMAScript <img height="50px" src="assets/img/ecma.jpg" alt=""></h2>
 						<ul class="small-list">
 							<li>
 								<b>ECMA International</b> is an organisation that creates standards for technologies
@@ -249,6 +231,72 @@
 							</li>
 						</ul>
 					</section>
+					<section style="text-align: left;">
+						<h2 class="blue">JavaScript Evolutions</h2>
+						<p><small>
+							TC39 is considering proposals for ECMAScript developments. Each proposal goes through 5 stages:
+						</small></p>
+						<ul class="small-list">
+							<li>0:
+								<b>Strawman -</b> suggestion of a need, call for ideas
+							</li>
+							<li>1:
+								<b>Proposal -</b> draft solution, first polyfills/demos
+							</li>
+							<li>2:
+								<b>Draft -</b> precisely describes the syntax/API
+							</li>
+							<li>3:
+								<b>Candidate -</b> signed by the whole committee, call for implementations
+							</li>
+							<li>4:
+								<b>Finished -</b> ready to be included in the next version of ES
+							</li>
+						</ul>
+						<div style="text-align: center;">
+							<p><small>
+								TC39 proposals and meetings are public: <a href="https://github.com/tc39">github.com/tc39</a>
+							</small></p>
+							<fieldset>
+								Any proposal before stage 4 can be dropped completely. <br />
+								However, from stage 3 onwards, the level of confidence is quite high.	
+							</fieldset>
+						</div>
+					</section>
+					<section>
+						<h2 class="blue">Versions of ECMAScript</h2>
+						<img src="./assets/img/ecmascript-versions.png" height="150px""" alt="">
+						<p>
+							<small>
+								A long delay between initial draft and release implies many browser-specific implementations.
+							</small>
+						</p>
+						<p>
+							<small>
+								TC39 has decided to move to an annual release schedule from ES6, renamed <b>ES2015</b>
+							</small>
+						</p>
+						<p>
+							<small>
+								Since 2015, a new version of the ECMAScript specification is released every year: ES2016, ES2017...
+							</small>
+						</p>
+					</section>
+					<section>
+						<h2 class="blue">ECMAScript browser implementation</h2>
+						<p><small>
+							As a result of the new annual rhythm:
+							<small>an excellent, comprehensive and consistent support across all modern browsers</small>
+						</small></p>
+						<div class="flex-center">
+							<p>So-called "<span class="green">evergreen</span>" browsers
+							</p>
+							<img height="450px" src="./assets/img/evergreen.png" alt="">
+						</div>
+					</section>
+				</section>
+				<section>
+					<h2 class="blue">A reintroduction to JS</h2>
 				</section>
 			</div>
 		</div>

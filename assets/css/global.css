@@ -2,19 +2,23 @@
   color: #42affa;
 }
 
+.green {
+  color: #00B050;
+}
+
 img {
   border-radius: .5rem;
 }
 
 .flex-slide,
-.flex-title {
+.flex-center {
   display: flex;
   justify-content: space-between;
   gap: .5rem;
   text-align: left;
 }
 
-.flex-title {
+.flex-center {
   align-items: center;
 }
 
@@ -54,4 +58,12 @@ img {
 
 .agenda ul {
   font-size: 15px;
+}
+
+fieldset {
+  display: inline-block;
+  margin: 0 auto;
+  padding: .5em 1em;
+  background-color: #79463D;
+  font-size: 1rem;
 }
