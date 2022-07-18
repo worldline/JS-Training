@@ -17,13 +17,239 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<a href="./"><img src="img/JavaScript-logo.png" alt="logo" class="logo"></a>
+					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
 					<h3>JavaScript Avancé</h3>
 					<p>
 						<small><a href="https://github.com/worldline/JS-Training" target="_blank">https://github.com/worldline/JS-Training</a></small>
 					</p>
         </section>
-				<section>Slide 2</section>
+				<section class="small-list">
+					<ul>
+						<li>
+							This course is for developers who already have a beginner to an intermediate level in JavaScript and who 
+							wish to deepen their knowledge of this language to better understand more ambitious JavaScript projects.
+						</li>
+						<li>
+							It is classified as advanced, which means that we will focus more on the technical points of the language 
+							and on the study of some advanced programming patterns.
+						</li>
+						<li>
+							The training focuses on the language and is agnostic of any framework or environment, meaning that you 
+							will be able to apply these lessons to both front-end (Angular, Vue.js, Ember...) and back-end (Node.js).
+						</li>
+						<li>
+							It is the ideal opportunity to review and consolidate the basics for all those who have learned 
+							JavaScript "on the job", or to prepare or complement a training on a modern web framework.
+						</li>
+					</ul>
+				</section>
+				<section class="agenda">
+					<h2>Agenda</h2>
+					<div class="flex-slide">
+						<div>
+							<h4 class="blue">Introduction</h4>
+							<ul class="small-list">
+								<li>ECMAScript, TC39 and versions of JavaScript</li>
+							</ul>
+	
+							<h4 class="blue">A reintroduction to JavaScript</h4>
+							<ul class="small-list">
+								<li>Primitives and Objects</li>
+								<li>Property descriptors</li>
+								<li>Scopes and Closures</li>
+								<li>Functions and contexts</li>
+								<li>Implicit casts</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="blue">ES2015 Upgrade</h4>
+							<ul class="small-list">
+								<li>Arrow functions</li>
+								<li>Default parameters</li>
+								<li>Spread / Rest</li>
+								<li>Destructuring</li>
+								<li>Template literals</li>
+								<li>Map and Sets</li>
+								<li>Modules</li>
+							</ul>
+	
+							<h4 class="blue">Managing asynchrony</h4>
+							<ul class="small-list">
+								<li>Asynchronous, what is it?</li>
+								<li>Callbacks and Publisher/Subscriber model</li>
+								<li>Promises</li>
+								<li>async / await</li>
+								<li>Observables</li>
+							</ul>
+						</div>
+
+						<div>
+							<h4 class="blue">Object oriented</h4>
+							<ul class="small-list">
+								<li>Prototypes and delegation</li>
+								<li>class / super / extends</li>
+								<li>Composition of objects</li>
+								<li>Symbols, iterables and generators</li>
+								<li>Proxies</li>
+							</ul>
+	
+							<h4 class="blue">Functionally oriented</h4>
+							<ul class="small-list">
+								<li>Recursivity</li>
+								<li>Chainable APIs</li>
+								<li>Composition of functions</li>
+								<li>Curryfication</li>
+							</ul>
+
+							<h4 class="blue">Transpilers</h4>
+							<ul class="small-list">
+								<li>Babel</li>
+								<li>TypeScript</li>
+								<li>JSX</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+				<section>
+					<section>
+						<h2 class="blue">Cheat Sheets</h2>
+						<p><small>It can be useful</small></p>
+					</section>
+					<section class="present" style="top: 111px; display: block;">
+						<h2>String Methods</h2>
+						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
+							"str".charAt(1) === "str"[1] === "t"
+							"a".concat("b") === "a" + "b" === "ab"
+							"str".startsWith("s") === true
+							"str".endsWith("r") === true
+							"str".includes("st") === true
+							"toto".indexOf("t") === 0
+							"toto".lastIndexOf("t") === 2
+							"str".search(/t/) === 1
+							"str1".match(/r(\d)/) => ["r1", "1"]
+							"Hi Bob".replace(/Hi (\w+)/, "Hello $1") => "Hello Bob"
+							"string".slice(0,3) === "str"
+							"1,2,3".split(",") => ["1","2","3"]
+							"STR".toLowerCase() === "str"
+							"str".toUpperCase() === "STR"
+							"  str  ".trim() == "str"
+						</code></pre>
+					</section>
+					<section class="present" style="top: 111px; display: block;">
+						<h2>Array Methods</h2>
+						<pre style="font-size: .3em"><code class="javascript hljs" data-trim data-line-numbers>
+							[1,2].concat([3,4], 5, 6) // [1,2,3,4,5,6]
+							[1,2,3].fill(4) // [4,4,4]
+							[1,2,3].includes(2) // true
+							[1,2,3].indexOf(2) // 1
+							[1,2,3].join("-") // "1-2-3"
+							[1,2,3,4].slice(1,3) // [2,3]
+							
+							[1,2,3,4].every((value, index, arr) => n > 2) // false
+							[1,2,3,4].some((value, index, arr) => n > 2) // true
+							[1,2,3,4].find((value, index, arr) => n > 2) // 3
+							[1,2,3,4].findIndex((value, index, arr) => n > 2) // 2
+							[1,2,3,4].filter((value, index, arr) => n > 2) // [3,4]
+							[1,2,3,4].forEach((value, index, arr) => { ... })
+							[1,2,3,4].map((val, index, arr) => val * 2) // [2,4,6,8]
+							[1,2,3,4].reduce((accu, n) => accu + n, "test") // "test1234"
+							[1,2,3,4].reduceRight((accu, n) => accu + n, "test") // "test4321"
+							
+							// /!\ Mutative methods, original array is modified!
+							let arr = [3,2,1]
+							arr.push(4,5) // returns new array.length (5), a = [3,2,1,4,5]
+							arr.pop() // returns last item (5), a = [3,2,1,4]
+							arr.unshift(6,5) // returns new array.length (6) ; a = [6,5,3,1,2,4]
+							arr.shift() // returns first item (6) ; a = [5,3,1,2,4]
+							arr.splice(1,2,7,8) // at index 1, remove 2 items, insert (7,8) ; [5,7,8,2,4]
+							arr.sort((a,b) => a-b) // [2,4,5,7,8]
+							arr.reverse() // [8,7,5,4,2]
+						</code></pre>
+					</section>
+					<section class="present" style="top: 111px; display: block;">
+						<h2>Map</h2>
+						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
+							let map = new Map([ ['key1', 'val1'], ['key2', 'val2'] ])
+							let key = {}, value = {} // any type
+							
+							map.set(key, value)
+							map.get(key) === value
+							map.has(key) === true
+							map.delete(key);
+							map.size === 2
+							
+							let keys = [...map.keys()]
+							let values = [...map.values()]
+							let fusionMap = new Map([...map1, ...map2])
+							
+							for(let [key, val] of map){ }
+							map.forEach((val, key, map) => {})
+						</code></pre>
+					</section>
+					<section class="present" style="top: 111px; display: block;">
+						<h2>Set</h2>
+						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
+							let mySet = new Set([ 1,2,3,4 ])
+ 
+							mySet.add("any type")
+							map.has(3) === true
+							map.delete(3);
+							map.size === 4;
+							map.clear(); // remove all
+							 
+							for(let item of mySet){}
+							mySet.forEach(item => {})
+							let items = [...mySet];
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2 class="blue">Introduction</h2>
+						<p><small>
+							Who manages JavaScript? How is the language evolving? <br />
+							ECMAScript, TC39 and JavaScript versions
+						</small></p>
+					</section>
+					<section class="present" style="top: 149px; display: block;">
+						<h2 class="flex-title blue">ECMAScript <img height="50px" src="assets/img/ecma.jpg" alt=""></h2>
+						<ul class="small-list">
+							<li><b>ECMA International</b> is an organisation that creates standards for technologies</li>
+							<li><b>ECMAScript</b> is the name of the specification referenced ECMA-262 and describing a general purpose scripting language</li>
+							<li>
+								<b>TC39</b> is the name of the technical committee that decides on developments in the ECMAScript specification. 
+								It is composed of delegates from <b>major companies</b> (including all browser providers) and <b>invited experts.</b>
+							</li>
+							<li>
+								<b>JavaScript</b> is a versatile scripting language and the most popular implementation of ECMAScript<br>
+								<em>(another popular implementation: ActionScript)</em>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2 class="blue">JavaScript Evolutions</h2>
+						<p style="text-align: left"><small>
+							TC39 is considering proposals for ECMAScript developments. Each proposal goes through 5 stages:
+						</small></p>
+						<ul class="small-list">
+							<li>
+								<b>ECMA International</b> is an organisation that creates standards for technologies
+							</li>
+							<li>
+								<b>ECMAScript</b> is the name of the specification referenced ECMA-262 and describing a general purpose scripting language
+							</li>
+							<li>
+								<b>TC39</b> is the name of the technical committee that decides on developments in the ECMAScript specification. 
+								It is composed of delegates from <b>major companies</b> (including all browser providers) and <b>invited experts.</b>
+							</li>
+							<li>
+								<b>JavaScript</b> is a versatile scripting language and the most popular implementation of ECMAScript<br>
+								<em>(another popular implementation: ActionScript)</em>
+							</li>
+						</ul>
+					</section>
+				</section>
 			</div>
 		</div>
 	</body>

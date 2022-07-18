@@ -1,6 +1,57 @@
+.blue {
+  color: #42affa;
+}
+
+img {
+  border-radius: .5rem;
+}
+
+.flex-slide,
+.flex-title {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  text-align: left;
+}
+
+.flex-title {
+  align-items: center;
+}
+
 .logo {
   height: 180px; 
   margin: 0 auto 4rem auto; 
   background: transparent;
-  border-radius: .5rem;
+}
+
+.small-list {
+  vertical-align: top;
+  font-size: 1.25rem;
+  line-height: 1.2em;
+  display: inline-block;
+}
+
+.small-list li {
+  margin-bottom: 1.25em;
+  list-style: none;
+}
+
+.small-list li:before {
+  content:'\2022';
+  color: #42affa;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.3em;
+}
+
+.agenda {
+  width: 100%;
+}
+.agenda h4 {
+  font-size: .6em;
+}
+
+.agenda ul {
+  font-size: 15px;
 }
