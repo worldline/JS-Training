@@ -2,6 +2,9 @@
   color: #42affa;
 }
 
+.red {
+  color: #e96767;
+}
 .green {
   color: #00B050;
 }
@@ -65,5 +68,16 @@ fieldset {
   margin: 0 auto;
   padding: .5em 1em;
   background-color: #79463D;
+  border: 2px solid #613831;
+  font-size: 1.1rem;
+  border-radius: .25rem;
+}
+
+.title-exo {
+  background-color: #296f9d;
+  color: white;
   font-size: 1rem;
+  padding: .25em .5em;
+  border-radius: .25rem;
+  box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
 }

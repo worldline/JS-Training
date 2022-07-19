@@ -16,15 +16,29 @@
   </head>
   <body>
 		<div class="reveal">
+			<div class="menubar" id="menubar">
+				<div class="dropdown">
+					<input id="checkbox_toggle" type="checkbox">
+					<label for="checkbox_toggle" data-i18n="chooselanguage">Choose language</label>
+					<div class="langchooser">
+						<label>
+								<input type="radio" name="menulangradios" value="en" checked><span>English</span>
+						</label>
+						<label>
+								<input type="radio" name="menulangradios" value="fr"><span>Français</span>
+						</label>
+					</div>
+				</div>
+			</div>
 			<div class="slides">
 				<section id="intro">
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
 					<h3 data-i18n="title">JavaScript Training</h3>
-					<p><small>
+					<p>
 						<a href="https://github.com/worldline/JS-Training" target="_blank">
 							https://github.com/worldline/JS-Training
 						</a>
-					</small></p>
+					</p>
 					<div class="langchooser flags">
 						<label>
 							<input type="radio" name="langradios" value="en" checked><img src="./assets/img/en.png">
@@ -57,7 +71,7 @@
 				<section class="agenda">
 					<h2>Agenda</h2>
 					<div class="flex-slide">
-						<div>
+						<div style="flex-basis: 100%;">
 							<h4 class="blue">Introduction</h4>
 							<ul class="small-list">
 								<li>ECMAScript, TC39 and versions of JavaScript</li>
@@ -73,7 +87,7 @@
 							</ul>
 						</div>
 
-						<div>
+						<div style="flex-basis: 100%;">
 							<h4 class="blue">ES2015 Upgrade</h4>
 							<ul class="small-list">
 								<li>Arrow functions</li>
@@ -95,7 +109,7 @@
 							</ul>
 						</div>
 
-						<div>
+						<div style="flex-basis: 100%;">
 							<h4 class="blue">Object oriented</h4>
 							<ul class="small-list">
 								<li>Prototypes and delegation</li>
@@ -125,7 +139,7 @@
 				<section>
 					<section>
 						<h2 class="blue">Cheat Sheets</h2>
-						<p><small>It can be useful</small></p>
+						<p>It can be useful</p>
 					</section>
 					<section>
 						<h2>String Methods</h2>
@@ -219,13 +233,13 @@
 				<section>
 					<section>
 						<h2 class="blue">Introduction</h2>
-						<p><small>
+						<p>
 							Who manages JavaScript? How is the language evolving? <br />
 							ECMAScript, TC39 and JavaScript versions
-						</small></p>
+						</p>
 					</section>
 					<section>
-						<h2 class="flex-center blue">ECMAScript <img height="50px" src="assets/img/ecma.jpg" alt=""></h2>
+						<h2 class="flex-center blue">ECMAScript <img height="50px" src="assets/img/ecma.jpg"></h2>
 						<ul class="small-list">
 							<li>
 								<b>ECMA International</b> is an organisation that creates standards for technologies
@@ -245,9 +259,9 @@
 					</section>
 					<section style="text-align: left;">
 						<h2 class="blue">JavaScript Evolutions</h2>
-						<p><small>
+						<p>
 							TC39 is considering proposals for ECMAScript developments. Each proposal goes through 5 stages:
-						</small></p>
+						</p>
 						<ul class="small-list">
 							<li>0:
 								<b>Strawman -</b> suggestion of a need, call for ideas
@@ -266,9 +280,7 @@
 							</li>
 						</ul>
 						<div style="text-align: center;">
-							<p><small>
-								TC39 proposals and meetings are public: <a href="https://github.com/tc39">github.com/tc39</a>
-							</small></p>
+							<p>TC39 proposals and meetings are public: <a href="https://github.com/tc39">github.com/tc39</a></p>
 							<fieldset>
 								Any proposal before stage 4 can be dropped completely. <br />
 								However, from stage 3 onwards, the level of confidence is quite high.	
@@ -277,38 +289,233 @@
 					</section>
 					<section>
 						<h2 class="blue">Versions of ECMAScript</h2>
-						<img src="./assets/img/ecmascript-versions.png" height="150px" alt="">
+						<img src="./assets/img/ecmascript-versions.png" height="150px">
 						<p>
-							<small>
-								A long delay between initial draft and release implies many browser-specific implementations.
-							</small>
+							A long delay between initial draft and release implies many browser-specific implementations.
 						</p>
 						<p>
-							<small>
-								TC39 has decided to move to an annual release schedule from ES6, renamed <b>ES2015</b>
-							</small>
+							TC39 has decided to move to an annual release schedule from ES6, renamed <b>ES2015</b>
 						</p>
 						<p>
-							<small>
-								Since 2015, a new version of the ECMAScript specification is released every year: ES2016, ES2017...
-							</small>
+							Since 2015, a new version of the ECMAScript specification is released every year: ES2016, ES2017...
 						</p>
 					</section>
 					<section>
 						<h2 class="blue">ECMAScript browser implementation</h2>
-						<p><small>
+						<p>
 							As a result of the new annual rhythm:<br />
 							<small>an excellent, comprehensive and consistent support across all modern browsers</small>
-						</small></p>
+						</p>
 						<div class="flex-center">
-							<p>So-called "<span class="green">evergreen</span>" browsers
-							</p>
-							<img height="450px" src="./assets/img/evergreen.png" alt="">
+							<p style="font-size: .8em;">So-called "<span class="green">evergreen</span>" browsers</p>
+							<img height="450px" src="./assets/img/evergreen.png">
 						</div>
 					</section>
 				</section>
 				<section>
-					<h2 class="blue">A reintroduction to JS</h2>
+					<section>
+						<h2 class="blue">A reintroduction to JS</h2>
+						<p>Exercices 1 to 6</p>
+					</section>
+					<section style="text-align: left;">
+						<h2 class="blue">Exercices</h2>
+						<p>
+							Slides and exercises available on Github:
+							<a href="https://github.com/worldline/JS-Training">https://github.com/worldline/JS-Training</a>
+						</p>
+						<p>
+							Do the exercises from your browser at this address:
+							<a href="https://codesandbox.io/s/github/SDCOAdvocates/JS-Training">https://codesandbox.io/s/github/SDCOAdvocates/JS-Training</a>
+						</p>
+						<img src="./assets/img/Image1.png">
+						<p>
+							Fork to create your personal version of the working repo. 
+							You can publish it on your personal Github account if you have one.
+						</p>
+						<div class="flex-center">
+							<img height="142px" src="./assets/img/Image2.png">
+							<img height="142px" src="./assets/img/Image3.png">
+							<img height="142px" src="./assets/img/Image4.png">
+						</div>
+						<p>For each exercise, correct the source to validate the associated test</p>
+					</section>
+					<section>
+						<h2 class="flex-center blue">
+							Types and Primitives 
+							<span class="title-exo">Exo 1</span>
+						</h2>
+						<p>JavaScript defines 7 data types:</p>
+						<img height="250px" src="./assets/img/Image5.png">
+						<p>The <b>typeof</b> operator returns the type of an object, but be careful:</p>
+						<pre><code class="javascript hljs" data-trim>
+							typeof null === "object" // bug of the 1st version of ES
+							typeof function(){} === "function"
+						</code></pre>
+					</section>
+					<section>
+						<h2 class="blue">null or undefined</h2>
+						<ul class="small-list">
+							<li><b>undefined</b> : the variable is declared but not assigned</li>
+							<li><b>null</b> : the variable has been assigned to the null reference</li>
+						</ul>
+						<p>
+							<b>null</b> represents the intentional absence of value and often comes from an assignment by the developer
+						</p>
+						<fieldset>
+							Don't assign variables to undefined. Use the delete operator instead:<br>
+							<img height="70px" src="./assets/img/Image6.png">
+						</fieldset>
+					</section>
+					<section style="text-align: left;">
+						<h2 class="blue">Objects</h2>
+						<p>Les fonctions, arrays et dérivés sont tous de type object. Contrairement aux primitives, les objets:</p>
+						<ul class="small-list">
+							<li>sont comparés par référence</li>
+						</ul>
+						<pre><code class="javascript hljs" data-trim>
+							"test" === "test"
+							true
+								
+							{ item: "test" } === { item: "test" }
+							true
+						</code></pre>
+						<ul class="small-list">
+							<li>ont une liste de propriétés qui sont des paires clé-valeur: clé (String, Symbol) ⇔ valeur (any)</li>
+						</ul>
+						<pre><code class="javascript hljs" data-trim>
+							"item" in { item: "test" } === true								
+							Symbol.iterator in [1,2,3] === true
+						</code></pre>
+					</section>
+					<section>
+						<h2 class="flex-center blue">
+							Objects: property browsing
+							<span class="title-exo">Exo 2</span>
+						</h2>
+						<pre style="font-size: 17px"><code class="javascript hljs" data-trim>
+							let obj = { a: 1, b: 2 }
+
+							"a" in obj
+							true
+
+							for(let key in obj) console.log(key, obj[key])
+							a 1
+							b 2
+
+							Object.keys(obj)
+								▸ (2) ["a", "b"]
+							Object.values(obj)
+								▸ (2) [1, 2]
+							Object.entries(obj)
+								▾ (2) [Array(2), Array(2)]
+									▸ (2) ["a", 1]
+									▸ (2) ["b", 2]
+										length: 2
+									▸ __proto__: Array(0)
+						</code></pre>
+					</section>
+					<section>
+						<h2 class="flex-center blue">
+							Objects: property assignment
+							<span class="title-exo">Exo 3</span>
+						</h2>
+						<pre><code class="javascript hljs" data-trim>
+							let obj = { key: "value" }
+							obj.a = 1;
+							obj["b"] = 2;
+							Object.assign(obj, { c: 3, d: 4}, {d: 5});
+								▸ {key: "value", a: 1, b: 2, c: 3, d: 5}
+
+							Object.fromEntries([ ['a', 1], ['b', 1]]);
+								▸ {a: 1, b: 2}
+						</code></pre>
+						<fieldset>
+							<b>Object.assign</b> is very useful for assigning default values 
+							or assigning a set of properties in a single statement
+						</fieldset>
+					</section>
+					<section style="text-align: left;">
+						<h2 class="blue">Property descriptors</h2>
+						<p>Each property contains in addition to its value, a list of intrinsic parameters called <b>descriptors</b>:</p>
+						<ul class="small-list">
+							<li><b>value:</b> <em>the value of the property</em></li>
+							<li><b>enumerable: true</b> <em>if the property is returned by Object.keys or for..in</em></li>
+							<li><b>writable: true</b> <em>if the value of the property can be modified</em></li>
+							<li><b>configurable: true</b>: <em>if the descriptor can be modified</em></li>
+							<li><b>get</b>: <em>optional function to use as getter</em></li>
+							<li><b>set</b>: <em>optional function to use as mutator (setter)</em></li>
+						</ul>
+						<p>A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators</p>
+					</section>
+					<section>
+						<h2 class="flex-center blue">
+							Define the descriptors
+							<span class="title-exo">Exo 4</span>
+						</h2>
+						<p>The method <b>Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
+						<div class="flex-center">
+							<pre><code class="javascript hljs" data-trim>
+								const obj = {}
+
+								Object.defineProperty(obj, 'a', {
+									value: 1,
+									enumerable: true,
+									writable: false
+								});
+
+								Object.defineProperty(obj, {
+									b: { enumerable: true, value: 2 },
+									c: { get: function(){ return 3 } },
+								});
+									
+								▸ {a: 1, b: 2}			
+							</code></pre>
+							<img height="325px" src="./assets/img/Image7.png">
+						</div>
+					</section>
+					<section>
+						<h2 class="blue">Getters / Setters</h2>
+						<p>Literal declaration for get / set descriptors:</p>
+						<pre><code class="javascript hljs" data-trim data-line-numbers>
+							const user = {
+								name: "Smith",
+								first: "John",
+
+								get fullName(){
+									return this.first + " " + this.name.toUpperCase()
+								},
+
+								set fullName(value){
+									this.first = value.split(" ")[0];
+									this.name = value.split(" ")[1];
+								}
+							}
+						</code></pre>
+					</section>
+					<section>
+						<h2 class="blue">Own and delegated properties</h2>
+						<p>
+							The properties assigned to an object are called the <b>own properties</b> of the object. 
+							But there are other types of properties, the <b>delegated properties</b>.
+						</p>
+						<img height="150" src="./assets/img/Image8.png">
+						<p>These delegated properties are in fact the properties of the object's prototype (see Object Oriented section)</p>
+						<pre><code class="javascript hljs" data-trim>
+							obj.toString === Object.prototype.toString
+							true
+						</code></pre>
+					</section>
+					<section>
+						<h2 class="blue">Scopes</h2>
+						<p><b>Scope</b> = perimeter within which variables can be accessed from a given location
+							At the highest level, we are in the global scope, accessible everywhere.</p>
+						<img height="300" src="./assets/img/Image9.png">
+						<p>
+							Accessible depuis le scope global <span class="green">(1)</span> : foo<br />
+							Accessible depuis le scope de la fonction foo <span class="red">(2)</span>  : foo, a, b, bar<br />
+							Accessible depuis le scope de la fonction bar <span class="blue">(3)</span>  : foo, a, b, bar, c<br />
+						</p>
+					</section>
 				</section>
 			</div>
 		</div>

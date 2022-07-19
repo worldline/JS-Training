@@ -1,3 +1,43 @@
+.menubar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: none;
+  padding: 0 3vmin;
+  z-index: 2;
+  height: 50px;
+  min-height: 50px;
+  top: -55px;
+  -webkit-transition: all 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: all 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: all 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  opacity: 0; }
+
+body:not(.hide-menubar) .reveal.ready .menubar {
+  top: 0;
+  opacity: 1; }
+
+.reveal .lowercase {
+  text-transform: none; }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .row .col {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
 .reveal .flags {
   display: block;
   position: relative;
