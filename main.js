@@ -5,7 +5,14 @@ deck.initialize({
   history: true,
   transition: 'linear',
   hash: true,
-
-  // Learn about plugins: https://revealjs.com/plugins/
-  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+  internation: {
+    switchselector: '.langchooser',
+    languages: {
+      fr: {
+        name: 'Français',
+        dictionary: './assets/languages/fr.json'
+      },
+    }
+  },
+  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, Internation ]
 })

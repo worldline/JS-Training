@@ -1,0 +1,111 @@
+.reveal .flags {
+  display: block;
+  position: relative;
+  margin-bottom: -80px !important;
+  margin-top: 80px; }
+  .reveal .flags label {
+    display: inline-block; }
+  .reveal .flags [type=radio] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0; }
+  .reveal .flags img {
+    border-radius: 40px;
+    border: 4px solid #1a1626;
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+    opacity: 0.5; }
+    .reveal .flags img:hover {
+      opacity: 1; }
+  .reveal .flags [type=radio]:checked + img {
+    pointer-events: none;
+    opacity: 1;
+    border: 4px solid white; }
+
+
+.menubar .dropdown {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  color: #FFF; }
+
+.menubar input[type=checkbox] {
+  display: none; }
+
+.menubar input[type=checkbox] + label {
+  background: none;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: .4em 1em;
+  cursor: pointer;
+  opacity: 0.5; }
+  .menubar input[type=checkbox] + label:hover {
+    opacity: 1; }
+
+.menubar input[type=checkbox]:checked + label {
+  border-radius: 6px 6px 0 0; }
+
+.menubar input[type=checkbox]:checked ~ .langchooser {
+  display: block; }
+
+.menubar label {
+  display: inline-block;
+  text-align: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.menubar [type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0; }
+
+.menubar .dropdown .langchooser {
+  position: absolute;
+  list-style: none;
+  text-align: left;
+  right: 0;
+  min-width: 100%;
+  margin-top: -1px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 1;
+  padding: 0;
+  -webkit-box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  background: #1a1626;
+  border: 1px solid white;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden; }
+  .menubar .dropdown .langchooser label {
+    display: block;
+    padding: 0; }
+
+.menubar .langchooser [type=radio] + span {
+  display: block;
+  padding: .75em 2em;
+  cursor: pointer;
+  opacity: 0.5; }
+
+.menubar .langchooser span:hover {
+  opacity: 0.75; }
+
+.menubar .langchooser [type=radio]:checked + span {
+  pointer-events: none;
+  color: white;
+  font-weight: bold;
+  opacity: 1;
+  position: relative; }
+  .menubar .langchooser [type=radio]:checked + span:before {
+    content: '√';
+    display: block;
+    position: absolute;
+    left: 1em; }

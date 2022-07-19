@@ -10,18 +10,29 @@
 		<link rel="stylesheet" href="./assets/css/reset.css">
 		<link rel="stylesheet" href="./assets/css/reveal.css">
 		<link rel="stylesheet" href="./assets/css/theme/black.css">
-		<link rel="stylesheet" href="./assets/css/global.css">
 		<link rel="stylesheet" href="./assets/plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="./assets/css/internation.css">
+		<link rel="stylesheet" href="./assets/css/global.css">
   </head>
   <body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
+				<section id="intro">
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
-					<h3>JavaScript Training</h3>
-					<p>
-						<small><a href="https://github.com/worldline/JS-Training" target="_blank">https://github.com/worldline/JS-Training</a></small>
-					</p>
+					<h3 data-i18n="title">JavaScript Training</h3>
+					<p><small>
+						<a href="https://github.com/worldline/JS-Training" target="_blank">
+							https://github.com/worldline/JS-Training
+						</a>
+					</small></p>
+					<div class="langchooser flags">
+						<label>
+							<input type="radio" name="langradios" value="en" checked><img src="./assets/img/en.png">
+						</label>
+						<label>
+							<input type="radio" name="langradios" value="fr"><img src="./assets/img/fr.png">
+						</label>
+					</div>
         </section>
 				<section class="small-list">
 					<ul>
@@ -306,5 +317,6 @@
 	<script src="./assets/plugin/notes/notes.js"></script>
 	<script src="./assets/plugin/markdown/markdown.js"></script>
 	<script src="./assets/plugin/highlight/highlight.js"></script>
-	<script type="module" src="/main.js"></script>
+	<script src="./assets/plugin/internation/internation.js"></script>
+	<script type="module" src="main.js"></script>
 </html>
