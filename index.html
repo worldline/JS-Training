@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-		<title>JavaScript Training</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 		<link rel="icon" type="image/x-icon" href="./assets/img/JavaScript-logo.png">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Training</title>
+		
 		<!-- styles -->
 		<link rel="stylesheet" href="./assets/css/reset.css">
 		<link rel="stylesheet" href="./assets/css/reveal.css">
 		<link rel="stylesheet" href="./assets/css/theme/black.css">
 		<link rel="stylesheet" href="./assets/css/global.css">
 		<link rel="stylesheet" href="./assets/plugin/highlight/monokai.css">
-	</head>
-	<body>
+  </head>
+  <body>
 		<div class="reveal">
 			<div class="slides">
 				<section>
@@ -191,7 +191,8 @@
 						<h2>Set</h2>
 						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
 							let mySet = new Set([ 1,2,3,4 ])
- 
+								▸ Set(4) {1, 2, 3, 4}
+
 							mySet.add("any type")
 							map.has(3) === true
 							map.delete(3);
@@ -265,7 +266,7 @@
 					</section>
 					<section>
 						<h2 class="blue">Versions of ECMAScript</h2>
-						<img src="./assets/img/ecmascript-versions.png" height="150px""" alt="">
+						<img src="./assets/img/ecmascript-versions.png" height="150px" alt="">
 						<p>
 							<small>
 								A long delay between initial draft and release implies many browser-specific implementations.
@@ -285,7 +286,7 @@
 					<section>
 						<h2 class="blue">ECMAScript browser implementation</h2>
 						<p><small>
-							As a result of the new annual rhythm:
+							As a result of the new annual rhythm:<br />
 							<small>an excellent, comprehensive and consistent support across all modern browsers</small>
 						</small></p>
 						<div class="flex-center">
@@ -302,10 +303,8 @@
 		</div>
 	</body>
 
-	<!-- scripts -->
-	<script src="./assets/js/reveal.js"></script>
 	<script src="./assets/plugin/notes/notes.js"></script>
 	<script src="./assets/plugin/markdown/markdown.js"></script>
 	<script src="./assets/plugin/highlight/highlight.js"></script>
-	<script src="./assets/js/index.js"></script>
+	<script type="module" src="/main.js"></script>
 </html>

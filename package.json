@@ -8,8 +8,9 @@
   },
   "main": "dist/reveal.js",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
     "test": "jest"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
   "browserslist": "last 5 Chrome versions, last 5 Firefox versions",
   "jest": {},
   "dependencies": {
-    "reveal.js": "^4.3.1"
+    "reveal.js": "^4.3.1",
+    "vite": "^2.5.1"
   }
 }
