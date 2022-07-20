@@ -226,17 +226,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
   margin: auto;
   border-collapse: collapse;
   border-spacing: 0;
+  color: #d1d1d1
 }
 
 .reveal table th {
   font-weight: bold;
+  color: white;
+  background-color: #4C5A6A;
 }
 
 .reveal table th,
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #5e5959;
 }
 
 .reveal table th[align=center],

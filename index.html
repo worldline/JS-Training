@@ -516,6 +516,92 @@
 							Accessible depuis le scope de la fonction bar <span class="blue">(3)</span>  : foo, a, b, bar, c<br />
 						</p>
 					</section>
+					<section>
+						<h2 class="blue">Block scopes</h2>
+						<p>In addition to function scopes, some instructions create so-called <b>block scopes</b></p>
+						<p>These are known as <b>block instructions:</b></p>
+						<div class="flex-center">
+							<pre><code class="javascript hljs" data-trim>
+								if(){ ... }
+								for(){ ... }
+								while(){ ... }
+							</code></pre>
+							<img height="150" src="./assets/img/Image10.png">
+						</div>
+						<p>
+							A block scope can also be declared with { ... } <br />
+							<em>(not to be confused with a literal object declaration)</em>
+						</p>
+					</section>
+					<section>
+						<h2 class="blue">var, let or const?</h2>
+						<ul class="small-list">
+							<li><b>let</b> and <b>const</b> appeared with ES2015</li>
+							<li><b>var</b> is no longer in use since</li>
+						</ul>
+						<div class="flex-slide">
+							<img height="250" src="./assets/img/Image11.png">
+							<table class="slide-array">
+								<thead>
+									<tr>
+										<th></th>
+										<th>Scope</th>
+										<th>Re-assignable</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>var</td>
+										<td>function</td>
+										<td>yes</td>
+									</tr>
+									<tr>
+										<td>let</td>
+										<td>block</td>
+										<td>yes</td>
+									</tr>
+									<tr>
+										<td>const</td>
+										<td>block</td>
+										<td>no</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<fieldset><u>Recommended:</u> Use <b>const</b>, or <b>let</b> if you need to reassign</fieldset>
+					</section>
+					<section>
+						<h2 class="blue">Closures</h2>
+						<p>Scope of a function = local scope + parent scope = local variables + free variables</p>
+						<p>
+							A function using <b>free variables</b> (defined in a parent scope) creates what is called a <b>closure</b>. 
+							A closure must remember its parent scope in order to execute correctly.
+						</p>
+						<div class="flex-center">
+							<aside>
+								<fieldset>
+									<b>add5</b> <em>retains its parent scope with x=5</em><br><br>
+									<em>This link prevents the garbage collector from dereferencing the local variable x at the end of the add</em>
+									<br><br>
+									<b>add5</b> <em>crée donc une closure</em>
+								</fieldset>
+								<fieldset>
+									Unintentional closures are the most common source of <b>memory leaks</b> problems in web applications.
+								</fieldset>
+							</aside>
+							<pre><code class="javascript hljs" data-trim>
+								function add(x) {
+									return function(y) {
+										return x + y;
+									}
+								}
+
+								var add5 = add(5);
+								add5(8)
+								▸ 13
+							</code></pre>
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -525,5 +611,5 @@
 	<script src="./assets/plugin/markdown/markdown.js"></script>
 	<script src="./assets/plugin/highlight/highlight.js"></script>
 	<script src="./assets/plugin/internation/internation.js"></script>
-	<script type="module" src="main.js"></script>
+	<script type="module" src="./main.js"></script>
 </html>
