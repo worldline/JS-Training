@@ -1,7 +1,6 @@
 import Reveal from 'reveal.js'
 
-const deck = new Reveal()
-deck.initialize({  
+Reveal.initialize({  
   history: true,
   transition: 'linear',
   hash: true,

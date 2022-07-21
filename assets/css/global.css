@@ -5,8 +5,13 @@
 .red {
   color: #e96767;
 }
+
 .green {
   color: #00B050;
+}
+
+.grey {
+  color: #979797;
 }
 
 img {
@@ -35,27 +40,6 @@ img {
   background: transparent;
 }
 
-.small-list {
-  vertical-align: top;
-  font-size: 1.25rem;
-  line-height: 1.2em;
-  display: inline-block;
-}
-
-.small-list li {
-  margin-bottom: 1.25em;
-  list-style: none;
-}
-
-.small-list li:before {
-  content:'\2022';
-  color: #42affa;
-  font-weight: bold;
-  display: inline-block;
-  width: 1em;
-  margin-left: -1.3em;
-}
-
 .agenda {
   width: 100%;
 }
@@ -77,6 +61,10 @@ fieldset {
   border-radius: .25rem;
 }
 
+.monospace {
+  font-family: monospace;
+}
+
 .title-exo {
   background-color: #296f9d;
   color: white;
@@ -89,4 +77,9 @@ fieldset {
 .slide-array {
   font-size: .5em;
   width: 50%;
+  vertical-align: middle;
+}
+
+.quizz pre {
+  margin: 0 auto;
 }

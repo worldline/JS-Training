@@ -91,6 +91,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
   text-shadow: var(--r-heading1-text-shadow);
 }
 
+.reveal h2,
+.reveal h4 {
+  color: var(--r-link-color);
+}
+
 /*********************************************
  * OTHER
  *********************************************/
@@ -133,6 +138,37 @@ section.has-light-background, section.has-light-background h1, section.has-light
   display: inline-block;
   text-align: left;
   margin: 0 0 0 2.5em;
+  vertical-align: top;
+  font-size: 1.25rem;
+  line-height: 1.2em;
+}
+
+.reveal ul li {
+  margin-bottom: 1.25em;
+  list-style: none;
+}
+
+.reveal ul li:before {
+  content:'\2022';
+  color: #42affa;
+  font-weight: bold;
+  font-size: 1.25em;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.3em;
+}
+
+.reveal ul li ul {
+  margin-top: .8em;
+}
+
+.reveal ul li ul li {
+  margin-bottom: .5em;
+  color: #cacaca
+}
+
+.reveal ul li pre {
+  font-size: 1rem;
 }
 
 .reveal ol {
@@ -235,11 +271,20 @@ section.has-light-background, section.has-light-background h1, section.has-light
   background-color: #4C5A6A;
 }
 
+.reveal table td pre {
+  font-size: .7em;
+  display: flex;
+  justify-content: center;
+  margin: .5rem auto; 
+  box-shadow: none;
+}
+
 .reveal table th,
 .reveal table td {
   text-align: left;
   padding: 0.2em 0.5em 0.2em 0.5em;
   border-bottom: 1px solid #5e5959;
+  vertical-align: middle;
 }
 
 .reveal table th[align=center],
@@ -341,4 +386,16 @@ section.has-light-background, section.has-light-background h1, section.has-light
   .backgrounds {
     background-color: var(--r-background-color);
   }
+}
+
+.flex-slide,
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  text-align: left;
+}
+
+.flex-center {
+  align-items: center;
 }
