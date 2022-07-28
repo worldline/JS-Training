@@ -1,3 +1,7 @@
+::selection {
+  background-color: blue !important;
+}
+
 .blue {
   color: #42affa;
 }
@@ -18,8 +22,16 @@ img {
   border-radius: .5rem;
 }
 
-.slide-left {
+.left {
   text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
 }
 
 .flex-slide,
@@ -51,7 +63,7 @@ img {
   font-size: 15px;
 }
 
-fieldset {
+.note {
   display: inline-block;
   margin: 1em auto;
   padding: .5em 1em;
@@ -59,6 +71,14 @@ fieldset {
   border: 2px solid #613831;
   font-size: 1.1rem;
   border-radius: .25rem;
+}
+
+.note.info {
+  background-color: #4646DD;
+}
+
+.note.warning {
+  background-color: #884b00;
 }
 
 .monospace {
@@ -72,12 +92,6 @@ fieldset {
   padding: .25em .5em;
   border-radius: .25rem;
   box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
-}
-
-.slide-array {
-  font-size: .5em;
-  width: 50%;
-  vertical-align: middle;
 }
 
 .quizz pre {

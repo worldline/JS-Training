@@ -33,7 +33,7 @@
 			<div class="slides">
 				<section id="intro">
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
-					<h3 data-i18n="title">JavaScript Training</h3>
+					<h1 data-i18n="title">JavaScript Training</h1>
 					<p>
 						<a href="https://github.com/worldline/JS-Training" target="_blank">
 							https://github.com/worldline/JS-Training
@@ -72,12 +72,12 @@
 					<h1>Agenda</h1>
 					<div class="flex-slide">
 						<div style="flex-basis: 100%;">
-							<h4 class="blue">Introduction</h4>
+							<h3>Introduction</h3>
 							<ul>
 								<li>ECMAScript, TC39 and versions of JavaScript</li>
 							</ul>
 	
-							<h4 class="blue">A reintroduction to JavaScript</h4>
+							<h3>A reintroduction to JavaScript</h3>
 							<ul>
 								<li>Primitives and Objects</li>
 								<li>Property descriptors</li>
@@ -88,7 +88,7 @@
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<h4 class="blue">ES2015 Upgrade</h4>
+							<h3>Modern JS: ES2015+</h3>
 							<ul>
 								<li>Arrow functions</li>
 								<li>Default parameters</li>
@@ -99,7 +99,7 @@
 								<li>Modules</li>
 							</ul>
 	
-							<h4 class="blue">Managing asynchrony</h4>
+							<h3>Managing asynchrony</h3>
 							<ul>
 								<li>Asynchronous, what is it?</li>
 								<li>Callbacks and Publisher/Subscriber model</li>
@@ -110,7 +110,7 @@
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<h4 class="blue">Object oriented</h4>
+							<h3>Object oriented</h3>
 							<ul>
 								<li>Prototypes and delegation</li>
 								<li>class / super / extends</li>
@@ -119,7 +119,7 @@
 								<li>Proxies</li>
 							</ul>
 	
-							<h4 class="blue">Functionally oriented</h4>
+							<h3>Functionally oriented</h3>
 							<ul>
 								<li>Recursivity</li>
 								<li>Chainable APIs</li>
@@ -127,7 +127,7 @@
 								<li>Curryfication</li>
 							</ul>
 
-							<h4 class="blue">Transpilers</h4>
+							<h3>Transpilers</h3>
 							<ul>
 								<li>Babel</li>
 								<li>TypeScript</li>
@@ -142,8 +142,8 @@
 						<p>It can be useful</p>
 					</section>
 					<section>
-						<h2>String Methods</h2>
-						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
+						<h3>String Methods</h3>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim data-line-numbers>
 							"str".charAt(1) === "str"[1] === "t"
 							"a".concat("b") === "a" + "b" === "ab"
 							"str".startsWith("s") === true
@@ -162,8 +162,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Array Methods</h2>
-						<pre style="font-size: .3em"><code class="javascript hljs" data-trim data-line-numbers>
+						<h3>Array Methods</h3>
+						<pre style="font-size: 50%"><code class="javascript hljs" data-trim data-line-numbers>
 							[1,2].concat([3,4], 5, 6) // [1,2,3,4,5,6]
 							[1,2,3].fill(4) // [4,4,4]
 							[1,2,3].includes(2) // true
@@ -193,8 +193,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Map</h2>
-						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
+						<h3>Map</h3>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim data-line-numbers>
 							let map = new Map([ ['key1', 'val1'], ['key2', 'val2'] ])
 							let key = {}, value = {} // any type
 							
@@ -213,8 +213,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Set</h2>
-						<pre style="font-size: .5em"><code class="javascript hljs" data-trim data-line-numbers>
+						<h3>Set</h3>
+						<pre><code class="javascript hljs" data-trim data-line-numbers>
 							let mySet = new Set([ 1,2,3,4 ])
 								▸ Set(4) {1, 2, 3, 4}
 
@@ -239,7 +239,7 @@
 						</p>
 					</section>
 					<section>
-						<h2 class="flex-center blue">ECMAScript <img height="50px" src="assets/img/ecma.jpg"></h2>
+						<h3 class="flex-center">ECMAScript <img height="50px" src="assets/img/ecma.jpg"></h3>
 						<ul>
 							<li>
 								<b>ECMA International</b> is an organisation that creates standards for technologies
@@ -258,7 +258,7 @@
 						</ul>
 					</section>
 					<section style="text-align: left;">
-						<h2>JavaScript Evolutions</h2>
+						<h3>JavaScript Evolutions</h3>
 						<p>
 							TC39 is considering proposals for ECMAScript developments. Each proposal goes through 5 stages:
 						</p>
@@ -281,14 +281,14 @@
 						</ul>
 						<div style="text-align: center;">
 							<p>TC39 proposals and meetings are public: <a href="https://github.com/tc39">github.com/tc39</a></p>
-							<fieldset>
+							<aside class="note warning">
 								Any proposal before stage 4 can be dropped completely. <br />
 								However, from stage 3 onwards, the level of confidence is quite high.	
-							</fieldset>
+							</aside>
 						</div>
 					</section>
 					<section>
-						<h2>Versions of ECMAScript</h2>
+						<h3>Versions of ECMAScript</h3>
 						<img src="./assets/img/ecmascript-versions.png" height="150px">
 						<p>
 							A long delay between initial draft and release implies many browser-specific implementations.
@@ -301,13 +301,13 @@
 						</p>
 					</section>
 					<section>
-						<h2>ECMAScript browser implementation</h2>
+						<h3>ECMAScript browser implementation</h3>
 						<p>
 							As a result of the new annual rhythm:<br />
 							<small>an excellent, comprehensive and consistent support across all modern browsers</small>
 						</p>
 						<div class="flex-center">
-							<p style="font-size: .8em;">So-called "<span class="green">evergreen</span>" browsers</p>
+							<p>So-called "<span class="green">evergreen</span>" browsers</p>
 							<img height="450px" src="./assets/img/evergreen.png">
 						</div>
 					</section>
@@ -315,10 +315,10 @@
 				<section>
 					<section>
 						<h2>A reintroduction to JS</h2>
-						<p>Exercices 1 to 6</p>
+						<p>Exercises 1 to 6</p>
 					</section>
 					<section style="text-align: left;">
-						<h2>Exercices</h2>
+						<h3>Exercises</h3>
 						<p>
 							Slides and exercises available on Github:
 							<a href="https://github.com/worldline/JS-Training">https://github.com/worldline/JS-Training</a>
@@ -340,10 +340,10 @@
 						<p>For each exercise, correct the source to validate the associated test</p>
 					</section>
 					<section>
-						<h2 class="flex-center blue">
+						<h3 class="flex-center">
 							Types and Primitives 
-							<span class="title-exo">Exo 1</span>
-						</h2>
+							<span class="title-exo">Ex. 1</span>
+						</h3>
 						<p>JavaScript defines 7 data types:</p>
 						<img height="250px" src="./assets/img/Image5.png">
 						<p>The <b class="monospace">typeof</b> operator returns the type of an object, but be careful:</p>
@@ -353,7 +353,7 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>null or undefined</h2>
+						<h3>null or undefined</h3>
 						<ul>
 							<li><b class="monospace">undefined</b> : the variable is declared but not assigned</li>
 							<li><b class="monospace">null</b> : the variable has been assigned to the null reference</li>
@@ -361,13 +361,13 @@
 						<p>
 							<b class="monospace">null</b> represents the intentional absence of value and often comes from an assignment by the developer
 						</p>
-						<fieldset>
+						<aside class="note warning">
 							Don't assign variables to undefined. Use the delete operator instead:<br>
 							<img height="70px" src="./assets/img/Image6.png">
-						</fieldset>
+						</aside>
 					</section>
 					<section style="text-align: left;">
-						<h2>Objects</h2>
+						<h3>Objects</h3>
 						<p>Functions, <b class="monospace">arrays</b> and derivatives are all of type <b class="monospace">object</b>. Unlike primitives, objects:</p>
 						<ul>
 							<li>are compared by reference</li>
@@ -388,11 +388,11 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2 class="flex-center blue">
-							Objects: property browsing
-							<span class="title-exo">Exo 2</span>
-						</h2>
-						<pre style="font-size: 17px"><code class="javascript hljs" data-trim>
+						<h3 class="flex-center">
+							Objects: properties listing
+							<span class="title-exo">Ex. 2</span>
+						</h3>
+						<pre><code class="javascript hljs" data-trim>
 							let obj = { a: 1, b: 2 }
 
 							"a" in obj
@@ -415,10 +415,10 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2 class="flex-center blue">
-							Objects: property assignment
-							<span class="title-exo">Exo 3</span>
-						</h2>
+						<h3 class="flex-center">
+							Objects: properties assignment
+							<span class="title-exo">Ex. 3</span>
+						</h3>
 						<pre><code class="javascript hljs" data-trim>
 							let obj = { key: "value" }
 							obj.a = 1;
@@ -429,13 +429,13 @@
 							Object.fromEntries([ ['a', 1], ['b', 1]]);
 								▸ {a: 1, b: 2}
 						</code></pre>
-						<fieldset>
+						<aside  class="note info">
 							<b class="monospace">Object.assign</b> is very useful for assigning default values 
 							or assigning a set of properties in a single statement
-						</fieldset>
+						</aside>
 					</section>
 					<section style="text-align: left;">
-						<h2>Property descriptors</h2>
+						<h3>Property descriptors</h3>
 						<p>Each property contains in addition to its value, a list of intrinsic parameters called <b>descriptors</b>:</p>
 						<ul>
 							<li><b class="monospace">value:</b> <em>the value of the property</em></li>
@@ -448,13 +448,13 @@
 						<p>A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators</p>
 					</section>
 					<section>
-						<h2 class="flex-center blue">
+						<h3 class="flex-center">
 							Define the descriptors
-							<span class="title-exo">Exo 4</span>
-						</h2>
+							<span class="title-exo">Ex. 4</span>
+						</h3>
 						<p>The method <b class="monospace">Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
 						<div class="flex-center">
-							<pre><code class="javascript hljs" data-trim>
+							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 								const obj = {}
 
 								Object.defineProperty(obj, 'a', {
@@ -474,7 +474,7 @@
 						</div>
 					</section>
 					<section>
-						<h2>Getters / Setters</h2>
+						<h3>Getters / Setters</h3>
 						<p>Literal declaration for get / set descriptors:</p>
 						<pre><code class="javascript hljs" data-trim data-line-numbers>
 							const user = {
@@ -493,7 +493,7 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Own and delegated properties</h2>
+						<h3>Own and delegated properties</h3>
 						<p>
 							The properties assigned to an object are called the <b>own properties</b> of the object. 
 							But there are other types of properties, the <b>delegated properties</b>.
@@ -502,22 +502,22 @@
 						<p>These delegated properties are in fact the properties of the object's prototype (see Object Oriented section)</p>
 						<pre><code class="javascript hljs" data-trim>
 							obj.toString === Object.prototype.toString
-							true
+							> true
 						</code></pre>
 					</section>
 					<section>
-						<h2>Scopes</h2>
-						<p><b>Scope</b> = perimeter within which variables can be accessed from a given location
-							At the highest level, we are in the global scope, accessible everywhere.</p>
+						<h3>Scopes</h3>
+						<p><b>Scope</b> = perimeter from which variables can be accessed.</p>
+						<p>At the highest level, we are in the global scope, accessible everywhere.</p>
 						<img height="300" src="./assets/img/Image9.png">
 						<p>
-							Accessible depuis le scope global <span class="green">(1)</span> : <span class="monospace">foo</span><br />
-							Accessible depuis le scope de la fonction foo <span class="red">(2)</span> : <span class="monospace">foo, a, b, bar</span><br />
-							Accessible depuis le scope de la fonction bar <span class="blue">(3)</span> : <span class="monospace">foo, a, b, bar, c</span><br />
+							Accessible from global scope<span class="green">(1)</span> : <span class="monospace">foo</span><br />
+							Accessible from function foo scope <span class="red">(2)</span> : <span class="monospace">foo, a, b, bar</span><br />
+							Accessible from function bar scope <span class="blue">(3)</span> : <span class="monospace">foo, a, b, bar, c</span><br />
 						</p>
 					</section>
 					<section>
-						<h2>Block scopes</h2>
+						<h3>Block scopes</h3>
 						<p>In addition to function scopes, some instructions create so-called <b>block scopes</b></p>
 						<p>These are known as <b>block instructions:</b></p>
 						<div class="flex-center">
@@ -534,14 +534,14 @@
 						</p>
 					</section>
 					<section>
-						<h2>var, let or const?</h2>
+						<h3>var, let or const?</h3>
 						<ul>
 							<li><b class="monospace">let</b> and <b class="monospace">const</b> appeared with ES2015</li>
 							<li><b class="monospace">var</b> is no longer in use since</li>
 						</ul>
 						<div class="flex-slide">
 							<img height="250" src="./assets/img/Image11.png">
-							<table class="slide-array">
+							<table>
 								<thead><tr><th></th><th>Scope</th><th>Re-assignable</th></tr></thead>
 								<tbody>
 									<tr><td class="monospace">var</td><td>function</td><td>yes</td></tr>
@@ -550,26 +550,21 @@
 								</tbody>
 							</table>
 						</div>
-						<fieldset><u>Recommended:</u> Use <b class="monospace">const</b>, or <b class="monospace">let</b> if you need to reassign</fieldset>
+						<aside class="note info"><u>Recommended:</u> Use <b class="monospace">const</b>, or <b class="monospace">let</b> if you need to reassign</aside>
 					</section>
 					<section>
-						<h2>Closures</h2>
+						<h3>Closures</h3>
 						<p>Scope of a function = local scope + parent scope = local variables + free variables</p>
 						<p>
 							A function using <b>free variables</b> (defined in a parent scope) creates what is called a <b>closure</b>. 
 							A closure must remember its parent scope in order to execute correctly.
 						</p>
 						<div class="flex-center">
-							<aside>
-								<fieldset>
-									<b class="monospace">add5</b> <em>retains its parent scope with x=5</em><br><br>
-									<em>This link prevents the garbage collector from dereferencing the local variable x at the end of the add</em>
-									<br><br>
-									<b class="monospace">add5</b> <em>crée donc une closure</em>
-								</fieldset>
-								<fieldset>
-									Unintentional closures are the most common source of <b>memory leaks</b> problems in web applications.
-								</fieldset>
+							<aside class="note">
+								<b class="monospace">add5</b> <em>retains its parent scope with x=5</em><br><br>
+								<em>This link prevents the garbage collector from dereferencing the local variable x at the end of the add</em>
+								<br><br>
+								<b class="monospace">add5</b> <em>creates a closure</em>
 							</aside>
 							<pre><code class="javascript hljs" data-trim>
 								function add(x) {
@@ -583,9 +578,12 @@
 								▸ 13
 							</code></pre>
 						</div>
+						<aside class="note warning">
+							Unintentional closures are the most common source of <b>memory leaks</b> problems in web applications.
+						</aside>
 					</section>
 					<section>
-						<h2>Using closures</h2>
+						<h3>Using closures</h3>
 						<p>"Private" variables</p>
 						<pre><code lass="javascript hljs" data-trim>
 							function getCounter() {
@@ -600,10 +598,10 @@
 						<p>Only the <b class="monospace">getValue</b> and <b class="monospace">increment</b> closures allow access</p>
 					</section>
 					<section>
-						<h2 class="flex-center blue">
+						<h3 class="flex-center">
 							Using closures
-							<span class="title-exo">Exo 5</span>
-						</h2>
+							<span class="title-exo">Ex. 5</span>
+						</h3>
 						<pre><code class="javascript hljs" data-trim>
 							for (var i = 1; i&lt;=3; i++) {
 								setTimeOut( function timer(){
@@ -615,15 +613,15 @@
 							▸ 4
 							▸ 4
 						</code></pre>
-						<fieldset>
+						<aside class="note">
 							Note that closures retain a reference to the parent scope,<br> 
 							and therefore access free variables by <b>reference</b>, not by value. <br>
 							<br>
 							The value of the free variables can therefore vary with respect to the time of instantiation of the function.
-						</fieldset>
+						</aside>
 					</section>
 					<section>
-						<h2>Functions and execution context</h2>
+						<h3>Functions and execution context</h3>
 						<p>
 							Functions have a "hidden argument" called <b>context</b> and assigned to the keyword <b class="monospace">this</b>. When the function 
 							is called as a property (<b>method</b>) of an object, that object is assigned as context:
@@ -642,13 +640,13 @@
 						<img height="80" src="./assets/img/Image12.png">
 					</section>
 					<section>
-						<h2>Functions and execution context</h2>
+						<h3>Functions and execution context</h3>
 						<p>
 							The execution context can be overloaded with the methods 
 							<span class="monospace">call</span>, 
 							<span class="monospace">apply</span> and <span class="monospace">bind</span>
 						</p>
-						<pre><code class="javascript hljs" data-trim>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function greet(a, b) {
 								return `Hi I'm ${this.name} ! ${a} + ${b} equals ${a+b} !`
 							}
@@ -668,7 +666,7 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Primitives and object equivalents</h2>
+						<h3>Primitives and object equivalents</h3>
 						<p>
 							<span class="monospace">String()</span>, <span class="monospace">Number()</span>, 
 							<span class="monospace">Boolean()</span> are the object equivalent constructors of the corresponding 
@@ -677,8 +675,8 @@
 						<p>The switch between object and primitive is automatic:</p>
 						<div class="flex-center">
 							<div style="flex-basis: 100%;">
-								<center><p>Primitive -> Objet</p></center>
-								<pre><code class="javascript hljs" data-trim>
+								<p class="center">Primitive -> Object</p>
+								<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 									let str = "abc";
 
 									str.length; // 3
@@ -686,8 +684,8 @@
 								</code></pre>
 							</div>
 							<div style="flex-basis: 100%;">
-								<center><p>Objet -> Primitive</p></center>
-								<pre style="font-size: 1rem;"><code class="javascript hljs" data-trim>
+								<p class="center">Object -> Primitive</p>
+								<pre style="font-size: 60%"><code class="javascript hljs" data-trim>
 									let Str = new String( "abc" ),
 											str = Str.valueOf() // ou "" + Str
 									let N = new Number( 42 ),
@@ -700,10 +698,10 @@
 								</code></pre>
 							</div>
 						</div>
-						<fieldset>Generally, primitive wrappers are not used explicitly</fieldset>
+						<aside class="note">Generally, primitive wrappers constructors are not called explicitly</aside>
 					</section>
 					<section>
-						<h2>Type conversions (cast)</h2>
+						<h3>Type conversions (cast)</h3>
 						<p>There are 3 types of implicit conversions in JS:</p>
 						<table class="slide-array" style="width: 80%">
 							<thead><tr><th></th><th>Explicit cast</th><th>Implicit cast</th><th>Cast operators</th></tr></thead>
@@ -752,25 +750,25 @@
 								</tr>
 							</tbody>
 						</table>
-						<fieldset>Recommended: case explicitly and as soon as possible</fieldset>
+						<aside class="note info">Recommended: cast explicitly and as soon as possible</aside>
 					</section>
 					<section>
-						<h2>== or === ?</h2>
+						<h3>== or === ?</h3>
 						<p>
 							== weak equality (with conversion) <br />
 							=== strict equality (without conversion)
 						</p>
 						<img height="250" src="./assets/img/Image13.png">
-						<fieldset>
+						<aside class="note info">
 							The rules for conversion with weak equality are complex. <br /> 
 							It's recommended to use strict equality, which is more predictable.
-						</fieldset>
+						</aside>
 					</section>
 					<section class="quizz">
-						<h2 class="flex-center blue">
+						<h3 class="flex-center">
 							Implicit casts
 							<span class="title-exo">Quizz</span>
-						</h2>
+						</h3>
 						<div class="flex-slide">
 							<div style="flex-basis: 100%;">
 								<p><pre class="fragment fade"><code>"0"-0</code></pre><pre class="fragment fade"><code>▸ 0</code></pre></p>
@@ -795,7 +793,7 @@
 						</div>
 					</section>
 					<section>
-						<h2>Logical operators</h2>
+						<h3>Logical operators</h3>
 						<p>Operands are converted to Booleans to evaluate the operator, but the original values are returned</p>
 						<pre><code class="javascript hljs" data-trim>
 							let a = 42,
@@ -808,17 +806,17 @@
 							c || b;		// "abc"
 							c && b;		// null
 						</code></pre>
-						<fieldset class="monospace">
+						<aside class="monospace note info">
 							a || b ⇔ a ? a : b <br>
 							a && b ⇔ a ? b : a
-						</fieldset>
+						</aside>
 						<p>
 							If the implicit Boolean cast of a value is <span class="monospace">true</span>, 
 							the value is said to be <em>truthy</em>, otherwise <em>falsey</em>
 						</p>
 					</section>
 					<section>
-						<h2>Logical operators</h2>
+						<h3>Logical operators</h3>
 						<p>
 							The operators <span class="monospace">||</span> and <span class="monospace">&&</span>, 
 							the ternary conditions <span class="monospace">?:</span> and <br>
@@ -826,19 +824,19 @@
 						</p>
 						<div class="flex-center">
 							<pre><code class="javascript hljs" data-trim>if(0) log('A'); else log('B');</code></pre>
-							<p class="fragment fade blue">B</p>
+							<p class="fragment fade">B</p>
 						</div>
 						<div class="flex-center">
 							<pre><code class="javascript hljs" data-trim>undefined ? log('C') : log('D');</code></pre>
-							<p class="fragment fade blue">D</p>
+							<p class="fragment fade">D</p>
 						</div>
 						<div class="flex-center">
 							<pre><code class="javascript hljs" data-trim>true && log('E'); false && log('F');</code></pre>
-							<p class="fragment fade blue">E</p>
+							<p class="fragment fade">E</p>
 						</div>
 						<div class="flex-center">
 							<pre><code class="javascript hljs" data-trim>true log('G'); false || log('H');</code></pre>
-							<p class="fragment fade blue">H</p>
+							<p class="fragment fade">H</p>
 						</div>
 						<p>
 							The <span class="monospace">&&</span> operator has priority over <span class="monospace">||</span> 
@@ -848,11 +846,11 @@
 				</section>
 				<section>
 					<section>
-						<h2>ES2015 Upgrade</h2>
-						<p>Exercices 7 to 11</p>
+						<h1>Upgrade to modern JS: ES2015+</h1>
+						<p>Exercises 7 to 11</p>
 					</section>
 					<section>
-						<h2>Syntactic sugar: key and value</h2>
+						<h3>Syntactic sugar: key and value</h3>
 						<pre><code class="javascript hljs" data-trim>
 							let foo = "foo", bar = "bar"
 
@@ -863,7 +861,7 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Syntactic sugar: calculated keys</h2>
+						<h3>Syntactic sugar: calculated keys</h3>
 						<pre><code class="javascript hljs" data-trim>
 							let foo = "foo", bar = "bar"
 
@@ -884,11 +882,11 @@
 									foobar: "foobar"
 						</code></pre>
 					</section>
-					<section class="slide-left">
-						<h2 class="flex-center blue">
+					<section class="left">
+						<h3 class="flex-center">
 							Arrow functions
-							<span class="title-exo">Exo 7</span>
-						</h2>
+							<span class="title-exo">Ex. 7</span>
+						</h3>
 						<pre><code class="javascript hljs" data-trim>
 							const f1 = () => {},
 										f2 = x => x*2,
@@ -901,12 +899,12 @@
 							<li>Cannot be invoked as builders</li>
 						</ul>
 						<p>Short and effective, they encourage a functional, no-frills style <em>(no closure)</em>.</p>
-						<center><fieldset>Recommended for all non-method functions</fieldset></center>
+						<aside class="note info">Recommended for all non-method functions</aside>
 					</section>
 					<section>
-						<h2>Default parameters</h2>
+						<h3>Default parameters</h3>
 						<p>
-							Assigns a default value if argument === <span class="monospace blue">undefined</span>
+							Assigns a default value if argument === <span class="monospace">undefined</span>
 						</p>
 						<pre><code class="javascript hljs" data-trim>
 							function f(a, b=1, c=2) { return a + b + c }
@@ -924,7 +922,7 @@
 						<pre><code class="javascript hljs" data-trim>const doSomething = (params = {}) => {}</code></pre>
 					</section>
 					<section>
-						<h2>Operators Spread / Rest</h2>
+						<h3>Operators Spread / Rest</h3>
 						<p>Spread: converts an iterable object into an argument list</p>
 						<pre><code class="javascript hljs" data-trim>
 							const sum = (a,b,c) => a+b+c;
@@ -942,7 +940,7 @@
 						<pre><code class="javascript hljs" data-trim>const cloneArray = arr => [...arr]</code></pre>
 					</section>
 					<section>
-						<h2>Operators Spread / Rest</h2>
+						<h3>Operators Spread / Rest</h3>
 						<p>Rest : converts a list of arguments into an Array</p>
 						<pre><code class="javascript hljs" data-trim>
 							const sum = (...args) => args.reduce((a,b) => a+b, 0);
@@ -955,12 +953,12 @@
 							}
 						</code></pre>
 					</section>
-					<section class="slide-left">
-						<h2 class="flex-center blue">
+					<section class="left">
+						<h3 class="flex-center">
 							Operators Spread / Rest
-							<span class="title-exo">Exo 8</span>
-						</h2>
-						<p class="blue">Object properties (ES2018)</p>
+							<span class="title-exo">Ex. 8</span>
+						</h3>
+						<p>Object properties (ES2018)</p>
 						<p>Only works with enumerable properties</p>
 						<ul>
 							<li>Rest properties:</li>
@@ -980,9 +978,9 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Destructuring</h2>
+						<h3>Destructuring</h3>
 						<p>Assigns variables according to an object / Array structure</p>
-						<pre><code class="javascript hljs" data-trim>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							const userData = { first: "Joe", name: "Dalton", age: 27 };
 							
 							const { first, age, name: userName } = userData;
@@ -1000,11 +998,11 @@
 							// first = 1, second = 2, fourth = 4
 						</code></pre>
 					</section>
-					<section class="slide-left">
-						<h2 class="flex-center blue">
+					<section class="left">
+						<h3 class="flex-center">
 							Destructuring
-							<span class="title-exo">Exo 9</span>
-						</h2>
+							<span class="title-exo">Ex. 9</span>
+						</h3>
 						<p>Also works with function parameters:</p>
 						<pre><code class="javascript hljs" data-trim>
 							function doSomething({ config, options: { verbose } }){
@@ -1019,12 +1017,12 @@
 						</code></pre>
 					</section>
 					<section>
-						<h2>Default parameters</h2>
+						<h3>Default parameters</h3>
 						<ul>
 							<li>Can be expressions using other arguments or variables in the scope.</li>
 							<li>If the default value is an expression, it will only be executed if necessary</li>
 						</ul>
-						<pre><code class="javascript hljs" data-trim>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function doSomething(data, config = retrieveDefaultConfig(data)) {
 								
 							}
@@ -1037,8 +1035,8 @@
 							}) => { }
 						</code></pre>
 					</section>
-					<section class="slide-left">
-						<h2>Object set in argument pattern</h2>
+					<section class="left">
+						<h3>Object set in argument pattern</h3>
 						<ul>
 							<li>Object set with destructuring and default values:</li>
 						</ul>
@@ -1063,8 +1061,8 @@
 							<li>allows you to return several variables</li>
 						</ul>
 					</section>
-					<section class="slide-left">
-						<h2>Template strings</h2>
+					<section class="left">
+						<h3>Template strings</h3>
 						<p>New form of String literal declaration in ES6, using the backtick ` ` character (AltGr+7)</p>
 						<p>Allows:</p>
 						<div class="flex-center">
@@ -1074,15 +1072,15 @@
 							</ul>
 							<img height="100" src="./assets/img/Image15.png">
 						</div>
-						<center><fieldset>Recommended: use template strings for all non-trivial strings</fieldset></center>
+						<aside class="note info">Recommended: use template strings for all non-trivial strings</aside>
 					</section>
 					<section>
-						<h2 class="flex-center">
+						<h3 class="flex-center">
 							Tagged Template strings
-							<span class="title-exo">Exo 10</span>
-						</h2>
+							<span class="title-exo">Ex. 10</span>
+						</h3>
 						<p>If a function reference precedes a template string, that function is invoked with the static and dynamic parts of the string:</p>
-						<pre><code class="javascript hljs" data-trim>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function insertInUpperCase(string, ...vars) {
 								console.log({ strings, vars });
 
@@ -1094,11 +1092,11 @@
 						<img height="150" src="./assets/img/Image16.png">
 						<img height="150" src="./assets/img/Image17.png">
 					</section>
-					<section class="slide-left">
-						<h2 class="flex-center">
+					<section class="left">
+						<h3 class="flex-center">
 							Map & Set
-							<span class="title-exo">Exo 11</span>
-						</h2>
+							<span class="title-exo">Ex. 11</span>
+						</h3>
 						<ul>
 							<li>Map: collection of keys/values like objects, but the keys can be of any type</li>
 							<li>Set: collection of values without keys, guarantee of uniqueness</li>
@@ -1131,8 +1129,8 @@
 							</code></pre>
 						</div>
 					</section>
-					<section class="slide-left">
-						<h2>Modules (or ESM to disambiguate)</h2>
+					<section class="left">
+						<h3>Modules (a.k.a. ES Modules or ESM in short)</h3>
 						<p>The long awaited standard solution for managing modular code (divided into several separate files)</p>
 						<p><b><u>Replaces and supersedes:</u></b></p>
 						<ul>
@@ -1142,7 +1140,9 @@
 							</li>
 							<li>
 								Asynchronous Module Definition (AMD)
-								<pre><code class="javascript hljs" data-trim>const $ = require('jquery')</code></pre>
+								<pre><code class="javascript hljs" data-trim>define(['jquery', 'underscore'], function($,_){ 
+
+});</code></pre>
 							</li>
 						
 							<li>
@@ -1153,7 +1153,7 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Modules</h2>
+						<h3>Modules</h3>
 						<div class="flex-center">
 							<div>
 								<p>Two keywords: <span class="monospace">import</span> and <span class="monospace">export</span></p>
@@ -1171,8 +1171,8 @@
 							<img height="350" src="./assets/img/Image14.png">
 						</div>
 					</section>
-					<section class="slide-left">
-						<h2>Modules</h2>
+					<section class="left">
+						<h3>Modules</h3>
 						<p>Modules have a different execution context to traditional scripts:</p>
 						<ul>
 							<li>
@@ -1187,7 +1187,7 @@
 						</ul>
 						<p>The code must therefore be parsed differently if it is a module:</p>
 						<ul>
-							<li>On browser: <pre><code><script type="module" src="index.js"></script></code></pre></li>
+							<li>On browser: <pre><code>&lt;script type="module" src="index.js"&gt;&lt;/script&gt;</code></pre></li>
 							<li>
 								On Node.js: use <span class="monospace">.mjs</span> extension instead of <span class="monospace">.js</span>, 
 								or have <span class="monospace">{ type: "module" }</span> in package.json
@@ -1195,7 +1195,7 @@
 						</ul>
 					</section>
 					<section>
-						<h2>Modules</h2>
+						<h3>Modules</h3>
 						<img height="350" src="./assets/img/Image21.png" alt="">
 						<p>
 							<a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">
@@ -1204,7 +1204,7 @@
 						</p>
 					</section>
 					<section>
-						<h2>Modules: dynamic import </h2>
+						<h3>Modules: dynamic import </h3>
 						<p>
 							When <span class="monospace">import</span> is called as a function, the module is imported asynchronously. <br>
 							This is very useful for downloading code on demand and optimising the loading time of your applications.
@@ -1212,7 +1212,7 @@
 						<img height="250" src="./assets/img/Image18.png">
 					</section>
 					<section>
-						<h2>Modules: what about support?</h2>
+						<h3>Modules: what about support?</h3>
 						<p>
 							Average support (~93%) in 2021: Chrome 61, Edge 16, Firefox 60
 							But developers use them widely in their codebases with bundlers like Webpack, Parcel, Rollup, esbuild...
@@ -1221,7 +1221,7 @@
 						<p>Bundlers preempt the browser's work by producing optimised JS bundles from a set of modules.</p>
 					</section>
 					<section>
-						<h2>Modules: script nomodule</h2>
+						<h3>Modules: script nomodule</h3>
 						<p>
 							Browsers that do not support modules can load an alternative script 
 							with the attribute <span class="monospace">nomodule</span>
@@ -1233,8 +1233,8 @@
 							The "modern" bundle will be lighter and more efficient.
 						</p>
 					</section>
-					<section class="slide-left">
-						<h2>Modules : recommandations</h2>
+					<section class="left">
+						<h3>Modules : recommandations</h3>
 						<p>Always use ESM modules and avoid other existing module systems</p>
 						<p>Using a bundler with the "Modern build" option</p>
 						<div class="flex-center">
@@ -1248,9 +1248,286 @@
 					</section>
 				</section>
 				<section>
-					<h2>Managing asynchrony</h2>
-					<p>Exercices 12 to 14</p>
+					<section>
+						<h2>Deal with Asynchrony</h2>
+						<p>Exercises 12 to 14</p>
+					</section>
+
+					<section class="left">
+						<h3>What is Asynchronism ?</h3>
+						<p>JavaScript is executed in an <b>mono-thread environment</b> (the engine only runs one instruction at a time).</p>
+						<p>Some instructions may take some time (I/O, network requests…) and must not block the execution of the rest of the program.</p>
+						<p>So we make them <b>asynchronous</b>: they declare a function call to be carried out later, after a defined or undefined period.</p>
+						<p>These future function calls are stored in stacks, and the engine decides when to pop the calls.</p>
+
+						<pre><code class="javascript hljs" data-trim>
+							setTimeout(function calledAfter5Seconds(){
+								console.log("bye !")
+							}, 5 * 1000)
+
+							console.log("hello !")
+						</code></pre>
+					</section>
+
+					<section class="left">
+						<h3>Callbacks</h3>
+						<p>The most common interface for asynchronous instructions is the <b>callback function</b>.</p>
+						<p>It consists of passing as parameter of an asynchronous function another function (the callback) which will be called later.</p>
+						<pre><code class="javascript hljs" data-trim>
+							let callback = function(result){ console.log(result) }
+
+							setTimeout(callback, 1000);
+
+							element.addEventListener('click', callback);
+						</code></pre>
+					</section>
+
+					<section class="left">
+						<h3 class="flex-center">Publisher/Subscriber <span class="title-exo">Ex. 14</span></h3>
+						<p>This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
+						<p><code>element.addEventListener</code> is an example of pub/sub.</p>
+						<br />
+						<p>A pub/sub keeps in memory a list of callbacks (the <b>subscribers</b>).</p>
+						<p>It is composed of at least two functions: <b>subscription</b> and <b>emission</b></p>
+						<p>Example of a pub/sub API:</p>
+						<pre><code class="javascript hljs" data-trim>
+							const publusher = new PubSub();
+
+							publisher.on("alert", function onAlert(eventData){
+								console.log(eventData)
+							})
+
+							publisher.emit("alert", "something happened")
+						</code></pre>
+					</section>
+
+					<section class="left">
+						<h3>Drawbacks of callbacks</h3>
+						<p>Callbacks show their limits when a series of asynchronous operations must be chained (executed one after the other).</p>
+						<div class="center"><img height="250" src="./assets/img/callback-hell.jpg" alt="The callback hell"></div>
+						<p>An exception raised by a callback cannot be catched directly from the parent scope, which is why error handling is often handled with a second argument of the callback function or a second callback function dedicated to error handling.</p>
+					</section>
+
+					<section>
+						<h3>Promises</h3>
+						<ul>
+						<li>Promises are objects used to facilitate the coordination of asynchronous operations.</li>
+						<li>A Promise represents the promise of a return value in the future. The delay is not necessarily predictable, this value can be available almost immediately or never arrive.</li>
+						<li>A Promise is always in one of these 3 states:
+						<ul>
+							<li><b>pending</b>: initial state, waiting</li>
+							<li><b>fulfilled</b>: the promise has been resolved, the operation was successful</li>
+							<li><b>rejected</b>: the promise was rejected due to an error</li>
+						</ul>
+						</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Callbacks vs Promises</h3>
+						<div class="flex-center" style="align-items: stretch; gap: 1em">
+							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
+doSomething(function(result){
+
+	doAnotherThing(result, function(newResult){
+
+		doFinalThing(newResult, function(finalResult){
+			console.log("Final result: ", finalResult)
+		}, failureCallback)
+
+	}, failureCallback)
+
+}, failureCallback)</code></pre>
+							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
+doSomething()
+.then(function(result){
+	return doAnotherThing(result)
+})
+.then(function(newResult){
+	return doFinalThing(newResult)
+})
+.then(function(finalResult){
+	console.log("Final result", finalResult)
+})
+.catch(failureCallback)
+							</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h3 class="flex-center">
+							Creation of a promise
+							<span class="title-exo">Ex. 13</span>
+						</h3>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
+						// creating a promise from a callback-based API
+						const promise = new Promise((resolve, reject) => {
+							const callback = (err, result) => err ? reject(err) : resolve(result)
+							doSomethingAsynchronous(callback)
+						})
+
+						promise.then(result => {
+							console.log(`Promise resolved with ${result}`)
+						})
+						promise.catch(error => {
+							console.log(`Promise rejected with ${error}`)
+						})
+						promise.finally(() => { // ES2018
+							console.log(`Called after either resolve or reject of the promise`)
+						})
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Other methods of creation of Promises</h3>
+						<ul>
+							<li><code>Promise.resolve(val)</code></li>
+							<li><code>Promise.reject(err)</code>
+							<p>create a promise immediately resolved/rejected with some value</p></li>
+							<br/>
+							<li><code>Promise.all([ promise1, promise2, promise3 ])</code>
+								<p>create a promise resolved when all the promises passed as arguments are resolved</p>
+							</li>
+							<li>
+								<code>Promise.race([ promise1, promise2, promise3 ])</code>
+								<p>create a promise resolved when one of the promises passed as arguments is resolved</p>
+							</li>
+						</ul>
+						<div class="center"><img height="200" src="./assets/img/promise-all-race.jpg" alt="Comparison between Promise.race and Promise.all"></div>
+					</section>
+
+					<section>
+						<h3 class="flex-center">Chaining and parallelism
+							<span class="title-exo">Quiz</span>
+						</h3>
+						<pre><code class="javascript hljs" data-trim>
+							const wait = promisify(setTimeout)
+
+							Promise.race([
+								fetch('/api/notifs').then(res => res.json()),
+								wait(10000)
+							]).then(([notifs]) => {
+								if(notifs){ /* do something */ }
+							})
+						</code></pre>
+						<pre class="fragment fade"><code class="javascript hljs" data-trim>
+							Promise.all([
+								wait(1000),
+								Promise.resolve(data),
+								wait(2000)
+							])
+						</code></pre>
+						<pre class="fragment fade"><code class="javascript hljs" data-trim>
+							Promise.race([
+								cache ? Promise.resolve(cache) : Promise.race([]),
+								fetch('/api/data').then(res => res.json())
+							])
+						</code></pre>
+
+					</section>
+
+					<section>
+						<h3>Exception management</h3>
+						<pre><code class="javascript hljs" data-trim>
+f1()
+.then(f2)
+.catch(error => {
+	// handle the exceptions from f1 or f2
+})
+.then(f3)
+.catch(error => {
+	// handle the exceptions coming exclusively from f3
+})
+							</code></pre>
+
+							<p><code>then()</code> and <code>catch()</code> can be chained in any order. It allows intermediate error handling in a promise chain.</p>
+
+							<aside class="note info">
+								<u>Recommended:</u> handle the exceptions at the lowest level possible, but always add a <code>catch()</code> at the highest level to handle uncatched exceptions.
+							</aside>
+					</section>
+
+					<section>
+						<h3>async / await (ES2017)</h3>
+						<p>Functions prefixed with the <code>async</code> operator can contain instructions prefixed with <code>await</code>.</p>
+						<p><code>await</code> pauses the function execution waiting for the following promise to be resolved.</p>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
+async function myFunction() {
+	try {
+		const result = await myPromise;
+		// my Promise is resolved and the the resolved value is assigned to result
+	} catch(err) {
+		// myPromise is rejected with error "err"
+	}
+
+	// this line is reached only after resolve/reject of myPromise
+	return 42
+}</code></pre>
+					</section>
+				
+
+					<section>
+						<h3>async / await: pros and cons</h3>
+						<p>
+							<img src="./assets/img/thumb-up.png" alt="" style="float: left; clear: both; margin: 0 1em 0 0"/>
+							Combines the advantage of asynchronism with the convenience of writing and reading synchronous code
+						</p>
+						<p>
+							<img src="./assets/img/thumb-up.png" alt="" style="float: left; clear: both; margin: 0 1em 0 0"/>
+							Allows to unify the management of synchronous errors (exceptions) with the cases of rejection of promises
+						</p>
+						<p>
+							<img src="./assets/img/thumb-down.png" alt="" style="float: left; clear: both; margin: 0 1em 0 0"/>
+							Does not encourage the developer to parallelize asynchronous operations, which can slow down the application
+						</p>
+						<aside class="note info">
+							Remember this winning combo: <code>await Promise.all([ ...promises ])</code>
+						</aside>
+					</section>
+
+					<section>
+						<h3>Observable</h3>
+						<p>A pattern halfway between Promise and Pub/Sub:
+							<ul><li>Promise that can be resolved in several stages</li>
+							<li>Event emitter with a completion concept</li>
+						</ul></p>
+						<div class="center">
+							<img src="assets/img/observable-en.png" alt="Timeline of an observable" />
+						</div>
+						<p>Not yet standardized but easily implementable by yourself like Pub/Sub.</p>
+						<p>This is one of the foundations of ReactiveX and reactive programming.</p>
+					</section>
+
+					<section>
+						<h3 class="flex-center">
+							Observable: example of API
+							<div class="title-exo">Ex. 14</div>
+						</h3>
+						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
+const keyboardObservable = new Observable( ({ emit, complete }) => {
+	const onKey = event => {
+		if(event.key === "Enter") {
+			complete();
+			document.removeEventListener("keyup", onKey)
+		}
+		else emit(event.key)
+	}
+
+	document.addEventListener("keyup", onKey)
+});
+
+const keys = [];
+const keyboardObserver = keyboardObservable.subscribe({
+	onValue: key => {
+		if (key === "Escape") keyboardObserver.unsubscribe();
+		else keys.push(key)
+	},
+	onComplete: () => alert(keys.join(""))
+});
+						</code></pre>
+					</section>
 				</section>
+
 			</div>
 		</div>
 	</body>
