@@ -1,3 +1,10 @@
+@import "reset.css";
+@import "reveal.css";
+@import "theme/black.css";
+@import "../plugin/highlight/monokai.Css";
+@import "internation.css";
+@import "braces.css";
+
 ::selection {
   background-color: blue !important;
 }
@@ -74,11 +81,13 @@ img {
 }
 
 .note.info {
-  background-color: #4646DD;
+  background-color: #393993;
+  border-color: #4949A3;
 }
 
 .note.warning {
   background-color: #884b00;
+  border-color: #985b10;
 }
 
 .monospace {

@@ -5,14 +5,7 @@
 		<link rel="icon" type="image/x-icon" href="./assets/img/JavaScript-logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Training</title>
-		
-		<!-- styles -->
-		<link rel="stylesheet" href="./assets/css/reset.css">
-		<link rel="stylesheet" href="./assets/css/reveal.css">
-		<link rel="stylesheet" href="./assets/css/theme/black.css">
-		<link rel="stylesheet" href="./assets/plugin/highlight/monokai.css">
-		<link rel="stylesheet" href="./assets/css/internation.css">
-		<link rel="stylesheet" href="./assets/css/global.css">
+	<link rel="stylesheet" href="./assets/css/global.css">
   </head>
   <body>
 		<div class="reveal">
@@ -39,14 +32,6 @@
 							https://github.com/worldline/JS-Training
 						</a>
 					</p>
-					<div class="langchooser flags">
-						<label>
-							<input type="radio" name="langradios" value="en" checked><img src="./assets/img/en.png">
-						</label>
-						<label>
-							<input type="radio" name="langradios" value="fr"><img src="./assets/img/fr.png">
-						</label>
-					</div>
         </section>
 				<section class="small-list">
 					<ul>
@@ -392,7 +377,7 @@
 							Objects: properties listing
 							<span class="title-exo">Ex. 2</span>
 						</h3>
-						<pre><code class="javascript hljs" data-trim>
+						<pre style="font-size: 90%"><code class="javascript hljs" data-trim>
 							let obj = { a: 1, b: 2 }
 
 							"a" in obj
@@ -403,15 +388,11 @@
 							b 2
 
 							Object.keys(obj)
-								▸ (2) ["a", "b"]
+								▸ ["a", "b"]
 							Object.values(obj)
-								▸ (2) [1, 2]
+								▸ [1, 2]
 							Object.entries(obj)
-								▾ (2) [Array(2), Array(2)]
-									▸ (2) ["a", 1]
-									▸ (2) ["b", 2]
-										length: 2
-									▸ __proto__: Array(0)
+								▸ [ ["a", 1], ["b", 2] ]
 						</code></pre>
 					</section>
 					<section>
@@ -624,7 +605,7 @@
 						<h3>Functions and execution context</h3>
 						<p>
 							Functions have a "hidden argument" called <b>context</b> and assigned to the keyword <b class="monospace">this</b>. When the function 
-							is called as a property (<b>method</b>) of an object, that object is assigned as context:
+							is called as a property (<b>method</b>) of an object, that object is assigned as execution context:
 						</p>
 						<pre><code class="javascript hljs" data-trim>
 							const obj = {
@@ -634,15 +615,14 @@
 							obj.whoisthis() === obj
 						</code></pre>
 						<p>
-							In the global scope or when a function is called by direct reference,
-							its context is the <b>global context</b> (<span class="monospace">Window</span> on browser)
-						</p>
+							When a function is called by direct reference, it has no context, which means the <code>this</code> variable will be looked up in parent scope.</p>
+						<p>At the <b>root scope</b>, the context is defined as the <b>global context</b> (<span class="monospace">Window</span> on browser)</p>
 						<img height="80" src="./assets/img/Image12.png">
 					</section>
 					<section>
 						<h3>Functions and execution context</h3>
 						<p>
-							The execution context can be overloaded with the methods 
+							The execution context can be changed with the methods 
 							<span class="monospace">call</span>, 
 							<span class="monospace">apply</span> and <span class="monospace">bind</span>
 						</p>
@@ -657,12 +637,12 @@
 							greet.call(alice, 1, 2)
 							▸ "Hi I'm Alice ! 1 + 2 equals 3 !"
 
-							greet.call(bob, [2, 3])
+							greet.apply(bob, [2, 3])
 							▸ "Hi I'm Bob ! 2 + 3 equals 5 !"
 
-							let greetBob = greet.bind(bob, 1, 1)
+							let greetBob = greet.bind(bob, 1, 5)
 							greetBob()
-							▸ "Hi I'm Bob ! 1 + 1 equals 1 !"
+							▸ "Hi I'm Bob ! 1 + 5 equals 6 !"
 						</code></pre>
 					</section>
 					<section>
@@ -816,6 +796,7 @@
 						</p>
 					</section>
 					<section>
+						<div class="title-exo" style="float: right">Quiz</div>
 						<h3>Logical operators</h3>
 						<p>
 							The operators <span class="monospace">||</span> and <span class="monospace">&&</span>, 
@@ -1526,8 +1507,282 @@ const keyboardObserver = keyboardObservable.subscribe({
 });
 						</code></pre>
 					</section>
+
+					<section class="left">
+						<h3>Tasks, microtasks and event loop</h3>
+						<p>The <b>event loop</b> is the mechanism that periodically pops the asynchronous calls.</p>
+						<p>Between each iteration of the loop, the browser re-renders the page and processes user events (click, scroll, etc.)</p>
+						<p>Modern JS engines store asynchronous calls in two stacks:<ul>
+							<li><b>tasks</b>, unstacked at the end of each event loop (examples: <code>setTimeout</code>, <code>setInterval</code>, <code>fetch</code>)</li>
+							<li><b>microtasks</b>, unstacked at the end of each task (examples: <code>promise.then</code>, <code>process.nextTick</code>)</li>
+						</ul></p>
+						<img src="assets/img/event-loop.jpg" alt="Schema of the event loop" />
+					</section>
+
+					<section class="left">
+						<h3>Work with the event loop</h3>
+						<p>Sometimes, you need to wait for the event loop:
+						<ul>
+							<li>to wait for the DOM to be updated before the next instruction</li>
+							<li>to not block the thread when doing a heavy calculation</li>
+						</ul>
+						</p>
+						<p>You then need to create a new task for your callback:
+							<ul>
+								<li><code>setTimeout(callback, delai)</code>
+									with zero delay to minimize waiting time
+								</li>
+								<li>
+									<code>requestAnimationFrame(callback)</code>
+									let the browser optimize when a callback is called to get a fluid animation (~ 60 frames per second)
+								</li>
+								<li>
+									<code>requestIdleCallback(callback)</code>
+									let the browser optimize when to call the callback when the CPU is not heavily loaded <i>(non standard)</i>
+								</li>
+							</ul>
+						</p>
+					</section>
+
+					<section>
+						<h3>Work with the event loop
+							<span class="title-exo">Quiz</span>
+						</h3>
+						<pre><code class="javascript hljs" data-trim>
+setTimeout(() => console.log(1), 0)
+Promise.resolve().then(() => console.log(2))
+requestAnimationFrame(() => console.log(3))
+requestIdleCallback(() => console.log(4))
+console.log(5)
+						</code></pre>
+
+						<p>In what order are the logs displayed ?</p>
+						<p class="center" style="font-weight: bold; font-size: 200%;">
+						<span class="fragment fade">5 - </span>
+						<span class="fragment fade">2 - </span>
+						<span class="fragment fade has-brace-bottom">1 - 4 - 3
+							<span class="brace"></span>
+							<span class="brace-description">variable depending on the CPU activity, but it's the most likely order</span>
+						</span>
+						</p>
+						
+					</section>
 				</section>
 
+				<section>
+					<section>
+						<h2>Object-oriented Programming</h2>
+						<p>Exercises 15 to 19</p>
+					</section>
+
+					<section class="left">
+						<h3>General principles of Object Oriented Programming</h3>
+						<ul>
+							<li>Represent a problem with elements that can be associated with material objects or concepts</li>
+							<li>Bring more proximity between code logic and business logic</li>
+							<li>Manipulate objects that contain their own internal state and their own logic</li>
+						</ul>
+						<br />
+						<p><span style="font-style: italic; text-decoration: underline;">Objectives:</span>
+						<ul>
+							<li>have a more intuitive, self-describing code</li>
+							<li>facilitate work in parallel</li>
+							<li>facilitate the transition from specification to code</li>
+						</ul></p>
+					</section>
+
+					<section class="left">
+						<h3>Objects and Prototypes</h3>
+						<ul>
+							<li>Any object has an internal private property called the <b>prototype</b></li>
+							<li>Any object can be the prototype of one or many other objects</li>
+							<li>You can retrieve the prototype of an object with:<br/>
+							<code>Object.getPrototypeOf(obj)</code></li>
+							<li>You can reassign dynamically the prototype of an object with:<br/>
+							<code>Object.setPrototypeOf(obj, newProto)</code></li>
+						</ul>
+						<div class="note warning" style="display: block; margin-left: auto; margin-right: 0; width: 500px">
+							Do not reassign the prototype in performance-critical parts of your application because it is tricky to optimize for classical JavaScript engines
+						</div>
+					</section>
+
+					<section class="left">
+						<h3>Why "prototype" ?</h3>
+						<ul>
+							<li>In industry, a <b>prototype</b> is a <b>real physical object</b>, on which mass-produced objects will be based.</li>
+							<li>On the same analogy, a <b>class</b> would be more like a <b>plan or diagram to follow</b>, of a more abstract nature and which cannot be manipulated like an object.</li>
+							<li>A prototype is taken as an example to create the produced objects, while a produced object can be taken as an example for the implementation of a class.</li>
+						</ul>
+						<p>The choice of this term serves to illustrate these differences.</p>
+					</section>
+
+					<section class="left">
+						<h3>Delegation to prototype</h3>
+						<p>If for <code><span class="blue">object</span>.<span class="green">prop</span></code>, the property <span class="green">prop</span> is not found in <span class="blue">object</span>, then it
+						is searched for in the <b>prototype</b> of <span class="blue">object</span>, then in the <b>prototype</b> of the <b>prototype</b> of <span class="blue">object</span>, and so on...</p>
+						<p>This is called <b>prototype delegation</b>, and objects have a <b>prototype chain</b>.</p>
+						<p>The "root" prototype is <code>Object.prototype</code>. Its own prototype is <code>null</code>.</p>
+
+						<pre><code class="javascript hljs" data-trim>
+							Object.getPrototypeOf([1,2,3]) === Array.prototype
+							> true
+							Object.getPrototypeOf(Array.prototype) === Object.prototype
+							> true
+							Object.getPrototypeOf(Object.prototype)
+							> null
+						</code></pre>
+					</section>
+
+					<section class="left">
+						<h3 class="flex-center">Methods related to the prototype
+							<div class="title-exo">Ex. 15</div>
+						</h3>
+
+						<div class="has-brace-right" style="margin-right: 300px">
+							<pre><code class="javascript hljs" data-trim>
+								Object.getPrototypeOf(obj)
+								Object.setPrototypeOf(obj, newProto)
+
+								let obj = Object.create(proto)
+
+								Object.getOwnPropertyNames(obj)
+								Object.getOwnPropertySymbols(obj)
+								Object.getOwnPropertyDescriptors(obj)
+							</code></pre>
+							<div class="brace"></div>
+							<div class="brace-description">Methods of the <code>Object</code> constructor</div>
+						</div>
+
+						<div class="has-brace-right" style="margin-right: 300px">
+							<pre class="has-brace-right"><code class="javascript hljs" data-trim>
+								obj.hasOwnProperty("prop")
+								obj.isPrototypeOf(anotherObj)
+							</code></pre>
+							<div class="brace"></div>
+							<div class="brace-description">Methods of the prototype <code>Object.prototype</code></div>
+						</div>
+					</section>
+
+					<section>
+						<h3>Beware of misuse of language !</h3>
+						<div class="center" style="font-size: 200%; font-weight: bold">classes ≠ prototypes</div>
+						<p>There are no classes in JavaScript, but the word is misused to refer to a prototype and its associated constructor.</p>
+						<p>Unlike classes, there is no difference in nature between a prototype and an object. A prototype can therefore be manipulated like any other object: assigned by reference, passed as a parameter, exported as a module...</p>
+						<img src="assets/img/kinds-of-oop.jpg" height="300" alt="Two kinds of OOP: an analogy with a classroom">
+					</section>
+
+					<section>
+						<h3>Beware of misuse of language !</h3>
+						<div class="center" style="font-size: 200%; font-weight: bold">inheritance ≠ delegation</div>
+						<p class="left">An object does not inherit the properties of its prototype, but it <b>delegates</b> them to it: these are not its own properties</p>
+						<pre><code class="javascript hljs" data-trim>
+							const bob = Object.create({ name: "Anonymous" })
+							bob.name = "Bob";
+
+							console.log(bob.name)
+							> "Bob"
+
+							delete bob.name;
+							console.log(bob.name)
+							> "Anonymous"
+						</code></pre>
+						<div class="left">
+						<p>In the context of OOP with prototypes, delegating can mean:</p>
+							<ul>
+								<li>retrieve default values</li>
+								<li>get a generic implementation of a method</li>
+								<li>implement basic behaviors (toString, cast to primitive, etc.)</li>
+							</ul>
+						</div>
+					</section>
+					
+					<section class="left">
+						<h3 class="center">Beware of misuse of language !</h3>
+						<div class="center" style="font-size: 200%; font-weight: bold">interface, override, instance...</div>
+						<p>Most of the class-based OOP vocabulary needs to be avoided:</p>
+						<ul>
+							<li>The prototype is neither an <i>interface</i> nor a <i>contract</i> to fulfill for the object, but an API base on which to rely.</li>
+							<li>We do not <i>override</i> properties, but we delegate those that are missing</li>
+							<li>The word "instance" makes sense for an instance of a class because it can mean "example". With prototypes, the roles are reversed since it is the prototype that fits better the role of example.</li>
+						</ul>
+						<div class="note">
+							Despite these differences in definition, this vocabulary is still often used (including within the language itself) in order to remain familiar to those accustomed to Java and class-based OOP.<br/>
+							It is quite the same historical aberration that brought us the name <i>"Java"</i>Script.
+						</div>
+					</section>
+
+					<section>
+						<h3>Constructors and operator <code class="blue">new</code></h3>
+						<p>In JavaScript, a function can be called <i>as a constructor</i> with the operator <code class="blue">new</code></p>
+						<pre><code class="javascript hljs" data-trim>
+							function Constructor(){
+								// init an object
+							}
+
+							Constructor() // called as regular function
+							new Constructor() // called as constructor
+						</code></pre>
+						<div class="note info">It's very unlikely you intend to use a function both as a constructor and as a regular function. By convention, those who are intended as constructors have their name starting with an Uppercase letter.</div>
+						<div class="note">Arrow functions cannot be invoked as constructors</div>
+					</section>
+
+					<section class="left">
+						<h3>Prototypes and constructors</h3>
+						<p>When <code>new Constructor()</code> is invoked, a new object is created with <code>Constructor.prototype</code> as prototype.</p>
+						<p>This is equivalent to call <code>Object.create(Constructor.prototype)</code></p>
+						<p >The same principle applies on all native constructors in the language:</p>
+						<pre><code class="javascript hljs" data-trim>
+							let today = new Date();
+							today.getMonth === Date.prototype.getMonth
+
+							let obj = {} // or new Object()
+							obj.toString === Object.prototype.toString
+
+							let array = [1,2,3] // or new Array(1,2,3)
+							array.concat === Array.prototype.concat
+						</code></pre>
+
+						<p>The <code class="blue">instanceof</code> operators determines if an object has been created by the following constructor:</p>
+						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
+							x instanceof C ⇔ Object.getPrototypeOf(x) === C.prototype
+							[] instanceof Array ⇔ Object.getPrototypeOf([]) === Array.prototype
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Constructors and context</h3>
+						<p>The <code class="blue">new</code> operator changes the way a function is invoked in several ways:</p>
+						<pre><code class="javascript hljs" data-trim>
+							function hello(){
+								console.log(`this === ${this}`)
+							}
+
+							let result1 = hello() // this === [object Window]
+							let result2 = new hello() // this === [object Object]
+						</code></pre>
+						<p>The created object is used as execution context of the constructor (<code class="green">this</code>)</p>
+						<div class="note">
+							<code>new Constructor(…args)</code> <br/>
+							≈<br/>
+							<code>Constructor.call(Object.create(Constructor.prototype), ...args)</code>
+						</div>
+						<p>This object is also returned by default by the function, when there is no <code>return</code> instruction.</p>
+						<pre><code class="javascript hljs" data-trim>
+							console.log(typeof result1) // undefined
+							console.log(typeof result2) // object
+						</code></pre>
+						
+						
+					</section>
+
+					<section>
+
+					</section>
+
+
+				</section>
+
+		
 			</div>
 		</div>
 	</body>
