@@ -4,6 +4,7 @@
 @import "../plugin/highlight/monokai.Css";
 @import "internation.css";
 @import "braces.css";
+@import "arrows.css";
 
 ::selection {
   background-color: blue !important;
@@ -39,6 +40,11 @@ img {
 
 .right {
   text-align: right;
+}
+
+ul.left,
+ul.right {
+  display: block;
 }
 
 .flex-slide,
@@ -94,7 +100,8 @@ img {
   font-family: monospace;
 }
 
-.title-exo {
+.ref {
+  float: right;
   background-color: #296f9d;
   color: white;
   font-size: 1rem;
@@ -105,4 +112,8 @@ img {
 
 .quizz pre {
   margin: 0 auto;
+}
+
+quote {
+  
 }

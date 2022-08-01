@@ -325,10 +325,8 @@
 						<p>For each exercise, correct the source to validate the associated test</p>
 					</section>
 					<section>
-						<h3 class="flex-center">
-							Types and Primitives 
-							<span class="title-exo">Ex. 1</span>
-						</h3>
+						<span class="ref">Exercise 1</span>
+						<h3>Types and Primitives</h3>
 						<p>JavaScript defines 7 data types:</p>
 						<img height="250px" src="./assets/img/Image5.png">
 						<p>The <b class="monospace">typeof</b> operator returns the type of an object, but be careful:</p>
@@ -359,33 +357,34 @@
 						</ul>
 						<pre><code class="javascript hljs" data-trim>
 							"test" === "test"
-							true
+							▸ true
 								
 							{ item: "test" } === { item: "test" }
-							true
+							▸ true
 						</code></pre>
 						<ul>
 							<li>have a list of properties that are key-value pairs: key (String, Symbol) ⇔ value (any)</li>
 						</ul>
 						<pre><code class="javascript hljs" data-trim>
-							"item" in { item: "test" } === true								
-							Symbol.iterator in [1,2,3] === true
+							"item" in { item: "test" }
+							▸ true
+							
+							Symbol.iterator in [1,2,3]
+							▸ true
 						</code></pre>
 					</section>
 					<section>
-						<h3 class="flex-center">
-							Objects: properties listing
-							<span class="title-exo">Ex. 2</span>
-						</h3>
+						<span class="ref">Exercise 2</span>
+						<h3 class="flex-center">Objects: properties listing</h3>
 						<pre style="font-size: 90%"><code class="javascript hljs" data-trim>
 							let obj = { a: 1, b: 2 }
 
 							"a" in obj
-							true
+							▸ true
 
 							for(let key in obj) console.log(key, obj[key])
-							a 1
-							b 2
+							▸ a 1
+							▸ b 2
 
 							Object.keys(obj)
 								▸ ["a", "b"]
@@ -396,10 +395,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<h3 class="flex-center">
-							Objects: properties assignment
-							<span class="title-exo">Ex. 3</span>
-						</h3>
+						<span class="ref">Exercise 3</span>
+						<h3>Objects: properties assignment</h3>
 						<pre><code class="javascript hljs" data-trim>
 							let obj = { key: "value" }
 							obj.a = 1;
@@ -429,10 +426,8 @@
 						<p>A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators</p>
 					</section>
 					<section>
-						<h3 class="flex-center">
-							Define the descriptors
-							<span class="title-exo">Ex. 4</span>
-						</h3>
+						<span class="ref">Exercise 4</span>
+						<h3>Define the descriptors</h3>
 						<p>The method <b class="monospace">Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
 						<div class="flex-center">
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
@@ -483,7 +478,7 @@
 						<p>These delegated properties are in fact the properties of the object's prototype (see Object Oriented section)</p>
 						<pre><code class="javascript hljs" data-trim>
 							obj.toString === Object.prototype.toString
-							> true
+							▸ true
 						</code></pre>
 					</section>
 					<section>
@@ -579,10 +574,8 @@
 						<p>Only the <b class="monospace">getValue</b> and <b class="monospace">increment</b> closures allow access</p>
 					</section>
 					<section>
-						<h3 class="flex-center">
-							Using closures
-							<span class="title-exo">Ex. 5</span>
-						</h3>
+						<span class="ref">Exercise 5</span>
+						<h3>Using closures</h3>
 						<pre><code class="javascript hljs" data-trim>
 							for (var i = 1; i&lt;=3; i++) {
 								setTimeOut( function timer(){
@@ -613,6 +606,7 @@
 							}
 
 							obj.whoisthis() === obj
+							▸ true
 						</code></pre>
 						<p>
 							When a function is called by direct reference, it has no context, which means the <code>this</code> variable will be looked up in parent scope.</p>
@@ -745,10 +739,8 @@
 						</aside>
 					</section>
 					<section class="quizz">
-						<h3 class="flex-center">
-							Implicit casts
-							<span class="title-exo">Quizz</span>
-						</h3>
+						<span class="ref">Quiz</span>
+						<h3>Implicit casts</h3>
 						<div class="flex-slide">
 							<div style="flex-basis: 100%;">
 								<p><pre class="fragment fade"><code>"0"-0</code></pre><pre class="fragment fade"><code>▸ 0</code></pre></p>
@@ -796,7 +788,7 @@
 						</p>
 					</section>
 					<section>
-						<div class="title-exo" style="float: right">Quiz</div>
+						<span class="ref">Quiz</span>
 						<h3>Logical operators</h3>
 						<p>
 							The operators <span class="monospace">||</span> and <span class="monospace">&&</span>, 
@@ -864,10 +856,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<h3 class="flex-center">
-							Arrow functions
-							<span class="title-exo">Ex. 7</span>
-						</h3>
+						<span class="ref">Exercise 7</span>
+						<h3>Arrow functions</h3>
 						<pre><code class="javascript hljs" data-trim>
 							const f1 = () => {},
 										f2 = x => x*2,
@@ -935,10 +925,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<h3 class="flex-center">
-							Operators Spread / Rest
-							<span class="title-exo">Ex. 8</span>
-						</h3>
+						<span class="ref">Exercise 8</span>
+						<h3>Operators Spread / Rest</h3>
 						<p>Object properties (ES2018)</p>
 						<p>Only works with enumerable properties</p>
 						<ul>
@@ -980,10 +968,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<h3 class="flex-center">
-							Destructuring
-							<span class="title-exo">Ex. 9</span>
-						</h3>
+						<span class="ref">Exercise 9</span>
+						<h3>Destructuring</h3>
 						<p>Also works with function parameters:</p>
 						<pre><code class="javascript hljs" data-trim>
 							function doSomething({ config, options: { verbose } }){
@@ -1056,10 +1042,8 @@
 						<aside class="note info">Recommended: use template strings for all non-trivial strings</aside>
 					</section>
 					<section>
-						<h3 class="flex-center">
-							Tagged Template strings
-							<span class="title-exo">Ex. 10</span>
-						</h3>
+						<span class="ref">Exercise 10</span>
+						<h3>Tagged Template strings</h3>
 						<p>If a function reference precedes a template string, that function is invoked with the static and dynamic parts of the string:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function insertInUpperCase(string, ...vars) {
@@ -1074,10 +1058,8 @@
 						<img height="150" src="./assets/img/Image17.png">
 					</section>
 					<section class="left">
-						<h3 class="flex-center">
-							Map & Set
-							<span class="title-exo">Ex. 11</span>
-						</h3>
+						<span class="ref">Exercise 11</span>
+						<h3>Map & Set</h3>
 						<ul>
 							<li>Map: collection of keys/values like objects, but the keys can be of any type</li>
 							<li>Set: collection of values without keys, guarantee of uniqueness</li>
@@ -1264,7 +1246,8 @@
 					</section>
 
 					<section class="left">
-						<h3 class="flex-center">Publisher/Subscriber <span class="title-exo">Ex. 14</span></h3>
+						<span class="ref">Exercise 14</span>
+						<h3>Publisher/Subscriber</h3>
 						<p>This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
 						<p><code>element.addEventListener</code> is an example of pub/sub.</p>
 						<br />
@@ -1272,7 +1255,7 @@
 						<p>It is composed of at least two functions: <b>subscription</b> and <b>emission</b></p>
 						<p>Example of a pub/sub API:</p>
 						<pre><code class="javascript hljs" data-trim>
-							const publusher = new PubSub();
+							const publisher = new PubSub();
 
 							publisher.on("alert", function onAlert(eventData){
 								console.log(eventData)
@@ -1336,10 +1319,8 @@ doSomething()
 					</section>
 
 					<section>
-						<h3 class="flex-center">
-							Creation of a promise
-							<span class="title-exo">Ex. 13</span>
-						</h3>
+						<span class="ref">Exercise 13</span>
+						<h3>Creation of a promise</h3>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 						// creating a promise from a callback-based API
 						const promise = new Promise((resolve, reject) => {
@@ -1378,9 +1359,8 @@ doSomething()
 					</section>
 
 					<section>
-						<h3 class="flex-center">Chaining and parallelism
-							<span class="title-exo">Quiz</span>
-						</h3>
+						<span class="ref">Quiz</span>
+						<h3>Chaining and parallelism</h3>
 						<pre><code class="javascript hljs" data-trim>
 							const wait = promisify(setTimeout)
 
@@ -1480,10 +1460,8 @@ async function myFunction() {
 					</section>
 
 					<section>
-						<h3 class="flex-center">
-							Observable: example of API
-							<div class="title-exo">Ex. 14</div>
-						</h3>
+						<span class="ref">Exercise 14</span>
+						<h3>Observable: example of API</h3>
 						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
 const keyboardObservable = new Observable( ({ emit, complete }) => {
 	const onKey = event => {
@@ -1545,9 +1523,8 @@ const keyboardObserver = keyboardObservable.subscribe({
 					</section>
 
 					<section>
-						<h3>Work with the event loop
-							<span class="title-exo">Quiz</span>
-						</h3>
+						<span class="ref">Quiz</span>
+						<h3>Work with the event loop</h3>
 						<pre><code class="javascript hljs" data-trim>
 setTimeout(() => console.log(1), 0)
 Promise.resolve().then(() => console.log(2))
@@ -1625,18 +1602,17 @@ console.log(5)
 
 						<pre><code class="javascript hljs" data-trim>
 							Object.getPrototypeOf([1,2,3]) === Array.prototype
-							> true
+							▸ true
 							Object.getPrototypeOf(Array.prototype) === Object.prototype
-							> true
+							▸ true
 							Object.getPrototypeOf(Object.prototype)
-							> null
+							▸ null
 						</code></pre>
 					</section>
 
 					<section class="left">
-						<h3 class="flex-center">Methods related to the prototype
-							<div class="title-exo">Ex. 15</div>
-						</h3>
+						<span class="ref">Exercise 15</span>
+						<h3>Methods related to the prototype</h3>
 
 						<div class="has-brace-right" style="margin-right: 300px">
 							<pre><code class="javascript hljs" data-trim>
@@ -1680,11 +1656,11 @@ console.log(5)
 							bob.name = "Bob";
 
 							console.log(bob.name)
-							> "Bob"
+							▸ "Bob"
 
 							delete bob.name;
 							console.log(bob.name)
-							> "Anonymous"
+							▸ "Anonymous"
 						</code></pre>
 						<div class="left">
 						<p>In the context of OOP with prototypes, delegating can mean:</p>
@@ -1775,8 +1751,304 @@ console.log(5)
 						
 					</section>
 
-					<section>
+					<section class="left">
+						<span class="ref">Exercise 16</span>
+						<h3>Constructor.prototype</h3>
+						<p>Every constructor function has a <code>prototype</code> property that is an object with a <code>constructor</code> property referring to the constructor function.</p>
+						<p>That's how you can retrieve the constructor from a constructed object.</p>
+						<img src="assets/img/constructor-prototype.jpg" style="float:left; width: 300px; margin-right: 1em" alt="Diagram presenting Constructor and protototype property recursion" />
+						<pre><code class="javascript hljs" data-trim>
+							function Car() { }
 
+							Car.prototype;
+							▸ { constructor: f }
+
+							Car.prototype.constructor === Car
+							▸ true
+						</code></pre>
+						<p>In the prototype, we can declare other properties that will be <b>delegated</b> by the objects created with this constructor:</p>
+						<pre><code class="javascript hljs" data-trim>
+							Car.prototype.nbWheels = 4;
+							const twingo = new Car();
+							twingo.nbWheels
+							▸ 4
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Constructor.prototype</h3>
+						<div class="note warning" style="width: 500px">Not to be confused: <pre><code class="javascript hljs">Constructor.prototype</code>  ≠  <code class="javascript hljs">Object.getPrototypeOf(Constructor)</code></pre></div>
+						<pre class="fragment fade"><code class="javascript hljs js" data-trim>
+							function Car(){} ⇔ const Car = new Function()
+						</code></pre>
+						<pre class="fragment fade"><code class="javascript hljs" data-trim>
+							Object.getPrototypeOf(Car) === Function.prototype
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Constructors flaws</h3>
+						<p>Constructors are a commonly used pattern in JS, but they have several flaws:</p>
+						<ul>
+							<li class="fragment">The prototype constructors are not automatically invoked, you have to do it manually.</li>
+							<li class="fragment">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a>.</li>
+							<li class="fragment">A <code>constructor</code> property is assigned to created objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code></li>
+							<li class="fragment"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not</li>
+							<li class="fragment">It is not possible to declare several constructors</li>
+							<li class="fragment">They are confusing for beginners with prototypes</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>The <code>class</code> operator (ES2015)</h3>
+						<p>Syntaxic sugar for declaring objects with constructors</p>
+						<div style="position: relative; display: flex;">
+							<pre style="font-size: 60%; width: 50%;"><code class="javascript hljs js" data-trim>
+class Person {
+	constructor(firstname, lastname) {
+		this.firstname = firstname
+		this.lastname = lastname
+	}
+
+	sayMyName(){
+		return `${this.firstname} ${this.lastname}`
+	}
+}
+
+class User extends Person {
+	constructor(firstname, lastname, role){
+		super(firstname, lastname);
+		this.role = role;
+	}
+
+	get isAdmin(){
+		return this.role === "admin"
+	}
+}
+
+const bill = new User("Bill", "Gates", "admin")
+							</code></pre>
+							<div class="left">
+								<div class="arrow left fragment" style="top: 34px; right: 80px">explicit <code>constructor</code> property</div>
+								<div class="arrow left fragment" style="top: 175px; right: 150px;">simplifies the assignation of the prototype</div>
+								<div class="arrow left fragment" style="top: 180px; right: 120px">simplifies the call to the prototype constructor</div>
+
+							</div>
+						</div>
+					</section>
+
+					<section>
+						<h3>super</h3>
+						<pre><code class="javascript hljs js" data-trim>
+							super(...args); // call the prototype constructor
+
+							super.method(); // call a method of the prototype
+						</code></pre>
+						<p>It is usable without the class operator:</p>
+						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+							const user = {
+								name: "Anonymous",
+								getName(){ return this.name }
+							}
+
+							const joe = {
+								name: "Joe",
+								getName(){
+									return `joe name: ${this.name} ; user name: ${super.name} : user getName: ${super.getName()}`
+								}
+							}
+
+							Object.setPrototypeOf(joe, user)
+
+							joe.getName()
+							▸ joe name: Joe ; user name: Anonymous ; user getName: Joe
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>static</h3>
+						<p>Defines a static property: a property of the constructor itself, not the prototype</p>
+						<pre><code class="javascript hljs js" data-trim>
+class C {
+	method(){ console.log("method") }
+
+	static methodStatic(){ console.log("static method") }
+}
+
+(new C()).method() // method in C.prototype
+C.methodStatic() // methodStatic in C
+						</code></pre>
+						<p>This is basically the same thing than directly assigning the property to the constructor, so not the most useful syntaxic sugar, but it was added for its familiarity for Java developers.</p>
+						<pre><code class="javascript hljs js" data-trim>
+							C.equivalentStatic = function(){ ... }
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Constructors flaws, with operator <code>class</code></h3>
+						<ul>
+							<li class="fragment">The prototype constructors are not automatically invoked, you have to do it manually.
+								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case but simplified with <code>super()</code></div>
+							</li>
+							<li class="fragment">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a>.
+								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case</div></li>
+							<li class="fragment">A <code>constructor</code> property is assigned to constructed objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code>
+								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case but the assignation is explicit to prevent conflicts</div></li>
+							<li class="fragment"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not
+								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> an exception is raised if constructor is not called with <code>new</code></div></li>
+							<li class="fragment">It is not possible to declare several constructors
+								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case</div></li>
+							<li class="fragment">They are confusing for beginners with prototypes
+								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> adds even more confusion with class-based OOP</div>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Alternative to constructors</h3>
+						<p >You don't need constructors to make prototype-based OOP. You can rather use:</p>
+						<ul class="left">
+							<li>Factory functions
+								<pre><code class="javascript hljs js" data-trim>
+function createUser({ first, name }){
+	const user = Object.create(userProto)
+	user.first = first
+	user.name = name
+	return user
+}</code></pre></li>
+							<li><code>Object.create</code> and <code>Object.assign</code>
+								<pre><code class="javascript hljs js" data-trim>
+const john = Object.assign(Object.create(userProto), {
+	first: "John",
+	name: "Smith"
+})</code></pre>
+							</li>
+						</ul>
+						<p>It fixes all the flaws previously stated, and you don't need these anymore:</p>
+						<p><code>new, instanceof, class, super, static</code></p>
+					</section>
+
+					<section>
+						<h3>class vs Object.create: an example</h3>
+						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+class Foo {
+	constructor(who){
+		this.me = who
+	}
+	identify(){
+		return `I am ${this.me}`
+	}
+}
+
+class Bar extends Foo {
+	speak(){
+		return `Hello, ${this.identify()}`
+	}
+}
+
+let b1 = new Bar("b1")
+let b2 = new Bar("b2")
+
+b1.speak();
+b2.speak();
+								</code></pre>
+								<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+const Foo = {
+	init(who){
+		this.me = who
+		return this
+	},
+	identify(){
+		return `I am ${this.me}`
+	}
+}
+
+const Bar = Object.create(Foo)
+Bar.speak = function(){
+	return `Hello, ${this.identify()}`
+}
+
+let b1 = Object.create(Bar).init("b1");
+let b2 = Object.create(Bar).init("b2");
+
+b1.speak();
+b2.speak();
+								</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<h3>Delegation pattern, in short</h3>
+						<ul>
+							<li>Lighter and simpler model</li>
+							<li>Replace the notion of constructors by factory functions or initialization methods </li>
+							<li>No longer needs <code>new</code> and <code>instanceof</code> operators</li>
+							<li>Requires to get out of the mental model of class hierarchies</li>
+						</ul>
+						<div class="note left">
+							<u>Recommended:</u>
+							<p>Use <code>Object.create</code> and <code>class extends</code> with moderation</p>
+							<p>Limit the size of your prototype chains as much as possible</p>
+							<p>Delegation is a powerful and flexible pattern, but other approachs such as <b>object composition</b> are underused.</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>Object composition (a.k.a. Mixins)</h3>
+						<p>Another pattern in JavaScript OOP consists of creating objects by composition.</p>
+						<p>This pattern is super simple because JS objects support dynamic assignation of new properties:</p>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+							const mixin = { ...objA, ...objB }
+							// or
+							const mixin = Object.assign({}, objA, objB)
+						</code></pre>
+						<p>The composition is ordered, applying arguments from left to right, so that in case of conflicts on one property name, the last one gets priority:</p>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+							let o = { ...{ x: 1 }, ...{ x: 2 }, ...{ x: 3 } }
+							o
+							▸ { x: 3 }
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Composition or delegation ?</h3>
+						<img src="assets/img/design-patterns-book.png"
+						alt="Cover of book: Design Patterns - Elements of Reusable Object-oriented software" style="float: right; height: 200px" />
+						<blockquote style="margin: 100px 0 100px auto">
+							Favor object composition over class inheritance
+							<br>(Gang of Four 1995:20)
+						</blockquote>
+						<p>In reality, there is no pattern always better than another:<br/>they match with different ways of thinking.</p>
+						<p>The flaws of each pattern became clear when you start to excessively use it anywhere.</p>
+						<p>Take the time to think about your model,
+							do not code by habit.</p>
+					</section>
+
+					<section class="left">
+						<div class="ref">Exercise 17</div>
+						<h3>Object patterns: exercise</h3>
+						<p>Let's practice on a project example: a web components library</p>
+						<p>Objects identified in the model:</p>
+						<ul>
+							<li><code>Component</code></li>
+							<li><code>Clickable</code></li>
+							<li><code>Focusable</code></li>
+							<li><code>Editable</code></li>
+							<li><code>Button</code></li>
+							<li><code>Input</code></li>
+							<li><code>TextInput</code></li>
+						</ul>
+						<p>
+							<u>Objectives</u>
+							<ol>
+								<li>think about the model, find the right relations between objects:
+									<br><b>Delegation ? Composition ? Encapsulation ?</b>
+								</li>
+								<li>implement the relations between objects</li>
+								<li>test the example using components Button and TextInput</li>
+							</ol>
+						</p>
 					</section>
 
 
