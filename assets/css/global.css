@@ -47,6 +47,10 @@ ul.right {
   display: block;
 }
 
+ul.narrow li {
+  margin-bottom: 0.25em;
+}
+
 .flex-slide,
 .flex-center {
   display: flex;
@@ -114,6 +118,20 @@ ul.right {
   margin: 0 auto;
 }
 
-quote {
-  
+.reveal li img {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cols-2 {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1em;
+}
+
+.chapter-title {
+  width: fit-content;
+  font-weight: bold;
+  border-bottom: 3px solid #F0DB4F;
 }

@@ -54,15 +54,15 @@
 					</ul>
 				</section>
 				<section class="agenda">
-					<h1>Agenda</h1>
+					<h2>Agenda</h2>
 					<div class="flex-slide">
 						<div style="flex-basis: 100%;">
-							<h3>Introduction</h3>
+							<p class="chapter-title">Introduction</p>
 							<ul>
 								<li>ECMAScript, TC39 and versions of JavaScript</li>
 							</ul>
 	
-							<h3>A reintroduction to JavaScript</h3>
+							<p class="chapter-title">A reintroduction to JavaScript</p>
 							<ul>
 								<li>Primitives and Objects</li>
 								<li>Property descriptors</li>
@@ -73,7 +73,7 @@
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<h3>Modern JS: ES2015+</h3>
+							<p class="chapter-title">Modern JS: ES2015+</p>
 							<ul>
 								<li>Arrow functions</li>
 								<li>Default parameters</li>
@@ -84,7 +84,7 @@
 								<li>Modules</li>
 							</ul>
 	
-							<h3>Managing asynchrony</h3>
+							<p class="chapter-title">Managing asynchrony</p>
 							<ul>
 								<li>Asynchronous, what is it?</li>
 								<li>Callbacks and Publisher/Subscriber model</li>
@@ -95,7 +95,7 @@
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<h3>Object oriented</h3>
+							<p class="chapter-title">Object oriented</p>
 							<ul>
 								<li>Prototypes and delegation</li>
 								<li>class / super / extends</li>
@@ -104,7 +104,7 @@
 								<li>Proxies</li>
 							</ul>
 	
-							<h3>Functionally oriented</h3>
+							<p class="chapter-title">Functionally oriented</p>
 							<ul>
 								<li>Recursivity</li>
 								<li>Chainable APIs</li>
@@ -112,7 +112,7 @@
 								<li>Curryfication</li>
 							</ul>
 
-							<h3>Transpilers</h3>
+							<p class="chapter-title">Transpilers</p>
 							<ul>
 								<li>Babel</li>
 								<li>TypeScript</li>
@@ -1888,18 +1888,18 @@ C.methodStatic() // methodStatic in C
 						<h3>Constructors flaws, with operator <code>class</code></h3>
 						<ul>
 							<li class="fragment">The prototype constructors are not automatically invoked, you have to do it manually.
-								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case but simplified with <code>super()</code></div>
+								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px;" /> still the case but simplified with <code>super()</code></div>
 							</li>
 							<li class="fragment">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a>.
-								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case</div></li>
+								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" /> still the case</div></li>
 							<li class="fragment">A <code>constructor</code> property is assigned to constructed objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code>
-								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case but the assignation is explicit to prevent conflicts</div></li>
+								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px;" /> still the case but the assignation is explicit to prevent conflicts</div></li>
 							<li class="fragment"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not
-								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> an exception is raised if constructor is not called with <code>new</code></div></li>
+								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px;" /> an exception is raised if constructor is not called with <code>new</code></div></li>
 							<li class="fragment">It is not possible to declare several constructors
-								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> still the case</div></li>
+								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" /> still the case</div></li>
 							<li class="fragment">They are confusing for beginners with prototypes
-								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px; display: inline-block; vertical-align: middle;" /> adds even more confusion with class-based OOP</div>
+								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" /> adds even more confusion with class-based OOP</div>
 							</li>
 						</ul>
 					</section>
@@ -1930,7 +1930,7 @@ const john = Object.assign(Object.create(userProto), {
 
 					<section>
 						<h3>class vs Object.create: an example</h3>
-						<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1em;">
+						<div class="cols-2">
 							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 class Foo {
 	constructor(who){
@@ -2051,6 +2051,207 @@ b2.speak();
 						</p>
 					</section>
 
+					<section>
+						<h3>Symbol</h3>
+						<p>New primitive type since ES2015</p>
+						<p>Represents a unique reference:</p>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+const symbol = Symbol();
+const symbolFoo = Symbol('foo');
+
+typeof symbol;
+▸ "symbol"
+
+symbolFoo.toString()
+▸ "Symbol(foo)"
+
+symbolFoo === Symbol('foo')
+▸ false
+						</code></pre>
+						<p>Symbols can be used as property keys of an object:</p>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+const obj = { [symbolFoo]: "bar" };
+Object.getOwnPropertySymbols(obj)
+▸ [Symbol(foo)]
+					</code></pre>
+					</section>
+
+					<section>
+						<h3>Symbols - Global register</h3>
+						<p>A global register exists for symbols nevertheless:</p>
+						<pre ><code class="javascript hljs js" data-trim>
+const symbolFoo = Symbol.for('foo')
+symbolFoo === Symbol.for('foo')
+▸ true
+Symbol.keyFor(symbolFoo)
+▸ "foo"
+						</code></pre>
+						<div class="note">Use with moderation, otherwise you will lose the primary interest of symbols, namely to be a unique reference</div>
+
+					</section>
+
+					<section>
+						<h3>Symbols - Known symbols</h3>
+						<p>Some symbols are built-in in ES2015.</p>
+						<p>They let you redefine some internal behaviors of the language for an object:</p>
+						<pre ><code class="javascript hljs js" data-trim>
+							const obj = {
+								[Symbol.toPrimitive](){ return 42 }
+							}
+
+							+obj;
+							▸ 42
+						</code></pre>
+						<p><u>Examples:</u></p>
+						<ul>
+							<li><code>Symbol.iterator</code>: used when iterating (for loops, spread operator...)</li>
+							<li><code>Symbol.hasInstance</code>: used by <code>instanceof</code> operator</li>
+							<li><code>Symbol.toPrimitive</code>: used to cast in primitive</li>
+							<li><code>Symbol.toStringTag</code>: used by <code>toString</code> method</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Iterable objects</h3>
+						<p><code>Array</code>, <code>Set</code> and <code>Map</code> are built-in iterable structures that do the job most of the cases.</p>
+						<p>But you can also create your own <b>iterable objects</b> for specific needs:<br><i>binary trees, linked lists, graphs...</i></p>
+						<p>An object is said <b>iterable</b> when its <code>Symbol.iterator</code> method returns an <b>iterator</b>.</p>
+						<p>An <b>iterator</b> is an object with a method <code>next()</code> that returns an object with 2 properties:</p>
+						<ul class="narrow">
+							<li><code>done</code>: boolean, true if the iteration is finished</li>
+							<li><code>value</code>: current value of iteration, undefined if <code>done</code> is true</li>
+						</ul>
+						<div class="cols-2">
+						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+							const compteur123 = {
+								[Symbol.iterator]: function(){
+									let nombres = [1, 2, 3]
+									return {
+										next(){
+											return {
+												done: nombres.length === 0,
+												value: nombres.shift()
+											}
+										}
+									}
+								}
+							}
+						</code></pre>
+						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+							for(let n of compteur123) console.log(n);
+							▸ 1
+							▸ 2
+							▸ 3
+
+							[...compteur123]
+							▸ [1, 2, 3]
+						</code></pre>
+						</div>
+					</section>
+
+					<section>
+						<div class="ref">Exercise 18</div>
+						<h3>function* and generators</h3>
+						<p>A generator is a special type of function used to simplify the creation of iterators. A generator is declared with operator <b>function*</b>, which allow the use of the <code>yield</code> operator inside.</p>
+						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+							const compteur123 = {
+								[Symbol.iterator]: function*(){
+									let nombres = [1, 2, 3];
+									while(nombres.length) yield nombres.shift();
+								}
+							}
+
+							[...compteur123]
+							▸ [1, 2, 3]
+						</code></pre>
+						<p><code>yield</code> let you pause the execution of the generator function and returns an intermediate result. The execution will resume on <code>next()</code> call.</p>
+						<p>Iteration is finished at the end of function instructions, or when meeting a <code>return</code> instruction.</p>
+					</section>
+
+					<section>
+						<h3>Proxy</h3>
+						<p>Proxies, introduced in ES2015, let you intercept and customize the operations made on objects:</p>
+						<ul class="narrow">
+							<li>enumerate and describe its properties</li>
+							<li>define, assign, or delete some properties</li>
+							<li>invoke it as function or constructor</li>
+							<li>get or set its prototype</li>
+							<li>...</li>
+						</ul>
+						<p>A <code>Proxy</code> does not change the original object, it returns a new object reference, and all the operations shall be done on this new reference.</p>
+						<p>By default, no operation is intercepted nor modified so the proxy object is indistinguishable from the original object.</p>
+						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+const obj = { foo: "bar" }
+const proxy = new Proxy(obj, {
+	get(obj, prop){
+		console.log(`get ${prop} intercepted`)
+		return "intercepted!"
+	}
+})
+
+proxy.foo;
+▸ get foo intercepted!
+
+obj.foo;
+▸ bar</code></pre>
+					</section>
+
+					<section>
+						<h3>Proxy traps</h3>
+						<pre><code class="javascript hljs js" data-trim>
+new Proxy(object, {
+	get(o, key){}, // read property value
+	set(o, key, val){}, // write a new value for property
+	deleteProperty(o, key){},
+	apply(o, context, args){}, // invoke as function
+	construct(o, args){}, // invoke as constructor
+	ownKeys(o){}, // enumerate own properties
+	has(o, key){}, // query if property exists
+	defineProperty(o, key, desc){},
+	getOwnPropertyDescriptor(o, key){},
+	getPrototypeOf(o){}
+	setPrototypeOf(o, proto){}
+})
+						</code></pre>
+					</section>
+
+					<section>
+						<h3>Reflect API</h3>
+						<p><b>Reflect</b> represents the capacity for <a href="https://en.wikipedia.org/wiki/Reflective_programming" target="_blank">reflection</a> acquired by JS with the introduction of proxies.</p>
+						<p>The <code>Reflect</code> object contains a set of methods that reproduce the default behavior of the language for all the Proxy traps. You can see it as the default value of every <code>Proxy</code> trap.</p>
+						<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+							Reflect.get(o, key) ⇔ o[key]
+							Reflect.set(o, key, val) ⇔ o[key] = val
+							Reflect.has(o, key) ⇔ key in o
+							Reflect.apply(o, context, args) ⇔ o.apply(context, args)
+							...
+						</code></pre>
+						<p>You can easily break existing behaviors you didn't even know existed when playing with proxies. A good practice and safety measure is to always call the Reflect API when adding a proxy trap.</p>
+						<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+new Proxy(obj, {
+	set(o, key, value){
+		if(typeof value !== "string"){
+			throw "Only strings are accepted as values for this object"
+		} 
+		return Reflect.set(o, key, value) // back to the default behavior
+	}
+})
+						</code></pre>
+					</section>
+
+					<section>
+						<div class="ref">Exercise 19</div>
+						<h3>Use cases for Proxies</h3>
+						<ul>
+							<li>Defensive objects: prevent object mutations, throw exceptions when trying to read an undefined property...</li>
+							<li>Watchers: publisher/subscriber event system on object mutations (<a href="https://vuejs.org/guide/extras/reactivity-in-depth.html#how-reactivity-works-in-vue" target="_blank">Vue.js</a>, <a href="https://mobx.js.org/configuration.html#proxy-support" target="_blank">MobX</a>)</li>
+							<li>Strong type-checking: validate types or values assigned to objects (<a href="https://objectmodel.js.org" target="_blank">objectmodel.js.org</a>)</li>
+							<li>Hiding private properties</li>
+							<li>Function memoization for performance imrpovements</li>
+							<li>Debugging, performance measurement</li>
+							<li>...</li>
+						</ul>
+					</section>
 
 				</section>
 
