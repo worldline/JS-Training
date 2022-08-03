@@ -1,15 +1,15 @@
 import { Observable } from "../src/exo14";
 
-it("Observable", () => {
+it("Observable next & complete", () => {
   const out = [];
   let startEmit;
 
-  const observable = new Observable(({ emit, complete }) => {
+  const observable = new Observable(subscriber => {
     let i = 0;
     const next = () => {
-      emit(++i);
+      subscriber.next(++i);
       if (i >= 5) {
-        complete();
+        subscriber.complete();
       } else {
         next()
       }
@@ -21,19 +21,19 @@ it("Observable", () => {
   expect("subscribe" in observable).toBe(true);
 
   observable.subscribe({
-    onValue(i) {
+    next(i) {
       out.push(i);
     },
-    onComplete() {
+    complete() {
       out.push("complete");
     }
   });
 
   observable.subscribe({
-    onValue(i) {
+    next(i) {
       out.push(i * 2);
     },
-    onComplete() {
+    complete() {
       out.push("complete2");
     }
   });
@@ -48,12 +48,12 @@ it("Observer unsubscribe", () => {
   const out = [];
   let startEmit;
 
-  const observable = new Observable(({ emit, complete }) => {
+  const observable = new Observable(subscriber => {
     let i = 0;
     const next = () => {
-      emit(++i);
+      subscriber.next(++i);
       if (i >= 5) {
-        complete();
+        subscriber.complete();
       } else {
         next();
       }
@@ -63,11 +63,11 @@ it("Observer unsubscribe", () => {
   });
 
   const observer = observable.subscribe({
-    onValue(i) {
+    next(i) {
       out.push(i);
       if (i >= 3) observer.unsubscribe();
     },
-    onComplete() {
+    complete() {
       out.push("complete");
     }
   });
@@ -77,5 +77,46 @@ it("Observer unsubscribe", () => {
   startEmit && startEmit();
 
   expect(out.join(",")).toBe("1,2,3");
+
+}, 100);
+
+it("Observable error handling", () => {
+  const out = [];
+  let startEmit;
+
+  const observable = new Observable(subscriber => {
+    let i = 0;
+    const next = () => {
+      subscriber.next(++i);
+      if (i >= 5) {
+        subscriber.complete();
+      } else if(i === 3){
+        throw "should fail at 3"
+      } else {
+        next();
+      }
+    };
+
+    startEmit = () => next();
+  });
+
+  const observer = observable.subscribe({
+    next(i) {
+      out.push(i);
+      if (i >= 3) observer.unsubscribe();
+    },
+    complete() {
+      out.push("complete");
+    },
+    error(err){
+      out.push("error:"+err);
+    }
+  });
+
+  expect("unsubscribe" in observer).toBe(true);
+
+  startEmit && startEmit();
+
+  expect(out.join(",")).toBe("1,2,3,error:should fail at 3");
 
 }, 100);
