@@ -1455,33 +1455,33 @@ async function myFunction() {
 						<div class="center">
 							<img src="assets/img/observable-en.png" alt="Timeline of an observable" />
 						</div>
-						<p>Not yet standardized but easily implementable by yourself like Pub/Sub.</p>
+						<p>A <a href="https://github.com/tc39/proposal-observable" target="_blank">proposal</a> exist to standardize Observables, but it's still Stage 0 and has not been presented to TC39 yet. However, it's easily implementable by yourself like Pub/Sub.</p>
 						<p>This is one of the foundations of ReactiveX and reactive programming.</p>
 					</section>
 
 					<section>
 						<span class="ref">Exercise 14</span>
-						<h3>Observable: example of API</h3>
+						<h3>Observable: example of API (from <a href="https://rxjs.dev/guide/observable" target="_blank">RxJS</a>)</h3>
 						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
-const keyboardObservable = new Observable( ({ emit, complete }) => {
+const keyboardObservable = new Observable( subscriber => {
 	const onKey = event => {
 		if(event.key === "Enter") {
-			complete();
+			subscriber.complete();
 			document.removeEventListener("keyup", onKey)
 		}
-		else emit(event.key)
+		else subscriber.next(event.key)
 	}
 
 	document.addEventListener("keyup", onKey)
 });
 
 const keys = [];
-const keyboardObserver = keyboardObservable.subscribe({
-	onValue: key => {
-		if (key === "Escape") keyboardObserver.unsubscribe();
+const keyboardSubscription = keyboardObservable.subscribe({
+	next(key){
+		if (key === "Escape") keyboardSubscription.unsubscribe();
 		else keys.push(key)
 	},
-	onComplete: () => alert(keys.join(""))
+	complete(){ alert(keys.join("")) }
 });
 						</code></pre>
 					</section>
@@ -2027,7 +2027,7 @@ b2.speak();
 
 					<section class="left">
 						<div class="ref">Exercise 17</div>
-						<h3>Object patterns: exercise</h3>
+						<h3>Exercise: Relations between objects</h3>
 						<p>Let's practice on a project example: a web components library</p>
 						<p>Objects identified in the model:</p>
 						<ul>
@@ -2253,6 +2253,132 @@ new Proxy(obj, {
 						</ul>
 					</section>
 
+				</section>
+
+				<section>
+
+					<section>
+						<h2>Functional programming</h2>
+						<p>Exercices 20 to 22</p>
+					</section>
+
+					<section class="left">
+						<h3>General principles of Functional Programming</h3>
+						<ul>
+							<li>Decompose a problem into <b>atomic</b>, <b>generic</b> and <b>composable</b> functions</li>
+							<li>Favor <b>pure functions</b>, i.e. not using free variables and having no side effects</li>
+							<li>Avoid object <b>mutations</b></li>
+						</ul>
+						<p><span style="font-style: italic; text-decoration: underline;">Objectives:</span></p>
+						<ul>
+							<li>have a more predictable code</li>
+							<li>reduce developer mental load</li>
+							<li>reduce the number of bugs</li>
+							<li>eliminate dead code more easily</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Function patterns: Recursivity</h3>
+						<p>A <b>recursive</b> function invokes itself with other arguments until reaching a <b>stop condition</b>.</p>
+						<pre><code class="javascript hljs js" data-trim>
+							const factorial = n => n &gt; 2 ? 1 : n * factorial(n-1)
+
+							const flatten = ([x, ...xs]) => x === undefined 
+								? []
+								: [ ...(Array.isArray(x) ? flatten(x) : x), ...flatten(xs) ]
+						</code></pre>
+						<div class="note">
+							<p>A useful pattern but not the most readable and with the risk of an infinite loop.</p>
+							<p><u>Recommended:</u> use it only for minimalist functions, and explicit the recursivity with code comments</p>
+						</div>
+					</section>
+
+					<section>
+						<div class="ref">Exercise 20</div>
+						<h3>Chainable API</h3>
+						<p>A <b>chainable</b> method returns its own execution context (<code>return this</code>) or an object of the same type/prototype in order to be able to chain the calls to this method.</p>
+						<p><i>Example: <code>Array.prototype</code> chainable methods</i></p>
+						<pre><code class="javascript hljs js" data-trim>
+[1, 2, 3, 4]
+	.concat(5, 6, 7, 8)
+	.map(n => n**2 + 1)
+	.filter(isPrime)
+	.slice(0, 5)
+	.join(", ") + " are prime numbers"
+▸ "2, 5, 17, 37 are prime numbers"
+						</code></pre>
+						<p>Chainable API are convenient to use because they reduce sequences of instructions to a single expression.
+						 They made the success of famous JS libraries like <a href="https://jquery.com/" target="_blank">jQuery</a> or <a href="https://lodash.com/" target="_blank">lodash</a>.</p>
+					</section>
+
+					<section>
+						<div class="ref">Exercise 21</div>
+						<h3>Function composition</h3>
+						<p><b>Function composition</b> consists of creating a composed function that sequentially calls several other functions, each with the return value of the previous one:</p>
+						<p class="center" style="font-size: 150%"><code>compose(f,g,h)(x) ⇔ h(g(f(x)))</code></p>
+						<p>Function composition can be a relevant solution when:</p>
+						<ul>
+							<li>a function is too long or takes too many parameters</li>
+							<li>a variable is only used once for an intermediate calculation</li>
+							<li>the developer is tempted to copy-paste some code</li>
+						</ul>
+						<p>Compared to chainable API, function composition favors independent functions over methods, which avoids overloading objects with too many properties.</p>
+					</section>
+
+					<section>
+						<h3>Currying</h3>
+						<p style="font-style: italic; color: gray">From <a href="https://en.wikipedia.org/wiki/Haskell_Curry" target="_blank">Haskell Curry</a>, a mathematician who laid the foundations of functional programming.</p>
+						<p><b>Currying</b> means transforming a function that takes N arguments into a function taking the 1st argument only and returning another function taking the 2nd argument only, and so on until having collected the N arguments necessary to compute and return the final result:</p>
+						<p class="center" style="font-size: 150%"><code>f(a,b,c) ⇔ curry(f)(a)(b)(c)</code></p>
+						<p>Arrow functions make it easy to transform functions into curryied ones:</p>
+						<pre><code class="javascript hljs js" data-trim>
+							const sum = (a,b,c) => a + b + c
+							const sum = a => b => c => a + b + c // curryied version
+						</code></pre>
+						<br>
+						<p>A more flexible definition allows passing any number of arguments at each step:</p>
+						<p class="center"><code>curry(f)(a,b)(c) ⇔ curry(f)(a)(b,c) ⇔ curry(f)(a)(b)(c)</code></p>
+					</section>
+
+					<section>
+						<div class="ref">Exercise 22</div>
+						<h3>Currying: use cases</h3>
+						<p><b>Currying</b> is used to apply part of the arguments to decline a generic function into a more specialized version of it: this is called <b>partial application</b>.</p>						
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim>
+const sum = a => b => a + b
+const increment = sum(1);
+
+increment(42)
+▸ 43
+
+const replace = curry((before, after, str) => str.replace(before, after))
+const replaceSpacesBy = replace(/\s/g);
+const trim = replaceSpacesBy("")
+
+trim("     Hello !    ")
+▸ "Hello!"
+						</code></pre>
+						<br>
+						<p class="note">In practice, we often introduce currying in a codebase the opposite way:<br>
+						starting from a function doing some specific work, we rewrite it into a more generic version, then use partial application to get back to the original specific use case.</p>
+					</section>
+
+					<section>
+						<h3>Partial application with <code>fn.bind</code></h3>
+						<p>Partial application can also be done with the <code>bind</code> function in <code>Function.prototype</code>:</p>
+						<pre><code class="javascript hljs js" data-trim>
+const where = (field, condition, array) => array.filter(
+	row => condition(row[field])
+)
+
+const whereAgeIs = where.bind(null, "age")
+whereAgeIs(n => n > 10, data)
+
+const whereAgeIsOver18 = where.bind(null, "age", n => n > 18)
+whereAgeIsOver18(data)</code></pre>
+					</section>
+					
 				</section>
 
 		
