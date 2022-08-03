@@ -6,9 +6,6 @@ export function Observable(action) {
     },
     complete() {
       //TODO: notify subscribers of completion
-    },
-    error(err){
-      //TODO: send exceptions catched
     }
   })
 }
