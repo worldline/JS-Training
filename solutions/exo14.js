@@ -1,8 +1,8 @@
 export function Observable(setup) {
   this.observers = [];
   setup({
-    emit: data => this.observers.forEach(observer => observer.onValue(data)),
-    complete: () => this.observers.forEach(observer => observer.onComplete()),
+    next: data => this.observers.forEach(observer => observer.next(data)),
+    complete: () => this.observers.forEach(observer => observer.complete()),
   })
 }
 
