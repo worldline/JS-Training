@@ -1,5 +1,6 @@
 .arrow {
-    position: relative;
+    position: absolute;
+    z-index: 10;
 }
 
 .arrow.left:before {
@@ -19,7 +20,7 @@
     content: "";
     display: block;
     height: 16px;
-    width: 85px;
+    width: 91px;
     border-top: 3px solid white;
     padding: 3px;
     position: absolute;

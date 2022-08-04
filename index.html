@@ -36,11 +36,11 @@
 				<section class="small-list">
 					<ul>
 						<li>
-							This course is for developers who already have a beginner to an intermediate level in JavaScript and who 
+							This course is for developers who already have a beginner to intermediate level in JavaScript and who 
 							wish to deepen their knowledge of this language to better understand more ambitious JavaScript projects.
 						</li>
 						<li>
-							It is classified as advanced, which means that we will focus more on the technical points of the language 
+							It is classified as advanced, which means that we will focus more on some technical aspects of the language 
 							and on the study of some advanced programming patterns.
 						</li>
 						<li>
@@ -1829,10 +1829,9 @@ class User extends Person {
 const bill = new User("Bill", "Gates", "admin")
 							</code></pre>
 							<div class="left">
-								<div class="arrow left fragment" style="top: 34px; right: 80px">explicit <code>constructor</code> property</div>
-								<div class="arrow left fragment" style="top: 175px; right: 150px;">simplifies the assignation of the prototype</div>
-								<div class="arrow left fragment" style="top: 180px; right: 120px">simplifies the call to the prototype constructor</div>
-
+								<div class="arrow left fragment" style="top: 34px; right: 0px">explicit <code>constructor</code> property</div>
+								<div class="arrow left fragment" style="top: 206px; right: -50px;">simplifies the assignation of the prototype</div>
+								<div class="arrow left fragment" style="top: 242px; right: -120px">simplifies the call to the prototype constructor</div>
 							</div>
 						</div>
 					</section>
@@ -2378,9 +2377,228 @@ whereAgeIs(n => n > 10, data)
 const whereAgeIsOver18 = where.bind(null, "age", n => n > 18)
 whereAgeIsOver18(data)</code></pre>
 					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<p>How to refactor a code to obtain pure, atomic, generic and composable functions ?</p>
+						<p>Let's start from this code example:</p>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+let results = [];
+
+function printUsersOverAge18(){
+	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+	results = data.filter(user => user.age >= 18).slice(0, 5)
+
+	const output = results.map(user => user.firstName).join("\n")
+	document.querySelector("#results").textContent = output
+}
+							</code></pre>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div class="note"><b>Step 1: get rid of non-local variables</b><br>Pass non-local variables as function arguments. If they are reassigned, make them return values.</div>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+let results = [];
+
+function printUsersOverAge18(){
+	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+	results = data.filter(user => user.age >= 18).slice(0, 5)
+
+	const output = results.map(user => user.firstName).join("\n")
+	document.querySelector("#results").textContent = output
+}
+							</code></pre>
+							<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div class="note"><b>Step 2: take out the side effects</b><br>Replace mutations with equivalent immutable instructions when possible. Otherwise, try to isolate them.</div>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+
+function printUsersOverAge18(data){
+	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+	const results = data.filter(user => user.age >= 18).slice(0, 5)
+
+	const output = results.map(user => user.firstName).join("\n")
+	document.querySelector("#results").textContent = output
+
+	return results
+}
+
+const results = printUsersOverAge18(data)
+							</code></pre>
+							<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div class="note"><b>Step 3: decompose logic in pure, composable functions</b></div>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+
+function getUsersOverAge18(data){
+	const sortedData = [...data].sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+	const results = sortedData.filter(user => user.age >= 18).slice(0, 5)
+
+	const output = results.map(user => user.firstName).join("\n")
+	return { results, output }
+}
+
+const { results, output } = getUsersOverAge18(data)
+document.querySelector("#results").textContent = output
+							</code></pre>
+							<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div class="note"><b>Step 4: make functions generic</b><br>Pass any arbitrary value as parameter. Add arguments mapping functions if necessary.</div>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+import { compose } from "utils/functions.js";
+
+const sortByLastName = data => [...data].sort(
+								(a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+
+const filterAgeOver18 = data => data.filter(user => user.age >= 18)
+const takeFive = data => data.slice(0, 5)
+const getFirstNames = users => users.map(user => user.firstName)
+
+const getUsersOverAge18 = compose(sortByLastName, filterAgeOver18, takeFive)
+
+const results = getUsersOverAge18(data)
+const output = getFirstNames(results).join("\n")
+
+document.querySelector("#results").textContent = output
+							</code></pre>
+							<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div class="note"><b>Step 5: currying functions</b> to reduce the number of arguments and remove superfluous mapping functions</div>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+import { compose } from "utils/functions.js";
+
+const sortBy = (key, data) => [...data].sort((a,b) => a[key]] &lt; b[key] ? -1 : 1)
+const filterBy = (key, test, data) => data.filter(({ [key]: val }) => test(val))
+const take = (nb, data) => data.slice(0, nb)
+const mapToProp = (key, data) => data.map(({ [key]: val }) => val)
+
+const getUsersOverAge18 = compose(
+	data => sortBy("lastName", data),
+	data => filterBy("age", n => n >= 18, data),
+	data => take(5, data)
+);
+
+const results = getUsersOverAge18(data)
+const output = mapToProp("firstName", results).join("\n")
+document.querySelector("#results").textContent = output
+							</code></pre>
+							<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div class="note"><b>Step 6: reorganize your modules</b> ; check each decomposed function obtained to decide whether it should be in this file or moved somewhere else.</div>
+						<pre style="font-size: 75%"><code class="javascript hljs js" data-trim contenteditable="true">
+import data from "users.json"
+import { compose } from "utils/functions.js";
+
+const sortBy = key => data => [...data].sort((a,b) => a[key]] &lt; b[key] ? -1 : 1)
+const filterBy = key => test => data => data.filter(({ [key]: val }) => test(val))
+const take = nb => data => data.slice(0, nb)
+const mapToProp = key => data => data.map(({ [key]: val }) => val)
+
+const getUsersOverAge18 = compose(
+	sortBy("lastName"),
+	filterBy("age", n => n >= 18),
+	take(5)
+);
+
+const results = getUsersOverAge18(data)
+const output = mapToProp("firstName", results).join("\n")
+document.querySelector("#results").textContent = output
+							</code></pre>
+							<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>
+						<div style="position: relative">
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+/* BEFORE */
+import data from "users.json"
+let results = [];
+
+function printUsersOverAge18(){
+	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+	results = data.filter(user => user.age >= 18).slice(0, 5)
+
+	const output = results.map(user => user.firstName).join("\n")
+	document.querySelector("#results").textContent = output
+}
+						</code></pre>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+/* AFTER */
+import data from "users.json"
+import { compose } from "utils/functions.js";
+import { sortBy, filterBy, take, mapToProp } from "utils/array.js";
+
+const getUsersOverAge18 = compose(
+	sortBy("lastName"),
+	filterBy("age", n => n >= 18),
+	take(5)
+);
+
+const results = getUsersOverAge18(data)
+const output = mapToProp("firstName", results).join("\n")
+document.querySelector("#results").textContent = output
+</code></pre>
+						<div class="arrow left" style="top: 310px; left: 780px; background: black; padding: 0.5em; font-size: 80%; width: 12em; border: 3px solid white;">
+							what we get at the end: pure, atomic, generic and composable functions
+						</div>
+						</div>
+
+					</section>
+
+					<section>
+						<h3>Functional refactoring in practice</h3>						
+						<p>To refactor a code and obtain pure atomic generic and composable functions:</p>
+						<img src="./assets/img/cook.png" style="float: right; width: 200px" />
+						<ol>
+							<li><i class="grey">Collecting ingredients</i>
+								<br>Replace non-local variables with new arguments or return values
+							</li>
+							<li><i class="grey">Slicing</i>
+								<br>Extract and isolate side effects and mutations
+							</li>
+							<li><i class="grey">Combine ingredients</i>
+								<br>Compose into series of pure functions
+							</li>
+							<li>
+								<i class="grey">Boil and simmer</i>
+								<br>Extract arbitrary values to make it more generic
+							</li>
+							<li>
+								<i class="grey">Add the spices</i>
+								<br>Curry functions to reduce the arguments and simplify code
+							</li>
+							<li>
+								<i class="grey">Set the table</i>
+								<br>Reorganize your modules, externalize generic functions
+							</li>
+						</ol>
+						<div class="note">Over time, you will be able to make your own <b>functional toolbox</b>, a recipe book reusable in different projects.</div>
+					</section>
 					
 				</section>
-
 		
 			</div>
 		</div>
