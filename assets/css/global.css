@@ -1,7 +1,7 @@
 @import "reset.css";
 @import "reveal.css";
 @import "theme/black.css";
-@import "../plugin/highlight/monokai.Css";
+@import "../plugin/highlight/monokai.css";
 @import "internation.css";
 @import "braces.css";
 @import "arrows.css";
