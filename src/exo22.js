@@ -8,13 +8,12 @@ import {
 } from "./exo21";
 export { compose } from "./exo21";
 
-// TODO: implémenter la fonction curry
-// ASTUCE: fn.length retourne le nombre d'arguments dans la signature de la fonction
+// TODO: implement the curry function
+// HINT: fn.length returns the number of arguments in the function signature
 export const curry = (fn, ...savedArgs) => {
-    // si j'ai tous les arguments, j'invoque ma fonction fn avec ces arguments
+    // if I have all the arguments, call fn with these arguments
 
-    // sinon, je retourne une fonction qui prendra les paramètres restants
-    // ASTUCE: utiliser récursivement la fonction curry
+    // otherwise, return another function that will take the remaining arguments
 }
 
 export const where = curry(oldWhere)
@@ -22,7 +21,7 @@ export const orderBy = curry(oldOrderBy)
 export const take = curry(oldTake)
 export const map = curry(oldMap)
 
-// exemple d'utilisation
+// example:
 const query = compose(
     where("age")(n => n >= 18),
     orderBy("lastName"),

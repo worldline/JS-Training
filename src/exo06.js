@@ -1,18 +1,18 @@
 export function parseUserData(data) {
-  // Résoudre l'exercice en utilisant uniquement des opérateurs, pas de if()
+  // solve the exercise using only operators (no if() instructions)
 
   return {
-    // retourner data.name ou "Anonymous" si data.name est falsey
+    // return data.name or "Anonymous" if data.name is falsey
     name: data.name,
 
-    // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
+    // convert data.age into number, return 0 if not a number
     age: data.age,
 
-    // retourner true si data.rightId est égal à 0
+    // return true if data.rightId is equal to 0
     isAdmin: false,
 
-    // si data.friends est une Array, retourner sa longueur
-    // sinon retourner false
+    // if data.friends is an Array, return its length
+    // otherwise return false
     friends: 0
   };
 }

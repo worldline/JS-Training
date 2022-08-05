@@ -3,13 +3,13 @@ import data from "../__tests__/fakedata.json";
 export const query = array =>
   Object.assign(array, {
     where(key, condition) {
-      //TODO: filtrer les éléments selon une condition sur une propriété
+      //TODO: filtering elements based on a condition on the value of property `key`
     },
     orderBy(key) {
-      //TODO: trier les éléments selon une propriété
+      //TODO: sort elements based on the value of their property `key` sorted alphabetically
     },
     take(number) {
-      //TODO: retourner les N premiers éléments de la liste
+      //TODO: return the N first elements of the list
     }
   });
 

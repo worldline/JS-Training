@@ -1,13 +1,13 @@
 export function deduplicateArray(arr) {
-  // TODO: retirer les valeurs en double dans l'array et retourner l'array filtrée
-  // 1 - avec les méthodes filter et indexOf
-  // 2 - avec un Set et l'opérateur spread
+  // TODO: remove duplicate values in the array and return the filtered array
+  // 1 - with filter and indexOf methods
+  // 2 - with a Set and spread operator
   return arr;
 }
 
 export function getPropertyFromValue(obj, val) {
-  // TODO: retourner la clé de la propriété de obj ayant comme valeur val
-  // 1 - avec les méthodes find et Object.keys
-  // 2 - avec une Map et Object.entries
+  // TODO: return the name of the first property of `obj` with value `val`, or null if not found
+  // 1 - with find and Object.keys methods
+  // 2 - with a Map and Object.entries
   return null;
 }
