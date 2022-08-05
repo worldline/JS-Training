@@ -13,5 +13,5 @@ Reveal.initialize({
       },
     }
   },
-  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, Internation ]
+  plugins: [ RevealHighlight, RevealNotes, Internation ]
 })
