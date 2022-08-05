@@ -1,0 +1,143 @@
+@import "reset.css";
+@import "reveal.css";
+@import "theme/black.css";
+@import "../plugin/highlight/monokai.Css";
+@import "internation.css";
+@import "braces.css";
+@import "arrows.css";
+
+::selection {
+  background-color: blue !important;
+}
+
+.blue {
+  color: #42affa;
+}
+
+.red {
+  color: #e96767;
+}
+
+.green {
+  color: #00B050;
+}
+
+.grey {
+  color: #979797;
+}
+
+img {
+  border-radius: .5rem;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.clear {
+  clear: both;
+}
+
+ul.left,
+ul.right {
+  display: block;
+}
+
+ul.narrow li {
+  margin-bottom: 0.25em;
+}
+
+.flex-slide,
+.flex-center {
+  display: flex;
+  justify-content: space-between;
+  gap: .5rem;
+  text-align: left;
+}
+
+.flex-center {
+  align-items: center;
+}
+
+.logo {
+  height: 180px; 
+  margin: 0 auto 4rem auto; 
+  background: transparent;
+}
+
+.agenda {
+  width: 100%;
+}
+.agenda h4 {
+  font-size: .6em;
+}
+
+.agenda ul {
+  font-size: 15px;
+}
+
+.note {
+  display: inline-block;
+  margin: 1em auto;
+  padding: .5em 1em;
+  background-color: #79463D;
+  border: 2px solid #613831;
+  font-size: 1.1rem;
+  border-radius: .25rem;
+}
+
+.note.info {
+  background-color: #393993;
+  border-color: #4949A3;
+}
+
+.note.warning {
+  background-color: #884b00;
+  border-color: #985b10;
+}
+
+code, .monospace {
+  font-family: monospace;
+}
+
+.ref {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #296f9d;
+  color: white;
+  font-size: 1.5rem;
+  padding: .25em .5em;
+  border-radius: .25rem;
+  box-shadow: 0px 5px 15px rgb(0 0 0 / 15%);
+}
+
+.quizz pre {
+  margin: 0 auto;
+}
+
+.reveal li img {
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.cols-2 {
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 1em;
+}
+
+.chapter-title {
+  width: fit-content;
+  font-weight: bold;
+  border-bottom: 3px solid #F0DB4F;
+}

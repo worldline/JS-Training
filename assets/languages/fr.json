@@ -1,0 +1,10 @@
+{
+  "slides": {
+     "intro":{
+        "title":"JavaScript avancé"
+     }
+  },
+  "menubar": {
+      "chooselanguage": "Langue"
+  }
+}

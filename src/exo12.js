@@ -4,16 +4,16 @@ export function createPubSub() {
   }
 
   pubsub.on = function(event, callback) {
-    // TODO: enregistrer le callback à déclencher suite à l'événement `event`
+    // TODO: register the callback to trigger when `event` happens
   };
 
   pubsub.emit = function(event, data) {
-    // TODO: appeler les callbacks enregistrés pour l'événement `event`
+    // TODO: call the callbacks registered for `event`
   };
 
   return pubsub
 }
 
-// Pour aller plus loin:
-// - méthode off(event, callback) pour retirer une souscription
-// - on('*') pour réagir à tous les événements
+// To go further:
+// - add a method off(event, callback) to remove a subscription
+// - on('*') to react to all events

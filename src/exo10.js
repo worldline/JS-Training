@@ -1,6 +1,6 @@
 export function i18n(strings, ...vars) {
-  // utilitaire basique d'internationalisation
-  // TODO: remplacer chaque fragment de texte avec i18n.translate
+  // basic localization utility
+  // TODO: replace each text fragment with its translation below, do not touch interpolated values
   return;
 }
 

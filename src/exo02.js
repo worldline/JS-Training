@@ -1,14 +1,14 @@
-// retourne true si l'objet a une propriété ayant comme clé key
+// return true if object `obj` has a property `key`
 export function hasProperty(obj, key) {
   return true;
 }
 
-// retourne true si l'objet a une propriété ayant comme valeur value
+// return true if object has some property with value `value`
 export function hasPropertyValue(obj, value) {
   return true;
 }
 
-// retourne le nombre de propriétés d'un objet (note: sans compter les propriétés déléguées)
+// return the number of properties of the object (without delegated properties)
 export function getNumberOfProperties(obj) {
   return 0;
 }

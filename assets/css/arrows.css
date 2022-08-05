@@ -1,0 +1,29 @@
+.arrow {
+    position: absolute;
+    z-index: 10;
+}
+
+.arrow.left:before {
+    content: "";
+    display: block;
+    height: 10px;
+    width: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(135deg);
+    position: absolute;
+    top: 0.5em;
+    left: -100px;
+}
+
+.arrow.left:after {
+    content: "";
+    display: block;
+    height: 16px;
+    width: 91px;
+    border-top: 3px solid white;
+    padding: 3px;
+    position: absolute;
+    top: calc(0.5em + 5px);
+    left: -100px;
+}

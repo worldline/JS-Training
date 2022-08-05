@@ -1,62 +1,30 @@
 import { parseUserData } from "../src/exo06";
 
 const a = parseUserData({
-  // retourner data.name ou "Anonymous" si data.name est falsey
   name: "Luke",
-
-  // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
   age: 28,
-
-  // retourner true si data.rightId est égal à 0
   rightId: 0,
-
-  // si data.friends est une Array, retourner sa longueur
-  // sinon retourner false
   friends: ["joe", "jack", "averell"]
 });
 
 const b = parseUserData({
-  // retourner data.name ou "Anonymous" si data.name est falsey
   name: "",
-
-  // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
   age: "",
-
-  // retourner true si data.rightId est égal à 0
   rightId: false,
-
-  // si data.friends est une Array, retourner sa longueur
-  // sinon retourner false
   friends: "none"
 });
 
 const c = parseUserData({
-  // retourner data.name ou "Anonymous" si data.name est falsey
   name: null,
-
-  // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
   age: "12",
-
-  // retourner true si data.rightId est égal à 0
   rightId: null,
-
-  // si data.friends est une Array, retourner sa longueur
-  // sinon retourner false
   friends: []
 });
 
 const d = parseUserData({
-  // retourner data.name ou "Anonymous" si data.name est falsey
   name: null,
-
-  // convertir data.age en nombre, retourner 0 si ce n'est pas un nombre
   age: null,
-
-  // retourner true si data.rightId est égal à 0
   rightId: null,
-
-  // si data.friends est une Array, retourner sa longueur
-  // sinon retourner false
   friends: null
 });
 

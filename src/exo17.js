@@ -46,7 +46,7 @@ const Button = {
   render() {
     super.render();
     this.elm.textContent = this.text;
-    // TODO: écouter les événements clic et focus
+    // TODO: listen for click and focus events
     return this.elm;
   }
 };
@@ -57,7 +57,7 @@ const Input = {
   render() {
     super.render();
     this.elm.value = this.value;
-    // TODO: écouter les événements keyup et focus
+    // TODO: listen for focus and keyup events
     return this.elm;
   }
 };
@@ -69,11 +69,12 @@ const TextInput = {
   }
 };
 
-//TODO: établir et coder les relations entre les différents objets: délégation, composition ou encapsulation
+//TODO: define and implement the relations between all these objects:
+// delegation, composition or encapsulation ?
 
 /**
- * Exemple d'utilisation
- * Décommenter la partie Exo 17 dans index.html pour tester le fonctionnel attendu
+ * Example of use
+ * Open exo17.html in Browser view to test
  */
 
 let text = Object.create(TextInput);

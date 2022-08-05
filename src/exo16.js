@@ -1,5 +1,5 @@
 export function Person(first, name) {
-  // TODO: assigner first et name comme propriétés propres
+  // TODO: assign first and name as own properties
 }
 
 Object.assign(Person.prototype, {
@@ -11,11 +11,11 @@ Object.assign(Person.prototype, {
 });
 
 export function User(first, name, rights) {
-  // TODO: appeler le constructeur Person avec le bon contexte d'éxécution
-  // TODO: assigner rights comme propriété propre
+  // TODO: call Person constructor with the right context
+  // TODO: assign rights as own property
 }
 
-// TODO: définir Person.prototype comme prototype de User.prototype
+// TODO: set Person.prototype as prototype of User.prototype
 
 Object.assign(User.prototype, {
   rights: [],
