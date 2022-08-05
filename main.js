@@ -1,4 +1,4 @@
-import Reveal from 'reveal.js'
+import Reveal from './assets/lib/reveal.esm.js'
 
 Reveal.initialize({  
   history: true,
