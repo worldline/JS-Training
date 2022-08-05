@@ -512,7 +512,8 @@
 						<h3>var, let or const?</h3>
 						<ul>
 							<li><b class="monospace">let</b> and <b class="monospace">const</b> appeared with ES2015</li>
-							<li><b class="monospace">var</b> is no longer in use since</li>
+							<li>they bind variables to <b>block scope</b> and not function scope like <code>var</code>, which is much more intuitive</li>
+							<li><b class="monospace">const</b> is no longer used since</li>
 						</ul>
 						<div class="flex-slide">
 							<img height="250" src="./assets/img/Image11.png">
@@ -525,22 +526,21 @@
 								</tbody>
 							</table>
 						</div>
-						<aside class="note info"><u>Recommended:</u> Use <b class="monospace">const</b>, or <b class="monospace">let</b> if you need to reassign</aside>
+						<aside class="note info"><span style="text-decoration: underline">Recommended:</span> Use <code>const</code>, or <code>let</code> if you need to reassign</aside>
 					</section>
 					<section>
 						<h3>Closures</h3>
-						<p>Scope of a function = local scope + parent scope = local variables + free variables</p>
+						<p>Scope of a function = local scope + parent scope = local variables + non-local variables</p>
 						<p>
-							A function using <b>free variables</b> (defined in a parent scope) creates what is called a <b>closure</b>. 
+							A function using <b>non-local variables</b> (defined in a parent scope) creates what is called a <b>closure</b>. 
 							A closure must remember its parent scope in order to execute correctly.
 						</p>
-						<div class="flex-center">
-							<aside class="note">
-								<b class="monospace">add5</b> <em>retains its parent scope with x=5</em><br><br>
-								<em>This link prevents the garbage collector from dereferencing the local variable x at the end of the add</em>
-								<br><br>
-								<b class="monospace">add5</b> <em>creates a closure</em>
-							</aside>
+						<div class="cols-2">
+							<div class="note info" style="font-size: 100%; font-style: italic">
+								<p><b class="monospace">add5</b> retains its parent scope with <code>x=5</code></p>
+								<p>This link prevents the garbage collector from dereferencing the local variable x at the end of the <b class="monospace">add</b> function</p>
+								<p><b class="monospace">add5</b> creates a <b>closure</b></p>
+							</div>
 							<pre><code class="javascript hljs" data-trim>
 								function add(x) {
 									return function(y) {
@@ -558,14 +558,13 @@
 						</aside>
 					</section>
 					<section>
-						<h3>Using closures</h3>
-						<p>"Private" variables</p>
+						<h3>Using closures to make "private" variables</h3>
 						<pre><code lass="javascript hljs" data-trim>
 							function getCounter() {
 								let value = 0;
 								return {
 									getValue(){ return value },
-									increment() { value += 1}
+									increment() { value += 1 }
 								}
 							}
 						</code></pre>
@@ -588,16 +587,16 @@
 						</code></pre>
 						<aside class="note">
 							Note that closures retain a reference to the parent scope,<br> 
-							and therefore access free variables by <b>reference</b>, not by value. <br>
+							and therefore access non-local variables by <b>reference</b>, not by value. <br>
 							<br>
-							The value of the free variables can therefore vary with respect to the time of instantiation of the function.
+							The value of the non-local variables can therefore vary depending on when the function is called.
 						</aside>
 					</section>
-					<section>
+					<section class="left">
 						<h3>Functions and execution context</h3>
 						<p>
-							Functions have a "hidden argument" called <b>context</b> and assigned to the keyword <b class="monospace">this</b>. When the function 
-							is called as a property (<b>method</b>) of an object, that object is assigned as execution context:
+							Functions have some kind of hidden argument called <b>context</b> and assigned to the keyword <b class="monospace">this</b> inside the function body.</p>
+							<p>When a function is called as a property of an object, we call it a <b>method</b> and that parent object is assigned as execution context of the method:
 						</p>
 						<pre><code class="javascript hljs" data-trim>
 							const obj = {
@@ -609,7 +608,7 @@
 						</code></pre>
 						<p>
 							When a function is called by direct reference, it has no context, which means the <code>this</code> variable will be looked up in parent scope.</p>
-						<p>At the <b>root scope</b>, the context is defined as the <b>global context</b> (<span class="monospace">Window</span> on browser)</p>
+						<p>At the <b>root scope</b>, the context is defined as the <b>global context</b> (<code>Window</code> on browser)</p>
 						<img height="80" src="./assets/img/Image12.png">
 					</section>
 					<section>
@@ -637,9 +636,10 @@
 							greetBob()
 							▸ "Hi I'm Bob ! 1 + 5 equals 6 !"
 						</code></pre>
+						<p>These methods are available on all functions.</p>
 					</section>
 					<section>
-						<h3>Primitives and object equivalents</h3>
+						<h3>Primitives wrappers</h3>
 						<p>
 							<span class="monospace">String()</span>, <span class="monospace">Number()</span>, 
 							<span class="monospace">Boolean()</span> are the object equivalent constructors of the corresponding 
@@ -658,7 +658,7 @@
 							</div>
 							<div style="flex-basis: 100%;">
 								<p class="center">Object -> Primitive</p>
-								<pre style="font-size: 60%"><code class="javascript hljs" data-trim>
+								<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
 									let Str = new String( "abc" ),
 											str = Str.valueOf() // ou "" + Str
 									let N = new Number( 42 ),
@@ -675,7 +675,7 @@
 					</section>
 					<section>
 						<h3>Type conversions (cast)</h3>
-						<p>There are 3 types of implicit conversions in JS:</p>
+						<p>There are 3 types of automatic type conversions in JS:</p>
 						<table class="slide-array" style="width: 80%">
 							<thead><tr><th></th><th>Explicit cast</th><th>Implicit cast</th><th>Cast operators</th></tr></thead>
 							<tbody>
@@ -723,7 +723,7 @@
 								</tr>
 							</tbody>
 						</table>
-						<aside class="note info">Recommended: cast explicitly and as soon as possible</aside>
+						<aside class="note info"><span style="font-weight: bold; text-decoration: underline">Recommended</span>: cast explicitly and as soon as possible</aside>
 					</section>
 					<section>
 						<h3>== or === ?</h3>
@@ -732,10 +732,10 @@
 							=== strict equality (without conversion)
 						</p>
 						<img height="250" src="./assets/img/Image13.png">
-						<aside class="note info">
-							The rules for conversion with weak equality are complex. <br /> 
+						<div class="note info">
+							The rules for conversion with weak equality are <a href="https://eqeq.js.org/" target="_blank">very complex</a>. <br /> 
 							It's recommended to use strict equality, which is more predictable.
-						</aside>
+						</div>
 					</section>
 					<section class="quizz">
 						<span class="ref">Quiz</span>
@@ -869,7 +869,7 @@
 							<li>Cannot be invoked as builders</li>
 						</ul>
 						<p>Short and effective, they encourage a functional, no-frills style <em>(no closure)</em>.</p>
-						<aside class="note info">Recommended for all non-method functions</aside>
+						<div class="note info">Arrow functions are recommended for all non-method functions</div>
 					</section>
 					<section>
 						<h3>Default parameters</h3>
@@ -1002,10 +1002,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<h3>Object set in argument pattern</h3>
-						<ul>
-							<li>Object set with destructuring and default values:</li>
-						</ul>
+						<h3>Parameterized object argument pattern</h3>
+						<p>Instead of passing several arguments to functions, a popular pattern is to pass an object as single argument with the different parameters as properties:</p>
 						<pre><code class="javascript hljs" data-trim>
 							const searchProducts = ({
 								minPrice = 0,
@@ -1020,30 +1018,35 @@
 						</code></pre>
 
 						<p>Receiving and returning a single object is very useful:</p>
-						<ul>
+						<ul class="narrow">
 							<li>no need to remember the order of the arguments</li>
 							<li>each parameter can be optional</li>
 							<li>we limit the quantity of variables to be passed from one point to another</li>
 							<li>allows you to return several variables</li>
 						</ul>
 					</section>
-					<section class="left">
+					<section>
 						<h3>Template strings</h3>
-						<p>New form of String literal declaration in ES6, using the backtick ` ` character (AltGr+7)</p>
-						<p>Allows:</p>
+						<p>Template Strings are a new literal String declaration introduced in ES2015.</p>
+						<p>It uses the backtick <code>` `</code> character.</p>
+						
 						<div class="flex-center">
-							<ul>
-								<li>interpolation of variables and expressions</li>
-								<li>line breaks</li>
-							</ul>
+							<div>
+								<p>This new literal declaration allows:</p>
+								<ul>
+									<li>interpolation of variables and expressions</li>
+									<li>line breaks</li>
+								</ul>
+							</div>
+							
 							<img height="100" src="./assets/img/Image15.png">
 						</div>
-						<aside class="note info">Recommended: use template strings for all non-trivial strings</aside>
+						<div class="note info"><span style="text-decoration: underline; font-weight: bold">Recommended</span>: use template strings for all non-trivial strings</div>
 					</section>
 					<section>
 						<span class="ref">Exercise 10</span>
 						<h3>Tagged Template strings</h3>
-						<p>If a function reference precedes a template string, that function is invoked with the static and dynamic parts of the string:</p>
+						<p>If a function reference precedes a template string literal, that function is invoked with the static and dynamic parts of the following string:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function insertInUpperCase(string, ...vars) {
 								console.log({ strings, vars });
@@ -1053,18 +1056,18 @@
 								)
 							}
 						</code></pre>
-						<img height="150" src="./assets/img/Image16.png">
-						<img height="150" src="./assets/img/Image17.png">
+						<img height="200" src="./assets/img/Image16.png">
+						<img height="200" src="./assets/img/Image17.png">
 					</section>
 					<section class="left">
 						<span class="ref">Exercise 11</span>
 						<h3>Map & Set</h3>
 						<ul>
-							<li>Map: collection of keys/values like objects, but the keys can be of any type</li>
-							<li>Set: collection of values without keys, guarantee of uniqueness</li>
+							<li><code>Map</code>: collection of keys/values like objects, but the keys can be of any type</li>
+							<li><code>Set</code>: collection of values without keys, not ordered but with guarantee of uniqueness</li>
 						</ul>
-						<div class="flex-center">
-							<pre><code class="javascript hljs" data-trim>
+						<div class="cols-2">
+							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 								s = new Set([1,2,3,2,4])
 								▸ Set(4) {1,2,3,4}
 
@@ -1075,7 +1078,7 @@
 								s.has(4)
 								▸ true
 							</code></pre>
-							<pre><code class="javascript hljs" data-trim>
+							<pre style="font-size: 70%"><code class="javascript hljs" data-trim>
 								m = new Map([
 									["key", "value"], [ s, s.size ]
 								])
@@ -1097,7 +1100,7 @@
 						<p><b><u>Replaces and supersedes:</u></b></p>
 						<ul>
 							<li>
-								CommonJS (used in particular by Node)
+								CommonJS (used by Node.js)
 								<pre><code class="javascript hljs" data-trim>const $ = require('jquery')</code></pre>
 							</li>
 							<li>
@@ -1175,25 +1178,22 @@
 					</section>
 					<section>
 						<h3>Modules: what about support?</h3>
-						<p>
-							Average support (~93%) in 2021: Chrome 61, Edge 16, Firefox 60
-							But developers use them widely in their codebases with bundlers like Webpack, Parcel, Rollup, esbuild...
-						</p>
+						<p><a href="https://caniuse.com/es6-module" target="_blank">Good support</a> (~95%) in 2022: Chrome 61+, Edge 16+, Firefox 60+</p>
+						<p>But developers use ESM widely in their codebases that are converted to AMD-like bundles by bundlers like Webpack, Parcel, Rollup, esbuild...</p>
 						<img height="200" src="./assets/img/Image19.png">
-						<p>Bundlers preempt the browser's work by producing optimised JS bundles from a set of modules.</p>
+						<p>Bundlers are tools that precompile your code and reduce the browser's work by producing optimized JS bundles from a set of modules during a build step.</p>
 					</section>
 					<section>
 						<h3>Modules: script nomodule</h3>
 						<p>
-							Browsers that do not support modules can load an alternative script 
-							with the attribute <span class="monospace">nomodule</span>
+							Browsers that do not support modules won't load <code>&lt;script type="module"></code>
+							<br>but they can load an alternative script with the <code>nomodule</code> attribute.
 						</p>
 						<img height="125" src="./assets/img/Image20.png">
 						<p>
-							Bundlers can take advantage of this attribute to produce two bundles, a "modern" and a "legacy" 
-							bundle with more transpiled code. <br>
-							The "modern" bundle will be lighter and more efficient.
-						</p>
+							Bundlers can take advantage of this attribute to produce <b>two bundles</b>:<br>
+							 a <span class="green">modern</span> bundle, and a <span class="blue">legacy</span> bundle with more transpiled code.</p>
+						<p>The modern bundle will be lighter and more efficient, so that support for older browsers does not degrade performance for the modern browsers used by the majority of users.</p>						
 					</section>
 					<section class="left">
 						<h3>Modules : recommandations</h3>
@@ -1202,7 +1202,7 @@
 						<div class="flex-center">
 							<ul>
 								<li>Parcel: for simplicity and speed of implementation</li>
-								<li>Webpack: for complex web applications</li>
+								<li>Webpack: for complex web applications with advanced needs</li>
 								<li>Rollup: for JS libraries</li>
 							</ul>
 							<img height="100" src="./assets/img/Image22.png" alt="">
@@ -1245,7 +1245,7 @@
 					</section>
 
 					<section class="left">
-						<span class="ref">Exercise 14</span>
+						<span class="ref">Exercise 12</span>
 						<h3>Publisher/Subscriber</h3>
 						<p>This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
 						<p><code>element.addEventListener</code> is an example of pub/sub.</p>
@@ -1800,7 +1800,7 @@ console.log(5)
 
 					<section>
 						<h3>The <code>class</code> operator (ES2015)</h3>
-						<p>Syntaxic sugar for declaring objects with constructors</p>
+						<p>Syntaxic sugar for declaring a prototype with a constructor</p>
 						<div style="position: relative; display: flex;">
 							<pre style="font-size: 60%; width: 50%;"><code class="javascript hljs js" data-trim>
 class Person {
@@ -2264,7 +2264,7 @@ new Proxy(obj, {
 						<h3>General principles of Functional Programming</h3>
 						<ul>
 							<li>Decompose a problem into <b>atomic</b>, <b>generic</b> and <b>composable</b> functions</li>
-							<li>Favor <b>pure functions</b>, i.e. not using free variables and having no side effects</li>
+							<li>Favor <b>pure functions</b>, i.e. not using non-local variables and having no side effects</li>
 							<li>Avoid object <b>mutations</b></li>
 						</ul>
 						<p><span style="font-style: italic; text-decoration: underline;">Objectives:</span></p>
@@ -2598,6 +2598,197 @@ document.querySelector("#results").textContent = output
 					</section>
 					
 				</section>
+
+				<section>
+					<section>
+						<h2>Beyond JavaScript</h2>
+						<p>Transpilers and JavaScript supersets</p>
+					</section>
+
+					<section>
+						<h3>Babel transpiler</h3>
+						<ul>
+							<li><b>Transpiler</b> = source-to-source compiler operating on the same language, or two languages with the same level of abstraction</li>
+							<li><img src="./assets/img/babel-logo.png" alt="Babel logo" style="float: right; margin: 0 0 1em 1em">
+								Babel is the most popular JS transpiler. It was initially called 6to5 because it converted ES6 to ES5 to get broader browser support (Internet Explorer in particular)</li>
+							<li style="clear: both">Example of ES2021 → ES5 transpilation:
+								<div class="cols-2">
+									<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+[1, 2, 3].map(n => n ** 2);
+
+var [a,,b] = [1, 2, 3]
+									</code></pre>
+									<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+[1, 2, 3].map(function(n){
+	return Math.pow(n, 2)
+});
+
+var _ref = [1, 2, 3],
+	a = _ref[0],
+	b = _ref[2]
+									</code></pre>
+								</div>
+							</li>
+							<li>A Babel plugin exists for almost each TC39 proposal, to experiment new proposals</li>
+							<li>Presets of Babel plugins exist for each major version of ECMAScript</li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>@babel/preset-env</h3>
+						<ul>
+							<li>Since <a href="https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know/" target="_blank">Internet Explorer has retired</a> and is no longer supported by Microsoft, we got in the evergreen era of web browsers, which make most of Babel transformations no longer required.</li>
+							<li>A new Babel preset has been created to reduce the amount of Babel transformations to just what you need based on the <a href="https://browserslist.dev/" target="_blank">list of browsers you want to support</a>.</li>							
+						</ul>
+
+						<p><i>package.json:</i>
+							<pre><code class="json hljs" data-trim>
+								"browserslist": "> 1%; not dead"
+							</code></pre>
+						</p>
+						<p style="text-decoration: underline;">Examples of browserslist queries:</p>
+						<ul>
+							<li><code>ie 6-8, Firefox >= 30, last 5 Chrome versions</code></li>
+							<li><code>cover 95% in US, cover 99% in my stats</code></li>
+							<li><code>extends browserslist-config-worldline</code></li>
+							<li><code>defaults</code> : <span style="color: gray"> 0.5%, last 2 versions, Firefox ESR, not dead</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>To transpile or not to transpile ?</h3>
+						<p class="clear left">
+							<img src="./assets/img/thumb-up.png" alt="Pro" style="float: left; margin-right: 1em">
+							Transpilation allows the developer to not think about the majority of browser support issues. It is no longer needed to remember which JS feature comes from which version and is supported in which browser.
+						</p>
+						<p class="clear left">
+							<img src="./assets/img/thumb-down.png" alt="Con" style="float: left; margin-right: 1em">
+							Transpilation introduces a compilation step, many new dependencies, some risk factors, and a loss of proximity between the code the developer writes and the code that is actually run in production.
+						</p>
+						<div class="note">
+							<p style="text-decoration: underline; font-weight: bold;">Recommended:</p>
+							<ul class="narrow">
+								<li>Transpile to a minimum in development mode</li>
+								<li>Use preset-env to reduce the amount of transpilation</li>
+								<li>Integrate transpilation with other existing build processes (linters, bundlers, minification...)</li>
+								<li>Use source maps with your debugging tools</li>
+							</ul>
+							<p>Fortunately, most of the frameworks build tooling is preconfigured like that !</p>
+						</div>
+					</section>
+
+					<section>
+						<h3>TypeScript</h3>
+
+						<ul>
+							<li>
+								<img src="./assets/img/ts-logo.png" alt="TypeScript logo" style="float: right; margin: 0 0 1em 1em">
+								TypeScript is a superset of JavaScript developed by Microsoft and published in 2012</li>
+							<li>It has an official transpiler, <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">tsc</a>, but many other alternative transpilers exist: <a href="https://esbuild.github.io/" target="_blank">esbuild</a>, <a href="https://bun.sh/" target="_blank">bun</a>, even a Babel preset.</li>
+							<li>The key-feature of TypeScript is the <b>static optionnal typing annotations</b></li>
+							<li>Other cool features: interfaces, decorators, enums, abstract classes</li>
+							<li>Gradually adoptable: with type definitions (<code>*.d.ts</code> files), TypeScript can catch mistakes even without any TS-specific syntax.</li>
+							<li>Try it online on this <a href="https://www.typescriptlang.org/play" target="_blank">playground</a></li>
+						</ul>
+						<div class="note">
+							In 10 years, TypeScript popularity has continuously grown. In 2022, it it a major part of the front-end ecosystem.<br/>
+							It is supported in all major web frameworks and improves both the developer experience and the code reliability, especially for medium-to-large apps.
+						</div>
+
+					</section>
+
+					<section>
+						<h3>JSX</h3>
+						<ul>
+							<li>
+								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right; margin: 0 0 1em 1em">
+								JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></li>
+							<li>JSX is now supported by other frameworks than React, such as Vue.js or Preact</li>
+							<li>JSX is an abstraction for <b>manipulating virtual DOM elements</b>, which is usually done with templates and a custom templating syntax in other frameworks.</li>
+						</ul>
+						<img src="./assets/img/jsx-example.png" alt="JSX example code">
+						<div class="note">
+							JSX's popularity is stagnant and the language is still debated in the JS community, especially because of HTML vs. JS keyword conflicts ; for example, the "class" HTML attribute in JSX must be rewritten "className" to avoid clashing with the <code>class</code> operator in JavaScript.
+						</div>
+					</section>
+
+				</section>
+
+				<section class="agenda">
+					<h2>Retrospective</h2>
+					<div class="flex-slide">
+						<div style="flex-basis: 100%;">
+							<p class="chapter-title">Introduction</p>
+							<ul>
+								<li>ECMAScript, TC39 and versions of JavaScript</li>
+							</ul>
+	
+							<p class="chapter-title">A reintroduction to JavaScript</p>
+							<ul>
+								<li>Primitives and Objects</li>
+								<li>Property descriptors</li>
+								<li>Scopes and Closures</li>
+								<li>Functions and contexts</li>
+								<li>Implicit casts</li>
+							</ul>
+						</div>
+
+						<div style="flex-basis: 100%;">
+							<p class="chapter-title">Modern JS: ES2015+</p>
+							<ul>
+								<li>Arrow functions</li>
+								<li>Default parameters</li>
+								<li>Spread / Rest</li>
+								<li>Destructuring</li>
+								<li>Template literals</li>
+								<li>Map and Sets</li>
+								<li>Modules</li>
+							</ul>
+	
+							<p class="chapter-title">Managing asynchronicity</p>
+							<ul>
+								<li>Asynchronicity, what is it?</li>
+								<li>Callbacks and Pub/Sub</li>
+								<li>Promises</li>
+								<li>async / await</li>
+								<li>Observables</li>
+							</ul>
+						</div>
+
+						<div style="flex-basis: 100%;">
+							<p class="chapter-title">Object oriented</p>
+							<ul>
+								<li>Prototypes and delegation</li>
+								<li>class / super / extends</li>
+								<li>Composition of objects</li>
+								<li>Symbols, iterables and generators</li>
+								<li>Proxies</li>
+							</ul>
+	
+							<p class="chapter-title">Functional programming</p>
+							<ul>
+								<li>Recursivity</li>
+								<li>Chainable APIs</li>
+								<li>Function Composition</li>
+								<li>Currying</li>
+							</ul>
+
+							<p class="chapter-title">Transpilers</p>
+							<ul>
+								<li>Babel</li>
+								<li>TypeScript, JSX</li>
+							</ul>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
+					<h1 data-i18n="title">JavaScript Training</h1>
+					<p>End of training, congratulations !</p>
+				</section>
+
+
 		
 			</div>
 		</div>

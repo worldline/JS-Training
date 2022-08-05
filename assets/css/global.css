@@ -42,6 +42,10 @@ img {
   text-align: right;
 }
 
+.clear {
+  clear: both;
+}
+
 ul.left,
 ul.right {
   display: block;
@@ -100,7 +104,7 @@ ul.narrow li {
   border-color: #985b10;
 }
 
-.monospace {
+code, .monospace {
   font-family: monospace;
 }
 
