@@ -1,15 +1,15 @@
 import { Observable } from "../src/exo14";
 
-it("Observable", () => {
+it("Observable next & complete", () => {
   const out = [];
   let startEmit;
 
-  const observable = new Observable(({ emit, complete }) => {
+  const observable = new Observable(subscriber => {
     let i = 0;
     const next = () => {
-      emit(++i);
+      subscriber.next(++i);
       if (i >= 5) {
-        complete();
+        subscriber.complete();
       } else {
         next()
       }
@@ -21,19 +21,19 @@ it("Observable", () => {
   expect("subscribe" in observable).toBe(true);
 
   observable.subscribe({
-    onValue(i) {
+    next(i) {
       out.push(i);
     },
-    onComplete() {
+    complete() {
       out.push("complete");
     }
   });
 
   observable.subscribe({
-    onValue(i) {
+    next(i) {
       out.push(i * 2);
     },
-    onComplete() {
+    complete() {
       out.push("complete2");
     }
   });
@@ -48,12 +48,12 @@ it("Observer unsubscribe", () => {
   const out = [];
   let startEmit;
 
-  const observable = new Observable(({ emit, complete }) => {
+  const observable = new Observable(subscriber => {
     let i = 0;
     const next = () => {
-      emit(++i);
+      subscriber.next(++i);
       if (i >= 5) {
-        complete();
+        subscriber.complete();
       } else {
         next();
       }
@@ -63,11 +63,11 @@ it("Observer unsubscribe", () => {
   });
 
   const observer = observable.subscribe({
-    onValue(i) {
+    next(i) {
       out.push(i);
       if (i >= 3) observer.unsubscribe();
     },
-    onComplete() {
+    complete() {
       out.push("complete");
     }
   });
