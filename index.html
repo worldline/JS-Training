@@ -1214,7 +1214,6 @@
 						<h2>Deal with Asynchrony</h2>
 						<p>Exercises 12 to 14</p>
 					</section>
-
 					<section class="left">
 						<h3>What is Asynchronism ?</h3>
 						<p>JavaScript is executed in an <b>mono-thread environment</b> (the engine only runs one instruction at a time).</p>
@@ -1230,7 +1229,6 @@
 							console.log("hello !")
 						</code></pre>
 					</section>
-
 					<section class="left">
 						<h3>Callbacks</h3>
 						<p>The most common interface for asynchronous instructions is the <b>callback function</b>.</p>
@@ -1243,7 +1241,6 @@
 							element.addEventListener('click', callback);
 						</code></pre>
 					</section>
-
 					<section class="left">
 						<span class="ref">Exercise 12</span>
 						<h3>Publisher/Subscriber</h3>
@@ -1263,14 +1260,12 @@
 							publisher.emit("alert", "something happened")
 						</code></pre>
 					</section>
-
 					<section class="left">
 						<h3>Drawbacks of callbacks</h3>
 						<p>Callbacks show their limits when a series of asynchronous operations must be chained (executed one after the other).</p>
 						<div class="center"><img height="250" src="./assets/img/callback-hell.jpg" alt="The callback hell"></div>
 						<p>An exception raised by a callback cannot be catched directly from the parent scope, which is why error handling is often handled with a second argument of the callback function or a second callback function dedicated to error handling.</p>
 					</section>
-
 					<section>
 						<h3>Promises</h3>
 						<ul>
@@ -1285,60 +1280,58 @@
 						</li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>Callbacks vs Promises</h3>
 						<div class="flex-center" style="align-items: stretch; gap: 1em">
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
-doSomething(function(result){
+								doSomething(function(result){
 
-	doAnotherThing(result, function(newResult){
+									doAnotherThing(result, function(newResult){
 
-		doFinalThing(newResult, function(finalResult){
-			console.log("Final result: ", finalResult)
-		}, failureCallback)
+										doFinalThing(newResult, function(finalResult){
+											console.log("Final result: ", finalResult)
+										}, failureCallback)
 
-	}, failureCallback)
+									}, failureCallback)
 
-}, failureCallback)</code></pre>
+								}, failureCallback)
+							</code></pre>
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
-doSomething()
-.then(function(result){
-	return doAnotherThing(result)
-})
-.then(function(newResult){
-	return doFinalThing(newResult)
-})
-.then(function(finalResult){
-	console.log("Final result", finalResult)
-})
-.catch(failureCallback)
+								doSomething()
+								.then(function(result){
+									return doAnotherThing(result)
+								})
+								.then(function(newResult){
+									return doFinalThing(newResult)
+								})
+								.then(function(finalResult){
+									console.log("Final result", finalResult)
+								})
+								.catch(failureCallback)
 							</code></pre>
 						</div>
 					</section>
-
 					<section>
 						<span class="ref">Exercise 13</span>
 						<h3>Creation of a promise</h3>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
-						// creating a promise from a callback-based API
-						const promise = new Promise((resolve, reject) => {
-							const callback = (err, result) => err ? reject(err) : resolve(result)
-							doSomethingAsynchronous(callback)
-						})
+							// creating a promise from a callback-based API
+							const promise = new Promise((resolve, reject) => {
+								const callback = (err, result) => err ? reject(err) : resolve(result)
+								doSomethingAsynchronous(callback)
+							})
 
-						promise.then(result => {
-							console.log(`Promise resolved with ${result}`)
-						})
-						promise.catch(error => {
-							console.log(`Promise rejected with ${error}`)
-						})
-						promise.finally(() => { // ES2018
-							console.log(`Called after either resolve or reject of the promise`)
-						})
+							promise.then(result => {
+								console.log(`Promise resolved with ${result}`)
+							})
+							promise.catch(error => {
+								console.log(`Promise rejected with ${error}`)
+							})
+							promise.finally(() => { // ES2018
+								console.log(`Called after either resolve or reject of the promise`)
+							})
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Other methods of creation of Promises</h3>
 						<ul>
@@ -1356,7 +1349,6 @@ doSomething()
 						</ul>
 						<div class="center"><img height="200" src="./assets/img/promise-all-race.jpg" alt="Comparison between Promise.race and Promise.all"></div>
 					</section>
-
 					<section>
 						<span class="ref">Quiz</span>
 						<h3>Chaining and parallelism</h3>
@@ -1383,49 +1375,47 @@ doSomething()
 								fetch('/api/data').then(res => res.json())
 							])
 						</code></pre>
-
 					</section>
-
 					<section>
 						<h3>Exception management</h3>
 						<pre><code class="javascript hljs" data-trim>
-f1()
-.then(f2)
-.catch(error => {
-	// handle the exceptions from f1 or f2
-})
-.then(f3)
-.catch(error => {
-	// handle the exceptions coming exclusively from f3
-})
-							</code></pre>
-
-							<p><code>then()</code> and <code>catch()</code> can be chained in any order. It allows intermediate error handling in a promise chain.</p>
-
-							<aside class="note info">
-								<u>Recommended:</u> handle the exceptions at the lowest level possible, but always add a <code>catch()</code> at the highest level to handle uncatched exceptions.
-							</aside>
+							f1()
+							.then(f2)
+							.catch(error => {
+								// handle the exceptions from f1 or f2
+							})
+							.then(f3)
+							.catch(error => {
+								// handle the exceptions coming exclusively from f3
+							})
+						</code></pre>
+						<p>
+							<code>then()</code> and <code>catch()</code> can be chained in any order. 
+							It allows intermediate error handling in a promise chain.
+						</p>
+						<aside class="note info">
+							<u>Recommended:</u> handle the exceptions at the lowest level possible, but always add a 
+							<code>catch()</code> at the highest level to handle uncatched exceptions.
+						</aside>
 					</section>
-
 					<section>
 						<h3>async / await (ES2017)</h3>
 						<p>Functions prefixed with the <code>async</code> operator can contain instructions prefixed with <code>await</code>.</p>
 						<p><code>await</code> pauses the function execution waiting for the following promise to be resolved.</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
-async function myFunction() {
-	try {
-		const result = await myPromise;
-		// my Promise is resolved and the the resolved value is assigned to result
-	} catch(err) {
-		// myPromise is rejected with error "err"
-	}
+							async function myFunction() {
+								try {
+									const result = await myPromise;
+									// my Promise is resolved and the the resolved value is assigned to result
+								} catch(err) {
+									// myPromise is rejected with error "err"
+								}
 
-	// this line is reached only after resolve/reject of myPromise
-	return 42
-}</code></pre>
+								// this line is reached only after resolve/reject of myPromise
+								return 42
+							}
+						</code></pre>
 					</section>
-				
-
 					<section>
 						<h3>async / await: pros and cons</h3>
 						<p>
@@ -1462,26 +1452,26 @@ async function myFunction() {
 						<span class="ref">Exercise 14</span>
 						<h3>Observable: example of API (from <a href="https://rxjs.dev/guide/observable" target="_blank">RxJS</a>)</h3>
 						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
-const keyboardObservable = new Observable( subscriber => {
-	const onKey = event => {
-		if(event.key === "Enter") {
-			subscriber.complete();
-			document.removeEventListener("keyup", onKey)
-		}
-		else subscriber.next(event.key)
-	}
+							const keyboardObservable = new Observable( subscriber => {
+								const onKey = event => {
+									if(event.key === "Enter") {
+										subscriber.complete();
+										document.removeEventListener("keyup", onKey)
+									}
+									else subscriber.next(event.key)
+								}
 
-	document.addEventListener("keyup", onKey)
-});
+								document.addEventListener("keyup", onKey)
+							});
 
-const keys = [];
-const keyboardSubscription = keyboardObservable.subscribe({
-	next(key){
-		if (key === "Escape") keyboardSubscription.unsubscribe();
-		else keys.push(key)
-	},
-	complete(){ alert(keys.join("")) }
-});
+							const keys = [];
+							const keyboardSubscription = keyboardObservable.subscribe({
+								next(key){
+									if (key === "Escape") keyboardSubscription.unsubscribe();
+									else keys.push(key)
+								},
+								complete(){ alert(keys.join("")) }
+							});
 						</code></pre>
 					</section>
 
@@ -1520,16 +1510,15 @@ const keyboardSubscription = keyboardObservable.subscribe({
 							</ul>
 						</p>
 					</section>
-
 					<section>
 						<span class="ref">Quiz</span>
 						<h3>Work with the event loop</h3>
 						<pre><code class="javascript hljs" data-trim>
-setTimeout(() => console.log(1), 0)
-Promise.resolve().then(() => console.log(2))
-requestAnimationFrame(() => console.log(3))
-requestIdleCallback(() => console.log(4))
-console.log(5)
+							setTimeout(() => console.log(1), 0)
+							Promise.resolve().then(() => console.log(2))
+							requestAnimationFrame(() => console.log(3))
+							requestIdleCallback(() => console.log(4))
+							console.log(5)
 						</code></pre>
 
 						<p>In what order are the logs displayed ?</p>
@@ -1541,16 +1530,13 @@ console.log(5)
 							<span class="brace-description">variable depending on the CPU activity, but it's the most likely order</span>
 						</span>
 						</p>
-						
 					</section>
 				</section>
-
 				<section>
 					<section>
 						<h2>Object-oriented Programming</h2>
 						<p>Exercises 15 to 19</p>
 					</section>
-
 					<section class="left">
 						<h3>General principles of Object Oriented Programming</h3>
 						<ul>
@@ -1566,7 +1552,6 @@ console.log(5)
 							<li>facilitate the transition from specification to code</li>
 						</ul></p>
 					</section>
-
 					<section class="left">
 						<h3>Objects and Prototypes</h3>
 						<ul>
@@ -1581,7 +1566,6 @@ console.log(5)
 							Do not reassign the prototype in performance-critical parts of your application because it is tricky to optimize for classical JavaScript engines
 						</div>
 					</section>
-
 					<section class="left">
 						<h3>Why "prototype" ?</h3>
 						<ul>
@@ -1591,7 +1575,6 @@ console.log(5)
 						</ul>
 						<p>The choice of this term serves to illustrate these differences.</p>
 					</section>
-
 					<section class="left">
 						<h3>Delegation to prototype</h3>
 						<p>If for <code><span class="blue">object</span>.<span class="green">prop</span></code>, the property <span class="green">prop</span> is not found in <span class="blue">object</span>, then it
@@ -1608,11 +1591,9 @@ console.log(5)
 							▸ null
 						</code></pre>
 					</section>
-
 					<section class="left">
 						<span class="ref">Exercise 15</span>
 						<h3>Methods related to the prototype</h3>
-
 						<div class="has-brace-right" style="margin-right: 300px">
 							<pre><code class="javascript hljs" data-trim>
 								Object.getPrototypeOf(obj)
@@ -1627,7 +1608,6 @@ console.log(5)
 							<div class="brace"></div>
 							<div class="brace-description">Methods of the <code>Object</code> constructor</div>
 						</div>
-
 						<div class="has-brace-right" style="margin-right: 300px">
 							<pre class="has-brace-right"><code class="javascript hljs" data-trim>
 								obj.hasOwnProperty("prop")
@@ -1637,7 +1617,6 @@ console.log(5)
 							<div class="brace-description">Methods of the prototype <code>Object.prototype</code></div>
 						</div>
 					</section>
-
 					<section>
 						<h3>Beware of misuse of language !</h3>
 						<div class="center" style="font-size: 200%; font-weight: bold">classes ≠ prototypes</div>
@@ -1645,7 +1624,6 @@ console.log(5)
 						<p>Unlike classes, there is no difference in nature between a prototype and an object. A prototype can therefore be manipulated like any other object: assigned by reference, passed as a parameter, exported as a module...</p>
 						<img src="assets/img/kinds-of-oop.jpg" height="300" alt="Two kinds of OOP: an analogy with a classroom">
 					</section>
-
 					<section>
 						<h3>Beware of misuse of language !</h3>
 						<div class="center" style="font-size: 200%; font-weight: bold">inheritance ≠ delegation</div>
@@ -1670,7 +1648,6 @@ console.log(5)
 							</ul>
 						</div>
 					</section>
-					
 					<section class="left">
 						<h3 class="center">Beware of misuse of language !</h3>
 						<div class="center" style="font-size: 200%; font-weight: bold">interface, override, instance...</div>
@@ -1685,7 +1662,6 @@ console.log(5)
 							It is quite the same historical aberration that brought us the name <i>"Java"</i>Script.
 						</div>
 					</section>
-
 					<section>
 						<h3>Constructors and operator <code class="blue">new</code></h3>
 						<p>In JavaScript, a function can be called <i>as a constructor</i> with the operator <code class="blue">new</code></p>
@@ -1700,12 +1676,11 @@ console.log(5)
 						<div class="note info">It's very unlikely you intend to use a function both as a constructor and as a regular function. By convention, those who are intended as constructors have their name starting with an Uppercase letter.</div>
 						<div class="note">Arrow functions cannot be invoked as constructors</div>
 					</section>
-
 					<section class="left">
 						<h3>Prototypes and constructors</h3>
 						<p>When <code>new Constructor()</code> is invoked, a new object is created with <code>Constructor.prototype</code> as prototype.</p>
 						<p>This is equivalent to call <code>Object.create(Constructor.prototype)</code></p>
-						<p >The same principle applies on all native constructors in the language:</p>
+						<p>The same principle applies on all native constructors in the language:</p>
 						<pre><code class="javascript hljs" data-trim>
 							let today = new Date();
 							today.getMonth === Date.prototype.getMonth
@@ -1723,7 +1698,6 @@ console.log(5)
 							[] instanceof Array ⇔ Object.getPrototypeOf([]) === Array.prototype
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Constructors and context</h3>
 						<p>The <code class="blue">new</code> operator changes the way a function is invoked in several ways:</p>
@@ -1746,10 +1720,7 @@ console.log(5)
 							console.log(typeof result1) // undefined
 							console.log(typeof result2) // object
 						</code></pre>
-						
-						
 					</section>
-
 					<section class="left">
 						<span class="ref">Exercise 16</span>
 						<h3>Constructor.prototype</h3>
@@ -1773,7 +1744,6 @@ console.log(5)
 							▸ 4
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Constructor.prototype</h3>
 						<div class="note warning" style="width: 500px">Not to be confused: <pre><code class="javascript hljs">Constructor.prototype</code>  ≠  <code class="javascript hljs">Object.getPrototypeOf(Constructor)</code></pre></div>
@@ -1784,7 +1754,6 @@ console.log(5)
 							Object.getPrototypeOf(Car) === Function.prototype
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Constructors flaws</h3>
 						<p>Constructors are a commonly used pattern in JS, but they have several flaws:</p>
@@ -1797,35 +1766,34 @@ console.log(5)
 							<li class="fragment">They are confusing for beginners with prototypes</li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>The <code>class</code> operator (ES2015)</h3>
 						<p>Syntaxic sugar for declaring a prototype with a constructor</p>
 						<div style="position: relative; display: flex;">
 							<pre style="font-size: 60%; width: 50%;"><code class="javascript hljs js" data-trim>
-class Person {
-	constructor(firstname, lastname) {
-		this.firstname = firstname
-		this.lastname = lastname
-	}
+								class Person {
+									constructor(firstname, lastname) {
+										this.firstname = firstname
+										this.lastname = lastname
+									}
 
-	sayMyName(){
-		return `${this.firstname} ${this.lastname}`
-	}
-}
+									sayMyName(){
+										return `${this.firstname} ${this.lastname}`
+									}
+								}
 
-class User extends Person {
-	constructor(firstname, lastname, role){
-		super(firstname, lastname);
-		this.role = role;
-	}
+								class User extends Person {
+									constructor(firstname, lastname, role){
+										super(firstname, lastname);
+										this.role = role;
+									}
 
-	get isAdmin(){
-		return this.role === "admin"
-	}
-}
+									get isAdmin(){
+										return this.role === "admin"
+									}
+								}
 
-const bill = new User("Bill", "Gates", "admin")
+								const bill = new User("Bill", "Gates", "admin")
 							</code></pre>
 							<div class="left">
 								<div class="arrow left fragment" style="top: 34px; right: 0px">explicit <code>constructor</code> property</div>
@@ -1834,7 +1802,6 @@ const bill = new User("Bill", "Gates", "admin")
 							</div>
 						</div>
 					</section>
-
 					<section>
 						<h3>super</h3>
 						<pre><code class="javascript hljs js" data-trim>
@@ -1862,26 +1829,24 @@ const bill = new User("Bill", "Gates", "admin")
 							▸ joe name: Joe ; user name: Anonymous ; user getName: Joe
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>static</h3>
 						<p>Defines a static property: a property of the constructor itself, not the prototype</p>
 						<pre><code class="javascript hljs js" data-trim>
-class C {
-	method(){ console.log("method") }
+							class C {
+								method(){ console.log("method") }
 
-	static methodStatic(){ console.log("static method") }
-}
+								static methodStatic(){ console.log("static method") }
+							}
 
-(new C()).method() // method in C.prototype
-C.methodStatic() // methodStatic in C
+							(new C()).method() // method in C.prototype
+							C.methodStatic() // methodStatic in C
 						</code></pre>
 						<p>This is basically the same thing than directly assigning the property to the constructor, so not the most useful syntaxic sugar, but it was added for its familiarity for Java developers.</p>
 						<pre><code class="javascript hljs js" data-trim>
 							C.equivalentStatic = function(){ ... }
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Constructors flaws, with operator <code>class</code></h3>
 						<ul>
@@ -1901,81 +1866,81 @@ C.methodStatic() // methodStatic in C
 							</li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>Alternative to constructors</h3>
-						<p >You don't need constructors to make prototype-based OOP. You can rather use:</p>
+						<p>You don't need constructors to make prototype-based OOP. You can rather use:</p>
 						<ul class="left">
 							<li>Factory functions
 								<pre><code class="javascript hljs js" data-trim>
-function createUser({ first, name }){
-	const user = Object.create(userProto)
-	user.first = first
-	user.name = name
-	return user
-}</code></pre></li>
+									function createUser({ first, name }){
+										const user = Object.create(userProto)
+										user.first = first
+										user.name = name
+										return user
+									}
+								</code></pre>
+							</li>
 							<li><code>Object.create</code> and <code>Object.assign</code>
 								<pre><code class="javascript hljs js" data-trim>
-const john = Object.assign(Object.create(userProto), {
-	first: "John",
-	name: "Smith"
-})</code></pre>
+									const john = Object.assign(Object.create(userProto), {
+										first: "John",
+										name: "Smith"
+									})
+								</code></pre>
 							</li>
 						</ul>
 						<p>It fixes all the flaws previously stated, and you don't need these anymore:</p>
 						<p><code>new, instanceof, class, super, static</code></p>
 					</section>
-
 					<section>
 						<h3>class vs Object.create: an example</h3>
 						<div class="cols-2">
 							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-class Foo {
-	constructor(who){
-		this.me = who
-	}
-	identify(){
-		return `I am ${this.me}`
-	}
-}
+								class Foo {
+									constructor(who){
+										this.me = who
+									}
+									identify(){
+										return `I am ${this.me}`
+									}
+								}
 
-class Bar extends Foo {
-	speak(){
-		return `Hello, ${this.identify()}`
-	}
-}
+								class Bar extends Foo {
+									speak(){
+										return `Hello, ${this.identify()}`
+									}
+								}
 
-let b1 = new Bar("b1")
-let b2 = new Bar("b2")
+								let b1 = new Bar("b1")
+								let b2 = new Bar("b2")
 
-b1.speak();
-b2.speak();
-								</code></pre>
-								<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-const Foo = {
-	init(who){
-		this.me = who
-		return this
-	},
-	identify(){
-		return `I am ${this.me}`
-	}
-}
+								b1.speak();
+								b2.speak();
+							</code></pre>
+							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+								const Foo = {
+									init(who){
+										this.me = who
+										return this
+									},
+									identify(){
+										return `I am ${this.me}`
+									}
+								}
 
-const Bar = Object.create(Foo)
-Bar.speak = function(){
-	return `Hello, ${this.identify()}`
-}
+								const Bar = Object.create(Foo)
+								Bar.speak = function(){
+									return `Hello, ${this.identify()}`
+								}
 
-let b1 = Object.create(Bar).init("b1");
-let b2 = Object.create(Bar).init("b2");
+								let b1 = Object.create(Bar).init("b1");
+								let b2 = Object.create(Bar).init("b2");
 
-b1.speak();
-b2.speak();
-								</code></pre>
+								b1.speak();
+								b2.speak();
+							</code></pre>
 						</div>
 					</section>
-
 					<section>
 						<h3>Delegation pattern, in short</h3>
 						<ul>
@@ -1985,10 +1950,10 @@ b2.speak();
 							<li>Requires to get out of the mental model of class hierarchies</li>
 						</ul>
 						<div class="note left">
-							<u>Recommended:</u>
-							<p>Use <code>Object.create</code> and <code>class extends</code> with moderation</p>
-							<p>Limit the size of your prototype chains as much as possible</p>
-							<p>Delegation is a powerful and flexible pattern, but other approachs such as <b>object composition</b> are underused.</p>
+							<u>Recommended:</u> <br>
+							Use <code>Object.create</code> and <code>class extends</code> with moderation <br>
+							Limit the size of your prototype chains as much as possible <br>
+							Delegation is a powerful and flexible pattern, but other approachs such as <b>object composition</b> are underused.
 						</div>
 					</section>
 
@@ -2054,45 +2019,44 @@ b2.speak();
 						<p>New primitive type since ES2015</p>
 						<p>Represents a unique reference:</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-const symbol = Symbol();
-const symbolFoo = Symbol('foo');
+							const symbol = Symbol();
+							const symbolFoo = Symbol('foo');
 
-typeof symbol;
-▸ "symbol"
+							typeof symbol;
+							▸ "symbol"
 
-symbolFoo.toString()
-▸ "Symbol(foo)"
+							symbolFoo.toString()
+							▸ "Symbol(foo)"
 
-symbolFoo === Symbol('foo')
-▸ false
+							symbolFoo === Symbol('foo')
+							▸ false
 						</code></pre>
 						<p>Symbols can be used as property keys of an object:</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-const obj = { [symbolFoo]: "bar" };
-Object.getOwnPropertySymbols(obj)
-▸ [Symbol(foo)]
-					</code></pre>
+							const obj = { [symbolFoo]: "bar" };
+							Object.getOwnPropertySymbols(obj)
+							▸ [Symbol(foo)]
+						</code></pre>
 					</section>
 
 					<section>
 						<h3>Symbols - Global register</h3>
 						<p>A global register exists for symbols nevertheless:</p>
-						<pre ><code class="javascript hljs js" data-trim>
-const symbolFoo = Symbol.for('foo')
-symbolFoo === Symbol.for('foo')
-▸ true
-Symbol.keyFor(symbolFoo)
-▸ "foo"
+						<pre><code class="javascript hljs js" data-trim>
+							const symbolFoo = Symbol.for('foo')
+							symbolFoo === Symbol.for('foo')
+							▸ true
+							Symbol.keyFor(symbolFoo)
+							▸ "foo"
 						</code></pre>
 						<div class="note">Use with moderation, otherwise you will lose the primary interest of symbols, namely to be a unique reference</div>
-
 					</section>
 
 					<section>
 						<h3>Symbols - Known symbols</h3>
 						<p>Some symbols are built-in in ES2015.</p>
 						<p>They let you redefine some internal behaviors of the language for an object:</p>
-						<pre ><code class="javascript hljs js" data-trim>
+						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim>
 							const obj = {
 								[Symbol.toPrimitive](){ return 42 }
 							}
@@ -2120,30 +2084,30 @@ Symbol.keyFor(symbolFoo)
 							<li><code>value</code>: current value of iteration, undefined if <code>done</code> is true</li>
 						</ul>
 						<div class="cols-2">
-						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
-							const compteur123 = {
-								[Symbol.iterator]: function(){
-									let nombres = [1, 2, 3]
-									return {
-										next(){
-											return {
-												done: nombres.length === 0,
-												value: nombres.shift()
+							<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+								const compteur123 = {
+									[Symbol.iterator]: function(){
+										let nombres = [1, 2, 3]
+										return {
+											next(){
+												return {
+													done: nombres.length === 0,
+													value: nombres.shift()
+												}
 											}
 										}
 									}
 								}
-							}
-						</code></pre>
-						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
-							for(let n of compteur123) console.log(n);
-							▸ 1
-							▸ 2
-							▸ 3
+							</code></pre>
+							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+								for(let n of compteur123) console.log(n);
+								▸ 1
+								▸ 2
+								▸ 3
 
-							[...compteur123]
-							▸ [1, 2, 3]
-						</code></pre>
+								[...compteur123]
+								▸ [1, 2, 3]
+							</code></pre>
 						</div>
 					</section>
 
@@ -2179,37 +2143,38 @@ Symbol.keyFor(symbolFoo)
 						<p>A <code>Proxy</code> does not change the original object, it returns a new object reference, and all the operations shall be done on this new reference.</p>
 						<p>By default, no operation is intercepted nor modified so the proxy object is indistinguishable from the original object.</p>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
-const obj = { foo: "bar" }
-const proxy = new Proxy(obj, {
-	get(obj, prop){
-		console.log(`get ${prop} intercepted`)
-		return "intercepted!"
-	}
-})
+							const obj = { foo: "bar" }
+							const proxy = new Proxy(obj, {
+								get(obj, prop){
+									console.log(`get ${prop} intercepted`)
+									return "intercepted!"
+								}
+							})
 
-proxy.foo;
-▸ get foo intercepted!
+							proxy.foo;
+							▸ get foo intercepted!
 
-obj.foo;
-▸ bar</code></pre>
+							obj.foo;
+							▸ bar
+						</code></pre>
 					</section>
 
 					<section>
 						<h3>Proxy traps</h3>
 						<pre><code class="javascript hljs js" data-trim>
-new Proxy(object, {
-	get(o, key){}, // read property value
-	set(o, key, val){}, // write a new value for property
-	deleteProperty(o, key){},
-	apply(o, context, args){}, // invoke as function
-	construct(o, args){}, // invoke as constructor
-	ownKeys(o){}, // enumerate own properties
-	has(o, key){}, // query if property exists
-	defineProperty(o, key, desc){},
-	getOwnPropertyDescriptor(o, key){},
-	getPrototypeOf(o){}
-	setPrototypeOf(o, proto){}
-})
+							new Proxy(object, {
+								get(o, key){}, // read property value
+								set(o, key, val){}, // write a new value for property
+								deleteProperty(o, key){},
+								apply(o, context, args){}, // invoke as function
+								construct(o, args){}, // invoke as constructor
+								ownKeys(o){}, // enumerate own properties
+								has(o, key){}, // query if property exists
+								defineProperty(o, key, desc){},
+								getOwnPropertyDescriptor(o, key){},
+								getPrototypeOf(o){}
+								setPrototypeOf(o, proto){}
+							})
 						</code></pre>
 					</section>
 
@@ -2217,7 +2182,7 @@ new Proxy(object, {
 						<h3>Reflect API</h3>
 						<p><b>Reflect</b> represents the capacity for <a href="https://en.wikipedia.org/wiki/Reflective_programming" target="_blank">reflection</a> acquired by JS with the introduction of proxies.</p>
 						<p>The <code>Reflect</code> object contains a set of methods that reproduce the default behavior of the language for all the Proxy traps. You can see it as the default value of every <code>Proxy</code> trap.</p>
-						<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							Reflect.get(o, key) ⇔ o[key]
 							Reflect.set(o, key, val) ⇔ o[key] = val
 							Reflect.has(o, key) ⇔ key in o
@@ -2225,19 +2190,19 @@ new Proxy(object, {
 							...
 						</code></pre>
 						<p>You can easily break existing behaviors you didn't even know existed when playing with proxies. A good practice and safety measure is to always call the Reflect API when adding a proxy trap.</p>
-						<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
-new Proxy(obj, {
-	set(o, key, value){
-		if(typeof value !== "string"){
-			throw "Only strings are accepted as values for this object"
-		} 
-		return Reflect.set(o, key, value) // back to the default behavior
-	}
-})
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+							new Proxy(obj, {
+								set(o, key, value){
+									if(typeof value !== "string"){
+										throw "Only strings are accepted as values for this object"
+									} 
+									return Reflect.set(o, key, value) // back to the default behavior
+								}
+							})
 						</code></pre>
 					</section>
 
-					<section>
+					<section class="left">
 						<div class="ref">Exercise 19</div>
 						<h3>Use cases for Proxies</h3>
 						<ul>
@@ -2250,16 +2215,13 @@ new Proxy(obj, {
 							<li>...</li>
 						</ul>
 					</section>
-
 				</section>
 
 				<section>
-
 					<section>
 						<h2>Functional programming</h2>
 						<p>Exercices 20 to 22</p>
 					</section>
-
 					<section class="left">
 						<h3>General principles of Functional Programming</h3>
 						<ul>
@@ -2287,8 +2249,8 @@ new Proxy(obj, {
 								: [ ...(Array.isArray(x) ? flatten(x) : x), ...flatten(xs) ]
 						</code></pre>
 						<div class="note">
-							<p>A useful pattern but not the most readable and with the risk of an infinite loop.</p>
-							<p><u>Recommended:</u> use it only for minimalist functions, and explicit the recursivity with code comments</p>
+							A useful pattern but not the most readable and with the risk of an infinite loop. <br>
+							<u>Recommended:</u> use it only for minimalist functions, and explicit the recursivity with code comments
 						</div>
 					</section>
 
@@ -2298,13 +2260,13 @@ new Proxy(obj, {
 						<p>A <b>chainable</b> method returns its own execution context (<code>return this</code>) or an object of the same type/prototype in order to be able to chain the calls to this method.</p>
 						<p><i>Example: <code>Array.prototype</code> chainable methods</i></p>
 						<pre><code class="javascript hljs js" data-trim>
-[1, 2, 3, 4]
-	.concat(5, 6, 7, 8)
-	.map(n => n**2 + 1)
-	.filter(isPrime)
-	.slice(0, 5)
-	.join(", ") + " are prime numbers"
-▸ "2, 5, 17, 37 are prime numbers"
+							[1, 2, 3, 4]
+								.concat(5, 6, 7, 8)
+								.map(n => n**2 + 1)
+								.filter(isPrime)
+								.slice(0, 5)
+								.join(", ") + " are prime numbers"
+							▸ "2, 5, 17, 37 are prime numbers"
 						</code></pre>
 						<p>Chainable API are convenient to use because they reduce sequences of instructions to a single expression.
 						 They made the success of famous JS libraries like <a href="https://jquery.com/" target="_blank">jQuery</a> or <a href="https://lodash.com/" target="_blank">lodash</a>.</p>
@@ -2344,37 +2306,41 @@ new Proxy(obj, {
 						<h3>Currying: use cases</h3>
 						<p><b>Currying</b> is used to apply part of the arguments to decline a generic function into a more specialized version of it: this is called <b>partial application</b>.</p>						
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim>
-const sum = a => b => a + b
-const increment = sum(1);
+							const sum = a => b => a + b
+							const increment = sum(1);
 
-increment(42)
-▸ 43
+							increment(42)
+							▸ 43
 
-const replace = curry((before, after, str) => str.replace(before, after))
-const replaceSpacesBy = replace(/\s/g);
-const trim = replaceSpacesBy("")
+							const replace = curry((before, after, str) => str.replace(before, after))
+							const replaceSpacesBy = replace(/\s/g);
+							const trim = replaceSpacesBy("")
 
-trim("     Hello !    ")
-▸ "Hello!"
+							trim("     Hello !    ")
+							▸ "Hello!"
 						</code></pre>
 						<br>
-						<p class="note">In practice, we often introduce currying in a codebase the opposite way:<br>
-						starting from a function doing some specific work, we rewrite it into a more generic version, then use partial application to get back to the original specific use case.</p>
+						<div class="note">
+							In practice, we often introduce currying in a codebase the opposite way:<br>
+							starting from a function doing some specific work, we rewrite it into a more generic version, 
+							then use partial application to get back to the original specific use case.
+						</div>
 					</section>
 
 					<section>
 						<h3>Partial application with <code>fn.bind</code></h3>
 						<p>Partial application can also be done with the <code>bind</code> function in <code>Function.prototype</code>:</p>
 						<pre><code class="javascript hljs js" data-trim>
-const where = (field, condition, array) => array.filter(
-	row => condition(row[field])
-)
+							const where = (field, condition, array) => array.filter(
+								row => condition(row[field])
+							)
 
-const whereAgeIs = where.bind(null, "age")
-whereAgeIs(n => n > 10, data)
+							const whereAgeIs = where.bind(null, "age")
+							whereAgeIs(n => n > 10, data)
 
-const whereAgeIsOver18 = where.bind(null, "age", n => n > 18)
-whereAgeIsOver18(data)</code></pre>
+							const whereAgeIsOver18 = where.bind(null, "age", n => n > 18)
+							whereAgeIsOver18(data)
+						</code></pre>
 					</section>
 
 					<section>
@@ -2382,189 +2348,188 @@ whereAgeIsOver18(data)</code></pre>
 						<p>How to refactor a code to obtain pure, atomic, generic and composable functions ?</p>
 						<p>Let's start from this code example:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
-let results = [];
+							import data from "users.json"
+							let results = [];
 
-function printUsersOverAge18(){
-	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
-	results = data.filter(user => user.age >= 18).slice(0, 5)
+							function printUsersOverAge18(){
+								data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+								results = data.filter(user => user.age >= 18).slice(0, 5)
 
-	const output = results.map(user => user.firstName).join("\n")
-	document.querySelector("#results").textContent = output
-}
-							</code></pre>
+								const output = results.map(user => user.firstName).join("\n")
+								document.querySelector("#results").textContent = output
+							}
+						</code></pre>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 1: get rid of non-local variables</b><br>Pass non-local variables as function arguments. If they are reassigned, make them return values.</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
-let results = [];
+							import data from "users.json"
+							let results = [];
 
-function printUsersOverAge18(){
-	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
-	results = data.filter(user => user.age >= 18).slice(0, 5)
+							function printUsersOverAge18(){
+								data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+								results = data.filter(user => user.age >= 18).slice(0, 5)
 
-	const output = results.map(user => user.firstName).join("\n")
-	document.querySelector("#results").textContent = output
-}
-							</code></pre>
-							<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
+								const output = results.map(user => user.firstName).join("\n")
+								document.querySelector("#results").textContent = output
+							}
+						</code></pre>
+						<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 2: take out the side effects</b><br>Replace mutations with equivalent immutable instructions when possible. Otherwise, try to isolate them.</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
+							import data from "users.json"
 
-function printUsersOverAge18(data){
-	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
-	const results = data.filter(user => user.age >= 18).slice(0, 5)
+							function printUsersOverAge18(data){
+								data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+								const results = data.filter(user => user.age >= 18).slice(0, 5)
 
-	const output = results.map(user => user.firstName).join("\n")
-	document.querySelector("#results").textContent = output
+								const output = results.map(user => user.firstName).join("\n")
+								document.querySelector("#results").textContent = output
 
-	return results
-}
+								return results
+							}
 
-const results = printUsersOverAge18(data)
-							</code></pre>
-							<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
+							const results = printUsersOverAge18(data)
+						</code></pre>
+						<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 3: decompose logic in pure, composable functions</b></div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
+							import data from "users.json"
 
-function getUsersOverAge18(data){
-	const sortedData = [...data].sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
-	const results = sortedData.filter(user => user.age >= 18).slice(0, 5)
+							function getUsersOverAge18(data){
+								const sortedData = [...data].sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+								const results = sortedData.filter(user => user.age >= 18).slice(0, 5)
 
-	const output = results.map(user => user.firstName).join("\n")
-	return { results, output }
-}
+								const output = results.map(user => user.firstName).join("\n")
+								return { results, output }
+							}
 
-const { results, output } = getUsersOverAge18(data)
-document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
+							const { results, output } = getUsersOverAge18(data)
+							document.querySelector("#results").textContent = output
+						</code></pre>
+						<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 4: make functions generic</b><br>Pass any arbitrary value as parameter. Add arguments mapping functions if necessary.</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
-import { compose } from "utils/functions.js";
+							import data from "users.json"
+							import { compose } from "utils/functions.js";
 
-const sortByLastName = data => [...data].sort(
-								(a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+							const sortByLastName = data => [...data].sort(
+															(a,b) => a.lastName &lt; b.lastName ? -1 : 1)
 
-const filterAgeOver18 = data => data.filter(user => user.age >= 18)
-const takeFive = data => data.slice(0, 5)
-const getFirstNames = users => users.map(user => user.firstName)
+							const filterAgeOver18 = data => data.filter(user => user.age >= 18)
+							const takeFive = data => data.slice(0, 5)
+							const getFirstNames = users => users.map(user => user.firstName)
 
-const getUsersOverAge18 = compose(sortByLastName, filterAgeOver18, takeFive)
+							const getUsersOverAge18 = compose(sortByLastName, filterAgeOver18, takeFive)
 
-const results = getUsersOverAge18(data)
-const output = getFirstNames(results).join("\n")
+							const results = getUsersOverAge18(data)
+							const output = getFirstNames(results).join("\n")
 
-document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
+							document.querySelector("#results").textContent = output
+						</code></pre>
+						<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 5: currying functions</b> to reduce the number of arguments and remove superfluous mapping functions</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
-import { compose } from "utils/functions.js";
+							import data from "users.json"
+							import { compose } from "utils/functions.js";
 
-const sortBy = (key, data) => [...data].sort((a,b) => a[key]] &lt; b[key] ? -1 : 1)
-const filterBy = (key, test, data) => data.filter(({ [key]: val }) => test(val))
-const take = (nb, data) => data.slice(0, nb)
-const mapToProp = (key, data) => data.map(({ [key]: val }) => val)
+							const sortBy = (key, data) => [...data].sort((a,b) => a[key]] &lt; b[key] ? -1 : 1)
+							const filterBy = (key, test, data) => data.filter(({ [key]: val }) => test(val))
+							const take = (nb, data) => data.slice(0, nb)
+							const mapToProp = (key, data) => data.map(({ [key]: val }) => val)
 
-const getUsersOverAge18 = compose(
-	data => sortBy("lastName", data),
-	data => filterBy("age", n => n >= 18, data),
-	data => take(5, data)
-);
+							const getUsersOverAge18 = compose(
+								data => sortBy("lastName", data),
+								data => filterBy("age", n => n >= 18, data),
+								data => take(5, data)
+							);
 
-const results = getUsersOverAge18(data)
-const output = mapToProp("firstName", results).join("\n")
-document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
+							const results = getUsersOverAge18(data)
+							const output = mapToProp("firstName", results).join("\n")
+							document.querySelector("#results").textContent = output
+						</code></pre>
+						<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 6: reorganize your modules</b> ; check each decomposed function obtained to decide whether it should be in this file or moved somewhere else.</div>
 						<pre style="font-size: 75%"><code class="javascript hljs js" data-trim contenteditable="true">
-import data from "users.json"
-import { compose } from "utils/functions.js";
+							import data from "users.json"
+							import { compose } from "utils/functions.js";
 
-const sortBy = key => data => [...data].sort((a,b) => a[key]] &lt; b[key] ? -1 : 1)
-const filterBy = key => test => data => data.filter(({ [key]: val }) => test(val))
-const take = nb => data => data.slice(0, nb)
-const mapToProp = key => data => data.map(({ [key]: val }) => val)
+							const sortBy = key => data => [...data].sort((a,b) => a[key]] &lt; b[key] ? -1 : 1)
+							const filterBy = key => test => data => data.filter(({ [key]: val }) => test(val))
+							const take = nb => data => data.slice(0, nb)
+							const mapToProp = key => data => data.map(({ [key]: val }) => val)
 
-const getUsersOverAge18 = compose(
-	sortBy("lastName"),
-	filterBy("age", n => n >= 18),
-	take(5)
-);
+							const getUsersOverAge18 = compose(
+								sortBy("lastName"),
+								filterBy("age", n => n >= 18),
+								take(5)
+							);
 
-const results = getUsersOverAge18(data)
-const output = mapToProp("firstName", results).join("\n")
-document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
+							const results = getUsersOverAge18(data)
+							const output = mapToProp("firstName", results).join("\n")
+							document.querySelector("#results").textContent = output
+						</code></pre>
+						<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
 					</section>
 
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div style="position: relative">
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-/* BEFORE */
-import data from "users.json"
-let results = [];
+							/* BEFORE */
+							import data from "users.json"
+							let results = [];
 
-function printUsersOverAge18(){
-	data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
-	results = data.filter(user => user.age >= 18).slice(0, 5)
+							function printUsersOverAge18(){
+								data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+								results = data.filter(user => user.age >= 18).slice(0, 5)
 
-	const output = results.map(user => user.firstName).join("\n")
-	document.querySelector("#results").textContent = output
-}
+								const output = results.map(user => user.firstName).join("\n")
+								document.querySelector("#results").textContent = output
+							}
 						</code></pre>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-/* AFTER */
-import data from "users.json"
-import { compose } from "utils/functions.js";
-import { sortBy, filterBy, take, mapToProp } from "utils/array.js";
+							/* AFTER */
+							import data from "users.json"
+							import { compose } from "utils/functions.js";
+							import { sortBy, filterBy, take, mapToProp } from "utils/array.js";
 
-const getUsersOverAge18 = compose(
-	sortBy("lastName"),
-	filterBy("age", n => n >= 18),
-	take(5)
-);
+							const getUsersOverAge18 = compose(
+								sortBy("lastName"),
+								filterBy("age", n => n >= 18),
+								take(5)
+							);
 
-const results = getUsersOverAge18(data)
-const output = mapToProp("firstName", results).join("\n")
-document.querySelector("#results").textContent = output
-</code></pre>
+							const results = getUsersOverAge18(data)
+							const output = mapToProp("firstName", results).join("\n")
+							document.querySelector("#results").textContent = output
+						</code></pre>
 						<div class="arrow left" style="top: 310px; left: 780px; background: black; padding: 0.5em; font-size: 80%; width: 12em; border: 3px solid white;">
 							what we get at the end: pure, atomic, generic and composable functions
 						</div>
 						</div>
-
 					</section>
 
 					<section>
@@ -2596,7 +2561,6 @@ document.querySelector("#results").textContent = output
 						</ol>
 						<div class="note">Over time, you will be able to make your own <b>functional toolbox</b>, a recipe book reusable in different projects.</div>
 					</section>
-					
 				</section>
 
 				<section>
@@ -2604,7 +2568,6 @@ document.querySelector("#results").textContent = output
 						<h2>Beyond JavaScript</h2>
 						<p>Transpilers and JavaScript supersets</p>
 					</section>
-
 					<section>
 						<h3>Babel transpiler</h3>
 						<ul>
@@ -2614,18 +2577,18 @@ document.querySelector("#results").textContent = output
 							<li style="clear: both">Example of ES2021 → ES5 transpilation:
 								<div class="cols-2">
 									<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
-[1, 2, 3].map(n => n ** 2);
+										[1, 2, 3].map(n => n ** 2);
 
-var [a,,b] = [1, 2, 3]
+										var [a,,b] = [1, 2, 3]
 									</code></pre>
 									<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
-[1, 2, 3].map(function(n){
-	return Math.pow(n, 2)
-});
+										[1, 2, 3].map(function(n){
+											return Math.pow(n, 2)
+										});
 
-var _ref = [1, 2, 3],
-	a = _ref[0],
-	b = _ref[2]
+										var _ref = [1, 2, 3],
+											a = _ref[0],
+											b = _ref[2]
 									</code></pre>
 								</div>
 							</li>
@@ -2679,7 +2642,6 @@ var _ref = [1, 2, 3],
 
 					<section>
 						<h3>TypeScript</h3>
-
 						<ul>
 							<li>
 								<img src="./assets/img/ts-logo.png" alt="TypeScript logo" style="float: right; margin: 0 0 1em 1em">
@@ -2694,7 +2656,6 @@ var _ref = [1, 2, 3],
 							In 10 years, TypeScript popularity has continuously grown. In 2022, it it a major part of the front-end ecosystem.<br/>
 							It is supported in all major web frameworks and improves both the developer experience and the code reliability, especially for medium-to-large apps.
 						</div>
-
 					</section>
 
 					<section>
@@ -2711,7 +2672,6 @@ var _ref = [1, 2, 3],
 							JSX's popularity is stagnant and the language is still debated in the JS community, especially because of HTML vs. JS keyword conflicts ; for example, the "class" HTML attribute in JSX must be rewritten "className" to avoid clashing with the <code>class</code> operator in JavaScript.
 						</div>
 					</section>
-
 				</section>
 
 				<section class="agenda">
@@ -2722,7 +2682,6 @@ var _ref = [1, 2, 3],
 							<ul>
 								<li>ECMAScript, TC39 and versions of JavaScript</li>
 							</ul>
-	
 							<p class="chapter-title">A reintroduction to JavaScript</p>
 							<ul>
 								<li>Primitives and Objects</li>
@@ -2732,7 +2691,6 @@ var _ref = [1, 2, 3],
 								<li>Implicit casts</li>
 							</ul>
 						</div>
-
 						<div style="flex-basis: 100%;">
 							<p class="chapter-title">Modern JS: ES2015+</p>
 							<ul>
@@ -2781,15 +2739,11 @@ var _ref = [1, 2, 3],
 						</div>
 					</div>
 				</section>
-
 				<section>
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
 					<h1 data-i18n="title">JavaScript Training</h1>
 					<p>End of training, congratulations !</p>
 				</section>
-
-
-		
 			</div>
 		</div>
 	</body>

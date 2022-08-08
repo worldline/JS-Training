@@ -19,7 +19,7 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-heading-color: #F0DB4F;
+  --r-heading-color: #f0ca4f;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
   --r-heading-text-transform: uppercase;
@@ -78,8 +78,6 @@ section.has-light-background, section.has-light-background h1, section.has-light
   font-weight: var(--r-heading-font-weight);
   line-height: var(--r-heading-line-height);
   letter-spacing: var(--r-heading-letter-spacing);
-  text-transform: var(--r-heading-text-transform);
-  text-shadow: var(--r-heading-text-shadow);
   word-wrap: break-word;
 }
 
