@@ -5,11 +5,11 @@
 		<link rel="icon" type="image/x-icon" href="./assets/img/JavaScript-logo.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Training</title>
-	<link rel="stylesheet" href="./assets/css/global.css">
+		<link rel="stylesheet" href="./assets/css/global.css">
   </head>
   <body>
 		<div class="reveal">
-			<div class="menubar" id="menubar" style="display: none">
+			<div class="menubar" id="menubar">
 				<div class="dropdown">
 					<input id="checkbox_toggle" type="checkbox">
 					<label for="checkbox_toggle" data-i18n="chooselanguage">Language</label>
@@ -24,7 +24,7 @@
 				</div>
 			</div>
 			<div class="slides">
-				<section id="intro">
+				<section id="welcome">
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
 					<h1 data-i18n="title">JavaScript Training</h1>
 					<p>
@@ -32,101 +32,109 @@
 							https://github.com/worldline/JS-Training
 						</a>
 					</p>
+					<div class="langchooser flags">
+						<label>
+							<input type="radio" name="langradios" value="en" checked><img src="./assets/img/en.png">
+						</label>
+						<label>
+							<input type="radio" name="langradios" value="fr"><img src="./assets/img/fr.png">
+						</label>
+					</div>
         </section>
-				<section class="small-list">
+				<section class="small-list" id="intro">
 					<ul>
-						<li>
+						<li data-i18n="1">
 							This course is for developers who already have a beginner to intermediate level in JavaScript and who 
 							wish to deepen their knowledge of this language to better understand more ambitious JavaScript projects.
 						</li>
-						<li>
+						<li data-i18n="2">
 							It is classified as advanced, which means that we will focus more on some technical aspects of the language 
 							and on the study of some advanced programming patterns.
 						</li>
-						<li>
+						<li data-i18n="3">
 							The training focuses on the language and is agnostic of any framework or environment, meaning that you 
 							will be able to apply these lessons to both front-end (Angular, Vue.js, Ember...) and back-end (Node.js).
 						</li>
-						<li>
+						<li data-i18n="4">
 							It is the ideal opportunity to review and consolidate the basics for all those who have learned 
 							JavaScript "on the job", or to prepare or complement a training on a modern web framework.
 						</li>
 					</ul>
 				</section>
-				<section class="agenda">
+				<section class="agenda" id="agenda">
 					<h2>Agenda</h2>
 					<div class="flex-slide">
 						<div style="flex-basis: 100%;">
-							<p class="chapter-title">Introduction</p>
+							<p class="chapter-title" data-i18n="chapter-1">Introduction</p>
 							<ul>
-								<li>ECMAScript, TC39 and versions of JavaScript</li>
+								<li data-i18n="list-1">ECMAScript, TC39 and versions of JavaScript</li>
 							</ul>
 	
-							<p class="chapter-title">A reintroduction to JavaScript</p>
+							<p class="chapter-title" data-i18n="chapter-2">A reintroduction to JavaScript</p>
 							<ul>
-								<li>Primitives and Objects</li>
-								<li>Property descriptors</li>
-								<li>Scopes and Closures</li>
-								<li>Functions and contexts</li>
-								<li>Implicit casts</li>
+								<li data-i18n="list-2">Primitives and Objects</li>
+								<li data-i18n="list-3">Property descriptors</li>
+								<li data-i18n="list-4">Scopes and Closures</li>
+								<li data-i18n="list-5">Functions and contexts</li>
+								<li data-i18n="list-6">Implicit casts</li>
 							</ul>
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<p class="chapter-title">Modern JS: ES2015+</p>
+							<p class="chapter-title" data-i18n="chapter-3">Modern JS: ES2015+</p>
 							<ul>
-								<li>Arrow functions</li>
-								<li>Default parameters</li>
-								<li>Spread / Rest</li>
-								<li>Destructuring</li>
-								<li>Template literals</li>
-								<li>Map and Sets</li>
-								<li>Modules</li>
+								<li data-i18n="list-7">Arrow functions</li>
+								<li data-i18n="list-8">Default parameters</li>
+								<li data-i18n="list-9">Spread / Rest</li>
+								<li data-i18n="list-10">Destructuring</li>
+								<li data-i18n="list-11">Template literals</li>
+								<li data-i18n="list-12">Map and Sets</li>
+								<li data-i18n="list-13">Modules</li>
 							</ul>
 	
-							<p class="chapter-title">Managing asynchronicity</p>
+							<p class="chapter-title" data-i18n="chapter-4">Managing asynchronicity</p>
 							<ul>
-								<li>Asynchronicity, what is it?</li>
-								<li>Callbacks and Pub/Sub</li>
-								<li>Promises</li>
-								<li>async / await</li>
-								<li>Observables</li>
+								<li data-i18n="list-14">Asynchronicity, what is it?</li>
+								<li data-i18n="list-15">Callbacks and Pub/Sub</li>
+								<li data-i18n="list-16">Promises</li>
+								<li data-i18n="list-17">async / await</li>
+								<li data-i18n="list-18">Observables</li>
 							</ul>
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<p class="chapter-title">Object oriented</p>
+							<p class="chapter-title" data-i18n="chapter-5">Object oriented</p>
 							<ul>
-								<li>Prototypes and delegation</li>
-								<li>class / super / extends</li>
-								<li>Composition of objects</li>
-								<li>Symbols, iterables and generators</li>
-								<li>Proxies</li>
+								<li data-i18n="list-19">Prototypes and delegation</li>
+								<li data-i18n="list-20">class / super / extends</li>
+								<li data-i18n="list-21">Composition of objects</li>
+								<li data-i18n="list-22">Symbols, iterables and generators</li>
+								<li data-i18n="list-23">Proxies</li>
 							</ul>
 	
-							<p class="chapter-title">Functional programming</p>
+							<p class="chapter-title" data-i18n="chapter-6">Functional programming</p>
 							<ul>
-								<li>Recursivity</li>
-								<li>Chainable APIs</li>
-								<li>Function Composition</li>
-								<li>Currying</li>
+								<li data-i18n="list-24">Recursivity</li>
+								<li data-i18n="list-25">Chainable APIs</li>
+								<li data-i18n="list-26">Function Composition</li>
+								<li data-i18n="list-27">Currying</li>
 							</ul>
 
-							<p class="chapter-title">Transpilers</p>
+							<p class="chapter-title" data-i18n="chapter-7">Transpilers</p>
 							<ul>
-								<li>Babel</li>
-								<li>TypeScript, JSX</li>
+								<li data-i18n="list-28">Babel</li>
+								<li data-i18n="list-29">TypeScript, JSX</li>
 							</ul>
 						</div>
 					</div>
 				</section>
 				<section>
-					<section>
-						<h2>Cheat Sheets</h2>
-						<p>It can be useful</p>
+					<section id="cheat-sheets">
+						<h2 data-i18n="title">Cheat Sheets</h2>
+						<p data-i18n="description">It can be useful</p>
 					</section>
-					<section>
-						<h3>String Methods</h3>
+					<section id="string-methods">
+						<h3 data-i18n="title">String Methods</h3>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim data-line-numbers>
 							"str".charAt(1) === "str"[1] === "t"
 							"a".concat("b") === "a" + "b" === "ab"
@@ -145,8 +153,8 @@
 							"  str  ".trim() == "str"
 						</code></pre>
 					</section>
-					<section>
-						<h3>Array Methods</h3>
+					<section id="array-methods">
+						<h3 data-i18n="title">Array Methods</h3>
 						<pre style="font-size: 50%"><code class="javascript hljs" data-trim data-line-numbers>
 							[1,2].concat([3,4], 5, 6) // [1,2,3,4,5,6]
 							[1,2,3].fill(4) // [4,4,4]
@@ -194,7 +202,7 @@
 							
 							for(let [key, val] of map){ }
 							map.forEach((val, key, map) => {})
-						</code></pre>
+					</code></pre>
 					</section>
 					<section>
 						<h3>Set</h3>
@@ -215,104 +223,104 @@
 					</section>
 				</section>
 				<section>
-					<section>
-						<h2>Introduction</h2>
-						<p>
+					<section id="chapter-1">
+						<h2 data-i18n="title">Introduction</h2>
+						<p data-i18n="description">
 							Who manages JavaScript? How is the language evolving? <br />
 							ECMAScript, TC39 and JavaScript versions
 						</p>
 					</section>
-					<section>
+					<section id="ecmascript">
 						<h3 class="flex-center">ECMAScript <img height="50px" src="assets/img/ecma.jpg"></h3>
 						<ul>
-							<li>
+							<li data-i18n="list-1">
 								<b>ECMA International</b> is an organisation that creates standards for technologies
 							</li>
-							<li>
+							<li data-i18n="list-2">
 								<b>ECMAScript</b> is the name of the specification referenced ECMA-262 and describing a general purpose scripting language
 							</li>
-							<li>
+							<li data-i18n="list-3">
 								<b>TC39</b> is the name of the technical committee that decides on developments in the ECMAScript specification. 
 								It is composed of delegates from <b>major companies</b> (including all browser providers) and <b>invited experts.</b>
 							</li>
-							<li>
+							<li data-i18n="list-4">
 								<b>JavaScript</b> is a versatile scripting language and the most popular implementation of ECMAScript<br>
 								<em>(another popular implementation: ActionScript)</em>
 							</li>
 						</ul>
 					</section>
-					<section style="text-align: left;">
-						<h3>JavaScript Evolutions</h3>
-						<p>
+					<section id="javascript-evolutions" style="text-align: left;">
+						<h3 data-i18n="title">JavaScript Evolutions</h3>
+						<p data-i18n="text-1">
 							TC39 is considering proposals for ECMAScript developments. Each proposal goes through 5 stages:
 						</p>
 						<ul>
-							<li>0:
+							<li data-i18n="list-1">0:
 								<b>Strawman -</b> suggestion of a need, call for ideas
 							</li>
-							<li>1:
+							<li data-i18n="list-2">1:
 								<b>Proposal -</b> draft solution, first polyfills/demos
 							</li>
-							<li>2:
+							<li data-i18n="list-3">2:
 								<b>Draft -</b> precisely describes the syntax/API
 							</li>
-							<li>3:
+							<li data-i18n="list-4">3:
 								<b>Candidate -</b> signed by the whole committee, call for implementations
 							</li>
-							<li>4:
+							<li data-i18n="list-5">4:
 								<b>Finished -</b> ready to be included in the next version of ES
 							</li>
 						</ul>
 						<div style="text-align: center;">
-							<p>TC39 proposals and meetings are public: <a href="https://github.com/tc39">github.com/tc39</a></p>
-							<aside class="note warning">
+							<p data-i18n="text-2">TC39 proposals and meetings are public: <a href="https://github.com/tc39" target="_blank">github.com/tc39</a></p>
+							<aside class="note warning" data-i18n="note">
 								Any proposal before stage 4 can be dropped completely. <br />
 								However, from stage 3 onwards, the level of confidence is quite high.	
 							</aside>
 						</div>
 					</section>
-					<section>
-						<h3>Versions of ECMAScript</h3>
+					<section id="ecmascript-versions">
+						<h3 data-i18n="title">Versions of ECMAScript</h3>
 						<img src="./assets/img/ecmascript-versions.png" height="150px">
-						<p>
+						<p data-i18n="text-1">
 							A long delay between initial draft and release implies many browser-specific implementations.
 						</p>
-						<p>
+						<p data-i18n="text-2">
 							TC39 has decided to move to an annual release schedule from ES6, renamed <b>ES2015</b>
 						</p>
-						<p>
+						<p data-i18n="text-3">
 							Since 2015, a new version of the ECMAScript specification is released every year: ES2016, ES2017...
 						</p>
 					</section>
-					<section>
-						<h3>ECMAScript browser implementation</h3>
-						<p>
+					<section id="ecmascript-navigator">
+						<h3 data-i18n="title">ECMAScript browser implementation</h3>
+						<p data-i18n="text-1">
 							As a result of the new annual rhythm:<br />
 							<small>an excellent, comprehensive and consistent support across all modern browsers</small>
 						</p>
 						<div class="flex-center">
-							<p>So-called "<span class="green">evergreen</span>" browsers</p>
+							<p data-i18n="text-2">So-called "<span class="green">evergreen</span>" browsers</p>
 							<img height="450px" src="./assets/img/evergreen.png">
 						</div>
 					</section>
 				</section>
 				<section>
-					<section>
-						<h2>A reintroduction to JS</h2>
-						<p>Exercises 1 to 6</p>
+					<section id="chapter-2">
+						<h2 data-i18n="title">A reintroduction to JS</h2>
+						<p data-i18n="description">Exercises 1 to 6</p>
 					</section>
-					<section style="text-align: left;">
-						<h3>Exercises</h3>
-						<p>
+					<section id="exercices-training" style="text-align: left;">
+						<h3 data-i18n="title">Exercises</h3>
+						<p data-i18n="text-1">
 							Slides and exercises available on Github:
-							<a href="https://github.com/worldline/JS-Training">https://github.com/worldline/JS-Training</a>
+							<a href="https://github.com/worldline/JS-Training" target="_blank">https://github.com/worldline/JS-Training</a>
 						</p>
-						<p>
+						<p data-i18n="text-2">
 							Do the exercises from your browser at this address:
-							<a href="https://codesandbox.io/s/github/SDCOAdvocates/JS-Training">https://codesandbox.io/s/github/SDCOAdvocates/JS-Training</a>
+							<a href="https://codesandbox.io/s/github/SDCOAdvocates/JS-Training" target="_blank">https://codesandbox.io/s/github/SDCOAdvocates/JS-Training</a>
 						</p>
 						<img src="./assets/img/Image1.png">
-						<p>
+						<p data-i18n="text-3">
 							Fork to create your personal version of the working repo. 
 							You can publish it on your personal Github account if you have one.
 						</p>
@@ -321,38 +329,38 @@
 							<img height="142px" src="./assets/img/Image3.png">
 							<img height="142px" src="./assets/img/Image4.png">
 						</div>
-						<p>For each exercise, correct the source to validate the associated test</p>
+						<p data-i18n="text-4">For each exercise, correct the source to validate the associated test</p>
 					</section>
-					<section>
-						<span class="ref">Exercise 1</span>
-						<h3>Types and Primitives</h3>
-						<p>JavaScript defines 7 data types:</p>
+					<section id="types-primitives">
+						<h3 data-i18n="title">Types and Primitives</h3>
+						<span class="ref" data-i18n="exo">Exercise 1</span>
+						<p data-i18n="text-1">JavaScript defines 7 data types:</p>
 						<img height="250px" src="./assets/img/Image5.png">
-						<p>The <b class="monospace">typeof</b> operator returns the type of an object, but be careful:</p>
+						<p data-i18n="text-2">The <b class="monospace">typeof</b> operator returns the type of an object, but be careful:</p>
 						<pre><code class="javascript hljs" data-trim>
 							typeof null === "object" // bug of the 1st version of ES
 							typeof function(){} === "function"
 						</code></pre>
 					</section>
-					<section>
-						<h3>null or undefined</h3>
+					<section id="null-or-undefined">
+						<h3 data-i18n="title">null or undefined</h3>
 						<ul>
-							<li><b class="monospace">undefined</b> : the variable is declared but not assigned</li>
-							<li><b class="monospace">null</b> : the variable has been assigned to the null reference</li>
+							<li data-i18n="text-1"><b class="monospace">undefined</b> : the variable is declared but not assigned</li>
+							<li data-i18n="text-2"><b class="monospace">null</b> : the variable has been assigned to the null reference</li>
 						</ul>
-						<p>
+						<p data-i18n="text-3">
 							<b class="monospace">null</b> represents the intentional absence of value and often comes from an assignment by the developer
 						</p>
 						<aside class="note warning">
-							Don't assign variables to undefined. Use the delete operator instead:<br>
+							<span data-i18n="note">Don't assign variables to undefined. Use the delete operator instead:</span><br>
 							<img height="70px" src="./assets/img/Image6.png">
 						</aside>
 					</section>
-					<section style="text-align: left;">
-						<h3>Objects</h3>
-						<p>Functions, <b class="monospace">arrays</b> and derivatives are all of type <b class="monospace">object</b>. Unlike primitives, objects:</p>
+					<section id="objects" style="text-align: left;">
+						<h3 data-i18n="title">Objects</h3>
+						<p data-i18n="text">Functions, <b class="monospace">arrays</b> and derivatives are all of type <b class="monospace">object</b>. Unlike primitives, objects:</p>
 						<ul>
-							<li>are compared by reference</li>
+							<li data-i18n="list-1">are compared by reference</li>
 						</ul>
 						<pre><code class="javascript hljs" data-trim>
 							"test" === "test"
@@ -362,7 +370,7 @@
 							▸ true
 						</code></pre>
 						<ul>
-							<li>have a list of properties that are key-value pairs: key (String, Symbol) ⇔ value (any)</li>
+							<li data-i18n="list-2">have a list of properties that are key-value pairs: key (String, Symbol) ⇔ value (any)</li>
 						</ul>
 						<pre><code class="javascript hljs" data-trim>
 							"item" in { item: "test" }
@@ -372,9 +380,9 @@
 							▸ true
 						</code></pre>
 					</section>
-					<section>
-						<span class="ref">Exercise 2</span>
-						<h3 class="flex-center">Objects: properties listing</h3>
+					<section id="properties-listing">
+						<h3 class="flex-center" data-i18n="title">Objects: properties listing</h3>
+						<span class="ref" data-i18n="exo">Exercise 2</span>
 						<pre style="font-size: 90%"><code class="javascript hljs" data-trim>
 							let obj = { a: 1, b: 2 }
 
@@ -393,9 +401,9 @@
 								▸ [ ["a", 1], ["b", 2] ]
 						</code></pre>
 					</section>
-					<section>
-						<span class="ref">Exercise 3</span>
-						<h3>Objects: properties assignment</h3>
+					<section id="properties-assignment">
+						<h3 data-i18n="title">Objects: properties assignment</h3>
+						<span class="ref" data-i18n="exo">Exercise 3</span>
 						<pre><code class="javascript hljs" data-trim>
 							let obj = { key: "value" }
 							obj.a = 1;
@@ -406,28 +414,28 @@
 							Object.fromEntries([ ['a', 1], ['b', 1]]);
 								▸ {a: 1, b: 2}
 						</code></pre>
-						<aside  class="note info">
+						<aside class="note info" data-i18n="note">
 							<b class="monospace">Object.assign</b> is very useful for assigning default values 
 							or assigning a set of properties in a single statement
 						</aside>
 					</section>
-					<section style="text-align: left;">
-						<h3>Property descriptors</h3>
-						<p>Each property contains in addition to its value, a list of intrinsic parameters called <b>descriptors</b>:</p>
+					<section id="property-descriptors" style="text-align: left;">
+						<h3 data-i18n="title">Property descriptors</h3>
+						<p data-i18n="text-1">Each property contains in addition to its value, a list of intrinsic parameters called <b>descriptors</b>:</p>
 						<ul>
-							<li><b class="monospace">value:</b> <em>the value of the property</em></li>
-							<li><b class="monospace">enumerable: true</b> <em>if the property is returned by Object.keys or for..in</em></li>
-							<li><b class="monospace">writable: true</b> <em>if the value of the property can be modified</em></li>
-							<li><b class="monospace">configurable: true</b>: <em>if the descriptor can be modified</em></li>
-							<li><b class="monospace">get</b>: <em>optional function to use as getter</em></li>
-							<li><b class="monospace">set</b>: <em>optional function to use as mutator (setter)</em></li>
+							<li><b class="monospace">value:</b> <em data-i18n="list-1">the value of the property</em></li>
+							<li><b class="monospace">enumerable: true</b> <em data-i18n="list-2">if the property is returned by Object.keys or for..in</em></li>
+							<li><b class="monospace">writable: true</b> <em data-i18n="list-3">if the value of the property can be modified</em></li>
+							<li><b class="monospace">configurable: true</b>: <em data-i18n="list-4">if the descriptor can be modified</em></li>
+							<li><b class="monospace">get</b>: <em data-i18n="list-5">optional function to use as getter</em></li>
+							<li><b class="monospace">set</b>: <em data-i18n="list-6">optional function to use as mutator (setter)</em></li>
 						</ul>
-						<p>A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators</p>
+						<p data-i18n="text-2">A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators.</p>
 					</section>
-					<section>
-						<span class="ref">Exercise 4</span>
-						<h3>Define the descriptors</h3>
-						<p>The method <b class="monospace">Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
+					<section id="define-the-descriptors">
+						<h3 data-i18n="title">Define the descriptors</h3>
+						<span class="ref" data-i18n="exo">Exercise 4</span>
+						<p data-i18n="text">The method <b class="monospace">Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
 						<div class="flex-center">
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 								const obj = {}
@@ -448,9 +456,9 @@
 							<img height="325px" src="./assets/img/Image7.png">
 						</div>
 					</section>
-					<section>
+					<section id="getters-setters">
 						<h3>Getters / Setters</h3>
-						<p>Literal declaration for get / set descriptors:</p>
+						<p data-i18n="text">Literal declaration for get / set descriptors:</p>
 						<pre><code class="javascript hljs" data-trim data-line-numbers>
 							const user = {
 								name: "Smith",
@@ -467,34 +475,34 @@
 							}
 						</code></pre>
 					</section>
-					<section>
-						<h3>Own and delegated properties</h3>
-						<p>
+					<section id="delegated-properties">
+						<h3 data-i18n="title">Own and delegated properties</h3>
+						<p data-i18n="text-1">
 							The properties assigned to an object are called the <b>own properties</b> of the object. 
 							But there are other types of properties, the <b>delegated properties</b>.
 						</p>
 						<img height="150" src="./assets/img/Image8.png">
-						<p>These delegated properties are in fact the properties of the object's prototype (see Object Oriented section)</p>
+						<p data-i18n="text-2">These delegated properties are in fact the properties of the object's prototype (see Object Oriented section)</p>
 						<pre><code class="javascript hljs" data-trim>
 							obj.toString === Object.prototype.toString
 							▸ true
 						</code></pre>
 					</section>
-					<section>
-						<h3>Scopes</h3>
-						<p><b>Scope</b> = perimeter from which variables can be accessed.</p>
-						<p>At the highest level, we are in the global scope, accessible everywhere.</p>
+					<section id="scopes">
+						<h3 data-i18n="title">Scopes</h3>
+						<p data-i18n="text-1"><b>Scope</b> = perimeter from which variables can be accessed.</p>
+						<p data-i18n="text-2">At the highest level, we are in the global scope, accessible everywhere.</p>
 						<img height="300" src="./assets/img/Image9.png">
 						<p>
-							Accessible from global scope<span class="green">(1)</span> : <span class="monospace">foo</span><br />
-							Accessible from function foo scope <span class="red">(2)</span> : <span class="monospace">foo, a, b, bar</span><br />
-							Accessible from function bar scope <span class="blue">(3)</span> : <span class="monospace">foo, a, b, bar, c</span><br />
+							<span data-i18n="text-3">Accessible from global scope</span> <span class="green">(1)</span> : <span class="monospace">foo</span><br />
+							<span data-i18n="text-4">Accessible from function foo scope</span> <span class="red">(2)</span> : <span class="monospace">foo, a, b, bar</span><br />
+							<span data-i18n="text-5">Accessible from function bar scope</span> <span class="blue">(3)</span> : <span class="monospace">foo, a, b, bar, c</span><br />
 						</p>
 					</section>
-					<section>
-						<h3>Block scopes</h3>
-						<p>In addition to function scopes, some instructions create so-called <b>block scopes</b></p>
-						<p>These are known as <b>block instructions:</b></p>
+					<section id="blocs-scopes">
+						<h3 data-i18n="title">Block scopes</h3>
+						<p data-i18n="text-1">In addition to function scopes, some instructions create so-called <b>block scopes</b></p>
+						<p data-i18n="text-2">These are known as <b>block instructions:</b></p>
 						<div class="flex-center">
 							<pre><code class="javascript hljs" data-trim>
 								if(){ ... }
@@ -503,17 +511,17 @@
 							</code></pre>
 							<img height="150" src="./assets/img/Image10.png">
 						</div>
-						<p>
+						<p data-i18n="text-3">
 							A block scope can also be declared with <span class="monospace">{ ... }</span> <br />
 							<em>(not to be confused with a literal object declaration)</em>
 						</p>
 					</section>
-					<section>
-						<h3>var, let or const?</h3>
+					<section id="var-let-const">
+						<h3 data-i18n="title">var, let or const?</h3>
 						<ul>
-							<li><b class="monospace">let</b> and <b class="monospace">const</b> appeared with ES2015</li>
-							<li>they bind variables to <b>block scope</b> and not function scope like <code>var</code>, which is much more intuitive</li>
-							<li><b class="monospace">const</b> is no longer used since</li>
+							<li data-i18n="list-1"><b class="monospace">let</b> and <b class="monospace">const</b> appeared with ES2015</li>
+							<li data-i18n="list-2">they bind variables to <b>block scope</b> and not function scope like <code>var</code>, which is much more intuitive</li>
+							<li data-i18n="list-3"><b class="monospace">var</b> is no longer used since</li>
 						</ul>
 						<div class="flex-slide">
 							<img height="250" src="./assets/img/Image11.png">
@@ -526,20 +534,20 @@
 								</tbody>
 							</table>
 						</div>
-						<aside class="note info"><span style="text-decoration: underline">Recommended:</span> Use <code>const</code>, or <code>let</code> if you need to reassign</aside>
+						<aside class="note info" data-i18n="note"><u>Recommended:</u> Use <code>const</code>, or <code>let</code> if you need to reassign</aside>
 					</section>
-					<section>
-						<h3>Closures</h3>
-						<p>Scope of a function = local scope + parent scope = local variables + non-local variables</p>
-						<p>
+					<section id="closures">
+						<h3 data-i18n="title">Closures</h3>
+						<p data-i18n="text-1">Scope of a function = local scope + parent scope = local variables + non-local variables</p>
+						<p data-i18n="text-2">
 							A function using <b>non-local variables</b> (defined in a parent scope) creates what is called a <b>closure</b>. 
 							A closure must remember its parent scope in order to execute correctly.
 						</p>
 						<div class="cols-2">
 							<div class="note info" style="font-size: 100%; font-style: italic">
-								<p><b class="monospace">add5</b> retains its parent scope with <code>x=5</code></p>
-								<p>This link prevents the garbage collector from dereferencing the local variable x at the end of the <b class="monospace">add</b> function</p>
-								<p><b class="monospace">add5</b> creates a <b>closure</b></p>
+								<p data-i18n="text-3"><b class="monospace">add5</b> retains its parent scope with <code>x=5</code></p>
+								<p data-i18n="text-4">This link prevents the garbage collector from dereferencing the local variable x at the end of the <b class="monospace">add</b> execution</p>
+								<p data-i18n="text-5"><b class="monospace">add5</b> creates a <b>closure</b></p>
 							</div>
 							<pre><code class="javascript hljs" data-trim>
 								function add(x) {
@@ -553,12 +561,12 @@
 								▸ 13
 							</code></pre>
 						</div>
-						<aside class="note warning">
+						<aside class="note warning" data-i18n="note">
 							Unintentional closures are the most common source of <b>memory leaks</b> problems in web applications.
 						</aside>
 					</section>
-					<section>
-						<h3>Using closures to make "private" variables</h3>
+					<section id="using-closures">
+						<h3 data-i18n="title">Using closures to make "private" variables</h3>
 						<pre><code lass="javascript hljs" data-trim>
 							function getCounter() {
 								let value = 0;
@@ -568,12 +576,12 @@
 								}
 							}
 						</code></pre>
-						<p>Outside the scope of the <b class="monospace">getCounter</b> function, the value variable will never be accessible.</p>
-						<p>Only the <b class="monospace">getValue</b> and <b class="monospace">increment</b> closures allow access</p>
+						<p data-i18n="text-1">Outside the scope of the <b class="monospace">getCounter</b> function, the value variable will never be accessible.</p>
+						<p data-i18n="text-2">Only the <b class="monospace">getValue</b> and <b class="monospace">increment</b> closures allow access</p>
 					</section>
-					<section>
-						<span class="ref">Exercise 5</span>
-						<h3>Using closures</h3>
+					<section id="using-closures-2">
+						<h3 data-i18n="title">Using closures</h3>
+						<span class="ref" data-i18n="exo">Exercise 5</span>
 						<pre><code class="javascript hljs" data-trim>
 							for (var i = 1; i&lt;=3; i++) {
 								setTimeOut( function timer(){
@@ -585,18 +593,20 @@
 							▸ 4
 							▸ 4
 						</code></pre>
-						<aside class="note">
+						<aside class="note" data-i18n="note">
 							Note that closures retain a reference to the parent scope,<br> 
 							and therefore access non-local variables by <b>reference</b>, not by value. <br>
 							<br>
 							The value of the non-local variables can therefore vary depending on when the function is called.
 						</aside>
 					</section>
-					<section class="left">
-						<h3>Functions and execution context</h3>
-						<p>
-							Functions have some kind of hidden argument called <b>context</b> and assigned to the keyword <b class="monospace">this</b> inside the function body.</p>
-							<p>When a function is called as a property of an object, we call it a <b>method</b> and that parent object is assigned as execution context of the method:
+					<section class="left" id="functions-execution-context">
+						<h3 data-i18n="title">Functions and execution context</h3>
+						<p data-i18n="text-1">
+							Functions have some kind of hidden argument called <b>context</b> and assigned to the keyword <b class="monospace">this</b> inside the function body.
+						</p>
+						<p data-i18n="text-2">
+							When a function is called as a property of an object, we call it a <b>method</b> and that parent object is assigned as execution context of the method:
 						</p>
 						<pre><code class="javascript hljs" data-trim>
 							const obj = {
@@ -606,14 +616,15 @@
 							obj.whoisthis() === obj
 							▸ true
 						</code></pre>
-						<p>
-							When a function is called by direct reference, it has no context, which means the <code>this</code> variable will be looked up in parent scope.</p>
-						<p>At the <b>root scope</b>, the context is defined as the <b>global context</b> (<code>Window</code> on browser)</p>
+						<p data-i18n="text-3">
+							When a function is called by direct reference, it has no context, which means the <code>this</code> variable will be looked up in parent scope.
+						</p>
+						<p data-i18n="text-4">At the <b>root scope</b>, the context is defined as the <b>global context</b> (<code>Window</code> on browser)</p>
 						<img height="80" src="./assets/img/Image12.png">
 					</section>
-					<section>
-						<h3>Functions and execution context</h3>
-						<p>
+					<section id="functions-execution-context-2">
+						<h3 data-i18n="title">Functions and execution context</h3>
+						<p data-i18n="text-1">
 							The execution context can be changed with the methods 
 							<span class="monospace">call</span>, 
 							<span class="monospace">apply</span> and <span class="monospace">bind</span>
@@ -636,16 +647,16 @@
 							greetBob()
 							▸ "Hi I'm Bob ! 1 + 5 equals 6 !"
 						</code></pre>
-						<p>These methods are available on all functions.</p>
+						<p data-i18n="text-2">These methods are available on all functions.</p>
 					</section>
-					<section>
-						<h3>Primitives wrappers</h3>
-						<p>
+					<section id="primitives-wrappers">
+						<h3 data-i18n="title">Primitives wrappers</h3>
+						<p data-i18n="text-1">
 							<span class="monospace">String()</span>, <span class="monospace">Number()</span>, 
 							<span class="monospace">Boolean()</span> are the object equivalent constructors of the corresponding 
 							primitives, also called <b>primitive wrappers</b>
 						</p>
-						<p>The switch between object and primitive is automatic:</p>
+						<p data-i18n="text-2">The switch between object and primitive is automatic:</p>
 						<div class="flex-center">
 							<div style="flex-basis: 100%;">
 								<p class="center">Primitive -> Object</p>
@@ -671,11 +682,11 @@
 								</code></pre>
 							</div>
 						</div>
-						<aside class="note">Generally, primitive wrappers constructors are not called explicitly</aside>
+						<aside class="note" data-i18n="note">Generally, primitive wrappers constructors are not called explicitly</aside>
 					</section>
-					<section>
-						<h3>Type conversions (cast)</h3>
-						<p>There are 3 types of automatic type conversions in JS:</p>
+					<section id="type-conversions">
+						<h3 data-i18n="title">Type conversions (cast)</h3>
+						<p data-i18n="text">There are 3 types of automatic type conversions in JS:</p>
 						<table class="slide-array" style="width: 80%">
 							<thead><tr><th></th><th>Explicit cast</th><th>Implicit cast</th><th>Cast operators</th></tr></thead>
 							<tbody>
@@ -723,23 +734,23 @@
 								</tr>
 							</tbody>
 						</table>
-						<aside class="note info"><span style="font-weight: bold; text-decoration: underline">Recommended</span>: cast explicitly and as soon as possible</aside>
+						<aside class="note info" data-i18n="note"><span style="font-weight: bold; text-decoration: underline">Recommended</span>: cast explicitly and as soon as possible</aside>
 					</section>
-					<section>
-						<h3>== or === ?</h3>
-						<p>
+					<section id="equals-operator">
+						<h3 data-i18n="title">== or === ?</h3>
+						<p data-i18n="text">
 							== weak equality (with conversion) <br />
 							=== strict equality (without conversion)
 						</p>
 						<img height="250" src="./assets/img/Image13.png">
-						<div class="note info">
+						<div class="note info" data-i18n="note">
 							The rules for conversion with weak equality are <a href="https://eqeq.js.org/" target="_blank">very complex</a>. <br /> 
 							It's recommended to use strict equality, which is more predictable.
 						</div>
 					</section>
-					<section class="quizz">
+					<section class="quizz" id="implicit-casts">
+						<h3 data-i18n="title">Implicit casts</h3>
 						<span class="ref">Quiz</span>
-						<h3>Implicit casts</h3>
 						<div class="flex-slide">
 							<div style="flex-basis: 100%;">
 								<p><pre class="fragment fade"><code>"0"-0</code></pre><pre class="fragment fade"><code>▸ 0</code></pre></p>
@@ -763,9 +774,9 @@
 							</div>
 						</div>
 					</section>
-					<section>
-						<h3>Logical operators</h3>
-						<p>Operands are converted to Booleans to evaluate the operator, but the original values are returned</p>
+					<section id="logical-operators">
+						<h3 data-i18n="title">Logical operators</h3>
+						<p data-i18n="text-1">Operands are converted to Booleans to evaluate the operator, but the original values are returned</p>
 						<pre><code class="javascript hljs" data-trim>
 							let a = 42,
 							b = "abc",
@@ -781,15 +792,15 @@
 							a || b ⇔ a ? a : b <br>
 							a && b ⇔ a ? b : a
 						</aside>
-						<p>
+						<p data-i18n="text-2">
 							If the implicit Boolean cast of a value is <span class="monospace">true</span>, 
-							the value is said to be <em>truthy</em>, otherwise <em>falsey</em>
+							the value is said to be <em class="monospace">truthy</em>, otherwise <em class="monospace">falsey</em>
 						</p>
 					</section>
-					<section>
-						<span class="ref">Quiz</span>
-						<h3>Logical operators</h3>
-						<p>
+					<section id="logical-operators-2">
+						<h3 data-i18n="title">Logical operators</h3>
+						<span class="ref" data-i18n="exo">Exercise 6</span>
+						<p data-i18n="text-1">
 							The operators <span class="monospace">||</span> and <span class="monospace">&&</span>, 
 							the ternary conditions <span class="monospace">?:</span> and <br>
 							<span class="monospace">if else</span> statements execute only one operand here:
@@ -810,19 +821,19 @@
 							<pre><code class="javascript hljs" data-trim>true log('G'); false || log('H');</code></pre>
 							<p class="fragment fade">H</p>
 						</div>
-						<p>
+						<p data-i18n="text-2">
 							The <span class="monospace">&&</span> operator has priority over <span class="monospace">||</span> 
 							which has priority over <span class="monospace">?:</span>
 						</p>
 					</section>
 				</section>
 				<section>
-					<section>
-						<h1>Upgrade to modern JS: ES2015+</h1>
-						<p>Exercises 7 to 11</p>
+					<section id="chapter-3">
+						<h1 data-i18n="title">Upgrade to modern JS: ES2015+</h1>
+						<p data-i18n="description">Exercises 7 to 11</p>
 					</section>
-					<section>
-						<h3>Syntactic sugar: key and value</h3>
+					<section id="syntactic-key-value">
+						<h3 data-i18n="title">Syntactic sugar: key and value</h3>
 						<pre><code class="javascript hljs" data-trim>
 							let foo = "foo", bar = "bar"
 
@@ -832,8 +843,8 @@
 							▸ {foo: "foo", bar: "bar"}
 						</code></pre>
 					</section>
-					<section>
-						<h3>Syntactic sugar: calculated keys</h3>
+					<section id="syntactic-calculated-keys">
+						<h3 data-i18n="title">Syntactic sugar: calculated keys</h3>
 						<pre><code class="javascript hljs" data-trim>
 							let foo = "foo", bar = "bar"
 
@@ -854,28 +865,26 @@
 									foobar: "foobar"
 						</code></pre>
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 7</span>
-						<h3>Arrow functions</h3>
+					<section class="left" id="arrow-functions">
+						<h3 data-i18n="title">Arrow functions</h3>
+						<span class="ref" data-i18n="exo">Exercise 7</span>
 						<pre><code class="javascript hljs" data-trim>
 							const f1 = () => {},
 										f2 = x => x*2,
 										f3 = (a,b,c) => { return a+b+c }
 						</code></pre>
-						<p>Functions declared with this shortened syntax have specific features:</p>
+						<p data-i18n="text-1">Functions declared with this shortened syntax have specific features:</p>
 						<ul>
-							<li>No execution context <br>
+							<li data-i18n="list-1">No execution context <br>
 							<span class="grey">(the value of <span class="monospace">this</span> is looked up in the parent scope)</span></li>
-							<li>Cannot be invoked as builders</li>
+							<li data-i18n="list-2">Cannot be invoked as builders</li>
 						</ul>
-						<p>Short and effective, they encourage a functional, no-frills style <em>(no closure)</em>.</p>
-						<div class="note info">Arrow functions are recommended for all non-method functions</div>
+						<p data-i18n="text-2">Short and effective, they encourage a functional, no-frills style <em>(no closure)</em>.</p>
+						<div class="note info" data-i18n="note">Arrow functions are recommended for all non-method functions</div>
 					</section>
-					<section>
-						<h3>Default parameters</h3>
-						<p>
-							Assigns a default value if argument === <span class="monospace">undefined</span>
-						</p>
+					<section id="default-paramters">
+						<h3 data-i18n="title">Default parameters</h3>
+						<p data-i18n="text-1">Assigns a default value if argument <span class="monospace">=== undefined</span></p>
 						<pre><code class="javascript hljs" data-trim>
 							function f(a, b=1, c=2) { return a + b + c }
 
@@ -888,12 +897,12 @@
 							f(1)
 							▸ 4
 						</code></pre>
-						<p>Also works with the arrow functions:</p>
+						<p data-i18n="text-2">Also works with the arrow functions:</p>
 						<pre><code class="javascript hljs" data-trim>const doSomething = (params = {}) => {}</code></pre>
 					</section>
-					<section>
-						<h3>Operators Spread / Rest</h3>
-						<p>Spread: converts an iterable object into an argument list</p>
+					<section id="spread-rest">
+						<h3 data-i18n="title">Operators Spread / Rest</h3>
+						<p data-i18n="text">Spread: converts an iterable object into an argument list</p>
 						<pre><code class="javascript hljs" data-trim>
 							const sum = (a,b,c) => a+b+c;
 
@@ -909,9 +918,9 @@
 
 						<pre><code class="javascript hljs" data-trim>const cloneArray = arr => [...arr]</code></pre>
 					</section>
-					<section>
-						<h3>Operators Spread / Rest</h3>
-						<p>Rest : converts a list of arguments into an Array</p>
+					<section id="spread-rest-2">
+						<h3 data-i18n="title">Operators Spread / Rest</h3>
+						<p data-i18n="text">Rest : converts a list of arguments into an Array</p>
 						<pre><code class="javascript hljs" data-trim>
 							const sum = (...args) => args.reduce((a,b) => a+b, 0);
 
@@ -923,11 +932,11 @@
 							}
 						</code></pre>
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 8</span>
-						<h3>Operators Spread / Rest</h3>
+					<section class="left" id="spread-rest-3">
+						<h3 data-i18n="title">Operators Spread / Rest</h3>
+						<span class="ref" data-i18n="exo">Exercise 8</span>
 						<p>Object properties (ES2018)</p>
-						<p>Only works with enumerable properties</p>
+						<p data-i18n="text">Only works with enumerable properties</p>
 						<ul>
 							<li>Rest properties:</li>
 						</ul>
@@ -945,9 +954,9 @@
 							n; // { x: 1, y: 2, a: 3, b: 4} 
 						</code></pre>
 					</section>
-					<section>
-						<h3>Destructuring</h3>
-						<p>Assigns variables according to an object / Array structure</p>
+					<section id="destructuring">
+						<h3 data-i18n="title">Destructuring</h3>
+						<p data-i18n="text">Assigns variables according to an object / Array structure</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							const userData = { first: "Joe", name: "Dalton", age: 27 };
 							
@@ -966,10 +975,10 @@
 							// first = 1, second = 2, fourth = 4
 						</code></pre>
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 9</span>
-						<h3>Destructuring</h3>
-						<p>Also works with function parameters:</p>
+					<section class="left" id="destructuring-2">
+						<h3 data-i18n="title">Destructuring</h3>
+						<span class="ref" data-i18n="exo">Exercise 9</span>
+						<p data-i18n="text">Also works with function parameters:</p>
 						<pre><code class="javascript hljs" data-trim>
 							function doSomething({ config, options: { verbose } }){
 								if(verbose) console.log("blabla");
@@ -982,11 +991,11 @@
 							})
 						</code></pre>
 					</section>
-					<section>
-						<h3>Default parameters</h3>
+					<section id="default-paramters-2">
+						<h3 data-i18n="title">Default parameters</h3>
 						<ul>
-							<li>Can be expressions using other arguments or variables in the scope.</li>
-							<li>If the default value is an expression, it will only be executed if necessary</li>
+							<li data-i18n="list-1">Can be expressions using other arguments or variables in the scope.</li>
+							<li data-i18n="list-2">If the default value is an expression, it will only be executed if necessary</li>
 						</ul>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function doSomething(data, config = retrieveDefaultConfig(data)) {
@@ -1001,9 +1010,9 @@
 							}) => { }
 						</code></pre>
 					</section>
-					<section class="left">
-						<h3>Parameterized object argument pattern</h3>
-						<p>Instead of passing several arguments to functions, a popular pattern is to pass an object as single argument with the different parameters as properties:</p>
+					<section class="left" id="object-argument-pattern">
+						<h3 data-i18n="title">Parameterized object argument pattern</h3>
+						<p data-i18n="text-1">Instead of passing several arguments to functions, a popular pattern is to pass an object as single argument with the different parameters as properties:</p>
 						<pre><code class="javascript hljs" data-trim>
 							const searchProducts = ({
 								minPrice = 0,
@@ -1017,36 +1026,36 @@
 							const { results, size } = searchProducts({ maxPrice: 500 });
 						</code></pre>
 
-						<p>Receiving and returning a single object is very useful:</p>
+						<p data-i18n="text-2">Receiving and returning a single object is very useful:</p>
 						<ul class="narrow">
-							<li>no need to remember the order of the arguments</li>
-							<li>each parameter can be optional</li>
-							<li>we limit the quantity of variables to be passed from one point to another</li>
-							<li>allows you to return several variables</li>
+							<li data-i18n="list-1">no need to remember the order of the arguments</li>
+							<li data-i18n="list-2">each parameter can be optional</li>
+							<li data-i18n="list-3">we limit the quantity of variables to be passed from one point to another</li>
+							<li data-i18n="list-4">allows you to return several variables</li>
 						</ul>
 					</section>
-					<section>
-						<h3>Template strings</h3>
-						<p>Template Strings are a new literal String declaration introduced in ES2015.</p>
-						<p>It uses the backtick <code>` `</code> character.</p>
+					<section id="template-strings">
+						<h3 data-i18n="title">Template strings</h3>
+						<p data-i18n="text-1">Template Strings are a new literal String declaration introduced in ES2015.</p>
+						<p data-i18n="text-2">It uses the backtick <code>` `</code> character.</p>
 						
 						<div class="flex-center">
 							<div>
-								<p>This new literal declaration allows:</p>
+								<p data-i18n="text-3">This new literal declaration allows:</p>
 								<ul>
-									<li>interpolation of variables and expressions</li>
-									<li>line breaks</li>
+									<li data-i18n="list-1">interpolation of variables and expressions</li>
+									<li data-i18n="list-2">line breaks</li>
 								</ul>
 							</div>
 							
 							<img height="100" src="./assets/img/Image15.png">
 						</div>
-						<div class="note info"><span style="text-decoration: underline; font-weight: bold">Recommended</span>: use template strings for all non-trivial strings</div>
+						<div class="note info" data-i18n="note"><span style="text-decoration: underline; font-weight: bold">Recommended</span>: use template strings for all non-trivial strings</div>
 					</section>
-					<section>
-						<span class="ref">Exercise 10</span>
-						<h3>Tagged Template strings</h3>
-						<p>If a function reference precedes a template string literal, that function is invoked with the static and dynamic parts of the following string:</p>
+					<section id="tagged-template-strings">
+						<h3 data-i18n="title">Tagged Template strings</h3>
+						<span class="ref" data-i18n="exo">Exercise 10</span>
+						<p data-i18n="text">If a function reference precedes a template string literal, that function is invoked with the static and dynamic parts of the following string:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function insertInUpperCase(string, ...vars) {
 								console.log({ strings, vars });
@@ -2497,38 +2506,38 @@
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div style="position: relative">
-						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-							/* BEFORE */
-							import data from "users.json"
-							let results = [];
+							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+								/* BEFORE */
+								import data from "users.json"
+								let results = [];
 
-							function printUsersOverAge18(){
-								data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
-								results = data.filter(user => user.age >= 18).slice(0, 5)
+								function printUsersOverAge18(){
+									data.sort((a,b) => a.lastName &lt; b.lastName ? -1 : 1)
+									results = data.filter(user => user.age >= 18).slice(0, 5)
 
-								const output = results.map(user => user.firstName).join("\n")
+									const output = results.map(user => user.firstName).join("\n")
+									document.querySelector("#results").textContent = output
+								}
+							</code></pre>
+							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
+								/* AFTER */
+								import data from "users.json"
+								import { compose } from "utils/functions.js";
+								import { sortBy, filterBy, take, mapToProp } from "utils/array.js";
+
+								const getUsersOverAge18 = compose(
+									sortBy("lastName"),
+									filterBy("age", n => n >= 18),
+									take(5)
+								);
+
+								const results = getUsersOverAge18(data)
+								const output = mapToProp("firstName", results).join("\n")
 								document.querySelector("#results").textContent = output
-							}
-						</code></pre>
-						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
-							/* AFTER */
-							import data from "users.json"
-							import { compose } from "utils/functions.js";
-							import { sortBy, filterBy, take, mapToProp } from "utils/array.js";
-
-							const getUsersOverAge18 = compose(
-								sortBy("lastName"),
-								filterBy("age", n => n >= 18),
-								take(5)
-							);
-
-							const results = getUsersOverAge18(data)
-							const output = mapToProp("firstName", results).join("\n")
-							document.querySelector("#results").textContent = output
-						</code></pre>
-						<div class="arrow left" style="top: 310px; left: 780px; background: black; padding: 0.5em; font-size: 80%; width: 12em; border: 3px solid white;">
-							what we get at the end: pure, atomic, generic and composable functions
-						</div>
+							</code></pre>
+							<div class="arrow left" style="top: 310px; left: 780px; background: black; padding: 0.5em; font-size: 80%; width: 12em; border: 3px solid white;">
+								what we get at the end: pure, atomic, generic and composable functions
+							</div>
 						</div>
 					</section>
 
@@ -2674,67 +2683,69 @@
 					</section>
 				</section>
 
-				<section class="agenda">
+				<section class="agenda" id="agenda">
 					<h2>Retrospective</h2>
 					<div class="flex-slide">
 						<div style="flex-basis: 100%;">
-							<p class="chapter-title">Introduction</p>
+							<p class="chapter-title" data-i18n="chapter-1">Introduction</p>
 							<ul>
-								<li>ECMAScript, TC39 and versions of JavaScript</li>
-							</ul>
-							<p class="chapter-title">A reintroduction to JavaScript</p>
-							<ul>
-								<li>Primitives and Objects</li>
-								<li>Property descriptors</li>
-								<li>Scopes and Closures</li>
-								<li>Functions and contexts</li>
-								<li>Implicit casts</li>
-							</ul>
-						</div>
-						<div style="flex-basis: 100%;">
-							<p class="chapter-title">Modern JS: ES2015+</p>
-							<ul>
-								<li>Arrow functions</li>
-								<li>Default parameters</li>
-								<li>Spread / Rest</li>
-								<li>Destructuring</li>
-								<li>Template literals</li>
-								<li>Map and Sets</li>
-								<li>Modules</li>
+								<li data-i18n="list-1">ECMAScript, TC39 and versions of JavaScript</li>
 							</ul>
 	
-							<p class="chapter-title">Managing asynchronicity</p>
+							<p class="chapter-title" data-i18n="chapter-2">A reintroduction to JavaScript</p>
 							<ul>
-								<li>Asynchronicity, what is it?</li>
-								<li>Callbacks and Pub/Sub</li>
-								<li>Promises</li>
-								<li>async / await</li>
-								<li>Observables</li>
+								<li data-i18n="list-2">Primitives and Objects</li>
+								<li data-i18n="list-3">Property descriptors</li>
+								<li data-i18n="list-4">Scopes and Closures</li>
+								<li data-i18n="list-5">Functions and contexts</li>
+								<li data-i18n="list-6">Implicit casts</li>
 							</ul>
 						</div>
 
 						<div style="flex-basis: 100%;">
-							<p class="chapter-title">Object oriented</p>
+							<p class="chapter-title" data-i18n="chapter-3">Modern JS: ES2015+</p>
 							<ul>
-								<li>Prototypes and delegation</li>
-								<li>class / super / extends</li>
-								<li>Composition of objects</li>
-								<li>Symbols, iterables and generators</li>
-								<li>Proxies</li>
+								<li data-i18n="list-7">Arrow functions</li>
+								<li data-i18n="list-8">Default parameters</li>
+								<li data-i18n="list-9">Spread / Rest</li>
+								<li data-i18n="list-10">Destructuring</li>
+								<li data-i18n="list-11">Template literals</li>
+								<li data-i18n="list-12">Map and Sets</li>
+								<li data-i18n="list-13">Modules</li>
 							</ul>
 	
-							<p class="chapter-title">Functional programming</p>
+							<p class="chapter-title" data-i18n="chapter-4">Managing asynchronicity</p>
 							<ul>
-								<li>Recursivity</li>
-								<li>Chainable APIs</li>
-								<li>Function Composition</li>
-								<li>Currying</li>
+								<li data-i18n="list-14">Asynchronicity, what is it?</li>
+								<li data-i18n="list-15">Callbacks and Pub/Sub</li>
+								<li data-i18n="list-16">Promises</li>
+								<li data-i18n="list-17">async / await</li>
+								<li data-i18n="list-18">Observables</li>
+							</ul>
+						</div>
+
+						<div style="flex-basis: 100%;">
+							<p class="chapter-title" data-i18n="chapter-5">Object oriented</p>
+							<ul>
+								<li data-i18n="list-19">Prototypes and delegation</li>
+								<li data-i18n="list-20">class / super / extends</li>
+								<li data-i18n="list-21">Composition of objects</li>
+								<li data-i18n="list-22">Symbols, iterables and generators</li>
+								<li data-i18n="list-23">Proxies</li>
+							</ul>
+	
+							<p class="chapter-title" data-i18n="chapter-6">Functional programming</p>
+							<ul>
+								<li data-i18n="list-24">Recursivity</li>
+								<li data-i18n="list-25">Chainable APIs</li>
+								<li data-i18n="list-26">Function Composition</li>
+								<li data-i18n="list-27">Currying</li>
 							</ul>
 
-							<p class="chapter-title">Transpilers</p>
+							<p class="chapter-title" data-i18n="chapter-7">Transpilers</p>
 							<ul>
-								<li>Babel</li>
-								<li>TypeScript, JSX</li>
+								<li data-i18n="list-28">Babel</li>
+								<li data-i18n="list-29">TypeScript, JSX</li>
 							</ul>
 						</div>
 					</div>

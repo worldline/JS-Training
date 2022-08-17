@@ -1,10 +1,317 @@
 {
   "slides": {
-     "intro":{
-        "title":"JavaScript avancé"
-     }
+    "welcome": {
+      "title": "JavaScript avancé"
+    },
+    "intro": {
+      "1": " Cette formation s'adresse aux développeurs ayant déjà un niveau débutant à moyen en JavaScript et souhaitant approfondir leurs connaissances sur ce langage pour mieux appréhender des projets JavaScript plus ambitieux.",
+      "2": " Elle est catégorisée en niveau avancé, ce qui veut dire que l'on s'attardera davantage sur les points techniques du langage et sur l'étude de certains patterns de programmation avancés.",
+      "3": " La formation se concentre sur le langage et est agnostique de tout framework ou environnement, c'est-à-dire que vous pourrez en appliquer les enseignements aussi bien sur du front-end (Angular, Vue.js, Ember...) que sur du back-end (Node.js).",
+      "4": " C'est l'occasion idéale de revoir et consolider les bases pour tous ceux qui ont appris JavaScript \"sur le tas\", ou pour préparer ou complémenter une formation sur un framework web moderne."
+    },
+    "agenda": {
+      "chapter-1": "Préambule",
+      "list-1": "ECMAScript, TC39 et les versions de JavaScript",
+      "chapter-2": "Une réintroduction à JavaScript",
+      "list-2": "Primitives et Objets",
+      "list-4": "Descripteurs de propriétés",
+      "list-5": "Scopes et Closures",
+      "list-6": "Fonctions et contextes",
+      "list-7": "Cast implicites",
+      "chapter-3": "Mise à niveau ES2015",
+      "list-8": "Arrow functions",
+      "list-9": "Paramètres par défaut",
+      "list-10": "Spread / Rest",
+      "list-11": "Destructuring",
+      "list-12": "Template literals",
+      "list-13": "Map et Sets",
+      "list-14": "Modules",
+      "chapter-4": "Gérer l'asynchronisme",
+      "list-15": "Asynchrone, c'est quoi",
+      "list-16": "Modules",
+      "list-17": "Callbacks et modèle Publisher/Subscriber",
+      "list-18": "Promises",
+      "list-19": "async / await",
+      "list-20": "Observables",
+      "chapter-5": "Orienté Objet",
+      "list-21": "Prototypes et délégation",
+      "list-22": "class / super / extends",
+      "list-23": "Composition d'objets",
+      "list-24": "Symboles, itérables et générateurs",
+      "list-25": "Proxies",
+      "chapter-6": "Orienté Fonctionnel",
+      "list-26": "Récursivité",
+      "list-27": "API chaînables",
+      "list-28": "Composition de fonctions",
+      "list-29": "Curryfication",
+      "chapter-7": "Transpileurs",
+      "list-30": "Babel",
+      "list-31": "TypeScript, JSX"
+    },
+    "cheat-sheets": {
+      "title": "Cheat Sheets",
+      "description": "Ça peut servir"
+    },
+    "string-methods": {
+      "title": "Méthodes de String"
+    },
+    "array-methods": {
+      "title": "Méthodes de Array"
+    },
+    "chapter-1": {
+      "title": "Préambule",
+      "description": "Qui gère JavaScript ? Comment le langage évolue ? <br /> ECMAScript, TC39 et versions de JavaScript"
+    },
+    "ecmascript": {
+      "list-1": "<b>ECMA International</b> est une organisation créant des standards pour les technologies",
+      "list-2": "<b>ECMAScript</b> est le nom de la spécification référencée ECMA-262 et décrivant un langage de script polyvalent",
+      "list-3": "<b>TC39</b> est le nom du comité technique décidant des évolutions de la spécification ECMAScript. Il est composé de délégués de <b>grandes entreprises</b> (dont tous les vendeurs navigateur) et d'<b>experts invités</b>.",
+      "list-4": "<b>JavaScript</b> est un langage de script polyvalent et l'implémentation la plus populaire de ECMAScript <em>(autre implémentation populaire: ActionScript)</em>"
+    },
+    "javascript-evolutions": {
+      "title": "Evolutions de JavaScript",
+      "text-1": "Le TC39 étudie les propositions d'évolutions de ECMAScript. Chaque proposition passe par 5 étapes:",
+      "list-1": "0: <b>Strawman</b> - suggestion d'un besoin, appel à idées",
+      "list-2": "1: <b>Proposal</b> - ébauche de solution, premiers polyfills/démos",
+      "list-3": "2: <b>Draft</b> - décrit précisément la syntaxe/API",
+      "list-4": "3: <b>Candidate</b> - signé par tout le comité, appel à implémentations",
+      "list-5": "4: <b>Finished</b> - prêt pour être inclus dans la prochaine version d'ES",
+      "text-2": "Les propositions et meetings du TC39 sont publics: <a href=\"https://github.com/tc39\" target=\"-blank\">github.com/tc39</a>",
+      "note": "Toute proposition avant le stage 4 peut être totalement abandonnée. <br> Toutefois, à partir du stage 3, le niveau de confiance est assez élevé."
+    },
+    "ecmascript-versions": {
+      "title": "Versions d'ECMAScript",
+      "text-1": "Un délai long entre draft initial et release implique beaucoup d'implémentations spécifiques par navigateur.",
+      "text-2": "Le TC39 a donc décidé de passer à un rythme de release annuel à partir de ES6, renommé <b>ES2015</b>",
+      "text-3": "Depuis 2015, une nouvelle version de la spécification ECMAScript est publiée chaque année: ES2016, ES2017…"
+    },
+    "ecmascript-navigator": {
+      "title": "Implémentation navigateur d'ECMAScript",
+      "text-1": "Conséquence du nouveau rythme annuel:<br /> <small>un excellent support, exhaustif et homogène entre tous les navigateurs moderne</small>",
+      "text-2": "Navigateurs dits <span class=\"green\">« evergreen »</span>"
+    },
+    "chapter-2": {
+      "title": "Une réintroduction à JS",
+      "description": "Exos 1 à 6"
+    },
+    "exercices-training": {
+      "title": "Exercices durant la formation",
+      "text-1": "Slides et exercices disponibles sur ce repo Github: <br> <a href=\"https://github.com/worldline/JS-Training\" target=\"-blank\">https://github.com/worldline/JS-Training</a>",
+      "text-2": "Faites les exercices depuis votre navigateur à cette adresse: <a href=\"https://codesandbox.io/s/github/SDCOAdvocates/JS-Training\" target=\"-blank\">https://codesandbox.io/s/github/SDCOAdvocates/JS-Training</a>",
+      "text-3": "Forkez pour créer votre version personnelle du repo de travail. Vous pouvez la publier sur votre compte personnel Github si vous en avez un.",
+      "text-4": "Pour chaque exercice, corrigez la source pour valider le test associ"
+    },
+    "types-primitives": {
+      "title": "Types et primitives",
+      "exo": "Exercice 1",
+      "text-1": "JavaScript définit 7 types de données:",
+      "text-2": "L'opérateur <b class=\"monospace\">typeof</b> retourne le type d'un objet, mais attention:"
+    },
+    "null-or-undefined": {
+      "title": "null ou undefined",
+      "text-1": "<b class=\"monospace\">undefined</b> : la variable est déclarée mais non assignée",
+      "text-2": "<b class=\"monospace\">null</b> : la variable a été assignée à la référence nulle",
+      "text-3": "<b class=\"monospace\">null</b> représente l'absence intentionnelle de valeur et provient souvent d'une assignation par le développeur",
+      "note": "N'assignez pas de variables à <b class=\"monospace\">undefined</b>. Utilisez l'opérateur <b class=\"monospace\">delete</b> à la place:"
+    },
+    "objects": {
+      "title": "Objets",
+      "text": "Les fonctions, arrays et dérivés sont tous de type <b class=\"monospace\">object</b>. <br>Contrairement aux primitives, les objets:",
+      "list-1": "sont comparés par référence",
+      "list-2": "ont une liste de propriétés qui sont des paires clé-valeur: clé (String, Symbol) ⇔ valeur (any)"
+    },
+    "properties-listing": {
+      "title": "Objets: parcours des propriétés",
+      "exo": "Exercice 2"
+    },
+    "properties-assignment": {
+      "title": "Objets: parcours des propriétés",
+      "exo": "Exercice 3",
+      "note": "<b class=\"monospace\">Object.assign</b> est très utile pour l'assignation de valeurs par défaut ou l'assignation d'un ensemble de propriétés en une seule instruction"
+    },
+    "property-descriptors": {
+      "title": "Descripteurs de propriétés",
+      "text-1" :"Chaque propriété contient en plus de sa valeur, une liste de paramètres intrinsèques appelés <b>descripteurs</b>:",
+      "list-1": "la valeur de la propriété",
+      "list-2": "si la propriété est retournée par Object.keys ou for..in",
+      "list-3": "si la valeur de la propriété peut être modifiée",
+      "list-4": "si le descripteur peut être modifié",
+      "list-5": "fonction optionnelle à utiliser comme accesseur (getter)",
+      "list-6": "fonction optionnelle à utiliser comme mutateur (setter)",
+      "text-2": "Une assignation par défaut est énumérable, modifiable et configurable, sans accesseur ou mutateur spécifique."
+    },
+    "define-the-descriptors": {
+      "title": "Définir les descripteurs",
+      "exo": "Exercice 4",
+      "text": "La méthode <b class=\"monospace\">Object.defineProperty()</b> permet d'assigner une propriété en précisant ses descripteurs"
+    },
+    "getters-setters": {
+      "text": "Déclaration littérale pour les descripteurs get / set :"
+    },
+    "delegated-properties": {
+      "title": "Propriétés propres et déléguées",
+      "text-1": "Les propriétés assignées à un objet sont appelées les <b>propriétés propres (own properties)</b> de l'objet. Mais il existe d'autres types de propriétés, les <b>propriétés déléguées</b>.",
+      "text-2": "Ces propriétés déléguées sont en réalité les propriétés propres du <b>prototype</b> de l'objet (cf section Orienté Objet)"
+    },
+    "scopes": {
+      "title": "Scopes (portées)",
+      "text-1": "<b>Scope = portée</b> = périmètre dans lequel les variables peuvent être accédées depuis un endroit donné",
+      "text-2": "Au plus haut niveau, on est dans le scope <b>global</b>, accessible partout.",
+      "text-3": "Accessible depuis le scope global",
+      "text-4": "Accessible depuis le scope de la fonction foo",
+      "text-5": "Accessible depuis le scope de la fonction bar"
+    },
+    "blocs-scopes": {
+      "title": "Scopes de blocs",
+      "text-1": "En plus des scopes des fonctions, certaines instructions créent des scopes dits <b>scopes de blocs</b>",
+      "text-2": "On parle d'<b>instructions à bloc</b> :",
+      "text-3": "Un scope de bloc peut aussi être déclaré avec <span class=\"monospace\">{ … }</span> <br><em>(à ne pas confondre avec une déclaration littérale d'objet)</em>"
+    },
+    "var-let-const": {
+      "title": "var, let ou const ?",
+      "list-1": "<span class=\"monospace\">let</span> et <span class=\"monospace\">const</span> sont apparus avec ES2015",
+      "list-2": "Ils lient les variables à la portée du bloc et non à la portée de la fonction comme var, ce qui est beaucoup plus intuitif",
+      "list-3": "<span class=\"monospace\">var</span> n'est quasiment plus utilisé depuis",
+      "note": "<u>Recommandé</u>: Privilégier <span class=\"monospace\">const</span>, ou <span class=\"monospace\">let</span> si vous devez réassigner"
+    },
+    "closures": {
+      "title": "Closures (fermetures)",
+      "text-1": "<b>Scope d'une fonction = scope local + scope parent = variables locales + variables libres</b>",
+      "text-2": "Une fonction utilisant des <b>variables libres</b> (définies dans un scope parent) crée ce qu'on appelle une <b>closure</b>. Une closure doit garder en mémoire son scope parent pour pouvoir s'exécuter correctement.",
+      "text-3": "<span class=\"monospace\">add5</span> retient son scope parent avec x=5",
+      "text-4": "Ce lien empêche le garbage collector de déréférencer la variable locale x à la fin de l'exécution de <span class=\"monospace\">add</span>",
+      "text-5": "<span class=\"monospace\">add5</span> crée donc une closure",
+      "note": "Les closures involontaires sont la source la plus fréquente de problèmes de <b>fuites mémoire</b> dans les applications web."
+    },
+    "using-closures": {
+      "title": "Utilisation des closures",
+      "list": "Variables « privées »",
+      "text-1": "En dehors du scope de la fonction <b class=\"monospace\">getCompteur</b>, la variable value ne sera jamais accessible.",
+      "text-2": "Seule les closures <b class=\"monospace\">getValue</b> et <b class=\"monospace\">increment</b> permettent d'y accéder."
+    },
+    "using-closures-2": {
+      "title": "Utilisation des closures",
+      "exo": "Exercice 5",
+      "note": "Attention, les closures conservent une référence au scope parent, et accèdent donc aux variables libres par <b>référence</b>, et non pas par valeur.<br><br>La valeur des variables libres peut donc varier par rapport au moment de l'instanciation de la fonction."
+    },
+    "functions-execution-context": {
+      "title": "Fonctions et contexte d'exécution",
+      "text-1": "Les fonctions ont une sorte d'argument caché appelé c<b>ontexte</b> et assigné au mot-clé <b class=\"monospace\">this</b> dans le corps de la fonction.",
+      "text-2": "Lorsqu'une fonction est appelée en tant que propriété d'un objet, nous l'appelons : une <b>méthode</b>, et cet objet parent est affecté en tant que contexte d'exécution de la méthode :",
+      "text-3": "Lorsqu'une fonction est appelée par référence directe, elle n'a pas de contexte, ce qui signifie que la variable <b class=\"monospace\">this</b> sera recherchée dans la portée parent.",
+      "text-4": "Dans le <b>scope global</b> ou au niveau de la racine, le contexte est défini comme le <b>contexte global</b> (<span class=\"monospace\">Window</span> sur navigateur)"
+    },
+    "functions-execution-context-2": {
+      "title": "Fonctions et contexte d'exécution",
+      "text-1": "Le contexte d’exécution peut être surchargé avec les méthodes <span class=\"monospace\">call</span>, <span class=\"monospace\">apply</span> et <span class=\"monospace\">bind</span>",
+      "text-2": "Ces méthodes sont disponibles sur toutes les fonctions."
+    },
+    "primitives-wrappers": {
+      "title": "Primitives et équivalents objet",
+      "text-1": "<span class=\"monospace\">String()</span>, <span class=\"monospace\">Number()</span>, <span class=\"monospace\">Boolean()</span> sont les constructeurs équivalents objets des primitives correspondantes, aussi appelés <b>primitive wrappers</b>",
+      "text-2": "La bascule entre objet et primitive est automatique :",
+      "note": "Généralement, on n'utilise pas les primitive wrappers explicitement"
+    },
+    "type-conversions": {
+      "title": "Conversions de types (cast)",
+      "text": "Il existe 3 types de conversions implicites en JS:",
+      "note": "<u>Recommandé</u>: caster explicitement et le plus tôt possible"
+    },
+    "equals-operator": {
+      "title": "== ou ===",
+      "text": "==  égalité faible (avec conversion) <br> === égalité stricte (sans conversion)",
+      "note": "Les règles de conversion avec l'égalité faible sont <a href=\"https://eqeq.js.org\" target=\"-blank\">complexes</a>. <br>Recommandé: privilégier l'égalité stricte, plus prévisible."
+    },
+    "implicit-casts": {
+      "title": "Cast implicites"
+    },
+    "logical-operators": {
+      "title": "Opérateurs logiques",
+      "text-1": "Les opérandes sont converties en booléens pour évaluer l'opérateur, mais les valeurs originales sont retournées",
+      "text-2": "Si la cast implicite en booléen d'une valeur est <span class=\"monospace\">true</span>, on dit que la valeur est <em class=\"monospace\">truthy</em>, sinon <em class=\"monospace\">falsey</em>"
+    },
+    "logical-operators-2": {
+      "title": "Opérateurs logiques",
+      "exo": "Exercice 6",
+      "text-1": "Les opérateurs <span class=\"monospace\">||</span> et <span class=\"monospace\">&&</span>, les conditions ternaires <span class=\"monospace\">?:</span> et les instructions <span class=\"monospace\">if else</span> n'exécutent qu'une seule opérande ici:",
+      "text-2": "L’opérateur <span class=\"monospace\">&&</span> est prioritaire à <span class=\"monospace\">||</span> qui est prioritaire à <span class=\"monospace\">?:</span>"
+    },
+    "chapter-3": {
+      "title": "Mise à niveau ES2015",
+      "description": "Exos 7 à 11"
+    },
+    "syntactic-key-value": {
+      "title": "Sucre syntaxique: clé et valeur"
+    },
+    "syntactic-calculated-keys": {
+      "title": "Sucre syntaxique: clés calculées"
+    },
+    "arrow-functions": {
+      "title": "Arrow functions",
+      "exo": "Exercice 7",
+      "text-1": "Les fonctions déclarées avec cette syntaxe raccourcie ont des spécificités :",
+      "list-1": "Pas de contexte d'exécution <br><span class=\"grey\">(la valeur de this est cherchée dans le scope parent)</span>",
+      "list-2": "Ne peuvent pas être invoquées en tant que constructeurs",
+      "text-2": "Courtes et efficaces, elles encouragent un style fonctionnel et sans effets de bord <em>(sans closure)</em>.",
+      "note": "Recommandé pour toutes les fonctions hors méthodes"
+    },
+    "default-paramters": {
+      "title": "Paramètres par défaut",
+      "text-1": "Assigne une valeur par défaut si l'argument <span class=\"monospace\">=== undefined</span>",
+      "text-2": "Fonctionne aussi avec les arrow functions :"
+    },
+    "spread-rest": {
+      "title": "Opérateurs Spread / Rest",
+      "text": "Spread : convertit un objet itérable en liste d'arguments"
+    },
+    "spread-rest-2": {
+      "title": "Opérateurs Spread / Rest",
+      "text": "Rest : convertit une liste d'arguments en Array"
+    },
+    "spread-rest-3": {
+      "title": "Opérateurs Spread / Rest",
+      "exo": "Exercice 8",
+      "text": "Ne fonctionne qu'avec les propriétés énumérables"
+    },
+    "destructuring": {
+      "title": "Destructuring",
+      "text": "Assigne des variables selon une structure d'objet / d'Array"
+    },
+    "destructuring-2": {
+      "title": "Destructuring",
+      "exo": "Exercice 9",
+      "text": "Fonctionne aussi avec les paramètres de fonctions:"
+    },
+    "default-paramters-2": {
+      "title": "Paramètres par défaut",
+      "list-1": "Peuvent être des expressions utilisant d'autres arguments ou variables du scope.",
+      "list-2": "Si la valeur par défaut est une expression, elle ne sera exécutée que si nécessaire"
+    },
+    "object-argument-pattern": {
+      "title": "Objet paramétré en pattern d'arguments",
+      "text-1": "Au lieu de passer plusieurs arguments aux fonctions, un modèle populaire consiste à passer un objet en tant qu'argument unique avec les différents paramètres en tant que propriétés :",
+      "text-2": "Recevoir et rendre un seul objet est très utile :",
+      "list-1": "plus besoin de retenir l'ordre des arguments",
+      "list-2": "chaque paramètre peut être facultatif",
+      "list-3": "on limite la quantité de variables à passer d'un point à un autre",
+      "list-4": "permet de retourner plusieurs variables"
+    },
+    "template-strings": {
+      "title": "Template strings",
+      "text-1": "Les chaînes de modèle sont une nouvelle déclaration de chaîne littérale introduite dans ES2015.",
+      "text-2": "Il utilise le caractère backtick ` `.",
+      "text-3": "Cette nouvelle déclaration littérale permet :",
+      "list-1": "l'interpolation de variables et expressions",
+      "list-2": "les sauts de ligne",
+      "note": "<u>Recommandé</u>: utilisez les template strings pour toutes les String non triviales"
+    },
+    "tagged-template-strings": {
+      "title": "Tagged Template strings",
+      "exo":"Exercice 10",
+      "text": "Si une référence de fonction précède une template string, cette fonction est invoquée avec les parties statiques et dynamiques de la string :"
+    }
   },
   "menubar": {
-      "chooselanguage": "Langue"
+    "chooselanguage": "Langue"
   }
 }
