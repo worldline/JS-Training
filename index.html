@@ -324,8 +324,8 @@
 						<p>For each exercise, correct the source to validate the associated test</p>
 					</section>
 					<section>
-						<span class="ref">Exercise 1</span>
 						<h3>Types and Primitives</h3>
+						<span class="ref">Exercise 1</span>
 						<p>JavaScript defines 7 data types:</p>
 						<img height="250px" src="./assets/img/Image5.png">
 						<p>The <b class="monospace">typeof</b> operator returns the type of an object, but be careful:</p>
@@ -373,8 +373,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<span class="ref">Exercise 2</span>
 						<h3 class="flex-center">Objects: properties listing</h3>
+						<span class="ref">Exercise 2</span>
 						<pre style="font-size: 90%"><code class="javascript hljs" data-trim>
 							let obj = { a: 1, b: 2 }
 
@@ -394,8 +394,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<span class="ref">Exercise 3</span>
 						<h3>Objects: properties assignment</h3>
+						<span class="ref">Exercise 3</span>
 						<pre><code class="javascript hljs" data-trim>
 							let obj = { key: "value" }
 							obj.a = 1;
@@ -425,8 +425,8 @@
 						<p>A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators</p>
 					</section>
 					<section>
-						<span class="ref">Exercise 4</span>
 						<h3>Define the descriptors</h3>
+						<span class="ref">Exercise 4</span>
 						<p>The method <b class="monospace">Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
 						<div class="flex-center">
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
@@ -513,7 +513,7 @@
 						<ul>
 							<li><b class="monospace">let</b> and <b class="monospace">const</b> appeared with ES2015</li>
 							<li>they bind variables to <b>block scope</b> and not function scope like <code>var</code>, which is much more intuitive</li>
-							<li><b class="monospace">const</b> is no longer used since</li>
+							<li><b class="monospace">var</b> is no longer used since</li>
 						</ul>
 						<div class="flex-slide">
 							<img height="250" src="./assets/img/Image11.png">
@@ -572,8 +572,8 @@
 						<p>Only the <b class="monospace">getValue</b> and <b class="monospace">increment</b> closures allow access</p>
 					</section>
 					<section>
-						<span class="ref">Exercise 5</span>
 						<h3>Using closures</h3>
+						<span class="ref">Exercise 5</span>
 						<pre><code class="javascript hljs" data-trim>
 							for (var i = 1; i&lt;=3; i++) {
 								setTimeOut( function timer(){
@@ -738,8 +738,8 @@
 						</div>
 					</section>
 					<section class="quizz">
-						<span class="ref">Quiz</span>
 						<h3>Implicit casts</h3>
+						<span class="ref">Quiz</span>
 						<div class="flex-slide">
 							<div style="flex-basis: 100%;">
 								<p><pre class="fragment fade"><code>"0"-0</code></pre><pre class="fragment fade"><code>▸ 0</code></pre></p>
@@ -787,8 +787,8 @@
 						</p>
 					</section>
 					<section>
-						<span class="ref">Quiz</span>
 						<h3>Logical operators</h3>
+						<span class="ref">Exercise 6</span>
 						<p>
 							The operators <span class="monospace">||</span> and <span class="monospace">&&</span>, 
 							the ternary conditions <span class="monospace">?:</span> and <br>
@@ -855,8 +855,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 7</span>
 						<h3>Arrow functions</h3>
+						<span class="ref">Exercise 7</span>
 						<pre><code class="javascript hljs" data-trim>
 							const f1 = () => {},
 										f2 = x => x*2,
@@ -924,8 +924,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 8</span>
 						<h3>Operators Spread / Rest</h3>
+						<span class="ref">Exercise 8</span>
 						<p>Object properties (ES2018)</p>
 						<p>Only works with enumerable properties</p>
 						<ul>
@@ -967,8 +967,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 9</span>
 						<h3>Destructuring</h3>
+						<span class="ref">Exercise 9</span>
 						<p>Also works with function parameters:</p>
 						<pre><code class="javascript hljs" data-trim>
 							function doSomething({ config, options: { verbose } }){
@@ -1044,8 +1044,8 @@
 						<div class="note info"><span style="text-decoration: underline; font-weight: bold">Recommended</span>: use template strings for all non-trivial strings</div>
 					</section>
 					<section>
-						<span class="ref">Exercise 10</span>
 						<h3>Tagged Template strings</h3>
+						<span class="ref">Exercise 10</span>
 						<p>If a function reference precedes a template string literal, that function is invoked with the static and dynamic parts of the following string:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function insertInUpperCase(string, ...vars) {
@@ -1060,8 +1060,8 @@
 						<img height="200" src="./assets/img/Image17.png">
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 11</span>
 						<h3>Map & Set</h3>
+						<span class="ref">Exercise 11</span>
 						<ul>
 							<li><code>Map</code>: collection of keys/values like objects, but the keys can be of any type</li>
 							<li><code>Set</code>: collection of values without keys, not ordered but with guarantee of uniqueness</li>
@@ -1242,8 +1242,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 12</span>
 						<h3>Publisher/Subscriber</h3>
+						<span class="ref">Exercise 12</span>
 						<p>This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
 						<p><code>element.addEventListener</code> is an example of pub/sub.</p>
 						<br />
@@ -1312,8 +1312,8 @@
 						</div>
 					</section>
 					<section>
-						<span class="ref">Exercise 13</span>
 						<h3>Creation of a promise</h3>
+						<span class="ref">Exercise 13</span>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							// creating a promise from a callback-based API
 							const promise = new Promise((resolve, reject) => {
@@ -1350,8 +1350,8 @@
 						<div class="center"><img height="200" src="./assets/img/promise-all-race.jpg" alt="Comparison between Promise.race and Promise.all"></div>
 					</section>
 					<section>
-						<span class="ref">Quiz</span>
 						<h3>Chaining and parallelism</h3>
+						<span class="ref">Quiz</span>
 						<pre><code class="javascript hljs" data-trim>
 							const wait = promisify(setTimeout)
 
@@ -1449,8 +1449,8 @@
 					</section>
 
 					<section>
-						<span class="ref">Exercise 14</span>
 						<h3>Observable: example of API (from <a href="https://rxjs.dev/guide/observable" target="_blank">RxJS</a>)</h3>
+						<span class="ref">Exercise 14</span>
 						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
 							const keyboardObservable = new Observable( subscriber => {
 								const onKey = event => {
@@ -1511,8 +1511,8 @@
 						</p>
 					</section>
 					<section>
-						<span class="ref">Quiz</span>
 						<h3>Work with the event loop</h3>
+						<span class="ref">Quiz</span>
 						<pre><code class="javascript hljs" data-trim>
 							setTimeout(() => console.log(1), 0)
 							Promise.resolve().then(() => console.log(2))
@@ -1592,8 +1592,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 15</span>
 						<h3>Methods related to the prototype</h3>
+						<span class="ref">Exercise 15</span>
 						<div class="has-brace-right" style="margin-right: 300px">
 							<pre><code class="javascript hljs" data-trim>
 								Object.getPrototypeOf(obj)
@@ -1722,8 +1722,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 16</span>
 						<h3>Constructor.prototype</h3>
+						<span class="ref">Exercise 16</span>
 						<p>Every constructor function has a <code>prototype</code> property that is an object with a <code>constructor</code> property referring to the constructor function.</p>
 						<p>That's how you can retrieve the constructor from a constructed object.</p>
 						<img src="assets/img/constructor-prototype.jpg" style="float:left; width: 300px; margin-right: 1em" alt="Diagram presenting Constructor and protototype property recursion" />
@@ -1989,8 +1989,8 @@
 					</section>
 
 					<section class="left">
-						<div class="ref">Exercise 17</div>
 						<h3>Exercise: Relations between objects</h3>
+						<div class="ref">Exercise 17</div>
 						<p>Let's practice on a project example: a web components library</p>
 						<p>Objects identified in the model:</p>
 						<ul>
@@ -2112,8 +2112,8 @@
 					</section>
 
 					<section>
-						<div class="ref">Exercise 18</div>
 						<h3>function* and generators</h3>
+						<div class="ref">Exercise 18</div>
 						<p>A generator is a special type of function used to simplify the creation of iterators. A generator is declared with operator <b>function*</b>, which allow the use of the <code>yield</code> operator inside.</p>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
 							const compteur123 = {
@@ -2203,8 +2203,8 @@
 					</section>
 
 					<section class="left">
-						<div class="ref">Exercise 19</div>
 						<h3>Use cases for Proxies</h3>
+						<div class="ref">Exercise 19</div>
 						<ul>
 							<li>Defensive objects: prevent object mutations, throw exceptions when trying to read an undefined property...</li>
 							<li>Watchers: publisher/subscriber event system on object mutations (<a href="https://vuejs.org/guide/extras/reactivity-in-depth.html#how-reactivity-works-in-vue" target="_blank">Vue.js</a>, <a href="https://mobx.js.org/configuration.html#proxy-support" target="_blank">MobX</a>)</li>
@@ -2255,8 +2255,8 @@
 					</section>
 
 					<section>
-						<div class="ref">Exercise 20</div>
 						<h3>Chainable API</h3>
+						<div class="ref">Exercise 20</div>
 						<p>A <b>chainable</b> method returns its own execution context (<code>return this</code>) or an object of the same type/prototype in order to be able to chain the calls to this method.</p>
 						<p><i>Example: <code>Array.prototype</code> chainable methods</i></p>
 						<pre><code class="javascript hljs js" data-trim>
@@ -2273,8 +2273,8 @@
 					</section>
 
 					<section>
-						<div class="ref">Exercise 21</div>
 						<h3>Function composition</h3>
+						<div class="ref">Exercise 21</div>
 						<p><b>Function composition</b> consists of creating a composed function that sequentially calls several other functions, each with the return value of the previous one:</p>
 						<p class="center" style="font-size: 150%"><code>compose(f,g,h)(x) ⇔ h(g(f(x)))</code></p>
 						<p>Function composition can be a relevant solution when:</p>
@@ -2302,8 +2302,8 @@
 					</section>
 
 					<section>
-						<div class="ref">Exercise 22</div>
 						<h3>Currying: use cases</h3>
+						<div class="ref">Exercise 22</div>
 						<p><b>Currying</b> is used to apply part of the arguments to decline a generic function into a more specialized version of it: this is called <b>partial application</b>.</p>						
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim>
 							const sum = a => b => a + b
