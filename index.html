@@ -1105,11 +1105,12 @@
 							</li>
 							<li>
 								Asynchronous Module Definition (AMD)
-								<pre><code class="javascript hljs" data-trim>define(['jquery', 'underscore'], function($,_){ 
-
-});</code></pre>
+								<pre><code class="javascript hljs" data-trim>
+									define(['jquery', 'underscore'], function($,_){ 
+										
+									});
+								</code></pre>
 							</li>
-						
 							<li>
 								Universal Module Definition (UMD)<br>
 								<em>Pattern combining CommonJS, AMD and using global variables to be sure to be understood by all module systems</em>
@@ -1163,9 +1164,7 @@
 						<h3>Modules</h3>
 						<img height="350" src="./assets/img/Image21.png" alt="">
 						<p>
-							<a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">
-								https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/
-							</a>
+							<a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/</a>
 						</p>
 					</section>
 					<section>
@@ -2158,7 +2157,6 @@
 							▸ bar
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Proxy traps</h3>
 						<pre><code class="javascript hljs js" data-trim>
@@ -2177,7 +2175,6 @@
 							})
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Reflect API</h3>
 						<p><b>Reflect</b> represents the capacity for <a href="https://en.wikipedia.org/wiki/Reflective_programming" target="_blank">reflection</a> acquired by JS with the introduction of proxies.</p>
@@ -2201,7 +2198,6 @@
 							})
 						</code></pre>
 					</section>
-
 					<section class="left">
 						<h3>Use cases for Proxies</h3>
 						<div class="ref">Exercise 19</div>
@@ -2216,7 +2212,6 @@
 						</ul>
 					</section>
 				</section>
-
 				<section>
 					<section>
 						<h2>Functional programming</h2>
@@ -2237,7 +2232,6 @@
 							<li>eliminate dead code more easily</li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>Function patterns: Recursivity</h3>
 						<p>A <b>recursive</b> function invokes itself with other arguments until reaching a <b>stop condition</b>.</p>
@@ -2253,7 +2247,6 @@
 							<u>Recommended:</u> use it only for minimalist functions, and explicit the recursivity with code comments
 						</div>
 					</section>
-
 					<section>
 						<h3>Chainable API</h3>
 						<div class="ref">Exercise 20</div>
@@ -2271,7 +2264,6 @@
 						<p>Chainable API are convenient to use because they reduce sequences of instructions to a single expression.
 						 They made the success of famous JS libraries like <a href="https://jquery.com/" target="_blank">jQuery</a> or <a href="https://lodash.com/" target="_blank">lodash</a>.</p>
 					</section>
-
 					<section>
 						<h3>Function composition</h3>
 						<div class="ref">Exercise 21</div>
@@ -2285,7 +2277,6 @@
 						</ul>
 						<p>Compared to chainable API, function composition favors independent functions over methods, which avoids overloading objects with too many properties.</p>
 					</section>
-
 					<section>
 						<h3>Currying</h3>
 						<p style="font-style: italic; color: gray">From <a href="https://en.wikipedia.org/wiki/Haskell_Curry" target="_blank">Haskell Curry</a>, a mathematician who laid the foundations of functional programming.</p>
@@ -2300,7 +2291,6 @@
 						<p>A more flexible definition allows passing any number of arguments at each step:</p>
 						<p class="center"><code>curry(f)(a,b)(c) ⇔ curry(f)(a)(b,c) ⇔ curry(f)(a)(b)(c)</code></p>
 					</section>
-
 					<section>
 						<h3>Currying: use cases</h3>
 						<div class="ref">Exercise 22</div>
@@ -2326,7 +2316,6 @@
 							then use partial application to get back to the original specific use case.
 						</div>
 					</section>
-
 					<section>
 						<h3>Partial application with <code>fn.bind</code></h3>
 						<p>Partial application can also be done with the <code>bind</code> function in <code>Function.prototype</code>:</p>
@@ -2342,7 +2331,6 @@
 							whereAgeIsOver18(data)
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<p>How to refactor a code to obtain pure, atomic, generic and composable functions ?</p>
@@ -2360,7 +2348,6 @@
 							}
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 1: get rid of non-local variables</b><br>Pass non-local variables as function arguments. If they are reassigned, make them return values.</div>
@@ -2378,7 +2365,6 @@
 						</code></pre>
 						<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 2: take out the side effects</b><br>Replace mutations with equivalent immutable instructions when possible. Otherwise, try to isolate them.</div>
@@ -2399,7 +2385,6 @@
 						</code></pre>
 						<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 3: decompose logic in pure, composable functions</b></div>
@@ -2419,7 +2404,6 @@
 						</code></pre>
 						<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 4: make functions generic</b><br>Pass any arbitrary value as parameter. Add arguments mapping functions if necessary.</div>
@@ -2443,7 +2427,6 @@
 						</code></pre>
 						<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 5: currying functions</b> to reduce the number of arguments and remove superfluous mapping functions</div>
@@ -2468,7 +2451,6 @@
 						</code></pre>
 						<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div class="note"><b>Step 6: reorganize your modules</b> ; check each decomposed function obtained to decide whether it should be in this file or moved somewhere else.</div>
@@ -2493,7 +2475,6 @@
 						</code></pre>
 						<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>
 						<div style="position: relative">
@@ -2531,7 +2512,6 @@
 						</div>
 						</div>
 					</section>
-
 					<section>
 						<h3>Functional refactoring in practice</h3>						
 						<p>To refactor a code and obtain pure atomic generic and composable functions:</p>
@@ -2562,7 +2542,6 @@
 						<div class="note">Over time, you will be able to make your own <b>functional toolbox</b>, a recipe book reusable in different projects.</div>
 					</section>
 				</section>
-
 				<section>
 					<section>
 						<h2>Beyond JavaScript</h2>
@@ -2596,7 +2575,6 @@
 							<li>Presets of Babel plugins exist for each major version of ECMAScript</li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>@babel/preset-env</h3>
 						<ul>
@@ -2617,15 +2595,14 @@
 							<li><code>defaults</code> : <span style="color: gray"> 0.5%, last 2 versions, Firefox ESR, not dead</span></li>
 						</ul>
 					</section>
-
 					<section>
 						<h3>To transpile or not to transpile ?</h3>
-						<p class="clear left">
-							<img src="./assets/img/thumb-up.png" alt="Pro" style="float: left; margin-right: 1em">
+						<p class="clear left" style="display: flex;align-items: center">
+							<img src="./assets/img/thumb-up.png" alt="Pro" style="margin-right: 1em">
 							Transpilation allows the developer to not think about the majority of browser support issues. It is no longer needed to remember which JS feature comes from which version and is supported in which browser.
 						</p>
-						<p class="clear left">
-							<img src="./assets/img/thumb-down.png" alt="Con" style="float: left; margin-right: 1em">
+						<p class="clear left" style="display: flex;align-items: center">
+							<img src="./assets/img/thumb-down.png" alt="Con" style="margin-right: 1em">
 							Transpilation introduces a compilation step, many new dependencies, some risk factors, and a loss of proximity between the code the developer writes and the code that is actually run in production.
 						</p>
 						<div class="note">
@@ -2639,15 +2616,14 @@
 							<p>Fortunately, most of the frameworks build tooling is preconfigured like that !</p>
 						</div>
 					</section>
-
 					<section>
 						<h3>TypeScript</h3>
 						<ul>
 							<li>
-								<img src="./assets/img/ts-logo.png" alt="TypeScript logo" style="float: right; margin: 0 0 1em 1em">
+								<img src="./assets/img/ts-logo.png" alt="TypeScript logo" style="float: right;margin: 0 0 1em 1em">
 								TypeScript is a superset of JavaScript developed by Microsoft and published in 2012</li>
 							<li>It has an official transpiler, <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">tsc</a>, but many other alternative transpilers exist: <a href="https://esbuild.github.io/" target="_blank">esbuild</a>, <a href="https://bun.sh/" target="_blank">bun</a>, even a Babel preset.</li>
-							<li>The key-feature of TypeScript is the <b>static optionnal typing annotations</b></li>
+							<li>The key-feature of TypeScript is the <b>static optional typing annotations</b></li>
 							<li>Other cool features: interfaces, decorators, enums, abstract classes</li>
 							<li>Gradually adoptable: with type definitions (<code>*.d.ts</code> files), TypeScript can catch mistakes even without any TS-specific syntax.</li>
 							<li>Try it online on this <a href="https://www.typescriptlang.org/play" target="_blank">playground</a></li>
@@ -2657,13 +2633,13 @@
 							It is supported in all major web frameworks and improves both the developer experience and the code reliability, especially for medium-to-large apps.
 						</div>
 					</section>
-
 					<section>
 						<h3>JSX</h3>
 						<ul>
 							<li>
-								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right; margin: 0 0 1em 1em">
-								JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></li>
+								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right;height: 125px;margin: 0 0 1em 1em">
+								<span>JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></span>
+							</li>
 							<li>JSX is now supported by other frameworks than React, such as Vue.js or Preact</li>
 							<li>JSX is an abstraction for <b>manipulating virtual DOM elements</b>, which is usually done with templates and a custom templating syntax in other frameworks.</li>
 						</ul>
@@ -2673,7 +2649,6 @@
 						</div>
 					</section>
 				</section>
-
 				<section class="agenda">
 					<h2>Retrospective</h2>
 					<div class="flex-slide">
