@@ -1,7 +1,7 @@
 {
   "slides": {
     "welcome": {
-      "title": "JavaScript avancé"
+      "title": "JavaScript Avancé"
     },
     "intro": {
       "1": " Cette formation s'adresse aux développeurs ayant déjà un niveau débutant à moyen en JavaScript et souhaitant approfondir leurs connaissances sur ce langage pour mieux appréhender des projets JavaScript plus ambitieux.",
@@ -165,22 +165,22 @@
       "title": "Scopes de blocs",
       "text-1": "En plus des scopes des fonctions, certaines instructions créent des scopes dits <b>scopes de blocs</b>",
       "text-2": "On parle d'<b>instructions à bloc</b> :",
-      "text-3": "Un scope de bloc peut aussi être déclaré avec <span class=\"monospace\">{ … }</span> <br><em>(à ne pas confondre avec une déclaration littérale d'objet)</em>"
+      "text-3": "Un scope de bloc peut aussi être déclaré avec <code>{ … }</code> <br><em>(à ne pas confondre avec une déclaration littérale d'objet)</em>"
     },
     "var-let-const": {
       "title": "var, let ou const ?",
-      "list-1": "<span class=\"monospace\">let</span> et <span class=\"monospace\">const</span> sont apparus avec ES2015",
+      "list-1": "<code>let</code> et <code>const</code> sont apparus avec ES2015",
       "list-2": "Ils lient les variables à la portée du bloc et non à la portée de la fonction comme var, ce qui est beaucoup plus intuitif",
-      "list-3": "<span class=\"monospace\">var</span> n'est quasiment plus utilisé depuis",
-      "note": "<u>Recommandé</u>: Privilégier <span class=\"monospace\">const</span>, ou <span class=\"monospace\">let</span> si vous devez réassigner"
+      "list-3": "<code>var</code> n'est quasiment plus utilisé depuis",
+      "note": "<u>Recommandé</u>: Privilégier <code>const</code>, ou <code>let</code> si vous devez réassigner"
     },
     "closures": {
       "title": "Closures (fermetures)",
       "text-1": "<b>Scope d'une fonction = scope local + scope parent = variables locales + variables libres</b>",
       "text-2": "Une fonction utilisant des <b>variables libres</b> (définies dans un scope parent) crée ce qu'on appelle une <b>closure</b>. Une closure doit garder en mémoire son scope parent pour pouvoir s'exécuter correctement.",
-      "text-3": "<span class=\"monospace\">add5</span> retient son scope parent avec x=5",
-      "text-4": "Ce lien empêche le garbage collector de déréférencer la variable locale x à la fin de l'exécution de <span class=\"monospace\">add</span>",
-      "text-5": "<span class=\"monospace\">add5</span> crée donc une closure",
+      "text-3": "<code>add5</code> retient son scope parent avec x=5",
+      "text-4": "Ce lien empêche le garbage collector de déréférencer la variable locale x à la fin de l'exécution de <code>add</code>",
+      "text-5": "<code>add5</code> crée donc une closure",
       "note": "Les closures involontaires sont la source la plus fréquente de problèmes de <b>fuites mémoire</b> dans les applications web."
     },
     "using-closures": {
@@ -199,16 +199,16 @@
       "text-1": "Les fonctions ont une sorte d'argument caché appelé c<b>ontexte</b> et assigné au mot-clé <b class=\"monospace\">this</b> dans le corps de la fonction.",
       "text-2": "Lorsqu'une fonction est appelée en tant que propriété d'un objet, nous l'appelons : une <b>méthode</b>, et cet objet parent est affecté en tant que contexte d'exécution de la méthode :",
       "text-3": "Lorsqu'une fonction est appelée par référence directe, elle n'a pas de contexte, ce qui signifie que la variable <b class=\"monospace\">this</b> sera recherchée dans la portée parent.",
-      "text-4": "Dans le <b>scope global</b> ou au niveau de la racine, le contexte est défini comme le <b>contexte global</b> (<span class=\"monospace\">Window</span> sur navigateur)"
+      "text-4": "Dans le <b>scope global</b> ou au niveau de la racine, le contexte est défini comme le <b>contexte global</b> (<code>Window</code> sur navigateur)"
     },
     "functions-execution-context-2": {
       "title": "Fonctions et contexte d'exécution",
-      "text-1": "Le contexte d’exécution peut être surchargé avec les méthodes <span class=\"monospace\">call</span>, <span class=\"monospace\">apply</span> et <span class=\"monospace\">bind</span>",
+      "text-1": "Le contexte d'exécution peut être surchargé avec les méthodes <code>call</code>, <code>apply</code> et <code>bind</code>",
       "text-2": "Ces méthodes sont disponibles sur toutes les fonctions."
     },
     "primitives-wrappers": {
       "title": "Primitives et équivalents objet",
-      "text-1": "<span class=\"monospace\">String()</span>, <span class=\"monospace\">Number()</span>, <span class=\"monospace\">Boolean()</span> sont les constructeurs équivalents objets des primitives correspondantes, aussi appelés <b>primitive wrappers</b>",
+      "text-1": "<code>String()</code>, <code>Number()</code>, <code>Boolean()</code> sont les constructeurs équivalents objets des primitives correspondantes, aussi appelés <b>primitive wrappers</b>",
       "text-2": "La bascule entre objet et primitive est automatique :",
       "note": "Généralement, on n'utilise pas les primitive wrappers explicitement"
     },
@@ -228,13 +228,13 @@
     "logical-operators": {
       "title": "Opérateurs logiques",
       "text-1": "Les opérandes sont converties en booléens pour évaluer l'opérateur, mais les valeurs originales sont retournées",
-      "text-2": "Si la cast implicite en booléen d'une valeur est <span class=\"monospace\">true</span>, on dit que la valeur est <em class=\"monospace\">truthy</em>, sinon <em class=\"monospace\">falsey</em>"
+      "text-2": "Si la cast implicite en booléen d'une valeur est <code>true</code>, on dit que la valeur est <em class=\"monospace\">truthy</em>, sinon <em class=\"monospace\">falsey</em>"
     },
     "logical-operators-2": {
       "title": "Opérateurs logiques",
       "exo": "Exercice 6",
-      "text-1": "Les opérateurs <span class=\"monospace\">||</span> et <span class=\"monospace\">&&</span>, les conditions ternaires <span class=\"monospace\">?:</span> et les instructions <span class=\"monospace\">if else</span> n'exécutent qu'une seule opérande ici:",
-      "text-2": "L’opérateur <span class=\"monospace\">&&</span> est prioritaire à <span class=\"monospace\">||</span> qui est prioritaire à <span class=\"monospace\">?:</span>"
+      "text-1": "Les opérateurs <code>||</code> et <code>&&</code>, les conditions ternaires <code>?:</code> et les instructions <code>if else</code> n'exécutent qu'une seule opérande ici:",
+      "text-2": "L'opérateur <code>&&</code> est prioritaire à <code>||</code> qui est prioritaire à <code>?:</code>"
     },
     "chapter-3": {
       "title": "Mise à niveau ES2015",
@@ -257,7 +257,7 @@
     },
     "default-paramters": {
       "title": "Paramètres par défaut",
-      "text-1": "Assigne une valeur par défaut si l'argument <span class=\"monospace\">=== undefined</span>",
+      "text-1": "Assigne une valeur par défaut si l'argument <code>=== undefined</code>",
       "text-2": "Fonctionne aussi avec les arrow functions :"
     },
     "spread-rest": {
@@ -309,6 +309,596 @@
       "title": "Tagged Template strings",
       "exo":"Exercice 10",
       "text": "Si une référence de fonction précède une template string, cette fonction est invoquée avec les parties statiques et dynamiques de la string :"
+    },
+    "map-set": {
+      "title": "Map & Set",
+      "exo": "Exercice 11",
+      "list-1": "<code>Map</code>: collection de clés/valeur comme les objets, mais les clés peuvent être de n'importe quel type",
+      "list-2": "<code>Set</code>: collection de valeurs sans clés, garantie d'unicité"
+    },
+    "modules": {
+      "title": "Modules (ou ESM pour désambiguïser)",
+      "text-1": "La solution standard longuement attendue pour gérer un code modulaire (réparti en plusieurs fichiers distincts)",
+      "text-2": "Remplace et rend caduc:",
+      "list-1": "CommonJS (utilisé notamment par Node)",
+      "list-2": "Asynchronous Module Definition (AMD)",
+      "list-3": "Universal Module Definition (UMD) <br><em>Pattern combinant CommonJS, AMD et utilisant de variables globales pour être sûr d'être compris par tous les systèmes de modules</em>",
+      "list-4": "le recours aux variables globales et les <code>&lt;script></code> à ordonner"
+    },
+    "modules-2": {
+      "title": "Modules",
+      "text-1": "Deux mots-clés: <code>import</code> et <code>export</code>",
+      "text-2": "On distingue les import nommés et les imports par défaut"
+    },
+    "modules-3": {
+      "title": "Modules",
+      "text-1": "Les modules ont un contexte d'exécution différent des scripts classiques:",
+      "list-1": "mode strict utilisé par défaut <code>(\"use strict\";)</code>",
+      "list-2": "exceptions explicites sur certaines erreurs silencieuses",
+      "list-3": "de nouveaux mots-clés sont réservés comme noms de variables",
+      "list-4": "interdit les variables non explicitement déclarées",
+      "list-5": "pas de contexte global <code>(this === undefined dans le scope global)</code>",
+      "text-2": "Il faut donc parser différemment le code si c'est un module:",
+      "list-6": "Sur navigateur",
+      "list-7": "Sur Node.js: utiliser l'extension <code>.mjs</code> au lieu de <code>.js</code>, ou avoir <code>{ type: \"module\" }</code> dans package.json"
+    },
+    "modules-4": {
+      "title": "Modules: import dynamique",
+      "text": "Quand <code>import</code> est appelé comme une fonction, le module est importé de façon asynchrone. <br>C'est très utile pour télécharger du code à la demande et optimiser le temps de chargement de vos applications."
+    },
+    "modules-5": {
+      "title": "Modules: quid du support ?",
+      "text-1": "<a href=\"https://caniuse.com/es6-module\" target=\"_blank\">Support moyen</a> (~95%) en 2022: Chrome 61+, Edge 16+, Firefox 60+",
+      "text-2": "Mais les développeurs utilisent largement ESM dans leurs bases de code qui sont converties en bundles de type AMD par des bundlers comme Webpack, Parcel, Rollup, esbuild...",
+      "text-3": "Les bundlers sont des outils qui précompilent votre code et réduisent le travail du navigateur en produisant des bundles JS optimisés à partir d'un ensemble de modules lors d'une étape de build."
+    },
+    "modules-6": {
+      "title": "Modules: script nomodule",
+      "text-1": "Les navigateurs qui ne prennent pas en charge les modules ne chargeront pas <br><code>&lt;script type=\"module\"></code>mais ils peuvent charger un script alternatif avec l'attribut nomodule.",
+      "text-2": "Les bundlers peuvent profiter de cet attribut pour produire <b>deux bundles :</b><br>un bundle <span class=\"green\">moderne</span> et un bundle <span class=\"blue\">hérité</span> avec plus de code transpilé.",
+      "text-3": "Le bundle moderne sera plus léger et plus efficace, de sorte que la prise en charge des anciens navigateurs ne dégrade pas les performances des navigateurs modernes utilisés par la majorité des utilisateurs."
+    },
+    "modules-7": {
+      "title": "Modules: recommandations",
+      "text-1": "Utiliser systématiquement les modules ESM et proscrire les autres systèmes de modules existants",
+      "text-2": "Utiliser un bundler avec l'option « Modern build »",
+      "list-1": "Parcel : pour la simplicité et rapidité de mise en place",
+      "list-2": "Webpack: pour les applications Web complexes avec des besoins avancés",
+      "list-3": "pour les bibliothèques JS"
+    },
+    "chapter-4": {
+      "title": "Gérer l'asynchronisme",
+      "description": "Exos 12 à 14"
+    },
+    "what-is-asynchronism": {
+      "title": "Qu'est-ce que l'asynchronisme ?",
+      "text-1": "JavaScript est exécuté dans un <b>environnement mono-thread</b> <em>(le moteur n'interprète qu'une seule instruction à la fois.)</em>",
+      "text-2": "Certaines instructions prennent du temps (I/O, requêtes réseau…) et ne doivent pas bloquer l'exécution du reste du programme.",
+      "text-3": "On les rend alors <b>asynchrones</b>: elles déclarent un traitement à effectuer ultérieurement, après un délai défini ou non.",
+      "text-4": "Ces futurs appels de fonction sont placés dans des <b>piles</b>, et le moteur décide du moment où dépiler les appels"
+    },
+    "callbacks": {
+      "title": "Callbacks",
+      "text-1": "L'interface la plus commune pour les instructions asynchrones est la fonction de rappel ou callback.",
+      "text-2": "Elle consiste à passer en paramètre d'une fonction asynchrone une autre fonction (la callback) qui sera appelée plus tard."
+    },
+    "publisher-subscriber": {
+      "title": "Publisher/Subscriber",
+      "exo": "Exercice 12",
+      "text-1": "Ce modèle de communication asynchrone se base sur un principe de souscription à un flux d'événements",
+      "text-2": "<code>element.addEventListener</code> est un exemple de pub/sub",
+      "text-3": "Un pub/sub garde en mémoire une liste de callbacks (les <b>abonnés</b>).",
+      "text-4": "Il est composé à minima de deux fonctions: <b>souscription</b> et <b>émission</b>",
+      "text-5": "Exemple d'API pub/sub :"
+    },
+    "drawbacks-of-callbacks": {
+      "title": "Inconvénients des callbacks",
+      "text-1": "Les callbacks montrent leurs limites quand une série d'opérations asynchrones doit être chainée (exécutée l'une après l'autre).",
+      "text-2": "Une exception n'est pas remontée par un callback, c'est pourquoi les traitements d'erreur sont souvent gérés avec un deuxième argument au callback ou une deuxième fonction callback"
+    },
+    "promises": {
+      "title": "Promises",
+      "list-1": "Les promesses (Promise) sont des objets utilisés pour faciliter la coordination d'opérations asynchrones.",
+      "list-2": "Une Promise représente la promesse d'une valeur dans le futur. Le délai n'est pas forcément prédictible, cette valeur peut être disponible presque immédiatement ou ne jamais arriver.",
+      "list-3": "Une Promise est toujours dans un de ces 3 états:",
+      "list-4": "<b>pending</b>: état initial, en attente",
+      "list-5": "<b>fulfilled</b>: la promesse a été résolue, l'opération a réussi",
+      "list-6": "<b>rejected</b>: la promesse a été rejetée suite à une erreur"
+    },
+    "creation-of-promise": {
+      "title": "Création d'une Promise",
+      "exo": "Exercice 13"
+    },
+    "other-mothods-creation-promises": {
+      "title": "Autres méthodes de création de Promise",
+      "text-1": "crée une promesse immédiatement résolue/rejetée avec telle valeur",
+      "text-2": "crée une promesse résolue quand toutes les promesses en arguments sont résolues",
+      "text-3": "crée une promesse résolue dès que l'une des promesses en argument est résolue"
+    },
+    "chaining-and-parallelism": {
+      "title": "Chaînage et parallélisme"
+    },
+    "exception-management": {
+      "title": "Traitement d'erreurs",
+      "text": "<code>then()</code> et <code>catch()</code> peuvent se chaîner dans n'importe quel ordreCela permet des traitements d'erreurs intermédiaires",
+      "note": "<u>Recommandé</u>: traiter les erreurs au plus bas niveau possible, et toujours mettre un <code>catch()</code> au plus haut niveau pour traiter les erreurs non capturées"
+    },
+    "async-await": {
+      "title": "async / await (ES2017)",
+      "text-1": "Les fonctions préfixées de l'opérateur <code>async</code> peuvent contenir des instructions <code>await</code>",
+      "text-2": "<code>await</code> met en pause l'exécution le temps que la promesse qui suit soit résolue."
+    },
+    "async-await-2": {
+      "title": "async / await : avantages, inconvénients",
+      "text-1": "Combine l'avantage de l'asynchronisme avec le confort d'écriture et de lecture d'un code synchrone",
+      "text-2": "Permet d'unifier la gestion des erreurs synchrones (exceptions) avec les cas de rejets de promesses",
+      "text-3": "N'encourage pas le développeur à paralléliser les opérations asynchrones, ce qui peut ralentir l'application",
+      "note": "Pensez à <code>await Promise.all([ … ])</code>, le combo gagnant"
+    },
+    "observable": {
+      "title": "Observable",
+      "text-1": "Un pattern à mi-chemin entre les Promise et le Pub/Sub:",
+      "list-1": "Promesse pouvant être résolue en plusieurs temps",
+      "list-2": "Event emitter avec un concept de complétion",
+      "text-2": "Une <a href=\"https://github.com/tc39/proposal-observable\" target=\"_blank\">proposition</a> existe pour normaliser les Observables, mais il s'agit toujours de l'étape 0 et n'a pas encore été présentée au TC39. Cependant, il est facilement implémentable par vous-même comme Pub/Sub.",
+      "text-3": "C'est un des fondements de ReactiveX et de la programmation réactive."
+    },
+    "observable-2": {
+      "title": "Observable: exemple d'API (de <a href=\"https://rxjs.dev/guide/observable\" target=\"_blank\">RxJS</a>)",
+      "exo": "Exercice 14"
+    },
+    "tasks-microtasks-and-event-loop": {
+      "title": "Tasks, microtasks, boucle d'événements",
+      "text-1": "La boucle d'événements (<b>event loop</b>) est le mécanisme qui dépile régulièrement les appels asynchrones.",
+      "text-2": "Entre chaque itération de la boucle, le navigateur refait le rendu de la page et traite les événements utilisateur (clic, scroll etc.)",
+      "text-3": "Les moteurs JS modernes stockent les appels asynchrones dans deux piles:",
+      "list-1": "les <b>tasks</b>, dépilées à la fin de chaque boucle d'événements (exemples: <code>setTimeout</code>, <code>setInterval</code>, <code>fetch</code>)",
+      "list-2": "les <b>microtasks</b>, dépilées à la fin de chaque task (exemples: <code>promise.then</code>, <code>process.nextTick</code>)"
+    },
+    "work-with-the-event-loop": {
+      "title": "Gérer la boucle d'événements",
+      "text-1": "Parfois, vous devrez attendre la boucle d'événements pour :",
+      "list-1": "que le DOM soit mis à jour pour une autre opération",
+      "list-2": "libérer le thread itérativement pendant un calcul lourd",
+      "text-2": "Il vous faut alors créer une task pour votre callback :",
+      "list-3": "avec un délai à zéro pour minimiser le temps d'attente",
+      "list-4": "laisse le navigateur optimiser le moment d'appel d'un callback destiné à des fins d'animation (~ 60 frames par seconde)",
+      "list-5": "laisse le navigateur optimiser le moment d'appel d'un callback lorsque le CPU n'est pas fortement sollicité <em>(non standard)</em>"
+    },
+    "work-with-the-event-loop-2": {
+      "title": "Gérer la boucle d'événements",
+      "text": "Dans quel ordre s'affichent les logs ?",
+      "note": "variable selon l'activité CPU,mais ceci est l'ordre le plus probable"
+    },
+    "chapter-5": {
+      "title": "Programmation orientée objet",
+      "description": "Exos 15 à 19"
+    },
+    "general-principles": {
+      "title": "Principes généraux de la programmation orientée objet",
+      "list-1": "Représenter un problème avec des éléments associables à des objets ou à des concepts matériels",
+      "list-2": "Apporter plus de proximité avec la logique métier",
+      "list-3": "Un objet contient son état interne et sa logique propre",
+      "text": "Objectifs :",
+      "list-4": "avoir un code plus intuitif, auto-descriptif",
+      "list-5": "faciliter le travail en parallèle",
+      "list-6": "faciliter le passage de la spécification au code"
+    },
+    "objects-and-prototypes": {
+      "title": "Objets et Prototypes",
+      "list-1": "Tout objet a une propriété interne privée appelée <b>prototype</b>",
+      "list-2": "N'importe quel objet peut être le prototype d'un ou plusieurs autres objets",
+      "list-3": "On peut récupérer le prototype d'un objet via: <br><code>Object.getPrototypeOf(obj)</code>",
+      "list-4": "Ou réassigner dynamiquement le prototype via: <br><code>Object.setPrototypeOf(obj, newProto)</code>",
+      "note": "Ne réaffectez pas le prototype dans les parties critiques pour les performances de votre application car il est difficile à optimiser pour les moteurs JavaScript classiques"
+    },
+    "why-prototype": {
+      "title": "Pourquoi « Prototype » ?",
+      "list-1": "En industrie, un prototype est un <b>objet physique réel</b>, sur lequel seront basés des objets produits en série.",
+      "list-2": "Sur la même analogie, une <b>classe</b> s'apparenterait plutôt à un /b>plan ou schéma à respecter</b>, de nature plus abstraite et qui ne peut pas se manipuler comme un objet.",
+      "list-3": "Un prototype est pris pour exemple pour créer les objets produits, tandis qu'un objet produit peut être pris comme exemple pour l'implémentation d'une classe.",
+      "text": "Le choix de ce terme sert à illustrer ces différences."
+    },
+    "delegation-prototype": {
+      "title": "Délégation au prototype",
+      "text-1": "Si pour <span class=\"blue\">objet</span>.<span class=\"green\">prop</span>, la propriété prop n'est pas trouvée dans <span class=\"blue\">objet</span>, elle est recherchée dans le <span class=\"blue\">prototype</span> de <span class=\"blue\">objet</span>, puis dans le prototype du <span class=\"blue\">prototype</span> de <span class=\"blue\">objet</span> etc…",
+      "text-2": "C'est ce qu'on appelle la <b>délégation de prototype</b>, et les objets ont une <b>chaîne de prototype</b>.",
+      "text-3": "Le prototype « racine » est <code>Object.prototype</code>. Son prototype pointe vers <code>null</code>."
+    },
+    "methods-related-to-the-prototype": {
+      "title": "Méthodes liées aux prototypes",
+      "exo": "Exercice 15",
+      "note-1": "Méthodes du constructeur <code>Object</code>",
+      "note-2": "Méthodes du prototype <code>Object.prototype</code>"
+    },
+    "beware-of-misuse-of-language": {
+      "title": "Attention aux abus de langage !",
+      "text-1": "Il n'y a pas de classes en JavaScript, mais le mot est utilisé par abus de langage pour désigner un prototype et un constructeur associé.",
+      "text-2": "Contrairement aux classes, il n'y a pas de différence de nature entre un prototype et un objet. Un prototype peut donc être manipulé comme tout objet: assigné par référence, passé en paramètre, exporté comme module..."
+    },
+    "beware-of-misuse-of-language-2": {
+      "title": "Attention aux abus de langage !",
+      "text-1": "héritage ≠ délégation",
+      "text-2": "Un objet n'hérite pas des propriétés de son prototype, mais il les lui délègue: ce ne sont pas ses propriétés propres",
+      "text-3": "Dans le cadre de la POO avec prototypes, déléguer peut signifier :",
+      "list-1": "récupérer des valeurs par défaut",
+      "list-2": "obtenir une implémentation générique d'une méthode",
+      "list-3": "implémenter des comportements de base (toString, cast en primitive…)"
+    },
+    "beware-of-misuse-of-language-3": {
+      "title": "Attention aux abus de langage !",
+      "text-1": "Interface, surcharge, instance…",
+      "text-2": "Beaucoup d'éléments du vocabulaire classique sont à revoir:",
+      "list-1": "Le prototype n'est ni une <em>interface</em> ni un <em>contrat</em> à remplir pour l'objet, mais une base d'API sur laquelle se reposer.",
+      "list-2": "On ne <em>surcharge</em> pas des propriétés, mais on délègue celles qui manquent",
+      "list-3": "Le mot « instance » est un anglicisme signifiant « exemple » pour parler d'un exemplaire d'une classe. Avec les prototypes, les rôles sont inversés puisque c'est le prototype qui joue davantage le rôle d'exemple.",
+      "note": "Malgré ces écarts de définition, ce vocabulaire est encore souvent utilisé (y compris au sein même du langage) afin de rester familier pour les habitués de Java et de la POO par classes. C'est la même aberration historique qui a donné le nom « Java »Script."
+    },
+    "constructor-and-operator-new": {
+      "title": "Constructeurs et opérateur <span class=\"blue\">new</span>",
+      "text": "En JavaScript, une fonction peut être invoquée en tant que constructeur avec l'opérateur <span class=\"blue\">new</span> :",
+      "note-1": "Il est très peu probable que vous ayez l'intention d'utiliser une fonction à la fois comme constructeur et comme fonction régulière. Par convention, ceux qui sont destinés à être des constructeurs ont leur nom commençant par une lettre majuscule.",
+      "note-2": "Les fonctions fléchées ne peuvent pas être décrites en tant que constructeur"
+    },
+    "prototypes-and-constructors": {
+      "title": "Prototypes et constructeurs",
+      "text-1": "Lorsque <code>new Constructor()</code> est invoqué, un nouvel objet est créé avec <code>Constructor.prototype</code> comme prototype.",
+      "text-2": "Cela équivaut à appeler <code>Object.create(Constructor.prototype)</code>",
+      "text-3": "Le même principe s'applique à tous les constructeurs natifs du langage :",
+      "text-4": "L'opérateur <code class=\"blue\">instanceof</code> détermine si une instance a été créée par un certain constructeur:"
+    },
+    "constructors-and-context": {
+      "title": "Constructeurs et contexte",
+      "text-1": "L'opérateur <span class=\"blue\">new</span> modifie la manière dont une fonction est invoquée de plusieurs manières :",
+      "text-2": "L'objet créé est utilisé comme contexte d'exécution du constructeur (<span class=\"green\">this</span>)",
+      "text-3": "Ce même objet est retourné par défaut en l'absence d'instruction <code>return</code>"
+    },
+    "constructor-prototype": {
+      "title": "Constructor.prototype",
+      "exo": "Exercice 16",
+      "text-1": "Toute fonction constructeur a une propriété <code>prototype</code> qui est un objet ayant lui-même une propriété <code>constructor</code>, qui est une référence à cette fonction constructeur.",
+      "text-2": "C'est ce qui permet de retrouver la fonction constructeur à partir d'un objet construit.",
+      "text-3": "Dans le prototype, nous pouvons déclarer d'autres propriétés qui seront <b>déléguées</b> par les objets créés avec ce constructeur :"
+    },
+    "constructor-prototype-2": {
+      "title": "Constructor.prototype",
+      "text": "Attention à ne pas confondre :"
+    },
+    "constructors-flaws": {
+      "title": "Défauts des constructeurs",
+      "text": "Les constructeurs sont un pattern assez couramment utilisé en JS, bien que présentant plusieurs défauts:",
+      "list-1": "Les constructeurs des prototypes ne sont pas automatiquement invoqués, vous devez le faire manuellement.",
+      "list-2": "Les constructeurs des prototypes peuvent ne pas avoir la même signature, ce qui casse le <a href=\"https://en.wikipedia.org/wiki/Liskov_substitution_principle\" target=\"_blank\">principe de substitution</a>.",
+      "list-3": "Une propriété <code>constructor</code> est assignée aux objets créés, ce qui peut casser du code existant si vous l'utilisez à d'autres effets",
+      "list-4": "Le mot-clé <code>this</code> ne fonctionne pas de la même façon selon si la fonction est appelée avec new ou non",
+      "list-5": "Il n'est pas possible de déclarer plusieurs constructeurs",
+      "list-6": "Ils prêtent à confusion pour les débutants avec les prototypes"
+    },
+    "class-operator": {
+      "title": "L'opérateur <code>class</code> (ES6)",
+      "text": "Sucre syntaxique pour la déclaration d'objets avec constructeurs",
+      "note-1": "explicite d'une propriété constructor",
+      "note-2": "simplifie l'assignation du prototype",
+      "note-3": "simplifie l'appel au constructeur du prototype"
+    },
+    "super": {
+      "title": "super",
+      "text": "Utilisable sans l'opérateur class :"
+    },
+    "static": {
+      "title": "static",
+      "text-1": "Définit une méthode statique: c'est-à-dire une propriété du constructeur et non du prototype",
+      "text-2": "C'est fondamentalement la même chose que d'attribuer directement la propriété au constructeur, donc ce n'est pas le sucre syntaxique le plus utile, mais il a été ajouté pour sa familiarité avec les développeurs Java."
+    },
+    "constructors-flaws-with-class": {
+      "title": "Défauts des constructeurs, avec class",
+      "list-1": "Les constructeurs des prototypes ne sont pas automatiquement invoqués, vous devez le faire manuellement.",
+      "text-1": "toujours le cas mais simplifié avec <code>super()</code>",
+      "list-2": "Les constructeurs des prototypes peuvent ne pas avoir la même interface, ce qui casse le <a target=\"_blank\" href=\"https://en.wikipedia.org/wiki/Liskov_substitution_principle\">principe de substitution</a>.",
+      "text-2": "toujours le cas",
+      "list-3": "Une propriété <code>constructor</code> est assignée aux objets créés, ce qui peut casser du code existant si vous l'utilisez à d'autres effets, par exemple : car.constructor = \"Toyota\"",
+      "text-3": "toujours le cas mais l'assignation est explicitée",
+      "list-4": "Le mot-clé <code>this</code> ne fonctionne pas de la même façon selon si la fonction est appelée avec <code>new</code> ou non",
+      "text-4": "exception levée si un constructeur n'est pas invoqué avec <code>new</code>",
+      "list-5": "Il n'est pas possible de déclarer plusieurs constructeurs",
+      "text-5": "toujours le cas",
+      "list-6": "Ils sont confusants pour les débutants avec les prototypes",
+      "text-6": "rajoute de la confusion avec la POO par classes"
+    },
+    "alternative-to-constructors": {
+      "title": "Alternatives aux constructeurs",
+      "text-1": "Vous n'avez pas besoin de constructeurs pour faire de la POO basée sur des prototypes. Vous pouvez plutôt utiliser :",
+      "list-1": "les fonctions usines",
+      "list-2": "<code>Object.create</code> et <code>Object.assign</code>",
+      "text-2": "Il corrige tous les défauts indiqués précédemment, et vous n'en avez plus besoin :"
+    },
+    "class-vs-Object.create-example": {
+      "title": "class vs Object.create: exemple"
+    },
+    "delegation-pattern": {
+      "title": "Pattern délégation, en résumé",
+      "list-1": "Modèle plus léger et plus simple",
+      "list-2": "Remplacer la notion de constructeurs par des fonctions d'usine ou des méthodes d'initialisation",
+      "list-3": "Plus besoin des opérateurs <code>new</code> et <code>instanceof</code>",
+      "list-4": "Nécessite de sortir du modèle mental des hiérarchies de classes",
+      "note": "<u>Recommandé</u>:<br>Utilisez avec modération <code>Object.create</code> et </code>class extends</code>. <br>Limitez au maximum la taille de vos chaînes de prototypes.<br>La délégation par prototypes est un pattern flexible et puissant, mais la <b>composition d'objets</b> est une autre approche sous-exploitée"
+    },
+    "object-composition": {
+      "title": "Composition d'objets (Mixins)",
+      "text-1": "Un autre modèle en JavaScript OOP consiste à créer des objets par composition.",
+      "text-2": "Ce modèle est super simple car les objets JS prennent en charge l'assignation dynamique de nouvelles propriétés :",
+      "text-3": "La composition est ordonnée, en appliquant les arguments de gauche à droite, de sorte qu'en cas de conflits sur un nom de propriété, le dernier est prioritaire :"
+    },
+    "composition-or-delegation": {
+      "title": "Composition ou délégation ?",
+      "text-1": "En réalité, il n'existe pas de pattern meilleur qu'un autre: ils correspondent à une manière d'organiser votre mode de pensée.",
+      "text-2": "Les défauts inhérents à chaque pattern proviennent d'une utilisation excessive de ce dernier.",
+      "text-3": "Prenez le temps de réfléchir à votre modèle, ne codez pas par automatisme."
+    },
+    "relations-between-objects": {
+      "title": "Exercice Relations entre objets",
+      "exo": "Exercice 17",
+      "text-1": "Exerçons-nous sur un exemple de projet : une bibliothèque de composants Web",
+      "text-2": "Objets identifiés dans le modèle:",
+      "text-3": "Objectifs",
+      "list-1": "réfléchir au modèle, déterminer les relations entre les objets:<br><b>Délégation ? Composition ? Encapsulation ?</b>",
+      "list-2": "implémenter les liaisons entre les objets",
+      "list-3": "tester l'exemple utilisant les deux composants Button et TextInput"
+    },
+    "symbol": {
+      "title": "Symbol",
+      "text-1": "Nouveau type primitif apparu avec ES2015.",
+      "text-2": "Représente une référence unique :",
+      "text-3": "Peut être utilisé comme clé de propriété d'un objet"
+    },
+    "symbol-global-register": {
+      "title": "Symbol - Registre global",
+      "text": "Il existe néanmoins un registre global pour les symboles :",
+      "note": "A utiliser modérément au risque de perdre l'intérêt premier des symboles, à savoir être une référence unique"
+    },
+    "symbol-know": {
+      "title": "Symboles connus",
+      "text-1": "Certains symboles sont intégrés dans ES2015.",
+      "text-2": "Ils permettent de redéfinir certains comportements internes du langage pour un objet :",
+      "text-3": "<u>Exemples</u>",
+      "list-1": "<code>Symbol.iterator</code> : utilisé lors de l'itération (boucles for, opérateur de propagation ...)",
+      "list-2": "<code>Symbol.hasInstance</code> : utilisé par l'opérateur <code>instanceof</code>",
+      "list-3": "<code>Symbol.toPrimitive</code> : utilisé pour le cast en primitive",
+      "list-4": "<code>Symbol.toStringTag</code> : utilisé par la méthode <code>toString</code>"
+    },
+    "iterable-objects": {
+      "title": "Objets itérables",
+      "text-1": "<code>Array</code>, <code>Set</code> et <code>Map</code> sont des structures adéquates pour modéliser vos listes dans la majorité des cas.",
+      "text-2": "Mais vous pouvez également créer vos propres <b>objets itérables</b> pour des besoins spécifiques : <em>arbres binaires, listes chaînées, graphes...</em>",
+      "text-3": "Un objet est <b>itérable</b> lorsque la méthode assignée à sa propriété <code>Symbol.iterator</code> retourne un <b>itérateur</b>.",
+      "text-4": "Un objet <b>itérateur</b> avec une méthode <code>next()</code> qui retourne un objet avec 2 propriétés:",
+      "list-1": "<code>done</code> : booléen, true si l'itérateur a fini la suite",
+      "list-2": "<code>value</code> : valeur courante de l'itération, absente si done = true "
+    },
+    "function-and-generators": {
+      "title": "function* et générateurs",
+      "exo": "Exercice 18",
+      "text-1": "Un générateur est un type spécial de fonction utilisé pour créer facilement des itérateurs. Il se déclare avec l'opérateur <code>function*</code> et contient des instructions <code>yield</code>.",
+      "text-2": "<code>yield</code> vous permet de suspendre l'exécution de la fonction du générateur et renvoie un résultat intermédiaire. L'exécution reprendra à l'appel de <code>next()</code>.",
+      "text-3": "L'itération est terminée à la fin des instructions de fonction ou lors de la rencontre d'une instruction <code>return</code>."
+    },
+    "proxy": {
+      "title": "Proxy",
+      "text-1": "Les proxys, introduits dans ES2015, permettent d'intercepter et de personnaliser les opérations effectuées sur les objets :",
+      "list-1": "énumération et description des propriétés",
+      "list-2": "définition, assignation et suppression de propriétés",
+      "list-3": "invocations de fonctions et de constructeurs",
+      "list-4": "assignation et récupération du prototype",
+      "list-5": "...",
+      "text-2": "Un <code>proxy</code> ne change pas l'objet d'origine, il renvoie une nouvelle référence d'objet, et toutes les opérations doivent être effectuées sur cette nouvelle référence.",
+      "text-3": "Par défaut, aucune opération n'est interceptée ni modifiée, de sorte que l'objet proxy ne peut pas être distingué de l'objet d'origine."
+    },
+    "reflect-api": {
+      "title": "Reflect API",
+      "text-1": "<b>Reflect</b> représente la capacité de <a href=\"https://en.wikipedia.org/wiki/Reflective_programming\" target=\"_blank\">réflexion</a> acquise par JS avec l'introduction des proxys.",
+      "text-2": "L'objet <code>Reflect</code> contient un ensemble de méthodes qui reproduisent le comportement par défaut du langage pour tous les traps Proxy. Vous pouvez le voir comme la valeur par défaut de chaque trap <code>Proxy</code>.",
+      "text-3": "Vous pouvez facilement casser des comportements existants dont vous ignoriez même l'existence lorsque vous jouez avec des proxys. Une bonne pratique et une mesure de sécurité consiste à toujours appeler l'API Reflect lors de l'ajout d'une interruption de proxy."
+    },
+    "use-cases-for-proxies": {
+      "title": "Cas d'utilisation des Proxy",
+      "exo": "Exercice 19",
+      "list-1": "Defensive objects: empêcher la mutation directe d'un objet, rejeter une exception lors de l'accès à une propriété non définie…",
+      "list-2": "Watchers: Pub/Sub sur les mutations d'un objet (<a href=\"https://vuejs.org/guide/extras/reactivity-in-depth.html#how-reactivity-works-in-vue\" target=\"_blank\">Vue.js</a>, <a href=\"https://mobx.js.org/configuration.html#proxy-support\" target=\"_blank\">MobX</a>)",
+      "list-3": "Typage fort: valide le type ou la valeur assignée (<a href=\"https://objectmodel.js.org\" target=\"_blank\">objectmodel.js.org)</a>",
+      "list-4": "Cacher des propriétés privées",
+      "list-5": "Mémorisation des fonctions pour l'amélioration des performances",
+      "list-6": "Mesures de performance et debug",
+      "list-7": "..."
+    },
+    "chapter-6": {
+      "title": "Programmation fonctionnelle",
+      "description": "Exos 20 à 22"
+    },
+    "general-principles-functional-programming": {
+      "title": "Principes généraux de la programmation fonctionnelle",
+      "list-1": "Décomposer un problème en fonctions <b>atomiques</b>, <b>génériques</b> et <b>composables</b>",
+      "list-2": "Privilégier les fonctions <b>pures</b>, c'est-à-dire n'utilisant pas de variables libres et n'ayant pas d'effets de bord",
+      "list-3": "Eviter les mutations d'objets",
+      "text": "Objectifs :",
+      "list-4": "avoir un code plus prévisible",
+      "list-5": "réduire la charge mentale du développeur",
+      "list-6": "réduire le nombre de bugs",
+      "list-7": "éliminer plus facilement le code mort"
+    },
+    "function-patterns-recursivity": {
+      "title": "Récursivité",
+      "text": "Une fonction <b>récursive</b> s'invoque elle-même avec d'autres arguments, jusqu'à atteindre une <b>condition d'arrêt</b>",
+      "note": "Un pattern utile mais peu lisible et avec un risque de boucle infinie.<br><u>Recommandé</u>: à utiliser pour des fonctions minimalistes, en explicitant avec des commentaires leur caractère récursif."
+    },
+    "chainable-api": {
+      "title": "API chaînables",
+      "exo": "Exercice 20",
+      "text-1": "Une méthode <b>chaînable</b> retourne son propre contexte d'exécution (<code>return this</code>) ou un objet du même type/prototype afin de pouvoir enchaîner les appels à cette méthode.",
+      "text-2": "Exemple: méthodes chaînable <code>Array.prototype</code>",
+      "text-3": "Les API chaînables sont pratiques à utiliser car elles réduisent les séquences d'instructions à une seule expression. Ils ont fait le succès de fameuses librairies JS comme <a href=\"https://jquery.com\" target=\"_blank\">jQuery</a> ou <a href=\"https://lodash.com\" target=\"_blank\">lodash</a>."
+    },
+    "function-composition": {
+      "title": "Composition de fonctions",
+      "exo": "Exercice 21",
+      "text-1": "La composition de fonctions consiste à créer une fonction composée qui appelle en série plusieurs autres fonctions, chacune avec la valeur de retour de la précédente:",
+      "text-2": "La composition de fonctions peut être une solution pertinente quand:",
+      "list-1": "une fonction est trop longue ou avec trop de paramètres",
+      "list-2": "une variable est utilisée une seule fois pour un calcul intermédiaire",
+      "list-3": "le développeur est tenté de copier-coller du code",
+      "text-3": "Comparée aux API chaînables, la composition de fonctions privilégie les fonctions indépendantes par rapport aux méthodes, ce qui évite de surcharger les objets avec un trop grand nombre de propriétés."
+    },
+    "currying": {
+      "title": "Curryfication (Currying)",
+      "text-1": "Tire son nom de <a href=\"https://en.wikipedia.org/wiki/Haskell_Curry\" target=\"_blank\">Haskell Curry</a>, un mathématicien qui a posé les bases de la programmation fonctionnelle.",
+      "text-2": "La <b>curryfication</b> consiste à transformer transformer une fonction qui prend N arguments en une fonction prenant uniquement le 1er argument et retournant une autre fonction prenant uniquement le 2ème argument, et ainsi de suite jusqu'à avoir collecté les N arguments nécessaires pour calculer et retourner le résultat final:",
+      "text-3": "Les fonctions fléchées facilitent la transformation des fonctions en fonctions curryées :",
+      "text-4": "Une définition plus souple autorise à passer un nombre quelconque d'arguments:"
+    },
+    "currying-use-cases": {
+      "title": "Curryfication: cas d'utilisation",
+      "exo": "Exercice 22",
+      "text": "La <b>curryfication</b> est utilisée pour appliquer une partie des arguments pour décliner une fonction générique en une version plus spécialisée de celle-ci : c'est ce qu'on appelle l'<b>application partielle</b>.",
+      "note": "En pratique, nous introduisons souvent la curryfication dans une base de code dans le sens inverse :<br>à partir d'une fonction effectuant un travail spécifique, nous la réécrivons dans une version plus générique, puis utilisons une application partielle pour revenir au cas d'utilisation spécifique d'origine."
+    },
+    "partial-application": {
+      "title": "Application partielle avec <code>fn.bind</code>",
+      "text": "Une application partielle peut également être effectuée avec la fonction <code>bind</code> dans <code>Function.prototype</code> :"
+    },
+    "functional-refactoring-in-practice": {
+      "title": "Refactoring fonctionnel en pratique",
+      "text-1": "Comment refactoriser un code pour obtenir des fonctions pures, atomiques, génériques et composables ?",
+      "text-2": "Partons de cet exemple de code:"
+    },
+    "functional-refactoring-in-practice-2": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note-1": "<b>Étape 1 : se débarrasser des variables non locales</b><br>Passez des variables non locales en tant qu'arguments de fonction. S'ils sont réaffectés, faites-leur renvoyer des valeurs.",
+      "note-2": "La réaffectation de variables non locales est un effet secondaire qui entraîne souvent des erreurs et des bogues chez les développeurs."
+    },
+    "functional-refactoring-in-practice-3": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note-1": "<b>Étape 2 : éliminer les effets secondaires</b><br>Remplacez les mutations par des instructions immuables équivalentes lorsque cela est possible. Sinon, essayez de les isoler.",
+      "note-2": "1 fonction = 1 rôle ; Externaliser les effets de bord aide à décomposer un code et mieux analyser son fonctionnement."
+    },
+    "functional-refactoring-in-practice-4": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note-1": "<b>Étape 3 : décomposer en fonctions pures et composables</b>",
+      "note-2": "Après avoir supprimé les variables non locales et les effets secondaires, il est beaucoup plus facile de décomposer le code en fonctions composables."
+    },
+    "functional-refactoring-in-practice-5": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note-1": "<b>Étape 4 : rendre les fonctions génériques</b><br>Passez n'importe quelle valeur arbitraire en paramètre. Ajoutez des fonctions de mappage d'arguments si nécessaire.",
+      "note-2": "Les nombres magiques et autres constantes non documentées encouragent le copier-coller de code et créent une dette technique."
+    },
+    "functional-refactoring-in-practice-6": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note-1": "<b>Étape 5 : fonctions de curryfication</b> pour réduire le nombre d'arguments et supprimer les fonctions de mappage superflues",
+      "note-2": "La Curryfication est très efficace pour faciliter la composition de fonctions génériques."
+    },
+    "functional-refactoring-in-practice-7": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note-1": "<b>Étape 6 : réorganisez vos modules</b> ; vérifiez chaque fonction décomposée obtenue pour décider si elle doit être dans ce fichier ou déplacée ailleurs.",
+      "note-2": "Une refactorisation fonctionnelle est inutile si le code est mal organisé ou si les fonctions réutilisables ne sont pas réutilisées"
+    },
+    "functional-refactoring-in-practice-8": {
+      "title": "Refactoring fonctionnel en pratique",
+      "note": "ce que nous obtenons à la fin : fonctions pures, atomiques, génériques et composables"
+    },
+    "functional-refactoring-in-practice-9": {
+      "title": "Refactoring fonctionnel en pratique",
+      "text": "Pour refactoriser un code et obtenir des fonctions purement atomiques génériques et composables :",
+      "list-1": "<i class=\"grey\">Collecte des ingrédients</i><br> Remplacer les variables libres par des arguments ou valeurs retournées",
+      "list-2": "<i class=\"grey\">Découpe</i><br> Extraire et isoler les effets de bord / mutations du corps des fonctions",
+      "list-3": "<i class=\"grey\">Mélanger le tout</i><br> Composer en séries de fonctions pures",
+      "list-4": "<i class=\"grey\">Laisser mijoter</i><br> Extraire les valeurs arbitraires en arguments pour gagner en généricité",
+      "list-5": "<i class=\"grey\">Ajouter les épices</i><br> Curryfier les fonctions pour réduire leur nombre d'arguments et simplifier le code",
+      "list-6": "<i class=\"grey\">Dresser l'assiette</i><br> Revenir sur chaque fonction pure, atomique, générique et composable obtenue pour établir si sa place est justifiée dans ce fichier ou si elle doit être externalisée",
+      "note": "Avec le temps, vous pourrez vous composer une <b>functional toolbox</b>, votre livre de recettes réutilisables dans vos différents projets"
+    },
+    "chapter-7": {
+      "title": "Au delà de JavaScript",
+      "description": "Transpilateurs et sur-ensembles JavaScript"
+    },
+    "babel-transpiler": {
+      "title": "Transpilateur Babel",
+      "list-1": "<b>Transpilateur</b> = compilateur source à source opérant sur le même langage, ou deux langages avec le même niveau d'abstraction",
+      "list-2": "Babel est le transpileur JS le plus populaire. Il s'appelait initialement 6to5 car il convertissait ES6 en ES5 pour obtenir une prise en charge plus large des navigateurs (Internet Explorer en particulier)",
+      "list-3": "Exemple de ES2021 → ES5 transpilation",
+      "list-4": "Un plugin Babel existe pour presque chaque proposition TC39, pour expérimenter de nouvelles propositions",
+      "list-5": "Des préréglages de plugins Babel existent pour chaque version majeure d'ECMAScript"
+    },
+    "babel-preset-env": {
+      "list-1": "Depuis qu'<a href=\"https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know\" target=\"_blank\">Internet Explorer</a> a pris sa retraite et n'est plus pris en charge par Microsoft, nous sommes entrés dans l'ère toujours verte des navigateurs Web, qui rendent la plupart des transformations Babel inutiles.",
+      "list-2": "Un nouveau préréglage Babel a été créé pour réduire le nombre de transformations Babel à ce dont vous avez besoin en fonction de la <a href=\"https://browserslist.dev\" target=\"_blank\">liste des navigateurs que vous souhaitez supporter</a>.",
+      "text": "Exemples de requêtes de listes de navigateurs :"
+    },
+    "transpile-or-not-transpile": {
+      "title": "Transpiler ou pas transpiler ?",
+      "text-1": "La transpilation permet au développeur de ne pas penser à la majorité des problèmes de prise en charge du navigateur. Il n'est plus nécessaire de se rappeler quelle fonctionnalité JS provient de quelle version et est prise en charge dans quel navigateur.",
+      "text-2": "La transpilation introduit une étape de compilation, de nombreuses nouvelles dépendances, des facteurs de risque et une perte de proximité entre le code écrit par le développeur et le code réellement exécuté en production.",
+      "text-3": "Recommandé :",
+      "list-1": "Transpiler au minimum en mode développement",
+      "list-2": "Utiliser preset-env pour réduire le scope de transpilation",
+      "list-3": "Intégrer la transpilation aux autres process de build existants (linters, bundlers, minification…)",
+      "list-4": "Utiliser les source maps avec son débogueur",
+      "text-4": "Heureusement, la plupart des outils de construction des frameworks sont préconfigurés comme ça !"
+    },
+    "typescript": {
+      "list-1": "TypeScript est un sur-ensemble de JavaScript développé par Microsoft et publié en 2012",
+      "list-2": "Il a un transpileur officiel, <a href=\"https://www.typescriptlang.org/docs/handbook/compiler-options.html\" target=\"_blank\">tsc</a>, mais de nombreux autres transpileurs alternatifs existent : <a href=\"https://esbuild.github.io\" target=\"_blank\">esbuild</a>, <a href=\"https://bun.sh\" target=\"_blank\">bun</a>, et même un préréglage Babel.",
+      "list-3": "La fonctionnalité clé de TypeScript est le typage statique optionnel",
+      "list-4": "Autres fonctionnalités intéressantes : interfaces, décorateurs, énumérations, classes abstraites",
+      "list-5": "Adoptable progressivement: avec les définitions de type (fichiers <code>*.d.ts</code>), TypeScript peut détecter les erreurs même sans aucune syntaxe spécifique à TS.",
+      "list-6": "Essayez-le en ligne <a href=\"https://www.typescriptlang.org/play\" target=\"_blank\">ici</a>",
+      "note": "En 10 ans, la popularité de TypeScript n'a cessé de croître. En 2022, c'est une partie majeure de l'écosystème front-end. Il est pris en charge dans tous les principaux frameworks Web et améliore à la fois l'expérience du développeur et la fiabilité du code, en particulier pour les applications de taille moyenne à grande."
+    },
+    "jsx": {
+      "list-1": "JSX est un autre sur-ensemble de JavaScript développé par Facebook, à l'origine pour le framework <b>React</b>",
+      "list-2": "JSX est maintenant pris en charge par d'autres frameworks que React, tels que Vue.js ou Preact",
+      "list-3": "JSX est une abstraction pour <b>manipuler des éléments DOM virtuels</b>, ce qui est généralement fait avec des modèles et une syntaxe de modèle personnalisée dans d'autres frameworks.",
+      "note": "La popularité de JSX stagne et le langage fait encore débat dans la communauté JS, notamment à cause des conflits de mots-clés HTML vs JS ; par exemple, l'attribut HTML \"class\" dans JSX doit être réécrit \"className\" pour éviter tout conflit avec l'opérateur de classe dans JavaScript."
+    },
+    "retrospective": {
+      "chapter-1": "Préambule",
+      "list-1": "ECMAScript, TC39 et les versions de JavaScript",
+      "chapter-2": "Une réintroduction à JavaScript",
+      "list-2": "Primitives et Objets",
+      "list-4": "Descripteurs de propriétés",
+      "list-5": "Scopes et Closures",
+      "list-6": "Fonctions et contextes",
+      "list-7": "Cast implicites",
+      "chapter-3": "Mise à niveau ES2015",
+      "list-8": "Arrow functions",
+      "list-9": "Paramètres par défaut",
+      "list-10": "Spread / Rest",
+      "list-11": "Destructuring",
+      "list-12": "Template literals",
+      "list-13": "Map et Sets",
+      "list-14": "Modules",
+      "chapter-4": "Gérer l'asynchronisme",
+      "list-15": "Asynchrone, c'est quoi",
+      "list-16": "Modules",
+      "list-17": "Callbacks et modèle Publisher/Subscriber",
+      "list-18": "Promises",
+      "list-19": "async / await",
+      "list-20": "Observables",
+      "chapter-5": "Orienté Objet",
+      "list-21": "Prototypes et délégation",
+      "list-22": "class / super / extends",
+      "list-23": "Composition d'objets",
+      "list-24": "Symboles, itérables et générateurs",
+      "list-25": "Proxies",
+      "chapter-6": "Orienté Fonctionnel",
+      "list-26": "Récursivité",
+      "list-27": "API chaînables",
+      "list-28": "Composition de fonctions",
+      "list-29": "Curryfication",
+      "chapter-7": "Transpileurs",
+      "list-30": "Babel",
+      "list-31": "TypeScript, JSX"
+    },
+    "ending": {
+      "title": "JavaScript Avancé",
+      "description": "Fin de formation, félicitations vous avez survécu !"
     }
   },
   "menubar": {

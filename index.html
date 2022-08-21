@@ -1068,12 +1068,12 @@
 						<img height="200" src="./assets/img/Image16.png">
 						<img height="200" src="./assets/img/Image17.png">
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 11</span>
-						<h3>Map & Set</h3>
+					<section class="left" id="map-set">
+						<h3 data-i18n="title">Map & Set</h3>
+						<span class="ref" data-i18n="exo">Exercise 11</span>
 						<ul>
-							<li><code>Map</code>: collection of keys/values like objects, but the keys can be of any type</li>
-							<li><code>Set</code>: collection of values without keys, not ordered but with guarantee of uniqueness</li>
+							<li data-i18n="list-1"><code>Map</code>: collection of keys/values like objects, but the keys can be of any type</li>
+							<li data-i18n="list-2"><code>Set</code>: collection of values without keys, not ordered but with guarantee of uniqueness</li>
 						</ul>
 						<div class="cols-2">
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
@@ -1103,35 +1103,37 @@
 							</code></pre>
 						</div>
 					</section>
-					<section class="left">
-						<h3>Modules (a.k.a. ES Modules or ESM in short)</h3>
-						<p>The long awaited standard solution for managing modular code (divided into several separate files)</p>
-						<p><b><u>Replaces and supersedes:</u></b></p>
+					<section class="left" id="modules">
+						<h3 data-i18n="title">Modules (a.k.a. ES Modules or ESM in short)</h3>
+						<p data-i18n="text-1">The long awaited standard solution for managing modular code (divided into several separate files)</p>
+						<p><b><u data-i18n="text-2">Replaces and supersedes:</u></b></p>
 						<ul>
 							<li>
-								CommonJS (used by Node.js)
+								<span data-i18n="list-1">CommonJS (used by Node.js)</span>
 								<pre><code class="javascript hljs" data-trim>const $ = require('jquery')</code></pre>
 							</li>
 							<li>
-								Asynchronous Module Definition (AMD)
-								<pre><code class="javascript hljs" data-trim>define(['jquery', 'underscore'], function($,_){ 
+								<span data-i18n="list-2">Asynchronous Module Definition (AMD)</span>
+								<pre><code class="javascript hljs" data-trim>
+									define(['jquery', 'underscore'], function($,_){ 
 
-});</code></pre>
+									});
+								</code></pre>
 							</li>
 						
-							<li>
+							<li data-i18n="list-3">
 								Universal Module Definition (UMD)<br>
 								<em>Pattern combining CommonJS, AMD and using global variables to be sure to be understood by all module systems</em>
 							</li>
-							<li>the use of global variables and the <span class="monospace">&lt;script></span> to be ordered</li>
+							<li data-i18n="list-4">the use of global variables and the <code>&lt;script></code> to be ordered</li>
 						</ul>
 					</section>
-					<section>
-						<h3>Modules</h3>
+					<section id="modules-2">
+						<h3 data-i18n="title">Modules</h3>
 						<div class="flex-center">
 							<div>
-								<p>Two keywords: <span class="monospace">import</span> and <span class="monospace">export</span></p>
-								<p>A distinction is made between named imports and default imports</p>
+								<p data-i18n="text-1">Two keywords: <code>import</code> and <code>export</code></p>
+								<p data-i18n="text-2">A distinction is made between named imports and default imports</p>
 								<pre><code class="javascript hljs" data-trim>
 									import MonModule from './mon-module.js'
 									import { a, b as two } from 'module'
@@ -1145,26 +1147,29 @@
 							<img height="350" src="./assets/img/Image14.png">
 						</div>
 					</section>
-					<section class="left">
-						<h3>Modules</h3>
-						<p>Modules have a different execution context to traditional scripts:</p>
+					<section class="left" id="modules-3">
+						<h3 data-i18n="title">Modules</h3>
+						<p data-i18n="text-1">Modules have a different execution context to traditional scripts:</p>
 						<ul>
 							<li>
-								strict mode used by default <span class="monospace">("use strict";)</span>
+								<span data-i18n="list-1">strict mode used by default <code>("use strict";)</code></span>
 								<ul>
-									<li>explicit exceptions on certain silent errors</li>
-									<li>new keywords are reserved as variable names</li>
-									<li>forbids variables not explicitly declared</li>
+									<li data-i18n="list-2">explicit exceptions on certain silent errors</li>
+									<li data-i18n="list-3">new keywords are reserved as variable names</li>
+									<li data-i18n="list-4">forbids variables not explicitly declared</li>
 								</ul>
 							</li>
-							<li>no global context (<span class="monospace">this === undefined</span> in the global scope)</li>
+							<li data-i18n="list-5">no global context (<code>this === undefined</code> in the global scope)</li>
 						</ul>
-						<p>The code must therefore be parsed differently if it is a module:</p>
+						<p data-i18n="text-2">The code must therefore be parsed differently if it is a module:</p>
 						<ul>
-							<li>On browser: <pre><code>&lt;script type="module" src="index.js"&gt;&lt;/script&gt;</code></pre></li>
 							<li>
-								On Node.js: use <span class="monospace">.mjs</span> extension instead of <span class="monospace">.js</span>, 
-								or have <span class="monospace">{ type: "module" }</span> in package.json
+								<span data-i18n="list-6">On browser:</span> 
+								<pre><code>&lt;script type="module" src="index.js"&gt;&lt;/script&gt;</code></pre>
+							</li>
+							<li data-i18n="list-7">
+								On Node.js: use <code>.mjs</code> extension instead of <code>.js</code>, 
+								or have <code>{ type: "module" }</code> in package.json
 							</li>
 						</ul>
 					</section>
@@ -1177,58 +1182,58 @@
 							</a>
 						</p>
 					</section>
-					<section>
-						<h3>Modules: dynamic import </h3>
-						<p>
-							When <span class="monospace">import</span> is called as a function, the module is imported asynchronously. <br>
+					<section id="modules-4">
+						<h3 data-i18n="title">Modules: dynamic import </h3>
+						<p data-i18n="text">
+							When <code>import</code> is called as a function, the module is imported asynchronously. <br>
 							This is very useful for downloading code on demand and optimising the loading time of your applications.
 						</p>
 						<img height="250" src="./assets/img/Image18.png">
 					</section>
-					<section>
-						<h3>Modules: what about support?</h3>
-						<p><a href="https://caniuse.com/es6-module" target="_blank">Good support</a> (~95%) in 2022: Chrome 61+, Edge 16+, Firefox 60+</p>
-						<p>But developers use ESM widely in their codebases that are converted to AMD-like bundles by bundlers like Webpack, Parcel, Rollup, esbuild...</p>
+					<section id="modules-5">
+						<h3 data-i18n="title">Modules: what about support?</h3>
+						<p data-i18n="text-1"><a href="https://caniuse.com/es6-module" target="_blank">Good support</a> (~95%) in 2022: Chrome 61+, Edge 16+, Firefox 60+</p>
+						<p data-i18n="text-2">But developers use ESM widely in their codebases that are converted to AMD-like bundles by bundlers like Webpack, Parcel, Rollup, esbuild...</p>
 						<img height="200" src="./assets/img/Image19.png">
-						<p>Bundlers are tools that precompile your code and reduce the browser's work by producing optimized JS bundles from a set of modules during a build step.</p>
+						<p data-i18n="text-3">Bundlers are tools that precompile your code and reduce the browser's work by producing optimized JS bundles from a set of modules during a build step.</p>
 					</section>
-					<section>
-						<h3>Modules: script nomodule</h3>
-						<p>
+					<section id="modules-6">
+						<h3 data-i18n="title">Modules: script nomodule</h3>
+						<p data-i18n="text-1">
 							Browsers that do not support modules won't load <code>&lt;script type="module"></code>
 							<br>but they can load an alternative script with the <code>nomodule</code> attribute.
 						</p>
 						<img height="125" src="./assets/img/Image20.png">
-						<p>
+						<p data-i18n="text-2">
 							Bundlers can take advantage of this attribute to produce <b>two bundles</b>:<br>
 							 a <span class="green">modern</span> bundle, and a <span class="blue">legacy</span> bundle with more transpiled code.</p>
-						<p>The modern bundle will be lighter and more efficient, so that support for older browsers does not degrade performance for the modern browsers used by the majority of users.</p>						
+						<p data-i18n="text-3">The modern bundle will be lighter and more efficient, so that support for older browsers does not degrade performance for the modern browsers used by the majority of users.</p>						
 					</section>
-					<section class="left">
-						<h3>Modules : recommandations</h3>
-						<p>Always use ESM modules and avoid other existing module systems</p>
-						<p>Using a bundler with the "Modern build" option</p>
+					<section class="left" id="modules-7">
+						<h3 data-i18n="title">Modules : recommandations</h3>
+						<p data-i18n="text-1">Always use ESM modules and avoid other existing module systems</p>
+						<p data-i18n="text-2">Using a bundler with the "Modern build" option</p>
 						<div class="flex-center">
 							<ul>
-								<li>Parcel: for simplicity and speed of implementation</li>
-								<li>Webpack: for complex web applications with advanced needs</li>
-								<li>Rollup: for JS libraries</li>
+								<li data-i18n="list-1">Parcel: for simplicity and speed of implementation</li>
+								<li data-i18n="list-2">Webpack: for complex web applications with advanced needs</li>
+								<li data-i18n="list-3">Rollup: for JS libraries</li>
 							</ul>
 							<img height="100" src="./assets/img/Image22.png" alt="">
 						</div>
 					</section>
 				</section>
 				<section>
-					<section>
-						<h2>Deal with Asynchrony</h2>
-						<p>Exercises 12 to 14</p>
+					<section id="chapter-4">
+						<h2 data-i18n="title">Deal with Asynchrony</h2>
+						<p data-i18n="description">Exercises 12 to 14</p>
 					</section>
-					<section class="left">
-						<h3>What is Asynchronism ?</h3>
-						<p>JavaScript is executed in an <b>mono-thread environment</b> (the engine only runs one instruction at a time).</p>
-						<p>Some instructions may take some time (I/O, network requests…) and must not block the execution of the rest of the program.</p>
-						<p>So we make them <b>asynchronous</b>: they declare a function call to be carried out later, after a defined or undefined period.</p>
-						<p>These future function calls are stored in stacks, and the engine decides when to pop the calls.</p>
+					<section class="left" id="what-is-asynchronism">
+						<h3 data-i18n="title">What is Asynchronism ?</h3>
+						<p data-i18n="text-1">JavaScript is executed in an <b>mono-thread environment</b> <em>(the engine only runs one instruction at a time)</em>.</p>
+						<p data-i18n="text-2">Some instructions may take some time (I/O, network requests…) and must not block the execution of the rest of the program.</p>
+						<p data-i18n="text-3">So we make them <b>asynchronous</b>: they declare a function call to be carried out later, after a defined or undefined period.</p>
+						<p data-i18n="text-4">These future function calls are stored in stacks, and the engine decides when to pop the calls.</p>
 
 						<pre><code class="javascript hljs" data-trim>
 							setTimeout(function calledAfter5Seconds(){
@@ -1238,10 +1243,10 @@
 							console.log("hello !")
 						</code></pre>
 					</section>
-					<section class="left">
-						<h3>Callbacks</h3>
-						<p>The most common interface for asynchronous instructions is the <b>callback function</b>.</p>
-						<p>It consists of passing as parameter of an asynchronous function another function (the callback) which will be called later.</p>
+					<section class="left" id="callbacks">
+						<h3 data-i18n="title">Callbacks</h3>
+						<p data-i18n="text-1">The most common interface for asynchronous instructions is the <b>callback function</b>.</p>
+						<p data-i18n="text-2">It consists of passing as parameter of an asynchronous function another function (the callback) which will be called later.</p>
 						<pre><code class="javascript hljs" data-trim>
 							let callback = function(result){ console.log(result) }
 
@@ -1250,15 +1255,15 @@
 							element.addEventListener('click', callback);
 						</code></pre>
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 12</span>
-						<h3>Publisher/Subscriber</h3>
-						<p>This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
-						<p><code>element.addEventListener</code> is an example of pub/sub.</p>
+					<section class="left" id="publisher-subscriber">
+						<h3 data-i18n="title">Publisher/Subscriber</h3>
+						<span class="ref" data-i18n="exo">Exercise 12</span>
+						<p data-i18n="text-1">This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
+						<p data-i18n="text-2"><code>element.addEventListener</code> is an example of pub/sub.</p>
 						<br />
-						<p>A pub/sub keeps in memory a list of callbacks (the <b>subscribers</b>).</p>
-						<p>It is composed of at least two functions: <b>subscription</b> and <b>emission</b></p>
-						<p>Example of a pub/sub API:</p>
+						<p data-i18n="text-3">A pub/sub keeps in memory a list of callbacks (the <b>subscribers</b>).</p>
+						<p data-i18n="text-4">It is composed of at least two functions: <b>subscription</b> and <b>emission</b></p>
+						<p data-i18n="text-5">Example of a pub/sub API:</p>
 						<pre><code class="javascript hljs" data-trim>
 							const publisher = new PubSub();
 
@@ -1269,23 +1274,23 @@
 							publisher.emit("alert", "something happened")
 						</code></pre>
 					</section>
-					<section class="left">
-						<h3>Drawbacks of callbacks</h3>
-						<p>Callbacks show their limits when a series of asynchronous operations must be chained (executed one after the other).</p>
+					<section class="left" id="drawbacks-of-callbacks">
+						<h3 data-i18n="title">Drawbacks of callbacks</h3>
+						<p data-i18n="text-1">Callbacks show their limits when a series of asynchronous operations must be chained (executed one after the other).</p>
 						<div class="center"><img height="250" src="./assets/img/callback-hell.jpg" alt="The callback hell"></div>
-						<p>An exception raised by a callback cannot be catched directly from the parent scope, which is why error handling is often handled with a second argument of the callback function or a second callback function dedicated to error handling.</p>
+						<p data-i18n="text-2">An exception raised by a callback cannot be catched directly from the parent scope, which is why error handling is often handled with a second argument of the callback function or a second callback function dedicated to error handling.</p>
 					</section>
-					<section>
-						<h3>Promises</h3>
+					<section id="promises">
+						<h3 data-i18n="title">Promises</h3>
 						<ul>
-						<li>Promises are objects used to facilitate the coordination of asynchronous operations.</li>
-						<li>A Promise represents the promise of a return value in the future. The delay is not necessarily predictable, this value can be available almost immediately or never arrive.</li>
-						<li>A Promise is always in one of these 3 states:
-						<ul>
-							<li><b>pending</b>: initial state, waiting</li>
-							<li><b>fulfilled</b>: the promise has been resolved, the operation was successful</li>
-							<li><b>rejected</b>: the promise was rejected due to an error</li>
-						</ul>
+						<li data-i18n="list-1">Promises are objects used to facilitate the coordination of asynchronous operations.</li>
+						<li data-i18n="list-2">A Promise represents the promise of a return value in the future. The delay is not necessarily predictable, this value can be available almost immediately or never arrive.</li>
+						<li><span data-i18n="list-3">A Promise is always in one of these 3 states:</span>
+							<ul>
+								<li data-i18n="list-4"><b>pending</b>: initial state, waiting</li>
+								<li data-i18n="list-5"><b>fulfilled</b>: the promise has been resolved, the operation was successful</li>
+								<li data-i18n="list-6"><b>rejected</b>: the promise was rejected due to an error</li>
+							</ul>
 						</li>
 						</ul>
 					</section>
@@ -1320,9 +1325,9 @@
 							</code></pre>
 						</div>
 					</section>
-					<section>
-						<span class="ref">Exercise 13</span>
-						<h3>Creation of a promise</h3>
+					<section class="left" id="creation-of-promise">
+						<h3 data-i18n="title">Creation of a promise</h3>
+						<span class="ref" data-i18n="exo">Exercise 13</span>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							// creating a promise from a callback-based API
 							const promise = new Promise((resolve, reject) => {
@@ -1341,26 +1346,27 @@
 							})
 						</code></pre>
 					</section>
-					<section>
-						<h3>Other methods of creation of Promises</h3>
+					<section id="other-mothods-creation-promises">
+						<h3 data-i18n="title">Other methods of creation of Promises</h3>
 						<ul>
 							<li><code>Promise.resolve(val)</code></li>
 							<li><code>Promise.reject(err)</code>
-							<p>create a promise immediately resolved/rejected with some value</p></li>
+								<p><small class="grey" data-i18n="text-1">create a promise immediately resolved/rejected with some value</small></p>
+							</li>
 							<br/>
 							<li><code>Promise.all([ promise1, promise2, promise3 ])</code>
-								<p>create a promise resolved when all the promises passed as arguments are resolved</p>
+								<p><small class="grey" data-i18n="text-2">create a promise resolved when all the promises passed as arguments are resolved</small></p>
 							</li>
 							<li>
 								<code>Promise.race([ promise1, promise2, promise3 ])</code>
-								<p>create a promise resolved when one of the promises passed as arguments is resolved</p>
+								<p><small class="grey" data-i18n="text-3">create a promise resolved when one of the promises passed as arguments is resolved</small></p>
 							</li>
 						</ul>
 						<div class="center"><img height="200" src="./assets/img/promise-all-race.jpg" alt="Comparison between Promise.race and Promise.all"></div>
 					</section>
-					<section>
+					<section id="chaining-and-parallelism">
+						<h3 data-i18n="title">Chaining and parallelism</h3>
 						<span class="ref">Quiz</span>
-						<h3>Chaining and parallelism</h3>
 						<pre><code class="javascript hljs" data-trim>
 							const wait = promisify(setTimeout)
 
@@ -1385,8 +1391,8 @@
 							])
 						</code></pre>
 					</section>
-					<section>
-						<h3>Exception management</h3>
+					<section id="exception-management">
+						<h3 data-i18n="title">Exception management</h3>
 						<pre><code class="javascript hljs" data-trim>
 							f1()
 							.then(f2)
@@ -1398,19 +1404,19 @@
 								// handle the exceptions coming exclusively from f3
 							})
 						</code></pre>
-						<p>
+						<p data-i18n="text">
 							<code>then()</code> and <code>catch()</code> can be chained in any order. 
 							It allows intermediate error handling in a promise chain.
 						</p>
-						<aside class="note info">
+						<aside class="note info" data-i18n="note">
 							<u>Recommended:</u> handle the exceptions at the lowest level possible, but always add a 
 							<code>catch()</code> at the highest level to handle uncatched exceptions.
 						</aside>
 					</section>
-					<section>
-						<h3>async / await (ES2017)</h3>
-						<p>Functions prefixed with the <code>async</code> operator can contain instructions prefixed with <code>await</code>.</p>
-						<p><code>await</code> pauses the function execution waiting for the following promise to be resolved.</p>
+					<section id="async-await">
+						<h3 data-i18n="title">async / await (ES2017)</h3>
+						<p data-i18n="text-1">Functions prefixed with the <code>async</code> operator can contain instructions prefixed with <code>await</code>.</p>
+						<p data-i18n="text-2"><code>await</code> pauses the function execution waiting for the following promise to be resolved.</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							async function myFunction() {
 								try {
@@ -1425,41 +1431,42 @@
 							}
 						</code></pre>
 					</section>
-					<section>
-						<h3>async / await: pros and cons</h3>
+					<section id="async-await-2">
+						<h3 data-i18n="title">async / await: pros and cons</h3>
 						<p>
 							<img src="./assets/img/thumb-up.png" alt="" style="float: left; clear: both; margin: 0 1em 0 0"/>
-							Combines the advantage of asynchronism with the convenience of writing and reading synchronous code
+							<span data-i18n="text-1">Combines the advantage of asynchronism with the convenience of writing and reading synchronous code</span>
 						</p>
 						<p>
 							<img src="./assets/img/thumb-up.png" alt="" style="float: left; clear: both; margin: 0 1em 0 0"/>
-							Allows to unify the management of synchronous errors (exceptions) with the cases of rejection of promises
+							<span data-i18n="text-2">Allows to unify the management of synchronous errors (exceptions) with the cases of rejection of promises</span>
 						</p>
 						<p>
 							<img src="./assets/img/thumb-down.png" alt="" style="float: left; clear: both; margin: 0 1em 0 0"/>
-							Does not encourage the developer to parallelize asynchronous operations, which can slow down the application
+							<span data-i18n="text-3">Does not encourage the developer to parallelize asynchronous operations, which can slow down the application</span>
 						</p>
-						<aside class="note info">
+						<aside class="note info" data-i18n="note">
 							Remember this winning combo: <code>await Promise.all([ ...promises ])</code>
 						</aside>
 					</section>
 
-					<section>
-						<h3>Observable</h3>
-						<p>A pattern halfway between Promise and Pub/Sub:
-							<ul><li>Promise that can be resolved in several stages</li>
-							<li>Event emitter with a completion concept</li>
-						</ul></p>
+					<section id="observable">
+						<h3 data-i18n="title">Observable</h3>
+						<p data-i18n="text-1">A pattern halfway between Promise and Pub/Sub:</p>
+						<ul>
+							<li data-i18n="list-1">Promise that can be resolved in several stages</li>
+							<li data-i18n="list-2">Event emitter with a completion concept</li>
+						</ul>
 						<div class="center">
 							<img src="assets/img/observable-en.png" alt="Timeline of an observable" />
 						</div>
-						<p>A <a href="https://github.com/tc39/proposal-observable" target="_blank">proposal</a> exist to standardize Observables, but it's still Stage 0 and has not been presented to TC39 yet. However, it's easily implementable by yourself like Pub/Sub.</p>
-						<p>This is one of the foundations of ReactiveX and reactive programming.</p>
+						<p data-i18n="text-2">A <a href="https://github.com/tc39/proposal-observable" target="_blank">proposal</a> exist to standardize Observables, but it's still Stage 0 and has not been presented to TC39 yet. However, it's easily implementable by yourself like Pub/Sub.</p>
+						<p data-i18n="text-3">This is one of the foundations of ReactiveX and reactive programming.</p>
 					</section>
 
-					<section>
-						<span class="ref">Exercise 14</span>
-						<h3>Observable: example of API (from <a href="https://rxjs.dev/guide/observable" target="_blank">RxJS</a>)</h3>
+					<section class="left" id="observable-2">
+						<h3 data-i18n="title">Observable: example of API (from <a href="https://rxjs.dev/guide/observable" target="_blank">RxJS</a>)</h3>
+						<span class="ref" data-i18n="exo">Exercise 14</span>
 						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
 							const keyboardObservable = new Observable( subscriber => {
 								const onKey = event => {
@@ -1484,44 +1491,44 @@
 						</code></pre>
 					</section>
 
-					<section class="left">
-						<h3>Tasks, microtasks and event loop</h3>
-						<p>The <b>event loop</b> is the mechanism that periodically pops the asynchronous calls.</p>
-						<p>Between each iteration of the loop, the browser re-renders the page and processes user events (click, scroll, etc.)</p>
-						<p>Modern JS engines store asynchronous calls in two stacks:<ul>
-							<li><b>tasks</b>, unstacked at the end of each event loop (examples: <code>setTimeout</code>, <code>setInterval</code>, <code>fetch</code>)</li>
-							<li><b>microtasks</b>, unstacked at the end of each task (examples: <code>promise.then</code>, <code>process.nextTick</code>)</li>
+					<section class="left" id="tasks-microtasks-and-event-loop">
+						<h3 data-i18n="title">Tasks, microtasks and event loop</h3>
+						<p data-i18n="text-1">The <b>event loop</b> is the mechanism that periodically pops the asynchronous calls.</p>
+						<p data-i18n="text-2">Between each iteration of the loop, the browser re-renders the page and processes user events (click, scroll, etc.)</p>
+						<p data-i18n="text-3">Modern JS engines store asynchronous calls in two stacks:<ul>
+							<li data-i18n="list-1"><b>tasks</b>, unstacked at the end of each event loop (examples: <code>setTimeout</code>, <code>setInterval</code>, <code>fetch</code>)</li>
+							<li data-i18n="list-2"><b>microtasks</b>, unstacked at the end of each task (examples: <code>promise.then</code>, <code>process.nextTick</code>)</li>
 						</ul></p>
 						<img src="assets/img/event-loop.jpg" alt="Schema of the event loop" />
 					</section>
 
-					<section class="left">
-						<h3>Work with the event loop</h3>
-						<p>Sometimes, you need to wait for the event loop:
+					<section class="left" id="work-with-the-event-loop">
+						<h3 data-i18n="title">Work with the event loop</h3>
+						<p data-i18n="text-1">Sometimes, you need to wait for the event loop:
 						<ul>
-							<li>to wait for the DOM to be updated before the next instruction</li>
-							<li>to not block the thread when doing a heavy calculation</li>
+							<li data-i18n="list-1">to wait for the DOM to be updated before the next instruction</li>
+							<li data-i18n="list-2">to not block the thread when doing a heavy calculation</li>
 						</ul>
 						</p>
-						<p>You then need to create a new task for your callback:
+						<p data-i18n="text-2">You then need to create a new task for your callback:
 							<ul>
-								<li><code>setTimeout(callback, delai)</code>
-									with zero delay to minimize waiting time
+								<li><code>setTimeout(callback, delai)</code><br>
+									<small class="grey" data-i18n="list-3">with zero delay to minimize waiting time</small>
 								</li>
 								<li>
 									<code>requestAnimationFrame(callback)</code>
-									let the browser optimize when a callback is called to get a fluid animation (~ 60 frames per second)
+									<small class="grey" data-i18n="list-4">let the browser optimize when a callback is called to get a fluid animation (~ 60 frames per second)</small>
 								</li>
 								<li>
 									<code>requestIdleCallback(callback)</code>
-									let the browser optimize when to call the callback when the CPU is not heavily loaded <i>(non standard)</i>
+									<small class="grey" data-i18n="list-5">let the browser optimize when to call the callback when the CPU is not heavily loaded <em>(non standard)</em></small>
 								</li>
 							</ul>
 						</p>
 					</section>
-					<section>
+					<section id="work-with-the-event-loop-2">
+						<h3 data-i18n="title">Work with the event loop</h3>
 						<span class="ref">Quiz</span>
-						<h3>Work with the event loop</h3>
 						<pre><code class="javascript hljs" data-trim>
 							setTimeout(() => console.log(1), 0)
 							Promise.resolve().then(() => console.log(2))
@@ -1530,66 +1537,64 @@
 							console.log(5)
 						</code></pre>
 
-						<p>In what order are the logs displayed ?</p>
+						<p data-i18n="text">In what order are the logs displayed ?</p>
 						<p class="center" style="font-weight: bold; font-size: 200%;">
 						<span class="fragment fade">5 - </span>
 						<span class="fragment fade">2 - </span>
 						<span class="fragment fade has-brace-bottom">1 - 4 - 3
 							<span class="brace"></span>
-							<span class="brace-description">variable depending on the CPU activity, but it's the most likely order</span>
+							<span class="brace-description" data-i18n="note">variable depending on the CPU activity, but it's the most likely order</span>
 						</span>
 						</p>
 					</section>
 				</section>
 				<section>
-					<section>
-						<h2>Object-oriented Programming</h2>
-						<p>Exercises 15 to 19</p>
+					<section id="chapter-5">
+						<h2 data-i18n="title">Object-oriented Programming</h2>
+						<p data-i18n="description">Exercises 15 to 19</p>
 					</section>
-					<section class="left">
-						<h3>General principles of Object Oriented Programming</h3>
+					<section class="left" id="general-principles">
+						<h3 data-i18n="title">General principles of Object Oriented Programming</h3>
 						<ul>
-							<li>Represent a problem with elements that can be associated with material objects or concepts</li>
-							<li>Bring more proximity between code logic and business logic</li>
-							<li>Manipulate objects that contain their own internal state and their own logic</li>
+							<li data-i18n="list-1">Represent a problem with elements that can be associated with material objects or concepts</li>
+							<li data-i18n="list-2">Bring more proximity between code logic and business logic</li>
+							<li data-i18n="list-3">Manipulate objects that contain their own internal state and their own logic</li>
 						</ul>
 						<br />
-						<p><span style="font-style: italic; text-decoration: underline;">Objectives:</span>
+						<p><span data-i18n="text" style="font-style: italic; text-decoration: underline;">Objectives:</span>
 						<ul>
-							<li>have a more intuitive, self-describing code</li>
-							<li>facilitate work in parallel</li>
-							<li>facilitate the transition from specification to code</li>
+							<li data-i18n="list-4">have a more intuitive, self-describing code</li>
+							<li data-i18n="list-5">facilitate work in parallel</li>
+							<li data-i18n="list-6">facilitate the transition from specification to code</li>
 						</ul></p>
 					</section>
-					<section class="left">
-						<h3>Objects and Prototypes</h3>
+					<section class="left" id="objects-and-prototypes">
+						<h3 data-i18n="title">Objects and Prototypes</h3>
 						<ul>
-							<li>Any object has an internal private property called the <b>prototype</b></li>
-							<li>Any object can be the prototype of one or many other objects</li>
-							<li>You can retrieve the prototype of an object with:<br/>
-							<code>Object.getPrototypeOf(obj)</code></li>
-							<li>You can reassign dynamically the prototype of an object with:<br/>
-							<code>Object.setPrototypeOf(obj, newProto)</code></li>
+							<li data-i18n="list-1">Any object has an internal private property called the <b>prototype</b></li>
+							<li data-i18n="list-2">Any object can be the prototype of one or many other objects</li>
+							<li data-i18n="list-3">You can retrieve the prototype of an object with:<br/><code>Object.getPrototypeOf(obj)</code></li>
+							<li data-i18n="list-4">You can reassign dynamically the prototype of an object with:<br/><code>Object.setPrototypeOf(obj, newProto)</code></li>
 						</ul>
-						<div class="note warning" style="display: block; margin-left: auto; margin-right: 0; width: 500px">
+						<div class="note warning" data-i18n="note" style="display: block; margin-left: auto; margin-right: 0; width: 500px">
 							Do not reassign the prototype in performance-critical parts of your application because it is tricky to optimize for classical JavaScript engines
 						</div>
 					</section>
-					<section class="left">
-						<h3>Why "prototype" ?</h3>
+					<section class="left" id="why-prototype">
+						<h3 data-i18n="title">Why "prototype" ?</h3>
 						<ul>
-							<li>In industry, a <b>prototype</b> is a <b>real physical object</b>, on which mass-produced objects will be based.</li>
-							<li>On the same analogy, a <b>class</b> would be more like a <b>plan or diagram to follow</b>, of a more abstract nature and which cannot be manipulated like an object.</li>
-							<li>A prototype is taken as an example to create the produced objects, while a produced object can be taken as an example for the implementation of a class.</li>
+							<li data-i18n="list-1">In industry, a <b>prototype</b> is a <b>real physical object</b>, on which mass-produced objects will be based.</li>
+							<li data-i18n="list-2">On the same analogy, a <b>class</b> would be more like a <b>plan or diagram to follow</b>, of a more abstract nature and which cannot be manipulated like an object.</li>
+							<li data-i18n="list-3">A prototype is taken as an example to create the produced objects, while a produced object can be taken as an example for the implementation of a class.</li>
 						</ul>
-						<p>The choice of this term serves to illustrate these differences.</p>
+						<p data-i18n="text">The choice of this term serves to illustrate these differences.</p>
 					</section>
-					<section class="left">
-						<h3>Delegation to prototype</h3>
-						<p>If for <code><span class="blue">object</span>.<span class="green">prop</span></code>, the property <span class="green">prop</span> is not found in <span class="blue">object</span>, then it
+					<section class="left" id="delegation-prototype">
+						<h3 data-i18n="title">Delegation to prototype</h3>
+						<p data-i18n="text-1">If for <code><span class="blue">object</span>.<span class="green">prop</span></code>, the property <span class="green">prop</span> is not found in <span class="blue">object</span>, then it
 						is searched for in the <b>prototype</b> of <span class="blue">object</span>, then in the <b>prototype</b> of the <b>prototype</b> of <span class="blue">object</span>, and so on...</p>
-						<p>This is called <b>prototype delegation</b>, and objects have a <b>prototype chain</b>.</p>
-						<p>The "root" prototype is <code>Object.prototype</code>. Its own prototype is <code>null</code>.</p>
+						<p data-i18n="text-2">This is called <b>prototype delegation</b>, and objects have a <b>prototype chain</b>.</p>
+						<p data-i18n="text-3">The "root" prototype is <code>Object.prototype</code>. Its own prototype is <code>null</code>.</p>
 
 						<pre><code class="javascript hljs" data-trim>
 							Object.getPrototypeOf([1,2,3]) === Array.prototype
@@ -1600,9 +1605,9 @@
 							▸ null
 						</code></pre>
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 15</span>
-						<h3>Methods related to the prototype</h3>
+					<section class="left" id="methods-related-to-the-prototype">
+						<h3 data-i18n="title">Methods related to the prototype</h3>
+						<span class="ref" data-i18n="exo">Exercise 15</span>
 						<div class="has-brace-right" style="margin-right: 300px">
 							<pre><code class="javascript hljs" data-trim>
 								Object.getPrototypeOf(obj)
@@ -1615,7 +1620,7 @@
 								Object.getOwnPropertyDescriptors(obj)
 							</code></pre>
 							<div class="brace"></div>
-							<div class="brace-description">Methods of the <code>Object</code> constructor</div>
+							<div class="brace-description" data-i18n="note-1">Methods of the <code>Object</code> constructor</div>
 						</div>
 						<div class="has-brace-right" style="margin-right: 300px">
 							<pre class="has-brace-right"><code class="javascript hljs" data-trim>
@@ -1623,20 +1628,20 @@
 								obj.isPrototypeOf(anotherObj)
 							</code></pre>
 							<div class="brace"></div>
-							<div class="brace-description">Methods of the prototype <code>Object.prototype</code></div>
+							<div class="brace-description" data-i18n="note-2">Methods of the prototype <code>Object.prototype</code></div>
 						</div>
 					</section>
-					<section>
-						<h3>Beware of misuse of language !</h3>
+					<section id="beware-of-misuse-of-language">
+						<h3 data-i18n="title">Beware of misuse of language !</h3>
 						<div class="center" style="font-size: 200%; font-weight: bold">classes ≠ prototypes</div>
-						<p>There are no classes in JavaScript, but the word is misused to refer to a prototype and its associated constructor.</p>
-						<p>Unlike classes, there is no difference in nature between a prototype and an object. A prototype can therefore be manipulated like any other object: assigned by reference, passed as a parameter, exported as a module...</p>
+						<p data-i18n="text-1">There are no classes in JavaScript, but the word is misused to refer to a prototype and its associated constructor.</p>
+						<p data-i18n="text-2">Unlike classes, there is no difference in nature between a prototype and an object. A prototype can therefore be manipulated like any other object: assigned by reference, passed as a parameter, exported as a module...</p>
 						<img src="assets/img/kinds-of-oop.jpg" height="300" alt="Two kinds of OOP: an analogy with a classroom">
 					</section>
-					<section>
-						<h3>Beware of misuse of language !</h3>
-						<div class="center" style="font-size: 200%; font-weight: bold">inheritance ≠ delegation</div>
-						<p class="left">An object does not inherit the properties of its prototype, but it <b>delegates</b> them to it: these are not its own properties</p>
+					<section id="beware-of-misuse-of-language-2">
+						<h3 data-i18n="title">Beware of misuse of language !</h3>
+						<div class="center" data-i18n="text-1" style="font-size: 200%; font-weight: bold">inheritance ≠ delegation</div>
+						<p class="left" data-i18n="text-2">An object does not inherit the properties of its prototype, but it <b>delegates</b> them to it: these are not its own properties</p>
 						<pre><code class="javascript hljs" data-trim>
 							const bob = Object.create({ name: "Anonymous" })
 							bob.name = "Bob";
@@ -1649,31 +1654,31 @@
 							▸ "Anonymous"
 						</code></pre>
 						<div class="left">
-						<p>In the context of OOP with prototypes, delegating can mean:</p>
+						<p data-i18n="text-3">In the context of OOP with prototypes, delegating can mean:</p>
 							<ul>
-								<li>retrieve default values</li>
-								<li>get a generic implementation of a method</li>
-								<li>implement basic behaviors (toString, cast to primitive, etc.)</li>
+								<li data-i18n="list-1">retrieve default values</li>
+								<li data-i18n="list-2">get a generic implementation of a method</li>
+								<li data-i18n="list-3">implement basic behaviors (toString, cast to primitive, etc.)</li>
 							</ul>
 						</div>
 					</section>
-					<section class="left">
-						<h3 class="center">Beware of misuse of language !</h3>
-						<div class="center" style="font-size: 200%; font-weight: bold">interface, override, instance...</div>
-						<p>Most of the class-based OOP vocabulary needs to be avoided:</p>
+					<section class="left" id="beware-of-misuse-of-language-3">
+						<h3 class="center" data-i18n="title">Beware of misuse of language !</h3>
+						<div class="center" data-i18n="text-1" style="font-size: 200%; font-weight: bold">interface, override, instance...</div>
+						<p data-i18n="text-2">Most of the class-based OOP vocabulary needs to be avoided:</p>
 						<ul>
-							<li>The prototype is neither an <i>interface</i> nor a <i>contract</i> to fulfill for the object, but an API base on which to rely.</li>
-							<li>We do not <i>override</i> properties, but we delegate those that are missing</li>
-							<li>The word "instance" makes sense for an instance of a class because it can mean "example". With prototypes, the roles are reversed since it is the prototype that fits better the role of example.</li>
+							<li data-i18n="list-1">The prototype is neither an <i>interface</i> nor a <i>contract</i> to fulfill for the object, but an API base on which to rely.</li>
+							<li data-i18n="list-2">We do not <i>override</i> properties, but we delegate those that are missing</li>
+							<li data-i18n="list-3">The word "instance" makes sense for an instance of a class because it can mean "example". With prototypes, the roles are reversed since it is the prototype that fits better the role of example.</li>
 						</ul>
-						<div class="note">
+						<div class="note" data-i18n="note">
 							Despite these differences in definition, this vocabulary is still often used (including within the language itself) in order to remain familiar to those accustomed to Java and class-based OOP.<br/>
 							It is quite the same historical aberration that brought us the name <i>"Java"</i>Script.
 						</div>
 					</section>
-					<section>
-						<h3>Constructors and operator <code class="blue">new</code></h3>
-						<p>In JavaScript, a function can be called <i>as a constructor</i> with the operator <code class="blue">new</code></p>
+					<section id="constructor-and-operator-new">
+						<h3 data-i18n="title">Constructors and operator <code class="blue">new</code></h3>
+						<p data-i18n="text">In JavaScript, a function can be called <i>as a constructor</i> with the operator <code class="blue">new</code></p>
 						<pre><code class="javascript hljs" data-trim>
 							function Constructor(){
 								// init an object
@@ -1682,14 +1687,14 @@
 							Constructor() // called as regular function
 							new Constructor() // called as constructor
 						</code></pre>
-						<div class="note info">It's very unlikely you intend to use a function both as a constructor and as a regular function. By convention, those who are intended as constructors have their name starting with an Uppercase letter.</div>
-						<div class="note">Arrow functions cannot be invoked as constructors</div>
+						<div class="note info" data-i18n="note-1">It's very unlikely you intend to use a function both as a constructor and as a regular function. By convention, those who are intended as constructors have their name starting with an Uppercase letter.</div>
+						<div class="note" data-i18n="note-2">Arrow functions cannot be invoked as constructors</div>
 					</section>
-					<section class="left">
-						<h3>Prototypes and constructors</h3>
-						<p>When <code>new Constructor()</code> is invoked, a new object is created with <code>Constructor.prototype</code> as prototype.</p>
-						<p>This is equivalent to call <code>Object.create(Constructor.prototype)</code></p>
-						<p>The same principle applies on all native constructors in the language:</p>
+					<section class="left" id="prototypes-and-constructors">
+						<h3 data-i18n="title">Prototypes and constructors</h3>
+						<p data-i18n="text-1">When <code>new Constructor()</code> is invoked, a new object is created with <code>Constructor.prototype</code> as prototype.</p>
+						<p data-i18n="text-2">This is equivalent to call <code>Object.create(Constructor.prototype)</code></p>
+						<p data-i18n="text-3">The same principle applies on all native constructors in the language:</p>
 						<pre><code class="javascript hljs" data-trim>
 							let today = new Date();
 							today.getMonth === Date.prototype.getMonth
@@ -1701,15 +1706,15 @@
 							array.concat === Array.prototype.concat
 						</code></pre>
 
-						<p>The <code class="blue">instanceof</code> operators determines if an object has been created by the following constructor:</p>
+						<p data-i18n="text-4">The <code class="blue">instanceof</code> operators determines if an object has been created by the following constructor:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							x instanceof C ⇔ Object.getPrototypeOf(x) === C.prototype
 							[] instanceof Array ⇔ Object.getPrototypeOf([]) === Array.prototype
 						</code></pre>
 					</section>
-					<section>
-						<h3>Constructors and context</h3>
-						<p>The <code class="blue">new</code> operator changes the way a function is invoked in several ways:</p>
+					<section id="constructors-and-context">
+						<h3 data-i18n="title">Constructors and context</h3>
+						<p data-i18n="text-1">The <code class="blue">new</code> operator changes the way a function is invoked in several ways:</p>
 						<pre><code class="javascript hljs" data-trim>
 							function hello(){
 								console.log(`this === ${this}`)
@@ -1718,23 +1723,23 @@
 							let result1 = hello() // this === [object Window]
 							let result2 = new hello() // this === [object Object]
 						</code></pre>
-						<p>The created object is used as execution context of the constructor (<code class="green">this</code>)</p>
+						<p data-i18n="text-2">The created object is used as execution context of the constructor (<code class="green">this</code>)</p>
 						<div class="note">
 							<code>new Constructor(…args)</code> <br/>
 							≈<br/>
 							<code>Constructor.call(Object.create(Constructor.prototype), ...args)</code>
 						</div>
-						<p>This object is also returned by default by the function, when there is no <code>return</code> instruction.</p>
+						<p data-i18n="text-3">This object is also returned by default by the function, when there is no <code>return</code> instruction.</p>
 						<pre><code class="javascript hljs" data-trim>
 							console.log(typeof result1) // undefined
 							console.log(typeof result2) // object
 						</code></pre>
 					</section>
-					<section class="left">
-						<span class="ref">Exercise 16</span>
-						<h3>Constructor.prototype</h3>
-						<p>Every constructor function has a <code>prototype</code> property that is an object with a <code>constructor</code> property referring to the constructor function.</p>
-						<p>That's how you can retrieve the constructor from a constructed object.</p>
+					<section class="left" id="constructor-prototype">
+						<h3 data-i18n="title">Constructor.prototype</h3>
+						<span class="ref" data-i18n="exo">Exercise 16</span>
+						<p data-i18n="text-1">Every constructor function has a <code>prototype</code> property that is an object with a <code>constructor</code> property referring to the constructor function.</p>
+						<p data-i18n="text-2">That's how you can retrieve the constructor from a constructed object.</p>
 						<img src="assets/img/constructor-prototype.jpg" style="float:left; width: 300px; margin-right: 1em" alt="Diagram presenting Constructor and protototype property recursion" />
 						<pre><code class="javascript hljs" data-trim>
 							function Car() { }
@@ -1745,7 +1750,7 @@
 							Car.prototype.constructor === Car
 							▸ true
 						</code></pre>
-						<p>In the prototype, we can declare other properties that will be <b>delegated</b> by the objects created with this constructor:</p>
+						<p data-i18n="text-3">In the prototype, we can declare other properties that will be <b>delegated</b> by the objects created with this constructor:</p>
 						<pre><code class="javascript hljs" data-trim>
 							Car.prototype.nbWheels = 4;
 							const twingo = new Car();
@@ -1753,9 +1758,12 @@
 							▸ 4
 						</code></pre>
 					</section>
-					<section>
-						<h3>Constructor.prototype</h3>
-						<div class="note warning" style="width: 500px">Not to be confused: <pre><code class="javascript hljs">Constructor.prototype</code>  ≠  <code class="javascript hljs">Object.getPrototypeOf(Constructor)</code></pre></div>
+					<section id="constructor-prototype-2">
+						<h3 data-i18n="title">Constructor.prototype</h3>
+						<div class="note warning" style="width: 500px">
+							<span data-i18n="text">Not to be confused:</span>
+							<pre><code class="javascript hljs">Constructor.prototype</code>  ≠  <code class="javascript hljs">Object.getPrototypeOf(Constructor)</code></pre>
+						</div>
 						<pre class="fragment fade"><code class="javascript hljs js" data-trim>
 							function Car(){} ⇔ const Car = new Function()
 						</code></pre>
@@ -1763,21 +1771,21 @@
 							Object.getPrototypeOf(Car) === Function.prototype
 						</code></pre>
 					</section>
-					<section>
-						<h3>Constructors flaws</h3>
-						<p>Constructors are a commonly used pattern in JS, but they have several flaws:</p>
+					<section id="constructors-flaws">
+						<h3 data-i18n="title">Constructors flaws</h3>
+						<p data-i18n="text">Constructors are a commonly used pattern in JS, but they have several flaws:</p>
 						<ul>
-							<li class="fragment">The prototype constructors are not automatically invoked, you have to do it manually.</li>
-							<li class="fragment">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a>.</li>
-							<li class="fragment">A <code>constructor</code> property is assigned to created objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code></li>
-							<li class="fragment"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not</li>
-							<li class="fragment">It is not possible to declare several constructors</li>
-							<li class="fragment">They are confusing for beginners with prototypes</li>
+							<li class="fragment" data-i18n="list-1">The prototype constructors are not automatically invoked, you have to do it manually.</li>
+							<li class="fragment" data-i18n="list-2">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a>.</li>
+							<li class="fragment" data-i18n="list-3">A <code>constructor</code> property is assigned to created objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code></li>
+							<li class="fragment" data-i18n="list-4"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not</li>
+							<li class="fragment" data-i18n="list-5">It is not possible to declare several constructors</li>
+							<li class="fragment" data-i18n="list-6">They are confusing for beginners with prototypes</li>
 						</ul>
 					</section>
-					<section>
-						<h3>The <code>class</code> operator (ES2015)</h3>
-						<p>Syntaxic sugar for declaring a prototype with a constructor</p>
+					<section id="class-operator">
+						<h3 data-i18n="title">The <code>class</code> operator (ES2015)</h3>
+						<p data-i18n="text">Syntaxic sugar for declaring a prototype with a constructor</p>
 						<div style="position: relative; display: flex;">
 							<pre style="font-size: 60%; width: 50%;"><code class="javascript hljs js" data-trim>
 								class Person {
@@ -1805,20 +1813,20 @@
 								const bill = new User("Bill", "Gates", "admin")
 							</code></pre>
 							<div class="left">
-								<div class="arrow left fragment" style="top: 34px; right: 0px">explicit <code>constructor</code> property</div>
-								<div class="arrow left fragment" style="top: 206px; right: -50px;">simplifies the assignation of the prototype</div>
-								<div class="arrow left fragment" style="top: 242px; right: -120px">simplifies the call to the prototype constructor</div>
+								<div class="arrow left fragment" data-i18n="note-1" style="top: 34px; right: 0px"><span>explicit <code>constructor</code> property</span></div>
+								<div class="arrow left fragment" data-i18n="note-2" style="top: 206px; right: -50px;">simplifies the assignation of the prototype</div>
+								<div class="arrow left fragment" data-i18n="note-3" style="top: 242px; right: -120px">simplifies the call to the prototype constructor</div>
 							</div>
 						</div>
 					</section>
-					<section>
-						<h3>super</h3>
+					<section id="super">
+						<h3 data-i18n="title">super</h3>
 						<pre><code class="javascript hljs js" data-trim>
 							super(...args); // call the prototype constructor
 
 							super.method(); // call a method of the prototype
 						</code></pre>
-						<p>It is usable without the class operator:</p>
+						<p data-i18n="text">It is usable without the class operator:</p>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
 							const user = {
 								name: "Anonymous",
@@ -1838,9 +1846,9 @@
 							▸ joe name: Joe ; user name: Anonymous ; user getName: Joe
 						</code></pre>
 					</section>
-					<section>
-						<h3>static</h3>
-						<p>Defines a static property: a property of the constructor itself, not the prototype</p>
+					<section id="static">
+						<h3 data-i18n="title">static</h3>
+						<p data-i18n="text-1">Defines a static property: a property of the constructor itself, not the prototype</p>
 						<pre><code class="javascript hljs js" data-trim>
 							class C {
 								method(){ console.log("method") }
@@ -1851,35 +1859,64 @@
 							(new C()).method() // method in C.prototype
 							C.methodStatic() // methodStatic in C
 						</code></pre>
-						<p>This is basically the same thing than directly assigning the property to the constructor, so not the most useful syntaxic sugar, but it was added for its familiarity for Java developers.</p>
+						<p data-i18n="text-2">This is basically the same thing than directly assigning the property to the constructor, so not the most useful syntaxic sugar, but it was added for its familiarity for Java developers.</p>
 						<pre><code class="javascript hljs js" data-trim>
 							C.equivalentStatic = function(){ ... }
 						</code></pre>
 					</section>
-					<section>
-						<h3>Constructors flaws, with operator <code>class</code></h3>
+					<section id="constructors-flaws-with-class">
+						<h3 data-i18n="title">Constructors flaws, with operator <code>class</code></h3>
 						<ul>
-							<li class="fragment">The prototype constructors are not automatically invoked, you have to do it manually.
-								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px;" /> still the case but simplified with <code>super()</code></div>
+							<li class="fragment">
+								<span data-i18n="list-1">The prototype constructors are not automatically invoked, you have to do it manually.</span>
+								<div>
+									<img alt="fixed" src="assets/img/patch.png" style="height: 28px;" />
+									<span data-i18n="text-1">still the case but simplified with <code>super()</code></span>
+								</div>
 							</li>
-							<li class="fragment">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a>.
-								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" /> still the case</div></li>
-							<li class="fragment">A <code>constructor</code> property is assigned to constructed objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code>
-								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px;" /> still the case but the assignation is explicit to prevent conflicts</div></li>
-							<li class="fragment"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not
-								<div><img alt="fixed" src="assets/img/patch.png" style="height: 28px;" /> an exception is raised if constructor is not called with <code>new</code></div></li>
-							<li class="fragment">It is not possible to declare several constructors
-								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" /> still the case</div></li>
-							<li class="fragment">They are confusing for beginners with prototypes
-								<div><img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" /> adds even more confusion with class-based OOP</div>
+							<li class="fragment">
+								<span data-i18n="list-2">The prototype constructor may not have the same signature, which breaks the <a target="_blank" href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">principle of substitution</a></span>.
+								<div>
+									<img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" />
+									<span data-i18n="text-2">still the case</span>
+								</div>
+							</li>
+							<li class="fragment">
+								<span data-i18n="list-3">A <code>constructor</code> property is assigned to constructed objects, which can break existing code if you use this property for other effects, for example: <code>car.constructor = "Toyota"</code></span>
+								<div>
+									<img alt="fixed" src="assets/img/patch.png" style="height: 28px;" />
+									<span data-i18n="text-3">still the case but the assignation is explicit to prevent conflicts</span>
+								</div>
+							</li>
+							<li class="fragment">
+								<span data-i18n="list-4"><code>this</code> keyword does not work the same depending on whether the function is called with operator <code>new</code> or not</span>
+								<div>
+									<img alt="fixed" src="assets/img/patch.png" style="height: 28px;" />
+									<span data-i18n="text-4">an exception is raised if constructor is not called with <code>new</code></span>
+								</div>
+							</li>
+							<li class="fragment">
+								<span data-i18n="list-5">It is not possible to declare several constructors</span>
+								<div>
+									<img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" />
+									<span data-i18n="text-5">still the case</span>
+								</div>
+							</li>
+							<li class="fragment">
+								<span data-i18n="list-6">They are confusing for beginners with prototypes</span>
+								<div>
+									<img alt="Not fixed" src="assets/img/smiley-sad.png" style="height: 28px;" />
+									<span data-i18n="text-6">adds even more confusion with class-based OOP</span>
+								</div>
 							</li>
 						</ul>
 					</section>
-					<section>
-						<h3>Alternative to constructors</h3>
-						<p>You don't need constructors to make prototype-based OOP. You can rather use:</p>
+					<section id="alternative-to-constructors">
+						<h3 data-i18n="title">Alternative to constructors</h3>
+						<p data-i18n="text-1">You don't need constructors to make prototype-based OOP. You can rather use:</p>
 						<ul class="left">
-							<li>Factory functions
+							<li>
+								<span data-i18n="list-1">Factory functions</span>
 								<pre><code class="javascript hljs js" data-trim>
 									function createUser({ first, name }){
 										const user = Object.create(userProto)
@@ -1889,7 +1926,8 @@
 									}
 								</code></pre>
 							</li>
-							<li><code>Object.create</code> and <code>Object.assign</code>
+							<li>
+								<span data-i18n="list-2"><code>Object.create</code> and <code>Object.assign</code></span>
 								<pre><code class="javascript hljs js" data-trim>
 									const john = Object.assign(Object.create(userProto), {
 										first: "John",
@@ -1898,11 +1936,11 @@
 								</code></pre>
 							</li>
 						</ul>
-						<p>It fixes all the flaws previously stated, and you don't need these anymore:</p>
+						<p data-i18n="text-2">It fixes all the flaws previously stated, and you don't need these anymore:</p>
 						<p><code>new, instanceof, class, super, static</code></p>
 					</section>
-					<section>
-						<h3>class vs Object.create: an example</h3>
+					<section id="class-vs-Object.create-example">
+						<h3 data-i18n="title">class vs Object.create: an example</h3>
 						<div class="cols-2">
 							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 								class Foo {
@@ -1950,58 +1988,53 @@
 							</code></pre>
 						</div>
 					</section>
-					<section>
-						<h3>Delegation pattern, in short</h3>
+					<section id="delegation-pattern">
+						<h3 data-i18n="title">Delegation pattern, in short</h3>
 						<ul>
-							<li>Lighter and simpler model</li>
-							<li>Replace the notion of constructors by factory functions or initialization methods </li>
-							<li>No longer needs <code>new</code> and <code>instanceof</code> operators</li>
-							<li>Requires to get out of the mental model of class hierarchies</li>
+							<li data-i18n="list-1">Lighter and simpler model</li>
+							<li data-i18n="list-2">Replace the notion of constructors by factory functions or initialization methods </li>
+							<li data-i18n="list-3">No longer needs <code>new</code> and <code>instanceof</code> operators</li>
+							<li data-i18n="list-4">Requires to get out of the mental model of class hierarchies</li>
 						</ul>
-						<div class="note left">
+						<div class="note left" data-i18n="note">
 							<u>Recommended:</u> <br>
 							Use <code>Object.create</code> and <code>class extends</code> with moderation <br>
 							Limit the size of your prototype chains as much as possible <br>
 							Delegation is a powerful and flexible pattern, but other approachs such as <b>object composition</b> are underused.
 						</div>
 					</section>
-
-					<section>
-						<h3>Object composition (a.k.a. Mixins)</h3>
-						<p>Another pattern in JavaScript OOP consists of creating objects by composition.</p>
-						<p>This pattern is super simple because JS objects support dynamic assignation of new properties:</p>
+					<section id="object-composition">
+						<h3 data-i18n="title">Object composition (a.k.a. Mixins)</h3>
+						<p data-i18n="text-1">Another pattern in JavaScript OOP consists of creating objects by composition.</p>
+						<p data-i18n="text-2">This pattern is super simple because JS objects support dynamic assignation of new properties:</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							const mixin = { ...objA, ...objB }
 							// or
 							const mixin = Object.assign({}, objA, objB)
 						</code></pre>
-						<p>The composition is ordered, applying arguments from left to right, so that in case of conflicts on one property name, the last one gets priority:</p>
+						<p data-i18n="text-3">The composition is ordered, applying arguments from left to right, so that in case of conflicts on one property name, the last one gets priority:</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							let o = { ...{ x: 1 }, ...{ x: 2 }, ...{ x: 3 } }
 							o
 							▸ { x: 3 }
 						</code></pre>
 					</section>
-
-					<section>
-						<h3>Composition or delegation ?</h3>
+					<section id="composition-or-delegation">
+						<h3 data-i18n="title">Composition or delegation ?</h3>
 						<img src="assets/img/design-patterns-book.png"
 						alt="Cover of book: Design Patterns - Elements of Reusable Object-oriented software" style="float: right; height: 200px" />
 						<blockquote style="margin: 100px 0 100px auto">
-							Favor object composition over class inheritance
-							<br>(Gang of Four 1995:20)
+							Favor object composition over class inheritance <br>(Gang of Four 1995:20)
 						</blockquote>
-						<p>In reality, there is no pattern always better than another:<br/>they match with different ways of thinking.</p>
-						<p>The flaws of each pattern became clear when you start to excessively use it anywhere.</p>
-						<p>Take the time to think about your model,
-							do not code by habit.</p>
+						<p data-i18n="text-1">In reality, there is no pattern always better than another:<br/>they match with different ways of thinking.</p>
+						<p data-i18n="text-2">The flaws of each pattern became clear when you start to excessively use it anywhere.</p>
+						<p data-i18n="text-3">Take the time to think about your model, do not code by habit.</p>
 					</section>
-
-					<section class="left">
-						<div class="ref">Exercise 17</div>
-						<h3>Exercise: Relations between objects</h3>
-						<p>Let's practice on a project example: a web components library</p>
-						<p>Objects identified in the model:</p>
+					<section class="left" id="relations-between-objects">
+						<h3 data-i18n="title">Exercise: Relations between objects</h3>
+						<div class="ref" data-i18n="exo">Exercise 17</div>
+						<p data-i18n="text-1">Let's practice on a project example: a web components library</p>
+						<p data-i18n="text-2">Objects identified in the model:</p>
 						<ul>
 							<li><code>Component</code></li>
 							<li><code>Clickable</code></li>
@@ -2012,21 +2045,20 @@
 							<li><code>TextInput</code></li>
 						</ul>
 						<p>
-							<u>Objectives</u>
+							<u data-i18n="text-3">Objectives</u>
 							<ol>
-								<li>think about the model, find the right relations between objects:
+								<li data-i18n="list-1">think about the model, find the right relations between objects:
 									<br><b>Delegation ? Composition ? Encapsulation ?</b>
 								</li>
-								<li>implement the relations between objects</li>
-								<li>test the example using components Button and TextInput</li>
+								<li data-i18n="list-2">implement the relations between objects</li>
+								<li data-i18n="list-3">test the example using components Button and TextInput</li>
 							</ol>
 						</p>
 					</section>
-
-					<section>
-						<h3>Symbol</h3>
-						<p>New primitive type since ES2015</p>
-						<p>Represents a unique reference:</p>
+					<section id="symbol">
+						<h3 data-i18n="title">Symbol</h3>
+						<p data-i18n="text-1">New primitive type since ES2015</p>
+						<p data-i18n="text-2">Represents a unique reference:</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							const symbol = Symbol();
 							const symbolFoo = Symbol('foo');
@@ -2040,17 +2072,16 @@
 							symbolFoo === Symbol('foo')
 							▸ false
 						</code></pre>
-						<p>Symbols can be used as property keys of an object:</p>
+						<p data-i18n="text-3">Symbols can be used as property keys of an object:</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							const obj = { [symbolFoo]: "bar" };
 							Object.getOwnPropertySymbols(obj)
 							▸ [Symbol(foo)]
 						</code></pre>
 					</section>
-
-					<section>
-						<h3>Symbols - Global register</h3>
-						<p>A global register exists for symbols nevertheless:</p>
+					<section id="symbol-global-register">
+						<h3 data-i18n="title">Symbols - Global register</h3>
+						<p data-i18n="text">A global register exists for symbols nevertheless:</p>
 						<pre><code class="javascript hljs js" data-trim>
 							const symbolFoo = Symbol.for('foo')
 							symbolFoo === Symbol.for('foo')
@@ -2058,13 +2089,14 @@
 							Symbol.keyFor(symbolFoo)
 							▸ "foo"
 						</code></pre>
-						<div class="note">Use with moderation, otherwise you will lose the primary interest of symbols, namely to be a unique reference</div>
+						<div class="note" data-i18n="note">
+							Use with moderation, otherwise you will lose the primary interest of symbols, namely to be a unique reference
+						</div>
 					</section>
-
-					<section>
-						<h3>Symbols - Known symbols</h3>
-						<p>Some symbols are built-in in ES2015.</p>
-						<p>They let you redefine some internal behaviors of the language for an object:</p>
+					<section id="symbol-know">
+						<h3 data-i18n="title">Symbols - Known symbols</h3>
+						<p data-i18n="text-1">Some symbols are built-in in ES2015.</p>
+						<p data-i18n="text-2">They let you redefine some internal behaviors of the language for an object:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim>
 							const obj = {
 								[Symbol.toPrimitive](){ return 42 }
@@ -2073,24 +2105,23 @@
 							+obj;
 							▸ 42
 						</code></pre>
-						<p><u>Examples:</u></p>
+						<p data-i18n="text-3"><u>Examples:</u></p>
 						<ul>
-							<li><code>Symbol.iterator</code>: used when iterating (for loops, spread operator...)</li>
-							<li><code>Symbol.hasInstance</code>: used by <code>instanceof</code> operator</li>
-							<li><code>Symbol.toPrimitive</code>: used to cast in primitive</li>
-							<li><code>Symbol.toStringTag</code>: used by <code>toString</code> method</li>
+							<li data-i18n="list-1"><code>Symbol.iterator</code>: used when iterating (for loops, spread operator...)</li>
+							<li data-i18n="list-2"><code>Symbol.hasInstance</code>: used by <code>instanceof</code> operator</li>
+							<li data-i18n="list-3"><code>Symbol.toPrimitive</code>: used to cast in primitive</li>
+							<li data-i18n="list-4"><code>Symbol.toStringTag</code>: used by <code>toString</code> method</li>
 						</ul>
 					</section>
-
-					<section>
-						<h3>Iterable objects</h3>
-						<p><code>Array</code>, <code>Set</code> and <code>Map</code> are built-in iterable structures that do the job most of the cases.</p>
-						<p>But you can also create your own <b>iterable objects</b> for specific needs:<br><i>binary trees, linked lists, graphs...</i></p>
-						<p>An object is said <b>iterable</b> when its <code>Symbol.iterator</code> method returns an <b>iterator</b>.</p>
-						<p>An <b>iterator</b> is an object with a method <code>next()</code> that returns an object with 2 properties:</p>
+					<section id="iterable-objects">
+						<h3 data-i18n="title">Iterable objects</h3>
+						<p data-i18n="text-1"><code>Array</code>, <code>Set</code> and <code>Map</code> are built-in iterable structures that do the job most of the cases.</p>
+						<p data-i18n="text-2">But you can also create your own <b>iterable objects</b> for specific needs:<br><i>binary trees, linked lists, graphs...</i></p>
+						<p data-i18n="text-3">An object is said <b>iterable</b> when its <code>Symbol.iterator</code> method returns an <b>iterator</b>.</p>
+						<p data-i18n="text-4">An <b>iterator</b> is an object with a method <code>next()</code> that returns an object with 2 properties:</p>
 						<ul class="narrow">
-							<li><code>done</code>: boolean, true if the iteration is finished</li>
-							<li><code>value</code>: current value of iteration, undefined if <code>done</code> is true</li>
+							<li data-i18n="list-1"><code>done</code>: boolean, true if the iteration is finished</li>
+							<li data-i18n="list-2"><code>value</code>: current value of iteration, undefined if <code>done</code> is true</li>
 						</ul>
 						<div class="cols-2">
 							<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
@@ -2119,11 +2150,10 @@
 							</code></pre>
 						</div>
 					</section>
-
-					<section>
-						<div class="ref">Exercise 18</div>
-						<h3>function* and generators</h3>
-						<p>A generator is a special type of function used to simplify the creation of iterators. A generator is declared with operator <b>function*</b>, which allow the use of the <code>yield</code> operator inside.</p>
+					<section id="function-and-generators">
+						<h3 data-i18n="title">function* and generators</h3>
+						<div class="ref" data-i18n="exo">Exercise 18</div>
+						<p data-i18n="text-1">A generator is a special type of function used to simplify the creation of iterators. A generator is declared with operator <b>function*</b>, which allow the use of the <code>yield</code> operator inside.</p>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
 							const compteur123 = {
 								[Symbol.iterator]: function*(){
@@ -2135,22 +2165,21 @@
 							[...compteur123]
 							▸ [1, 2, 3]
 						</code></pre>
-						<p><code>yield</code> let you pause the execution of the generator function and returns an intermediate result. The execution will resume on <code>next()</code> call.</p>
-						<p>Iteration is finished at the end of function instructions, or when meeting a <code>return</code> instruction.</p>
+						<p data-i18n="text-2"><code>yield</code> let you pause the execution of the generator function and returns an intermediate result. The execution will resume on <code>next()</code> call.</p>
+						<p data-i18n="text-3">Iteration is finished at the end of function instructions, or when meeting a <code>return</code> instruction.</p>
 					</section>
-
-					<section>
-						<h3>Proxy</h3>
-						<p>Proxies, introduced in ES2015, let you intercept and customize the operations made on objects:</p>
+					<section id="proxy">
+						<h3 data-i18n="title">Proxy</h3>
+						<p data-i18n="text-1">Proxies, introduced in ES2015, let you intercept and customize the operations made on objects:</p>
 						<ul class="narrow">
-							<li>enumerate and describe its properties</li>
-							<li>define, assign, or delete some properties</li>
-							<li>invoke it as function or constructor</li>
-							<li>get or set its prototype</li>
-							<li>...</li>
+							<li data-i18n="list-1">enumerate and describe its properties</li>
+							<li data-i18n="list-2">define, assign, or delete some properties</li>
+							<li data-i18n="list-3">invoke it as function or constructor</li>
+							<li data-i18n="list-4">get or set its prototype</li>
+							<li data-i18n="list-5">...</li>
 						</ul>
-						<p>A <code>Proxy</code> does not change the original object, it returns a new object reference, and all the operations shall be done on this new reference.</p>
-						<p>By default, no operation is intercepted nor modified so the proxy object is indistinguishable from the original object.</p>
+						<p data-i18n="text-2">A <code>Proxy</code> does not change the original object, it returns a new object reference, and all the operations shall be done on this new reference.</p>
+						<p data-i18n="text-3">By default, no operation is intercepted nor modified so the proxy object is indistinguishable from the original object.</p>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
 							const obj = { foo: "bar" }
 							const proxy = new Proxy(obj, {
@@ -2167,7 +2196,6 @@
 							▸ bar
 						</code></pre>
 					</section>
-
 					<section>
 						<h3>Proxy traps</h3>
 						<pre><code class="javascript hljs js" data-trim>
@@ -2186,11 +2214,10 @@
 							})
 						</code></pre>
 					</section>
-
-					<section>
-						<h3>Reflect API</h3>
-						<p><b>Reflect</b> represents the capacity for <a href="https://en.wikipedia.org/wiki/Reflective_programming" target="_blank">reflection</a> acquired by JS with the introduction of proxies.</p>
-						<p>The <code>Reflect</code> object contains a set of methods that reproduce the default behavior of the language for all the Proxy traps. You can see it as the default value of every <code>Proxy</code> trap.</p>
+					<section id="reflect-api">
+						<h3 data-i18n="title">Reflect API</h3>
+						<p data-i18n="text-1"><b>Reflect</b> represents the capacity for <a href="https://en.wikipedia.org/wiki/Reflective_programming" target="_blank">reflection</a> acquired by JS with the introduction of proxies.</p>
+						<p data-i18n="text-2">The <code>Reflect</code> object contains a set of methods that reproduce the default behavior of the language for all the Proxy traps. You can see it as the default value of every <code>Proxy</code> trap.</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							Reflect.get(o, key) ⇔ o[key]
 							Reflect.set(o, key, val) ⇔ o[key] = val
@@ -2198,7 +2225,7 @@
 							Reflect.apply(o, context, args) ⇔ o.apply(context, args)
 							...
 						</code></pre>
-						<p>You can easily break existing behaviors you didn't even know existed when playing with proxies. A good practice and safety measure is to always call the Reflect API when adding a proxy trap.</p>
+						<p data-i18n="text-3">You can easily break existing behaviors you didn't even know existed when playing with proxies. A good practice and safety measure is to always call the Reflect API when adding a proxy trap.</p>
 						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							new Proxy(obj, {
 								set(o, key, value){
@@ -2210,46 +2237,43 @@
 							})
 						</code></pre>
 					</section>
-
-					<section class="left">
-						<div class="ref">Exercise 19</div>
-						<h3>Use cases for Proxies</h3>
+					<section class="left" id="use-cases-for-proxies">
+						<h3 data-i18n="title">Use cases for Proxies</h3>
+						<div class="ref" data-i18n="exo">Exercise 19</div>
 						<ul>
-							<li>Defensive objects: prevent object mutations, throw exceptions when trying to read an undefined property...</li>
-							<li>Watchers: publisher/subscriber event system on object mutations (<a href="https://vuejs.org/guide/extras/reactivity-in-depth.html#how-reactivity-works-in-vue" target="_blank">Vue.js</a>, <a href="https://mobx.js.org/configuration.html#proxy-support" target="_blank">MobX</a>)</li>
-							<li>Strong type-checking: validate types or values assigned to objects (<a href="https://objectmodel.js.org" target="_blank">objectmodel.js.org</a>)</li>
-							<li>Hiding private properties</li>
-							<li>Function memoization for performance imrpovements</li>
-							<li>Debugging, performance measurement</li>
-							<li>...</li>
+							<li data-i18n="list-1">Defensive objects: prevent object mutations, throw exceptions when trying to read an undefined property...</li>
+							<li data-i18n="list-2">Watchers: publisher/subscriber event system on object mutations (<a href="https://vuejs.org/guide/extras/reactivity-in-depth.html#how-reactivity-works-in-vue" target="_blank">Vue.js</a>, <a href="https://mobx.js.org/configuration.html#proxy-support" target="_blank">MobX</a>)</li>
+							<li data-i18n="list-3">Strong type-checking: validate types or values assigned to objects (<a href="https://objectmodel.js.org" target="_blank">objectmodel.js.org</a>)</li>
+							<li data-i18n="list-4">Hiding private properties</li>
+							<li data-i18n="list-5">Function memoization for performance imrpovements</li>
+							<li data-i18n="list-6">Debugging, performance measurement</li>
+							<li data-i18n="list-7">...</li>
 						</ul>
 					</section>
 				</section>
-
 				<section>
-					<section>
-						<h2>Functional programming</h2>
-						<p>Exercices 20 to 22</p>
+					<section id="chapter-6">
+						<h2 data-i18n="title">Functional programming</h2>
+						<p data-i18n="description">Exercices 20 to 22</p>
 					</section>
-					<section class="left">
-						<h3>General principles of Functional Programming</h3>
+					<section class="left" id="general-principles-functional-programming">
+						<h3 data-i18n="title">General principles of Functional Programming</h3>
 						<ul>
-							<li>Decompose a problem into <b>atomic</b>, <b>generic</b> and <b>composable</b> functions</li>
-							<li>Favor <b>pure functions</b>, i.e. not using non-local variables and having no side effects</li>
-							<li>Avoid object <b>mutations</b></li>
+							<li data-i18n="list-1">Decompose a problem into <b>atomic</b>, <b>generic</b> and <b>composable</b> functions</li>
+							<li data-i18n="list-2">Favor <b>pure functions</b>, i.e. not using non-local variables and having no side effects</li>
+							<li data-i18n="list-3">Avoid object <b>mutations</b></li>
 						</ul>
-						<p><span style="font-style: italic; text-decoration: underline;">Objectives:</span></p>
+						<p><span style="font-style: italic; text-decoration: underline;" data-i18n="text">Objectives:</span></p>
 						<ul>
-							<li>have a more predictable code</li>
-							<li>reduce developer mental load</li>
-							<li>reduce the number of bugs</li>
-							<li>eliminate dead code more easily</li>
+							<li data-i18n="list-4">have a more predictable code</li>
+							<li data-i18n="list-5">reduce developer mental load</li>
+							<li data-i18n="list-6">reduce the number of bugs</li>
+							<li data-i18n="list-7">eliminate dead code more easily</li>
 						</ul>
 					</section>
-
-					<section>
-						<h3>Function patterns: Recursivity</h3>
-						<p>A <b>recursive</b> function invokes itself with other arguments until reaching a <b>stop condition</b>.</p>
+					<section id="function-patterns-recursivity">
+						<h3 data-i18n="title">Function patterns: Recursivity</h3>
+						<p data-i18n="text">A <b>recursive</b> function invokes itself with other arguments until reaching a <b>stop condition</b>.</p>
 						<pre><code class="javascript hljs js" data-trim>
 							const factorial = n => n &gt; 2 ? 1 : n * factorial(n-1)
 
@@ -2257,17 +2281,16 @@
 								? []
 								: [ ...(Array.isArray(x) ? flatten(x) : x), ...flatten(xs) ]
 						</code></pre>
-						<div class="note">
+						<div class="note" data-i18n="note">
 							A useful pattern but not the most readable and with the risk of an infinite loop. <br>
 							<u>Recommended:</u> use it only for minimalist functions, and explicit the recursivity with code comments
 						</div>
 					</section>
-
-					<section>
-						<div class="ref">Exercise 20</div>
-						<h3>Chainable API</h3>
-						<p>A <b>chainable</b> method returns its own execution context (<code>return this</code>) or an object of the same type/prototype in order to be able to chain the calls to this method.</p>
-						<p><i>Example: <code>Array.prototype</code> chainable methods</i></p>
+					<section id="chainable-api">
+						<h3 data-i18n="title">Chainable API</h3>
+						<div class="ref" data-i18n="exo">Exercise 20</div>
+						<p data-i18n="text-1">A <b>chainable</b> method returns its own execution context (<code>return this</code>) or an object of the same type/prototype in order to be able to chain the calls to this method.</p>
+						<p data-i18n="text-2"><i>Example: <code>Array.prototype</code> chainable methods</i></p>
 						<pre><code class="javascript hljs js" data-trim>
 							[1, 2, 3, 4]
 								.concat(5, 6, 7, 8)
@@ -2277,43 +2300,40 @@
 								.join(", ") + " are prime numbers"
 							▸ "2, 5, 17, 37 are prime numbers"
 						</code></pre>
-						<p>Chainable API are convenient to use because they reduce sequences of instructions to a single expression.
+						<p data-i18n="text-3">Chainable API are convenient to use because they reduce sequences of instructions to a single expression.
 						 They made the success of famous JS libraries like <a href="https://jquery.com/" target="_blank">jQuery</a> or <a href="https://lodash.com/" target="_blank">lodash</a>.</p>
 					</section>
-
-					<section>
-						<div class="ref">Exercise 21</div>
-						<h3>Function composition</h3>
-						<p><b>Function composition</b> consists of creating a composed function that sequentially calls several other functions, each with the return value of the previous one:</p>
+					<section id="function-composition">
+						<h3 data-i18n="title">Function composition</h3>
+						<div class="ref" data-i18n="exo">Exercise 21</div>
+						<p data-i18n="text-1"><b>Function composition</b> consists of creating a composed function that sequentially calls several other functions, each with the return value of the previous one:</p>
 						<p class="center" style="font-size: 150%"><code>compose(f,g,h)(x) ⇔ h(g(f(x)))</code></p>
-						<p>Function composition can be a relevant solution when:</p>
+						<p data-i18n="text-2">Function composition can be a relevant solution when:</p>
 						<ul>
-							<li>a function is too long or takes too many parameters</li>
-							<li>a variable is only used once for an intermediate calculation</li>
-							<li>the developer is tempted to copy-paste some code</li>
+							<li data-i18n="list-1">a function is too long or takes too many parameters</li>
+							<li data-i18n="list-2">a variable is only used once for an intermediate calculation</li>
+							<li data-i18n="list-3">the developer is tempted to copy-paste some code</li>
 						</ul>
-						<p>Compared to chainable API, function composition favors independent functions over methods, which avoids overloading objects with too many properties.</p>
+						<p data-i18n="text-3">Compared to chainable API, function composition favors independent functions over methods, which avoids overloading objects with too many properties.</p>
 					</section>
-
-					<section>
-						<h3>Currying</h3>
-						<p style="font-style: italic; color: gray">From <a href="https://en.wikipedia.org/wiki/Haskell_Curry" target="_blank">Haskell Curry</a>, a mathematician who laid the foundations of functional programming.</p>
-						<p><b>Currying</b> means transforming a function that takes N arguments into a function taking the 1st argument only and returning another function taking the 2nd argument only, and so on until having collected the N arguments necessary to compute and return the final result:</p>
+					<section id="currying">
+						<h3 data-i18n="title">Currying</h3>
+						<p data-i18n="text-1" style="font-style: italic; color: gray">From <a href="https://en.wikipedia.org/wiki/Haskell_Curry" target="_blank">Haskell Curry</a>, a mathematician who laid the foundations of functional programming.</p>
+						<p data-i18n="text-2"><b>Currying</b> means transforming a function that takes N arguments into a function taking the 1st argument only and returning another function taking the 2nd argument only, and so on until having collected the N arguments necessary to compute and return the final result:</p>
 						<p class="center" style="font-size: 150%"><code>f(a,b,c) ⇔ curry(f)(a)(b)(c)</code></p>
-						<p>Arrow functions make it easy to transform functions into curryied ones:</p>
+						<p data-i18n="text-3">Arrow functions make it easy to transform functions into curryied ones:</p>
 						<pre><code class="javascript hljs js" data-trim>
 							const sum = (a,b,c) => a + b + c
 							const sum = a => b => c => a + b + c // curryied version
 						</code></pre>
 						<br>
-						<p>A more flexible definition allows passing any number of arguments at each step:</p>
+						<p data-i18n="text-4">A more flexible definition allows passing any number of arguments at each step:</p>
 						<p class="center"><code>curry(f)(a,b)(c) ⇔ curry(f)(a)(b,c) ⇔ curry(f)(a)(b)(c)</code></p>
 					</section>
-
-					<section>
-						<div class="ref">Exercise 22</div>
-						<h3>Currying: use cases</h3>
-						<p><b>Currying</b> is used to apply part of the arguments to decline a generic function into a more specialized version of it: this is called <b>partial application</b>.</p>						
+					<section id="currying-use-cases">
+						<h3 data-i18n="title">Currying: use cases</h3>
+						<div class="ref" data-i18n="exo">Exercise 22</div>
+						<p data-i18n="text"><b>Currying</b> is used to apply part of the arguments to decline a generic function into a more specialized version of it: this is called <b>partial application</b>.</p>						
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim>
 							const sum = a => b => a + b
 							const increment = sum(1);
@@ -2329,16 +2349,15 @@
 							▸ "Hello!"
 						</code></pre>
 						<br>
-						<div class="note">
+						<div class="note" data-i18n="note">
 							In practice, we often introduce currying in a codebase the opposite way:<br>
 							starting from a function doing some specific work, we rewrite it into a more generic version, 
 							then use partial application to get back to the original specific use case.
 						</div>
 					</section>
-
-					<section>
-						<h3>Partial application with <code>fn.bind</code></h3>
-						<p>Partial application can also be done with the <code>bind</code> function in <code>Function.prototype</code>:</p>
+					<section id="partial-application">
+						<h3 data-i18n="title">Partial application with <code>fn.bind</code></h3>
+						<p data-i18n="text">Partial application can also be done with the <code>bind</code> function in <code>Function.prototype</code>:</p>
 						<pre><code class="javascript hljs js" data-trim>
 							const where = (field, condition, array) => array.filter(
 								row => condition(row[field])
@@ -2351,11 +2370,10 @@
 							whereAgeIsOver18(data)
 						</code></pre>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<p>How to refactor a code to obtain pure, atomic, generic and composable functions ?</p>
-						<p>Let's start from this code example:</p>
+					<section id="functional-refactoring-in-practice">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<p data-i18n="text-1">How to refactor a code to obtain pure, atomic, generic and composable functions ?</p>
+						<p data-i18n="text-2">Let's start from this code example:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 							let results = [];
@@ -2369,10 +2387,9 @@
 							}
 						</code></pre>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<div class="note"><b>Step 1: get rid of non-local variables</b><br>Pass non-local variables as function arguments. If they are reassigned, make them return values.</div>
+					<section id="functional-refactoring-in-practice-2">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<div class="note" data-i18n="note-1"><b>Step 1: get rid of non-local variables</b><br>Pass non-local variables as function arguments. If they are reassigned, make them return values.</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 							let results = [];
@@ -2385,12 +2402,11 @@
 								document.querySelector("#results").textContent = output
 							}
 						</code></pre>
-						<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
+						<div class="note info" data-i18n="note-2">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<div class="note"><b>Step 2: take out the side effects</b><br>Replace mutations with equivalent immutable instructions when possible. Otherwise, try to isolate them.</div>
+					<section id="functional-refactoring-in-practice-3">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<div class="note" data-i18n="note-1"><b>Step 2: take out the side effects</b><br>Replace mutations with equivalent immutable instructions when possible. Otherwise, try to isolate them.</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 
@@ -2406,12 +2422,11 @@
 
 							const results = printUsersOverAge18(data)
 						</code></pre>
-						<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
+						<div class="note info" data-i18n="note-2">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<div class="note"><b>Step 3: decompose logic in pure, composable functions</b></div>
+					<section id="functional-refactoring-in-practice-4">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<div class="note" data-i18n="note-1"><b>Step 3: decompose logic in pure, composable functions</b></div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 
@@ -2426,12 +2441,11 @@
 							const { results, output } = getUsersOverAge18(data)
 							document.querySelector("#results").textContent = output
 						</code></pre>
-						<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
+						<div class="note info" data-i18n="note-2">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<div class="note"><b>Step 4: make functions generic</b><br>Pass any arbitrary value as parameter. Add arguments mapping functions if necessary.</div>
+					<section id="functional-refactoring-in-practice-5">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<div class="note" data-i18n="note-1"><b>Step 4: make functions generic</b><br>Pass any arbitrary value as parameter. Add arguments mapping functions if necessary.</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 							import { compose } from "utils/functions.js";
@@ -2450,12 +2464,11 @@
 
 							document.querySelector("#results").textContent = output
 						</code></pre>
-						<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
+						<div class="note info" data-i18n="note-2">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<div class="note"><b>Step 5: currying functions</b> to reduce the number of arguments and remove superfluous mapping functions</div>
+					<section id="functional-refactoring-in-practice-6">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<div class="note" data-i18n="note-1"><b>Step 5: currying functions</b> to reduce the number of arguments and remove superfluous mapping functions</div>
 						<pre style="font-size: 80%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 							import { compose } from "utils/functions.js";
@@ -2475,12 +2488,11 @@
 							const output = mapToProp("firstName", results).join("\n")
 							document.querySelector("#results").textContent = output
 						</code></pre>
-						<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
+						<div class="note info" data-i18n="note-2">Currying is very efficient to ease the composition of generic functions.</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
-						<div class="note"><b>Step 6: reorganize your modules</b> ; check each decomposed function obtained to decide whether it should be in this file or moved somewhere else.</div>
+					<section id="functional-refactoring-in-practice-7">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
+						<div class="note" data-i18n="note-1"><b>Step 6: reorganize your modules</b> ; check each decomposed function obtained to decide whether it should be in this file or moved somewhere else.</div>
 						<pre style="font-size: 75%"><code class="javascript hljs js" data-trim contenteditable="true">
 							import data from "users.json"
 							import { compose } from "utils/functions.js";
@@ -2500,11 +2512,10 @@
 							const output = mapToProp("firstName", results).join("\n")
 							document.querySelector("#results").textContent = output
 						</code></pre>
-						<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
+						<div class="note info" data-i18n="note-2">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>
+					<section id="functional-refactoring-in-practice-8">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>
 						<div style="position: relative">
 							<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 								/* BEFORE */
@@ -2535,55 +2546,59 @@
 								const output = mapToProp("firstName", results).join("\n")
 								document.querySelector("#results").textContent = output
 							</code></pre>
-							<div class="arrow left" style="top: 310px; left: 780px; background: black; padding: 0.5em; font-size: 80%; width: 12em; border: 3px solid white;">
+							<div class="arrow left"  data-i18n="note" style="top: 310px; left: 780px; background: black; padding: 0.5em; font-size: 80%; width: 12em; border: 3px solid white;">
 								what we get at the end: pure, atomic, generic and composable functions
 							</div>
 						</div>
 					</section>
-
-					<section>
-						<h3>Functional refactoring in practice</h3>						
-						<p>To refactor a code and obtain pure atomic generic and composable functions:</p>
-						<img src="./assets/img/cook.png" style="float: right; width: 200px" />
+					<section class="left" id="functional-refactoring-in-practice-9">
+						<h3 data-i18n="title">Functional refactoring in practice</h3>						
+						<p data-i18n="text">To refactor a code and obtain pure atomic generic and composable functions:</p>
+						<img src="./assets/img/cook.png" style="position: absolute; right: 0; width: 200px" />
 						<ol>
-							<li><i class="grey">Collecting ingredients</i>
+							<li data-i18n="list-1">
+								<i class="grey">Collecting ingredients</i>
 								<br>Replace non-local variables with new arguments or return values
 							</li>
-							<li><i class="grey">Slicing</i>
+							<li data-i18n="list-2">
+								<i class="grey">Slicing</i>
 								<br>Extract and isolate side effects and mutations
 							</li>
-							<li><i class="grey">Combine ingredients</i>
+							<li data-i18n="list-3">
+								<i class="grey">Combine ingredients</i>
 								<br>Compose into series of pure functions
 							</li>
-							<li>
+							<li data-i18n="list-4">
 								<i class="grey">Boil and simmer</i>
 								<br>Extract arbitrary values to make it more generic
 							</li>
-							<li>
+							<li data-i18n="list-4">
 								<i class="grey">Add the spices</i>
 								<br>Curry functions to reduce the arguments and simplify code
 							</li>
-							<li>
+							<li data-i18n="list-6">
 								<i class="grey">Set the table</i>
 								<br>Reorganize your modules, externalize generic functions
 							</li>
 						</ol>
-						<div class="note">Over time, you will be able to make your own <b>functional toolbox</b>, a recipe book reusable in different projects.</div>
+						<div class="note" data-i18n="note">Over time, you will be able to make your own <b>functional toolbox</b>, a recipe book reusable in different projects.</div>
 					</section>
 				</section>
-
 				<section>
-					<section>
-						<h2>Beyond JavaScript</h2>
-						<p>Transpilers and JavaScript supersets</p>
+					<section id="chapter-7">
+						<h2 data-i18n="title">Beyond JavaScript</h2>
+						<p data-i18n="description">Transpilers and JavaScript supersets</p>
 					</section>
-					<section>
-						<h3>Babel transpiler</h3>
+					<section id="babel-transpiler">
+						<h3 data-i18n="title">Babel transpiler</h3>
 						<ul>
-							<li><b>Transpiler</b> = source-to-source compiler operating on the same language, or two languages with the same level of abstraction</li>
-							<li><img src="./assets/img/babel-logo.png" alt="Babel logo" style="float: right; margin: 0 0 1em 1em">
-								Babel is the most popular JS transpiler. It was initially called 6to5 because it converted ES6 to ES5 to get broader browser support (Internet Explorer in particular)</li>
-							<li style="clear: both">Example of ES2021 → ES5 transpilation:
+							<li data-i18n="list-1"><b>Transpiler</b> = source-to-source compiler operating on the same language, or two languages with the same level of abstraction</li>
+							<li>
+								<img src="./assets/img/babel-logo.png" alt="Babel logo" style="float: right; margin: 0 0 1em 1em">
+								<span data-i18n="list-2">Babel is the most popular JS transpiler. It was initially called 6to5 because it converted ES6 to ES5 to get broader browser support (Internet Explorer in particular)</span>
+							</li>
+							<li style="clear: both">
+								<span data-i18n="list-3">Example of ES2021 → ES5 transpilation:</span>
 								<div class="cols-2">
 									<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
 										[1, 2, 3].map(n => n ** 2);
@@ -2601,16 +2616,15 @@
 									</code></pre>
 								</div>
 							</li>
-							<li>A Babel plugin exists for almost each TC39 proposal, to experiment new proposals</li>
-							<li>Presets of Babel plugins exist for each major version of ECMAScript</li>
+							<li data-i18n="list-4">A Babel plugin exists for almost each TC39 proposal, to experiment new proposals</li>
+							<li data-i18n="list-5">Presets of Babel plugins exist for each major version of ECMAScript</li>
 						</ul>
 					</section>
-
-					<section>
+					<section id="babel-preset-env">
 						<h3>@babel/preset-env</h3>
 						<ul>
-							<li>Since <a href="https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know/" target="_blank">Internet Explorer has retired</a> and is no longer supported by Microsoft, we got in the evergreen era of web browsers, which make most of Babel transformations no longer required.</li>
-							<li>A new Babel preset has been created to reduce the amount of Babel transformations to just what you need based on the <a href="https://browserslist.dev/" target="_blank">list of browsers you want to support</a>.</li>							
+							<li data-i18n="list-1">Since <a href="https://blogs.windows.com/windowsexperience/2022/06/15/internet-explorer-11-has-retired-and-is-officially-out-of-support-what-you-need-to-know/" target="_blank">Internet Explorer has retired</a> and is no longer supported by Microsoft, we got in the evergreen era of web browsers, which make most of Babel transformations no longer required.</li>
+							<li data-i18n="list-2">A new Babel preset has been created to reduce the amount of Babel transformations to just what you need based on the <a href="https://browserslist.dev/" target="_blank">list of browsers you want to support</a>.</li>							
 						</ul>
 
 						<p><i>package.json:</i>
@@ -2618,7 +2632,7 @@
 								"browserslist": "> 1%; not dead"
 							</code></pre>
 						</p>
-						<p style="text-decoration: underline;">Examples of browserslist queries:</p>
+						<p data-i18n="text" style="text-decoration: underline;">Examples of browserslist queries:</p>
 						<ul>
 							<li><code>ie 6-8, Firefox >= 30, last 5 Chrome versions</code></li>
 							<li><code>cover 95% in US, cover 99% in my stats</code></li>
@@ -2626,64 +2640,61 @@
 							<li><code>defaults</code> : <span style="color: gray"> 0.5%, last 2 versions, Firefox ESR, not dead</span></li>
 						</ul>
 					</section>
-
-					<section>
-						<h3>To transpile or not to transpile ?</h3>
-						<p class="clear left">
-							<img src="./assets/img/thumb-up.png" alt="Pro" style="float: left; margin-right: 1em">
-							Transpilation allows the developer to not think about the majority of browser support issues. It is no longer needed to remember which JS feature comes from which version and is supported in which browser.
+					<section id="transpile-or-not-transpile">
+						<h3 data-i18n="title">To transpile or not to transpile ?</h3>
+						<p class="clear left" style="display: flex; align-items: center;">
+							<img src="./assets/img/thumb-up.png" alt="Pro" style="margin-right: 1em">
+							<span data-i18n="text-1">Transpilation allows the developer to not think about the majority of browser support issues. It is no longer needed to remember which JS feature comes from which version and is supported in which browser.</span>
 						</p>
-						<p class="clear left">
-							<img src="./assets/img/thumb-down.png" alt="Con" style="float: left; margin-right: 1em">
-							Transpilation introduces a compilation step, many new dependencies, some risk factors, and a loss of proximity between the code the developer writes and the code that is actually run in production.
+						<p class="clear left" style="display: flex; align-items: center;">
+							<img src="./assets/img/thumb-down.png" alt="Con" style="margin-right: 1em">
+							<span data-i18n="text-2">Transpilation introduces a compilation step, many new dependencies, some risk factors, and a loss of proximity between the code the developer writes and the code that is actually run in production.</span>
 						</p>
 						<div class="note">
-							<p style="text-decoration: underline; font-weight: bold;">Recommended:</p>
+							<p data-i18n="text-3" style="text-decoration: underline; font-weight: bold;">Recommended:</p>
 							<ul class="narrow">
-								<li>Transpile to a minimum in development mode</li>
-								<li>Use preset-env to reduce the amount of transpilation</li>
-								<li>Integrate transpilation with other existing build processes (linters, bundlers, minification...)</li>
-								<li>Use source maps with your debugging tools</li>
+								<li data-i18n="list-1">Transpile to a minimum in development mode</li>
+								<li data-i18n="list-2">Use preset-env to reduce the amount of transpilation</li>
+								<li data-i18n="list-3">Integrate transpilation with other existing build processes (linters, bundlers, minification...)</li>
+								<li data-i18n="list-4">Use source maps with your debugging tools</li>
 							</ul>
-							<p>Fortunately, most of the frameworks build tooling is preconfigured like that !</p>
+							<p data-i18n="text-4">Fortunately, most of the frameworks build tooling is preconfigured like that !</p>
 						</div>
 					</section>
-
-					<section>
+					<section id="typescript">
 						<h3>TypeScript</h3>
 						<ul>
-							<li>
+							<li><span data-i18n="list-1">TypeScript is a superset of JavaScript developed by Microsoft and published in 2012</span>
 								<img src="./assets/img/ts-logo.png" alt="TypeScript logo" style="float: right; margin: 0 0 1em 1em">
-								TypeScript is a superset of JavaScript developed by Microsoft and published in 2012</li>
-							<li>It has an official transpiler, <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">tsc</a>, but many other alternative transpilers exist: <a href="https://esbuild.github.io/" target="_blank">esbuild</a>, <a href="https://bun.sh/" target="_blank">bun</a>, even a Babel preset.</li>
-							<li>The key-feature of TypeScript is the <b>static optionnal typing annotations</b></li>
-							<li>Other cool features: interfaces, decorators, enums, abstract classes</li>
-							<li>Gradually adoptable: with type definitions (<code>*.d.ts</code> files), TypeScript can catch mistakes even without any TS-specific syntax.</li>
-							<li>Try it online on this <a href="https://www.typescriptlang.org/play" target="_blank">playground</a></li>
+							</li>
+							<li data-i18n="list-2">It has an official transpiler, <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">tsc</a>, but many other alternative transpilers exist: <a href="https://esbuild.github.io/" target="_blank">esbuild</a>, <a href="https://bun.sh/" target="_blank">bun</a>, even a Babel preset.</li>
+							<li data-i18n="list-3">The key-feature of TypeScript is the <b>static optionnal typing annotations</b></li>
+							<li data-i18n="list-4">Other cool features: interfaces, decorators, enums, abstract classes</li>
+							<li data-i18n="list-5">Gradually adoptable: with type definitions (<code>*.d.ts</code> files), TypeScript can catch mistakes even without any TS-specific syntax.</li>
+							<li data-i18n="list-6">Try it online on this <a href="https://www.typescriptlang.org/play" target="_blank">playground</a></li>
 						</ul>
-						<div class="note">
+						<div class="note" data-i18n="note">
 							In 10 years, TypeScript popularity has continuously grown. In 2022, it it a major part of the front-end ecosystem.<br/>
 							It is supported in all major web frameworks and improves both the developer experience and the code reliability, especially for medium-to-large apps.
 						</div>
 					</section>
-
-					<section>
+					<section id="jsx">
 						<h3>JSX</h3>
 						<ul>
 							<li>
-								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right; margin: 0 0 1em 1em">
-								JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></li>
-							<li>JSX is now supported by other frameworks than React, such as Vue.js or Preact</li>
-							<li>JSX is an abstraction for <b>manipulating virtual DOM elements</b>, which is usually done with templates and a custom templating syntax in other frameworks.</li>
+								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right;height: 125px; margin: 0 0 1em 1em">
+								<span data-i18n="list-1">JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></span>
+							</li>
+							<li data-i18n="list-2">JSX is now supported by other frameworks than React, such as Vue.js or Preact</li>
+							<li data-i18n="list-3">JSX is an abstraction for <b>manipulating virtual DOM elements</b>, which is usually done with templates and a custom templating syntax in other frameworks.</li>
 						</ul>
 						<img src="./assets/img/jsx-example.png" alt="JSX example code">
-						<div class="note">
+						<div class="note" data-i18n="note">
 							JSX's popularity is stagnant and the language is still debated in the JS community, especially because of HTML vs. JS keyword conflicts ; for example, the "class" HTML attribute in JSX must be rewritten "className" to avoid clashing with the <code>class</code> operator in JavaScript.
 						</div>
 					</section>
 				</section>
-
-				<section class="agenda" id="agenda">
+				<section class="agenda" id="retrospective">
 					<h2>Retrospective</h2>
 					<div class="flex-slide">
 						<div style="flex-basis: 100%;">
@@ -2750,10 +2761,10 @@
 						</div>
 					</div>
 				</section>
-				<section>
+				<section id="ending">
 					<a href="./"><img src="./assets/img/JavaScript-logo.png" alt="logo" class="logo"></a>
 					<h1 data-i18n="title">JavaScript Training</h1>
-					<p>End of training, congratulations !</p>
+					<p data-i18n="description">End of training, congratulations !</p>
 				</section>
 			</div>
 		</div>
