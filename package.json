@@ -1,7 +1,7 @@
 {
-  "name": "formation-javascript-avance",
+  "name": "js-training",
   "version": "1.0.0",
-  "description": "Formation JavaScript Avancé",
+  "description": "Advanced JavaScript Training",
   "repository": {
     "type": "git",
     "url": "https://github.com/worldline/JS-Training.git"
