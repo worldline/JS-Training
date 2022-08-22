@@ -19,11 +19,11 @@ section.has-light-background, section.has-light-background h1, section.has-light
   --r-block-margin: 20px;
   --r-heading-margin: 0 0 20px 0;
   --r-heading-font: Source Sans Pro, Helvetica, sans-serif;
-  --r-heading-color: #F0DB4F;
+  --r-heading-color: #f0ca4f;
   --r-heading-line-height: 1.2;
   --r-heading-letter-spacing: normal;
-  --r-heading-text-transform: uppercase;
-  --r-heading-text-shadow: 2px 2px 2px black;
+  --r-heading-text-transform: normal;
+  --r-heading-text-shadow: none;
   --r-heading-font-weight: 600;
   --r-code-font: monospace;
   --r-link-color: #42affa;

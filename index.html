@@ -324,8 +324,8 @@
 						<p>For each exercise, correct the source to validate the associated test</p>
 					</section>
 					<section>
-						<span class="ref">Exercise 1</span>
 						<h3>Types and Primitives</h3>
+						<span class="ref">Exercise 1</span>
 						<p>JavaScript defines 7 data types:</p>
 						<img height="250px" src="./assets/img/Image5.png">
 						<p>The <b class="monospace">typeof</b> operator returns the type of an object, but be careful:</p>
@@ -373,8 +373,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<span class="ref">Exercise 2</span>
 						<h3 class="flex-center">Objects: properties listing</h3>
+						<span class="ref">Exercise 2</span>
 						<pre style="font-size: 90%"><code class="javascript hljs" data-trim>
 							let obj = { a: 1, b: 2 }
 
@@ -394,8 +394,8 @@
 						</code></pre>
 					</section>
 					<section>
-						<span class="ref">Exercise 3</span>
 						<h3>Objects: properties assignment</h3>
+						<span class="ref">Exercise 3</span>
 						<pre><code class="javascript hljs" data-trim>
 							let obj = { key: "value" }
 							obj.a = 1;
@@ -425,8 +425,8 @@
 						<p>A default assignment is enumerable, modifiable and configurable, without specific accessors or mutators</p>
 					</section>
 					<section>
-						<span class="ref">Exercise 4</span>
 						<h3>Define the descriptors</h3>
+						<span class="ref">Exercise 4</span>
 						<p>The method <b class="monospace">Object.defineProperty()</b> allows you to assign a property by specifying its descriptors</p>
 						<div class="flex-center">
 							<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
@@ -513,7 +513,7 @@
 						<ul>
 							<li><b class="monospace">let</b> and <b class="monospace">const</b> appeared with ES2015</li>
 							<li>they bind variables to <b>block scope</b> and not function scope like <code>var</code>, which is much more intuitive</li>
-							<li><b class="monospace">const</b> is no longer used since</li>
+							<li><b class="monospace">var</b> is no longer used since</li>
 						</ul>
 						<div class="flex-slide">
 							<img height="250" src="./assets/img/Image11.png">
@@ -572,8 +572,8 @@
 						<p>Only the <b class="monospace">getValue</b> and <b class="monospace">increment</b> closures allow access</p>
 					</section>
 					<section>
-						<span class="ref">Exercise 5</span>
 						<h3>Using closures</h3>
+						<span class="ref">Exercise 5</span>
 						<pre><code class="javascript hljs" data-trim>
 							for (var i = 1; i&lt;=3; i++) {
 								setTimeOut( function timer(){
@@ -738,8 +738,8 @@
 						</div>
 					</section>
 					<section class="quizz">
-						<span class="ref">Quiz</span>
 						<h3>Implicit casts</h3>
+						<span class="ref">Quiz</span>
 						<div class="flex-slide">
 							<div style="flex-basis: 100%;">
 								<p><pre class="fragment fade"><code>"0"-0</code></pre><pre class="fragment fade"><code>▸ 0</code></pre></p>
@@ -787,8 +787,8 @@
 						</p>
 					</section>
 					<section>
-						<span class="ref">Quiz</span>
 						<h3>Logical operators</h3>
+						<span class="ref">Exercise 6</span>
 						<p>
 							The operators <span class="monospace">||</span> and <span class="monospace">&&</span>, 
 							the ternary conditions <span class="monospace">?:</span> and <br>
@@ -855,8 +855,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 7</span>
 						<h3>Arrow functions</h3>
+						<span class="ref">Exercise 7</span>
 						<pre><code class="javascript hljs" data-trim>
 							const f1 = () => {},
 										f2 = x => x*2,
@@ -924,8 +924,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 8</span>
 						<h3>Operators Spread / Rest</h3>
+						<span class="ref">Exercise 8</span>
 						<p>Object properties (ES2018)</p>
 						<p>Only works with enumerable properties</p>
 						<ul>
@@ -967,8 +967,8 @@
 						</code></pre>
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 9</span>
 						<h3>Destructuring</h3>
+						<span class="ref">Exercise 9</span>
 						<p>Also works with function parameters:</p>
 						<pre><code class="javascript hljs" data-trim>
 							function doSomething({ config, options: { verbose } }){
@@ -1044,8 +1044,8 @@
 						<div class="note info"><span style="text-decoration: underline; font-weight: bold">Recommended</span>: use template strings for all non-trivial strings</div>
 					</section>
 					<section>
-						<span class="ref">Exercise 10</span>
 						<h3>Tagged Template strings</h3>
+						<span class="ref">Exercise 10</span>
 						<p>If a function reference precedes a template string literal, that function is invoked with the static and dynamic parts of the following string:</p>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
 							function insertInUpperCase(string, ...vars) {
@@ -1060,8 +1060,8 @@
 						<img height="200" src="./assets/img/Image17.png">
 					</section>
 					<section class="left">
-						<span class="ref">Exercise 11</span>
 						<h3>Map & Set</h3>
+						<span class="ref">Exercise 11</span>
 						<ul>
 							<li><code>Map</code>: collection of keys/values like objects, but the keys can be of any type</li>
 							<li><code>Set</code>: collection of values without keys, not ordered but with guarantee of uniqueness</li>
@@ -1105,11 +1105,12 @@
 							</li>
 							<li>
 								Asynchronous Module Definition (AMD)
-								<pre><code class="javascript hljs" data-trim>define(['jquery', 'underscore'], function($,_){ 
+								<pre><code class="javascript hljs" data-trim>
+									define(['jquery', 'underscore'], function($,_){
 
-});</code></pre>
+									});
+								</code></pre>
 							</li>
-						
 							<li>
 								Universal Module Definition (UMD)<br>
 								<em>Pattern combining CommonJS, AMD and using global variables to be sure to be understood by all module systems</em>
@@ -1163,9 +1164,7 @@
 						<h3>Modules</h3>
 						<img height="350" src="./assets/img/Image21.png" alt="">
 						<p>
-							<a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">
-								https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/
-							</a>
+							<a href="https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/">https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/</a>
 						</p>
 					</section>
 					<section>
@@ -1211,7 +1210,7 @@
 				</section>
 				<section>
 					<section>
-						<h2>Deal with Asynchrony</h2>
+						<h2>Managing Asynchronicity</h2>
 						<p>Exercises 12 to 14</p>
 					</section>
 
@@ -1245,8 +1244,8 @@
 					</section>
 
 					<section class="left">
-						<span class="ref">Exercise 12</span>
 						<h3>Publisher/Subscriber</h3>
+						<span class="ref">Exercise 12</span>
 						<p>This asynchronous communication pattern is based on a principle of subscription to a flow of events.</p>
 						<p><code>element.addEventListener</code> is an example of pub/sub.</p>
 						<br />
@@ -1321,21 +1320,21 @@ doSomething()
 						<span class="ref">Exercise 13</span>
 						<h3>Creation of a promise</h3>
 						<pre style="font-size: 80%"><code class="javascript hljs" data-trim>
-						// creating a promise from a callback-based API
-						const promise = new Promise((resolve, reject) => {
-							const callback = (err, result) => err ? reject(err) : resolve(result)
-							doSomethingAsynchronous(callback)
-						})
+// creating a promise from a callback-based API
+const promise = new Promise((resolve, reject) => {
+	const callback = (err, result) => err ? reject(err) : resolve(result)
+	doSomethingAsynchronous(callback)
+})
 
-						promise.then(result => {
-							console.log(`Promise resolved with ${result}`)
-						})
-						promise.catch(error => {
-							console.log(`Promise rejected with ${error}`)
-						})
-						promise.finally(() => { // ES2018
-							console.log(`Called after either resolve or reject of the promise`)
-						})
+promise.then(result => {
+	console.log(`Promise resolved with ${result}`)
+})
+promise.catch(error => {
+	console.log(`Promise rejected with ${error}`)
+})
+promise.finally(() => { // ES2018
+	console.log(`Called after either resolve or reject of the promise`)
+})
 						</code></pre>
 					</section>
 
@@ -1358,8 +1357,8 @@ doSomething()
 					</section>
 
 					<section>
-						<span class="ref">Quiz</span>
 						<h3>Chaining and parallelism</h3>
+						<span class="ref">Quiz</span>
 						<pre><code class="javascript hljs" data-trim>
 							const wait = promisify(setTimeout)
 
@@ -1383,7 +1382,6 @@ doSomething()
 								fetch('/api/data').then(res => res.json())
 							])
 						</code></pre>
-
 					</section>
 
 					<section>
@@ -1399,9 +1397,9 @@ f1()
 	// handle the exceptions coming exclusively from f3
 })
 							</code></pre>
-
-							<p><code>then()</code> and <code>catch()</code> can be chained in any order. It allows intermediate error handling in a promise chain.</p>
-
+							<p>
+								<code>then()</code> and <code>catch()</code> can be chained in any order. It allows intermediate error handling in a promise chain.
+							</p>
 							<aside class="note info">
 								<u>Recommended:</u> handle the exceptions at the lowest level possible, but always add a <code>catch()</code> at the highest level to handle uncatched exceptions.
 							</aside>
@@ -1424,7 +1422,6 @@ async function myFunction() {
 	return 42
 }</code></pre>
 					</section>
-				
 
 					<section>
 						<h3>async / await: pros and cons</h3>
@@ -1459,8 +1456,8 @@ async function myFunction() {
 					</section>
 
 					<section>
-						<span class="ref">Exercise 14</span>
 						<h3>Observable: example of API (from <a href="https://rxjs.dev/guide/observable" target="_blank">RxJS</a>)</h3>
+						<span class="ref">Exercise 14</span>
 						<pre style="font-size: 65%"><code class="javascript hljs" data-trim>
 const keyboardObservable = new Observable( subscriber => {
 	const onKey = event => {
@@ -1522,8 +1519,8 @@ const keyboardSubscription = keyboardObservable.subscribe({
 					</section>
 
 					<section>
-						<span class="ref">Quiz</span>
 						<h3>Work with the event loop</h3>
+						<span class="ref">Quiz</span>
 						<pre><code class="javascript hljs" data-trim>
 setTimeout(() => console.log(1), 0)
 Promise.resolve().then(() => console.log(2))
@@ -1541,7 +1538,6 @@ console.log(5)
 							<span class="brace-description">variable depending on the CPU activity, but it's the most likely order</span>
 						</span>
 						</p>
-						
 					</section>
 				</section>
 
@@ -1705,7 +1701,7 @@ console.log(5)
 						<h3>Prototypes and constructors</h3>
 						<p>When <code>new Constructor()</code> is invoked, a new object is created with <code>Constructor.prototype</code> as prototype.</p>
 						<p>This is equivalent to call <code>Object.create(Constructor.prototype)</code></p>
-						<p >The same principle applies on all native constructors in the language:</p>
+						<p>The same principle applies on all native constructors in the language:</p>
 						<pre><code class="javascript hljs" data-trim>
 							let today = new Date();
 							today.getMonth === Date.prototype.getMonth
@@ -1746,13 +1742,11 @@ console.log(5)
 							console.log(typeof result1) // undefined
 							console.log(typeof result2) // object
 						</code></pre>
-						
-						
 					</section>
 
 					<section class="left">
-						<span class="ref">Exercise 16</span>
 						<h3>Constructor.prototype</h3>
+						<span class="ref">Exercise 16</span>
 						<p>Every constructor function has a <code>prototype</code> property that is an object with a <code>constructor</code> property referring to the constructor function.</p>
 						<p>That's how you can retrieve the constructor from a constructed object.</p>
 						<img src="assets/img/constructor-prototype.jpg" style="float:left; width: 300px; margin-right: 1em" alt="Diagram presenting Constructor and protototype property recursion" />
@@ -1828,7 +1822,7 @@ class User extends Person {
 const bill = new User("Bill", "Gates", "admin")
 							</code></pre>
 							<div class="left">
-								<div class="arrow left fragment" style="top: 34px; right: 0px">explicit <code>constructor</code> property</div>
+								<div class="arrow left fragment" style="top: 34px; right: 0">explicit <code>constructor</code> property</div>
 								<div class="arrow left fragment" style="top: 206px; right: -50px;">simplifies the assignation of the prototype</div>
 								<div class="arrow left fragment" style="top: 242px; right: -120px">simplifies the call to the prototype constructor</div>
 							</div>
@@ -1904,7 +1898,7 @@ C.methodStatic() // methodStatic in C
 
 					<section>
 						<h3>Alternative to constructors</h3>
-						<p >You don't need constructors to make prototype-based OOP. You can rather use:</p>
+						<p>You don't need constructors to make prototype-based OOP. You can rather use:</p>
 						<ul class="left">
 							<li>Factory functions
 								<pre><code class="javascript hljs js" data-trim>
@@ -2024,8 +2018,8 @@ b2.speak();
 					</section>
 
 					<section class="left">
-						<div class="ref">Exercise 17</div>
 						<h3>Exercise: Relations between objects</h3>
+						<div class="ref">Exercise 17</div>
 						<p>Let's practice on a project example: a web components library</p>
 						<p>Objects identified in the model:</p>
 						<ul>
@@ -2077,7 +2071,7 @@ Object.getOwnPropertySymbols(obj)
 					<section>
 						<h3>Symbols - Global register</h3>
 						<p>A global register exists for symbols nevertheless:</p>
-						<pre ><code class="javascript hljs js" data-trim>
+						<pre><code class="javascript hljs js" data-trim>
 const symbolFoo = Symbol.for('foo')
 symbolFoo === Symbol.for('foo')
 ▸ true
@@ -2092,7 +2086,7 @@ Symbol.keyFor(symbolFoo)
 						<h3>Symbols - Known symbols</h3>
 						<p>Some symbols are built-in in ES2015.</p>
 						<p>They let you redefine some internal behaviors of the language for an object:</p>
-						<pre ><code class="javascript hljs js" data-trim>
+						<pre><code class="javascript hljs js" data-trim>
 							const obj = {
 								[Symbol.toPrimitive](){ return 42 }
 							}
@@ -2120,36 +2114,36 @@ Symbol.keyFor(symbolFoo)
 							<li><code>value</code>: current value of iteration, undefined if <code>done</code> is true</li>
 						</ul>
 						<div class="cols-2">
-						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
-							const compteur123 = {
-								[Symbol.iterator]: function(){
-									let nombres = [1, 2, 3]
-									return {
-										next(){
-											return {
-												done: nombres.length === 0,
-												value: nombres.shift()
-											}
-										}
-									}
-								}
-							}
+							<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
+const compteur123 = {
+	[Symbol.iterator]: function(){
+		let nombres = [1, 2, 3]
+		return {
+			next(){
+				return {
+					done: nombres.length === 0,
+					value: nombres.shift()
+				}
+			}
+		}
+	}
+}
 						</code></pre>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
-							for(let n of compteur123) console.log(n);
-							▸ 1
-							▸ 2
-							▸ 3
+for(let n of compteur123) console.log(n);
+▸ 1
+▸ 2
+▸ 3
 
-							[...compteur123]
-							▸ [1, 2, 3]
+[...compteur123]
+▸ [1, 2, 3]
 						</code></pre>
 						</div>
 					</section>
 
 					<section>
-						<div class="ref">Exercise 18</div>
 						<h3>function* and generators</h3>
+						<div class="ref">Exercise 18</div>
 						<p>A generator is a special type of function used to simplify the creation of iterators. A generator is declared with operator <b>function*</b>, which allow the use of the <code>yield</code> operator inside.</p>
 						<pre style="font-size: 60%"><code class="javascript hljs js" data-trim>
 							const compteur123 = {
@@ -2191,7 +2185,8 @@ proxy.foo;
 ▸ get foo intercepted!
 
 obj.foo;
-▸ bar</code></pre>
+▸ bar
+						</code></pre>
 					</section>
 
 					<section>
@@ -2217,7 +2212,7 @@ new Proxy(object, {
 						<h3>Reflect API</h3>
 						<p><b>Reflect</b> represents the capacity for <a href="https://en.wikipedia.org/wiki/Reflective_programming" target="_blank">reflection</a> acquired by JS with the introduction of proxies.</p>
 						<p>The <code>Reflect</code> object contains a set of methods that reproduce the default behavior of the language for all the Proxy traps. You can see it as the default value of every <code>Proxy</code> trap.</p>
-						<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 							Reflect.get(o, key) ⇔ o[key]
 							Reflect.set(o, key, val) ⇔ o[key] = val
 							Reflect.has(o, key) ⇔ key in o
@@ -2225,7 +2220,7 @@ new Proxy(object, {
 							...
 						</code></pre>
 						<p>You can easily break existing behaviors you didn't even know existed when playing with proxies. A good practice and safety measure is to always call the Reflect API when adding a proxy trap.</p>
-						<pre style="font-size: 90%"><code class="javascript hljs js" data-trim>
+						<pre style="font-size: 70%"><code class="javascript hljs js" data-trim>
 new Proxy(obj, {
 	set(o, key, value){
 		if(typeof value !== "string"){
@@ -2237,9 +2232,9 @@ new Proxy(obj, {
 						</code></pre>
 					</section>
 
-					<section>
-						<div class="ref">Exercise 19</div>
+					<section class="left">
 						<h3>Use cases for Proxies</h3>
+						<div class="ref">Exercise 19</div>
 						<ul>
 							<li>Defensive objects: prevent object mutations, throw exceptions when trying to read an undefined property...</li>
 							<li>Watchers: publisher/subscriber event system on object mutations (<a href="https://vuejs.org/guide/extras/reactivity-in-depth.html#how-reactivity-works-in-vue" target="_blank">Vue.js</a>, <a href="https://mobx.js.org/configuration.html#proxy-support" target="_blank">MobX</a>)</li>
@@ -2250,11 +2245,9 @@ new Proxy(obj, {
 							<li>...</li>
 						</ul>
 					</section>
-
 				</section>
 
 				<section>
-
 					<section>
 						<h2>Functional programming</h2>
 						<p>Exercices 20 to 22</p>
@@ -2293,8 +2286,8 @@ new Proxy(obj, {
 					</section>
 
 					<section>
-						<div class="ref">Exercise 20</div>
 						<h3>Chainable API</h3>
+						<div class="ref">Exercise 20</div>
 						<p>A <b>chainable</b> method returns its own execution context (<code>return this</code>) or an object of the same type/prototype in order to be able to chain the calls to this method.</p>
 						<p><i>Example: <code>Array.prototype</code> chainable methods</i></p>
 						<pre><code class="javascript hljs js" data-trim>
@@ -2311,8 +2304,8 @@ new Proxy(obj, {
 					</section>
 
 					<section>
-						<div class="ref">Exercise 21</div>
 						<h3>Function composition</h3>
+						<div class="ref">Exercise 21</div>
 						<p><b>Function composition</b> consists of creating a composed function that sequentially calls several other functions, each with the return value of the previous one:</p>
 						<p class="center" style="font-size: 150%"><code>compose(f,g,h)(x) ⇔ h(g(f(x)))</code></p>
 						<p>Function composition can be a relevant solution when:</p>
@@ -2392,7 +2385,7 @@ function printUsersOverAge18(){
 	const output = results.map(user => user.firstName).join("\n")
 	document.querySelector("#results").textContent = output
 }
-							</code></pre>
+						</code></pre>
 					</section>
 
 					<section>
@@ -2409,8 +2402,8 @@ function printUsersOverAge18(){
 	const output = results.map(user => user.firstName).join("\n")
 	document.querySelector("#results").textContent = output
 }
-							</code></pre>
-							<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
+						</code></pre>
+						<div class="note info">Reassigning non-local variables is a side-effect that often leads to developer mistakes and bugs.</div>
 					</section>
 
 					<section>
@@ -2430,8 +2423,8 @@ function printUsersOverAge18(data){
 }
 
 const results = printUsersOverAge18(data)
-							</code></pre>
-							<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
+						</code></pre>
+						<div class="note info">1 function = 1 role ; externalizing side effects helps to decompose a code and understand it better.</div>
 					</section>
 
 					<section>
@@ -2450,8 +2443,8 @@ function getUsersOverAge18(data){
 
 const { results, output } = getUsersOverAge18(data)
 document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
+						</code></pre>
+						<div class="note info">After removing non-local variables and side effects, it is much easier to decompose code into composable functions.</div>
 					</section>
 
 					<section>
@@ -2474,8 +2467,8 @@ const results = getUsersOverAge18(data)
 const output = getFirstNames(results).join("\n")
 
 document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
+						</code></pre>
+						<div class="note info">Magic numbers and other undocumented constants encourages copy-pasting code and creates technical debt.</div>
 					</section>
 
 					<section>
@@ -2499,8 +2492,8 @@ const getUsersOverAge18 = compose(
 const results = getUsersOverAge18(data)
 const output = mapToProp("firstName", results).join("\n")
 document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
+						</code></pre>
+						<div class="note info">Currying is very efficient to ease the composition of generic functions.</div>
 					</section>
 
 					<section>
@@ -2524,8 +2517,8 @@ const getUsersOverAge18 = compose(
 const results = getUsersOverAge18(data)
 const output = mapToProp("firstName", results).join("\n")
 document.querySelector("#results").textContent = output
-							</code></pre>
-							<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
+						</code></pre>
+						<div class="note info">A functional refactoring is useless if code is badly organized or if reusable functions are not reused</div>
 					</section>
 
 					<section>
@@ -2564,7 +2557,6 @@ document.querySelector("#results").textContent = output
 							what we get at the end: pure, atomic, generic and composable functions
 						</div>
 						</div>
-
 					</section>
 
 					<section>
@@ -2596,7 +2588,6 @@ document.querySelector("#results").textContent = output
 						</ol>
 						<div class="note">Over time, you will be able to make your own <b>functional toolbox</b>, a recipe book reusable in different projects.</div>
 					</section>
-					
 				</section>
 
 				<section>
@@ -2657,12 +2648,12 @@ var _ref = [1, 2, 3],
 
 					<section>
 						<h3>To transpile or not to transpile ?</h3>
-						<p class="clear left">
-							<img src="./assets/img/thumb-up.png" alt="Pro" style="float: left; margin-right: 1em">
+						<p class="clear left" style="display: flex;align-items: center">
+							<img src="./assets/img/thumb-up.png" alt="Pro" style="margin-right: 1em">
 							Transpilation allows the developer to not think about the majority of browser support issues. It is no longer needed to remember which JS feature comes from which version and is supported in which browser.
 						</p>
-						<p class="clear left">
-							<img src="./assets/img/thumb-down.png" alt="Con" style="float: left; margin-right: 1em">
+						<p class="clear left" style="display: flex;align-items: center">
+							<img src="./assets/img/thumb-down.png" alt="Con" style="margin-right: 1em">
 							Transpilation introduces a compilation step, many new dependencies, some risk factors, and a loss of proximity between the code the developer writes and the code that is actually run in production.
 						</p>
 						<div class="note">
@@ -2685,7 +2676,7 @@ var _ref = [1, 2, 3],
 								<img src="./assets/img/ts-logo.png" alt="TypeScript logo" style="float: right; margin: 0 0 1em 1em">
 								TypeScript is a superset of JavaScript developed by Microsoft and published in 2012</li>
 							<li>It has an official transpiler, <a href="https://www.typescriptlang.org/docs/handbook/compiler-options.html" target="_blank">tsc</a>, but many other alternative transpilers exist: <a href="https://esbuild.github.io/" target="_blank">esbuild</a>, <a href="https://bun.sh/" target="_blank">bun</a>, even a Babel preset.</li>
-							<li>The key-feature of TypeScript is the <b>static optionnal typing annotations</b></li>
+							<li>The key-feature of TypeScript is the <b>static optional typing annotations</b></li>
 							<li>Other cool features: interfaces, decorators, enums, abstract classes</li>
 							<li>Gradually adoptable: with type definitions (<code>*.d.ts</code> files), TypeScript can catch mistakes even without any TS-specific syntax.</li>
 							<li>Try it online on this <a href="https://www.typescriptlang.org/play" target="_blank">playground</a></li>
@@ -2694,15 +2685,15 @@ var _ref = [1, 2, 3],
 							In 10 years, TypeScript popularity has continuously grown. In 2022, it it a major part of the front-end ecosystem.<br/>
 							It is supported in all major web frameworks and improves both the developer experience and the code reliability, especially for medium-to-large apps.
 						</div>
-
 					</section>
 
 					<section>
 						<h3>JSX</h3>
 						<ul>
 							<li>
-								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right; margin: 0 0 1em 1em">
-								JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></li>
+								<img src="./assets/img/jsx-logo.png" alt="JSX logo" style="float: right;height: 125px;margin: 0 0 1em 1em">
+								<span>JSX is another superset of JavaScript developed by Facebook, originally for the framework <b>React</b></span>
+							</li>
 							<li>JSX is now supported by other frameworks than React, such as Vue.js or Preact</li>
 							<li>JSX is an abstraction for <b>manipulating virtual DOM elements</b>, which is usually done with templates and a custom templating syntax in other frameworks.</li>
 						</ul>
@@ -2711,7 +2702,6 @@ var _ref = [1, 2, 3],
 							JSX's popularity is stagnant and the language is still debated in the JS community, especially because of HTML vs. JS keyword conflicts ; for example, the "class" HTML attribute in JSX must be rewritten "className" to avoid clashing with the <code>class</code> operator in JavaScript.
 						</div>
 					</section>
-
 				</section>
 
 				<section class="agenda">
@@ -2787,9 +2777,6 @@ var _ref = [1, 2, 3],
 					<h1 data-i18n="title">JavaScript Training</h1>
 					<p>End of training, congratulations !</p>
 				</section>
-
-
-		
 			</div>
 		</div>
 	</body>
