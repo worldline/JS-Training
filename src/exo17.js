@@ -74,7 +74,7 @@ const TextInput = {
 
 /**
  * Example of use
- * Open exo17.html in Browser view to test
+ * Open index.html in Browser view to test
  */
 
 let text = Object.create(TextInput);
@@ -82,6 +82,6 @@ text.value = "Bob";
 text.render();
 
 let btn = Object.create(Button);
-btn.text = "Salut !";
-btn.onClick = () => alert(`Salut ${text.value} !`);
+btn.text = "Hello !";
+btn.onClick = () => alert(`Hello ${text.value} !`);
 btn.render();
