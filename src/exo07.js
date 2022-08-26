@@ -1,25 +1,26 @@
-// données d'exemple (d'autres sont utilisées en test)
+// example data (other data will be used in unit tests)
 const products = [
-  { type: "legume", name: "Carotte", quantity: 3, unitPrice: 5 },
-  { type: "legume", name: "Chou", quantity: 1, unitPrice: 10 },
-  { type: "legume", name: "Patates", quantity: 10, unitPrice: 1 },
-  { type: "fruit", name: "Pomme", quantity: 6, unitPrice: 2 },
-  { type: "fruit", name: "Poire", quantity: 6, unitPrice: 3 }
+  { type: "vegetable", name: "Carrot", quantity: 3, unitPrice: 5 },
+  { type: "vegetable", name: "Cabbage", quantity: 1, unitPrice: 10 },
+  { type: "vegetable", name: "Potato", quantity: 10, unitPrice: 1 },
+  { type: "fruit", name: "Apple", quantity: 6, unitPrice: 2 },
+  { type: "fruit", name: "Pear", quantity: 6, unitPrice: 3 }
 ];
 
-// Résoudre l'exercice avec des arrow functions
+// solve the exercise using arrow functions
+// check out the Array methods cheat sheet for help
 
 export function getProductNames(products) {
-  // retourne la liste des noms des produits (méthode map de Array)
+  // return the list of product names
   return [];
 }
 
 export function getFruits(products) {
-  // retourne les fruits uniquement (méthode filter de Array)
+  // return only the fruits
   return [];
 }
 
 export function calcTotalPrice(products) {
-  // retourne le prix total des produits (méthode reduce de Array)
+  // return total price of all products (unitPrice * quantity)
   return 0;
 }

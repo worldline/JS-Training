@@ -1,4 +1,5 @@
-// retourne un objet où les valeurs des propriétés sont devenues les clés et les clés les valeurs
+// return an object with values and keys inverted
+// we assume all values to be strings
 // { a: "b" } => { b: "a" }
 
 export function invertKeysAndValues(obj) {
