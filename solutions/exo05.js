@@ -1,33 +1,31 @@
-const paroles = [
-  "Frère Jacques",
-  "Dormez-vous",
-  "Sonnez les matines",
-  "Ding ding dong"
+const lyrics = [
+  "Clap along if you feel like a room without a roof",
+  "Clap along if you feel like happiness is the truth",
+  "Clap along if you know what happiness is to you",
+  "Clap along if you feel like that's what you wanna do"
 ];
 
 export let instructions = [];
 
-// FIX 1: utiliser let au lieu de var dans la boucle for
-// pour limiter sa portée au scope de bloc
-for (let i = 0; i < paroles.length; i++) {
+// FIX 1: use let instead of var in the for loop to declare "i" in block scope
+for (let i = 0; i < lyrics.length; i++) {
   instructions.push(function printNextLine() {
-    return paroles[i] + ", " + paroles[i];
+    return "Because I'm happy ! " + lyrics[i]
   });
 }
 
-// FIX 2 : créer un scope de fonction pour
-// avoir une variable locale dans chaque itération
-/*paroles.forEach(function (parole) {
+// FIX 2 : create a new function scope to get a local variable at each iteration
+/*lyrics.forEach(function (lyric) {
   instructions.push(function printNextLine() {
-    return parole + ", " + parole;
+    return "Because I'm happy ! " + lyric
   });
 })*/
 
-// FIX3: Pattern Immediately Invoked Function Expression(IIFE)
-/*for (var i = 0; i < paroles.length; i++) {
-  (function(parole){
+// FIX3: Pattern Immediately Invoked Function Expression (IIFE)
+/*for (var i = 0; i < lyrics.length; i++) {
+  (function(lyric){
       instructions.push(function printNextLine() {
-        return parole + ", " + parole;
+        return "Because I'm happy ! " + lyric
       });
-  })(paroles[i])
+  })(lyrics[i])
 }*/

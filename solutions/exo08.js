@@ -1,10 +1,9 @@
-// essayez d'utiliser l'opérateur spread et rest
+// try to solve the exercise using spread and rest operators
 
-// TODO: fonction retournant un objet avec comme propriétés
-// la liste des valeurs reçues en arguments et comme valeur
-// le nombre de fois où elles sont apparues
+// TODO: return an object with properties being the list of received arguments, 
+// and the number of times each argument has been received as values
 
-// solution avec reduce
+// solution with reduce
 export function count(...args) {
   return args.reduce(
     (countByArg, arg) => {
@@ -15,7 +14,7 @@ export function count(...args) {
   )
 }
 
-// solution avec map et Object.assign
+// solution with map and Object.assign
 export function count2(...args) {
   return Object.assign({}, ...args.map(arg => {
     let count = args.filter(a => a === arg).length
@@ -23,17 +22,17 @@ export function count2(...args) {
   }))
 }
 
-// exemple d'utilisation:
-count("Carotte", "Chou", "Patate", "Chou", "Chou", "Carotte")
-// { Carotte: 2, Chou: 3, Patate: 1 }
+// exemple:
+count("Carrot", "Cabbage", "Potato", "Cabbage", "Cabbage", "Carrot")
+// { Carrot: 2, Cabbage: 3, Potato: 1 }
 
 
-// TODO: fonction retournant l'argument apparu le plus de fois
+// TODO: return the argument that occurs the most times in the argument list
 export function mostFrequentIn(...args) {
   let countByArg = count(...args);
   let maxCount = Math.max(...Object.values(countByArg))
   return args.find(arg => countByArg[arg] === maxCount)
 }
 
-// exemple d'utilisation:
-mostFrequentIn("Carotte", "Chou", "Patate", "Chou", "Chou", "Carotte") === "Chou"
+// example:
+mostFrequentIn("Carrot", "Cabbage", "Potato", "Cabbage", "Cabbage", "Carrot") === "Cabbage"

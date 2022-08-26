@@ -1,7 +1,7 @@
 export const addAliasForProperties = (object, alias) => {
-  // TODO: retourner un Proxy pour l'objet permettant
-  // de déclarer des alias pour accéder en lecture ou écriture
-  // à une propriété de l'objet
+  // TODO: return a Proxy for `object`
+  // allowing to declare aliases for some properties
+  // the alias can be used for both reading or writing a value on the aliased property
   return new Proxy(object, {
     has(obj, prop) {
       return Reflect.has(obj, prop) || alias.hasOwnProperty(prop);
@@ -15,7 +15,7 @@ export const addAliasForProperties = (object, alias) => {
   });
 };
 
-// exemple d'utilisation:
+// example:
 const user = addAliasForProperties(
   { name: "Sanchez", first: "Rick" },
   { lastName: "name", firstName: "first" }
@@ -23,9 +23,9 @@ const user = addAliasForProperties(
 console.log(`${user.firstName} ${user.lastName}`); // Rick Sanchez
 
 export const countFunctionCalls = fn => {
-  // TODO: retourner un Proxy pour la fonction permettant
-  // de compter le nombre d'appels faits pour cette fonction,
-  // stocké dans la propriété fn.count
+  // TODO: return a Proxy for function `fn`
+  // allowing to count the number of times this function has been called
+  // the count can be retrieved with `fn.count`
   let count = 0;
   return new Proxy(fn, {
     get(o, key) {

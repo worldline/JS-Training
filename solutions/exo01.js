@@ -1,4 +1,4 @@
-// retourne true si la variable passée est une primitive
+// return true if parameter is a primitive, or false otherwise
 
 // solution 1
 export function isPrimitive(x) {

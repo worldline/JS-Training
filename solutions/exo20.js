@@ -13,7 +13,7 @@ export const query = array =>
         }
     });
 
-// exemple d'utilisation
+// example
 console.log(
     query(data)
         .where("age", n => n >= 18)

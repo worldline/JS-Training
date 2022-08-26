@@ -1,20 +1,20 @@
 export function parseUserData(data) {
-  // TODO: retourner un nouvel objet avec les propriétés de l'objet data
-  // et ces valeurs par défaut pour les propriétés manquantes :
+   // TODO: return a new object with the properties of data
+  // and these values applied as default for missing properties :
   const defaults = { name: "Anonymous", isAdmin: false };
 
-  // solution 1 : en utilisant Object.assign
+  // solution 1 : using Object.assign
   return Object.assign({}, defaults, data);
 
-  // solution 2 : en utilisant l'opérateur spread sur les properties
+  // solution 2 : using spread operator on properties
   return { ...defaults, ...data }
 }
 
-// solution 3 : en utilisant le destructuring et les paramètres par défaut pour parseUserData
+// solution 3 :  using destructuring and default parameters for parseUserData
 export function parseUserData2({
   name = "Anonymous",
   isAdmin = false,
-  ...rest
+  ...otherData
 }) {
-  return { name, isAdmin, ...rest }
+  return { name, isAdmin, ...otherData }
 }

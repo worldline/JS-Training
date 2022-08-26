@@ -1,5 +1,5 @@
 export const range = (start, end) => {
-    // retourner un itérable itérant entre les deux bornes numériques
+    // return an iterable iterating over all the numbers between two bounds
     return {
         [Symbol.iterator]: function* () {
             let i = start;
@@ -7,3 +7,7 @@ export const range = (start, end) => {
         }
     }
 };
+
+// example:
+// [...range(5,10)]
+// -> [5,6,7,8,9,10]

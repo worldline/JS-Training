@@ -81,11 +81,12 @@ const TextInput = {
 
 Object.setPrototypeOf(TextInput, Input);
 
-//TODO: établir et coder les relations entre les différents objets: délégation, composition ou encapsulation
+//TODO: define and implement the relations between all these objects:
+// delegation, composition or encapsulation ?
 
 /**
- * Exemple d'utilisation
- * Décommenter la partie Exo 17 dans index.html pour tester le fonctionnel attendu
+ * Example of use
+ * Open index.html in Browser view to test
  */
 
 let text = Object.create(TextInput);
@@ -93,6 +94,6 @@ text.value = "Bob";
 text.render();
 
 let btn = Object.create(Button);
-btn.text = "Salut !";
-btn.onClick = () => alert(`Salut ${text.value} !`);
+btn.text = "Hello !";
+btn.onClick = () => alert(`Hello ${text.value} !`);
 btn.render();

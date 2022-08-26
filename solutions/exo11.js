@@ -1,22 +1,22 @@
 export function deduplicateArray(arr) {
-  // TODO: retirer les valeurs en double dans l'array et retourner l'array filtrée
-  // solution 1 : avec les méthodes filter et indexOf
+  // TODO: remove duplicate values in the array and return the filtered array
+  // solution 1 - with filter and indexOf methods
   return arr.filter((elm, index, arr) => arr.indexOf(elm) === index);
 }
 
 export function deduplicateArray2(arr) {
-  // solution 2 : avec un Set et l'opérateur spread
+  // solution 2 - with a Set and spread operator
   return [...new Set(arr)]
 }
 
 export function getPropertyFromValue(obj, val) {
-  // TODO: retourner la clé de la propriété de obj ayant comme valeur val
-  // solution 1 : avec les méthodes find et Object.keys
+  // TODO: return the name of the first property of `obj` with value `val`, or null if not found
+  // solution 1 - with find and Object.keys methods
   return Object.keys(obj).find(key => obj[key] === val)
 }
 
 export function getPropertyFromValue2(obj, val) {
-  // solution 2 : avec une Map et Object.entries
+  // solution 2 - with a Map and Object.entries
   return new Map(
     Object.entries(obj).map(entry => entry.reverse())
   ).get(val)
