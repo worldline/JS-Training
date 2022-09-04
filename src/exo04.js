@@ -9,5 +9,5 @@ export function spyOnProperty(obj, prop, onRead, onWrite) {
 export function setPrivatesAndConstants(obj) {
   // change the descriptor of every property of the object:
   // properties with names starting with an underscore _ must be non enumerable
-  // properties with names starting with an uppercase letter (A-Z) must be non writable and non configurable
+  // properties with names in uppercase letters must be non writable and non configurable
 }

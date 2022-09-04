@@ -45,20 +45,20 @@ it("should set constant props non writable nor configurable", () => {
   let obj = {
     a: 1,
     b: 2,
-    Constant: 3
+    CONSTANT: 3
   }
 
   setPrivatesAndConstants(obj);
 
   try {
-    obj.Constant = 4;
+    obj.CONSTANT = 4;
   } catch (e) { }
 
-  expect(obj.Constant).toBe(3);
+  expect(obj.CONSTANT).toBe(3);
 
   try {
-    delete obj.Constant;
+    delete obj.CONSTANT;
   } catch (e) { }
 
-  expect(obj.Constant).toBe(3);
+  expect(obj.CONSTANT).toBe(3);
 });
