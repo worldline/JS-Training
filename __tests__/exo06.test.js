@@ -4,28 +4,28 @@ const a = parseUserData({
   name: "Luke",
   age: 28,
   rightId: 0,
-  friends: ["joe", "jack", "averell"]
+  company: "Microsoft"
 });
 
 const b = parseUserData({
   name: "",
   age: "",
   rightId: false,
-  friends: "none"
+  company: "Google"
 });
 
 const c = parseUserData({
   name: null,
   age: "12",
   rightId: null,
-  friends: []
+  company: "Apple"
 });
 
 const d = parseUserData({
   name: null,
   age: null,
   rightId: null,
-  friends: null
+  company: null
 });
 
 it("should parse name correctly", () => {
@@ -49,9 +49,9 @@ it("should parse isAdmin correctly", () => {
   expect(d.isAdmin).toBe(false);
 });
 
-it("should parse friends correctly", () => {
-  expect(a.friends).toBe(3);
-  expect(b.friends).toBe(false);
-  expect(c.friends).toBe(0);
-  expect(d.friends).toBe(false);
+it("should parse company correctly", () => {
+  expect(a.company).toBe("Microsoft");
+  expect(b.company).toBe(false);
+  expect(c.company).toBe(false);
+  expect(d.company).toBe(false);
 });
