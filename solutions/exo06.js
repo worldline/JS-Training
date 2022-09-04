@@ -11,8 +11,8 @@ export function parseUserData(data) {
     // return true if data.rightId is equal to 0
     isAdmin: data.rightId === 0,
 
-    // if data.friends is an Array, return its length
-    // otherwise return false
-    friends: Array.isArray(data.friends) && data.friends.length
+    // if data.age is under 16, return false 
+    // otherwise return data.company
+    company: data.age >= 16 && data.company
   };
 }
