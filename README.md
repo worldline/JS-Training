@@ -4,8 +4,7 @@ JavaScript Advanced Training Course
 
 ## Slides
 
-- [Online slides](https://worldline.github.io/JS-Training-slides/) (English)
-- PowerPoint (Français): [presenter_slides_fr.pptx](https://github.com/worldline/JS-Training-slides/raw/master/presenter_slides.pptx)
+- [Online slides](https://worldline.github.io/JS-Training-slides/) (English/French)
 
 ## Exercises
 
