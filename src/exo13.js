@@ -5,9 +5,10 @@ export function promisify(fn) {
   // but taking no callback argument and returning a Promise instead
 }
 
-// example:
+/* example:
 const wait = promisify(setTimeout);
 wait(1000)
   .then(() => { console.log("1"); return wait(1000) })
   .then(() => { console.log("2"); return wait(1000) })
   .then(() => { console.log("3") });
+*/

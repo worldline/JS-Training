@@ -9,9 +9,10 @@ export function promisify(fn) {
   })
 }
 
-// example
+/* example
 const wait = promisify(setTimeout);
 wait(1000)
   .then(() => { console.log("1"); return wait(1000) })
   .then(() => { console.log("2"); return wait(1000) })
   .then(() => { console.log("3") });
+*/

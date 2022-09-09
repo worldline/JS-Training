@@ -1,4 +1,4 @@
-export function Person(first = "John", name = "Smith") {
+export function Person(first, name) {
   // assign first and name as own properties
   this.first = first;
   this.name = name;
