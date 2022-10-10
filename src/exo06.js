@@ -11,8 +11,7 @@ export function parseUserData(data) {
     // return true if data.rightId is equal to 0
     isAdmin: false,
 
-    // if data.age is under 16, return false 
-    // otherwise return data.company
+    // return data.company if data.age is over 16, otherwise return false
     company: data.company
   };
 }
