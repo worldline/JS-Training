@@ -16,6 +16,8 @@ test("PubSub", () => {
   emitter.emit("event2", 2);
   emitter.emit("event2", 3);
 
+  emitter.emit("eventWithoutSubscribers", "should not fail");
+
   expect(canal1.join(",")).toBe("1");
   expect(canal2.join(",")).toBe("2,3");
   expect(all.join(",")).toBe("1,2,3");
