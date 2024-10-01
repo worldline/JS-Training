@@ -1,10 +1,10 @@
 export function Observable(action) {
   this.observers = [];
   action({
-    next(value) {
+    next: (value) => {
       //TODO: notify subscribers of a new value emitted
     },
-    complete() {
+    complete: () => {
       //TODO: notify subscribers of completion
     }
   })
