@@ -28,11 +28,19 @@ const d = parseUserData({
   company: null
 });
 
+const e = parseUserData({
+  name: undefined,
+  age: "old",
+  rightId: "",
+  company: "Oracle"
+})
+
 it("should parse name correctly", () => {
   expect(a.name).toBe("Luke");
   expect(b.name).toBe("Anonymous");
   expect(c.name).toBe("Anonymous");
   expect(d.name).toBe("Anonymous");
+  expect(e.name).toBe("Anonymous");
 });
 
 it("should parse age correctly", () => {
@@ -40,6 +48,7 @@ it("should parse age correctly", () => {
   expect(b.age).toBe(0);
   expect(c.age).toBe(12);
   expect(d.age).toBe(0);
+  expect(e.age).toBe(0);
 });
 
 it("should parse isAdmin correctly", () => {
@@ -47,6 +56,7 @@ it("should parse isAdmin correctly", () => {
   expect(b.isAdmin).toBe(false);
   expect(c.isAdmin).toBe(false);
   expect(d.isAdmin).toBe(false);
+  expect(e.isAdmin).toBe(false);
 });
 
 it("should parse company correctly", () => {
@@ -54,4 +64,5 @@ it("should parse company correctly", () => {
   expect(b.company).toBe(false);
   expect(c.company).toBe(false);
   expect(d.company).toBe(false);
+  expect(e.company).toBe(false);
 });
