@@ -45,9 +45,6 @@ Temporary Items
 # Node modules
 node_modules
 
-# parcel-cache
-.parcel-cache
-
 # Webstorm
 .idea
 
